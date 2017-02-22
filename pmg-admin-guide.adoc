@@ -55,7 +55,10 @@ Important Service Daemons
 TODO
 
 :leveloffset: 2
-//include::pvedaemon.adoc[]
+
+include::pmgdaemon.adoc[]
+
+include::pmgproxy.adoc[]
 
 :leveloffset: 0
 
@@ -98,6 +101,22 @@ include::pmgdb.1-synopsis.adoc[]
 [appendix]
 Service Daemons
 ---------------
+
+*pmgdaemon* - {pmg} API Daemon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:leveloffset: 1
+include::pmgdaemon.8-synopsis.adoc[]
+
+:leveloffset: 0
+
+*pmgproxy* - {pmg} API Proxy Daemon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:leveloffset: 1
+include::pmgproxy.8-synopsis.adoc[]
+
+:leveloffset: 0
 
 *pmgpolicy* - Policy Daemon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
