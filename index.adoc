@@ -17,12 +17,6 @@ image:./images/proxmox-logo.svg[] pass:[<br>] {pmg} Documentation Index
 |===========================================================
 
 
-Individual Chapters
--------------------
-
-include::chapter-index-table.adoc[]
-
-
 {pmg} Manual Pages
 ------------------
 
