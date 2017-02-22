@@ -1,0 +1,46 @@
+*pmgdaemon* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgdaemon help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`-verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgdaemon restart*
+
+Restart the daemon (or start if not running).
+
+
+
+*pmgdaemon start* `[OPTIONS]`
+
+Start the daemon.
+
+`-debug` `<boolean>` ('default =' `0`)::
+
+Debug mode - stay in foreground
+
+
+
+*pmgdaemon status*
+
+Get daemon status.
+
+
+
+*pmgdaemon stop*
+
+Stop the daemon.
+
+
+
+

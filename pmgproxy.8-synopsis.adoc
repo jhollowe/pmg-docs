@@ -1,0 +1,46 @@
+*pmgproxy* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgproxy help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`-verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgproxy restart*
+
+Restart the daemon (or start if not running).
+
+
+
+*pmgproxy start* `[OPTIONS]`
+
+Start the daemon.
+
+`-debug` `<boolean>` ('default =' `0`)::
+
+Debug mode - stay in foreground
+
+
+
+*pmgproxy status*
+
+Get daemon status.
+
+
+
+*pmgproxy stop*
+
+Stop the daemon.
+
+
+
+
