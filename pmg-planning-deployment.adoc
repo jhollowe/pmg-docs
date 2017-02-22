@@ -44,7 +44,7 @@ e-mails through your {png} (usually by specifying Proxmox as
 "smarthost" on your e-mail server - see
 xref:mail_server_config[Example mail server configuration].
 
-
+[[firewall_settings]]
 Firewall settings
 -----------------
 
