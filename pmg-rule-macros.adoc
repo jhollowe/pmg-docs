@@ -1,0 +1,29 @@
+[[rule_system_macros]]
+Available Macros for the Rule System
+------------------------------------
+
+It is possible to use macros inside most fields of action objects.
+That way it is possible to access and include data contained in the
+original mail, get envelope sender and receivers addresses or include
+additional information about Viruses and Spam. Currently the
+following macros are defined:
+
+[cols="l,3d",options="header"]
+|======
+|Macro               |Comment
+|__SENDER__	     |(envelope) sender mail address
+|__RECEIVERS__       |(envelope) receiver mail address list
+|__ADMIN__           |Email address of the administrator
+|__TARGETS__         |Subset of receivers matched by the rule
+|__SUBJECT__         |Subject of the message
+|__MSGID__           |The message ID
+|__RULE__            |Name of the matching rule
+|__RULE_INFO__       |Additional information about the matching rule
+|__VIRUS_INFO__      |Additional information about detected viruses
+|__SPAMLEVEL__       |Computed spam level
+|__SPAM_INFO__       |Additional information why message is spam
+|__SENDER_IP__       |IP address of sending host
+|__VERSION__         |The current software version (proxmox mail gateway)
+|__FILENAME__        |Attachment file name
+|__SPAMSTARS__       |A series of "*" charactes where each one represents a full score (__SPAMLEVEL__) point
+|======

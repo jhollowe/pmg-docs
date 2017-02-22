@@ -96,6 +96,8 @@ TODO
 
 :leveloffset: 0
 
+[appendix]
+include::pmg-rule-macros.adoc[]
 
 [appendix]
 Configuration Files
