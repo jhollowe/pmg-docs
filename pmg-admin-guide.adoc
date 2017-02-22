@@ -21,6 +21,8 @@ ifndef::manvolnum[]
 
 include::pmg-intro.adoc[]
 
+include::pmg-quick-start.adoc[]
+
 
 // Return to normal title levels.
 :leveloffset: 0
