@@ -1,0 +1,7 @@
+pmg-docs (5.0-1) unstable; urgency=medium
+
+  * first version using asciidoc
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 22 Feb 2017 06:26:49 +0100
+
+

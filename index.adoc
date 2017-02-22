@@ -1,0 +1,51 @@
+image:./images/proxmox-logo.svg[] pass:[<br>] {pmg} Documentation Index
+========================================================================
+:data-uri:
+:icons:
+:title: {pmg} Documentation Index
+
+
+{pmg} Administration Guide
+--------------------------
+
+[width="100%",options="header"]
+|===========================================================
+|Format               |Link
+|Printable version    |link:pmg-admin-guide.pdf[]
+|Online HTML version  |link:pmg-admin-guide.html[]
+|E-Book version       |link:pmg-admin-guide.epub[]
+|===========================================================
+
+
+Individual Chapters
+-------------------
+
+include::chapter-index-table.adoc[]
+
+
+{pmg} Manual Pages
+------------------
+
+Command Line Interface
+~~~~~~~~~~~~~~~~~~~~~~
+
+include::man1-index-table.adoc[]
+
+
+Service Daemons
+~~~~~~~~~~~~~~~
+
+include::man8-index-table.adoc[]
+
+
+Configuration Options
+~~~~~~~~~~~~~~~~~~~~~
+
+include::man5-index-table.adoc[]
+
+
+API Viewer
+~~~~~~~~~~
+
+The link:api-viewer/index.html[API viewer] is a tiny web application
+which allows you to inspect all available API calls.

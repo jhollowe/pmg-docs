@@ -1,0 +1,98 @@
+ifdef::pmglogo[]
+image:./images/proxmox-logo.svg[] pass:[<br>] Proxmox Mail Gateway Administration Guide
+=======================================================================================
+endif::pmglogo[]
+ifndef::pmglogo[]
+Proxmox Mail Gateway Administration Guide
+=========================================
+endif::pmglogo[]
+:doctype:   book
+:title: Proxmox Mail Gateway Administration Guide
+:toc:
+:numbered:
+:data-uri:
+:icons:
+ifndef::wiki[]
+ifndef::manvolnum[]
+:pmg-toplevel:
+
+// Push titles down one level.
+:leveloffset: 1
+
+include::pmg-intro.adoc[]
+
+
+// Return to normal title levels.
+:leveloffset: 0
+
+Important Service Daemons
+-------------------------
+
+TODO
+
+:leveloffset: 2
+//include::pvedaemon.adoc[]
+
+:leveloffset: 0
+
+
+Useful Command Line Tools
+-------------------------
+
+TODO
+
+:leveloffset: 2
+//include::pveceph.adoc[]
+
+:leveloffset: 0
+
+[appendix]
+Command Line Interface
+----------------------
+
+*pmgsh* - {pmg} API Shell
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TODO
+
+:leveloffset: 1
+//include::pvesm.1-synopsis.adoc[]
+
+:leveloffset: 0
+
+
+[appendix]
+Service Daemons
+---------------
+
+*pmgpolicy* - Policy Daemon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TODO
+
+:leveloffset: 1
+//include::pve-firewall.8-synopsis.adoc[]
+
+:leveloffset: 0
+
+
+[appendix]
+Configuration Files
+-------------------
+
+TODO
+
+:leveloffset: 2
+//include::datacenter.cfg.adoc[]
+
+:leveloffset: 0
+
+:leveloffset: 1
+
+[appendix]
+include::GFDL.adoc[]
+
+:leveloffset: 0
+
+endif::manvolnum[]
+endif::wiki[]

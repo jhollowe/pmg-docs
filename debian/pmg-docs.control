@@ -1,0 +1,5 @@
+Package: pmg-docs
+Section: doc
+Architecture: all
+Description: Proxmox Mail Gateway Documentation
+ This package contains the Proxmox Mail Gateway documentation files.
