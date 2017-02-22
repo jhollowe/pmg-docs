@@ -25,6 +25,7 @@ include::pmg-quick-start.adoc[]
 
 include::pmg-planning-deployment.adoc[]
 
+include::pmgconfig.adoc[]
 
 // Return to normal title levels.
 :leveloffset: 0
@@ -71,13 +72,16 @@ TODO
 Command Line Interface
 ----------------------
 
-*pmgsh* - {pmg} API Shell
-~~~~~~~~~~~~~~~~~~~~~~~~~
+*pmgsh* - API Shell
+~~~~~~~~~~~~~~~~~~~
 
 TODO
 
+*pmgconfig* - Configuration Management Toolkit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 :leveloffset: 1
-//include::pvesm.1-synopsis.adoc[]
+include::pmgconfig.1-synopsis.adoc[]
 
 :leveloffset: 0
 

@@ -1,0 +1,33 @@
+[[chapter_pmgconfig]]
+ifdef::manvolnum[]
+pmgconfig(1)
+============
+:pmg-toplevel:
+
+NAME
+----
+
+pmgconfig - Proxmox Mail Gateway Configuration Management Toolkit
+
+
+SYNOPSIS
+--------
+
+include::pmgconfig.1-synopsis.adoc[]
+
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Configuration Management Toolkit
+================================
+:pmg-toplevel:
+endif::manvolnum[]
+
+Toolkit to simplify common configuration tasks.
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
+

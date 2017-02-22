@@ -1,0 +1,63 @@
+*pmgconfig* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgconfig apicert* `[OPTIONS]`
+
+Generate /etc/pmg/pmg-api.pem (self signed certificate for GUI and REST
+API).
+
+`-force` `<boolean>` ('default =' `0`)::
+
+Overwrite existing certificate.
+
+
+
+*pmgconfig dump*
+
+Print configuration setting which can be used in templates.
+
+
+
+
+*pmgconfig help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`-verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgconfig ldapsync*
+
+Syncronize the LDAP database.
+
+
+
+*pmgconfig sync* `[OPTIONS]`
+
+Syncronize Proxmox Mail Gateway configurations with system configuration.
+
+`-restart` `<boolean>` ('default =' `0`)::
+
+Restart services if necessary.
+
+
+
+*pmgconfig tlscert* `[OPTIONS]`
+
+Generate /etc/pmg/pmg-tls.pem (self signed certificate for encrypted SMTP
+traffic).
+
+`-force` `<boolean>` ('default =' `0`)::
+
+Overwrite existing certificate.
+
+
+
+
