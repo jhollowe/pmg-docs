@@ -37,7 +37,8 @@ GEN_DEB_SOURCES=				\
 	${MANUAL_SOURCES}			\
 	docinfo.xml
 
-GEN_SCRIPTS=
+GEN_SCRIPTS=					\
+	gen-pmg.conf.5-opts.pl
 
 API_VIEWER_SOURCES=				\
 	api-viewer/index.html			\
@@ -151,7 +152,7 @@ $(GEN_DEB): $(GEN_DEB_SOURCES) asciidoc-pmg
 	install -dm755 build-$(GEN_PACKAGE)/usr/bin
 	# install files
 	install -m 0644 ${GEN_DEB_SOURCES} build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}
-	#install -m 0755 ${GEN_SCRIPTS} build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}
+	install -m 0755 ${GEN_SCRIPTS} build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}
 	# install asciidoc-pmg
 	install -m 0755 asciidoc-pmg build-$(GEN_PACKAGE)/usr/bin/
 	install -dm755 build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}/asciidoc/

@@ -1,0 +1,58 @@
+[[pmg_configuration_file]]
+ifdef::manvolnum[]
+pmg.conf(5)
+===========
+:pmg-toplevel:
+
+NAME
+----
+
+pmg.conf - Proxmox Mail Gateway Main Configuration
+
+
+SYNOPSIS
+--------
+
+`/etc/pmg/pmg.conf`
+
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Proxmox Mail Gateway Main Configuration
+=======================================
+endif::manvolnum[]
+ifdef::wiki[]
+:title: Manual: pmg.conf
+:pmg-toplevel:
+endif::wiki[]
+
+The file `/etc/pmg/pmg.conf` is the main configuration.
+
+
+File Format
+-----------
+
+The file is divided into several section. Each section has
+the following format:
+
+----
+section: NAME
+	 OPTION value
+	 ...
+----
+
+Blank lines in the file separates sections, and lines starting with a `#`
+character are treated as comments and are also ignored.
+
+
+Options
+-------
+
+include::pmg.conf.5-opts.adoc[]
+
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]

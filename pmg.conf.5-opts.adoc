@@ -1,0 +1,220 @@
+.Section 'admin'
+
+`dailyreport`: `<boolean>` ('default =' `1`)::
+
+Send daily reports.
+
+`delete`: `<string>` ::
+
+A list of settings you want to delete.
+
+`demo`: `<boolean>` ('default =' `0`)::
+
+Demo mode - do not start SMTP filter.
+
+`digest`: `<string>` ::
+
+Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
+
+`proxypassword`: `<string>` ::
+
+HTTP proxy password.
+
+`proxyport`: `<integer> (1 - N)` ('default =' `8080`)::
+
+HTTP proxy port.
+
+`proxyserver`: `<string>` ::
+
+HTTP proxy server address.
+
+`proxyuser`: `<string>` ::
+
+HTTP proxy user name.
+
+.Section 'clamav'
+
+`archiveblockencrypted`: `<boolean>` ('default =' `0`)::
+
+Wether to block encrypted archives. Mark encrypted archives as viruses.
+
+`archivemaxfiles`: `<integer> (0 - N)` ('default =' `1000`)::
+
+Number of files to be scanned within an archive, a document, or any other kind of container. Warning: disabling this limit or setting it too high may result in severe damage to the system.
+
+`archivemaxrec`: `<integer> (1 - N)` ('default =' `5`)::
+
+Nested archives are scanned recursively, e.g. if a ZIP archive contains a TAR  file,  all files within it will also be scanned. This options specifies how deeply the process should be continued. Warning: setting this limit too high may result in severe damage to the system.
+
+`archivemaxsize`: `<integer> (1000000 - N)` ('default =' `25000000`)::
+
+Files larger than this limit won't be scanned.
+
+`dbmirror`: `<string>` ('default =' `database.clamav.net`)::
+
+ClamAV database mirror server.
+
+`delete`: `<string>` ::
+
+A list of settings you want to delete.
+
+`digest`: `<string>` ::
+
+Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
+
+`maxcccount`: `<integer> (0 - N)` ('default =' `0`)::
+
+This option sets the lowest number of Credit Card or Social Security numbers found in a file to generate a detect.
+
+`maxscansize`: `<integer> (1000000 - N)` ('default =' `100000000`)::
+
+Sets the maximum amount of data to be scanned for each input file.
+
+.Section 'mail'
+
+`banner`: `<string>` ('default =' `ESMTP Proxmox`)::
+
+ESMTP banner.
+
+`conn_count_limit`: `<integer> (0 - N)` ('default =' `50`)::
+
+How many simultaneous connections any client is allowed to make to this service. To disable this feature, specify a limit of 0.
+
+`conn_rate_limit`: `<integer> (0 - N)` ('default =' `0`)::
+
+The maximal number of connection attempts any client is allowed to make to this service per minute. To disable this feature, specify a limit of 0.
+
+`delete`: `<string>` ::
+
+A list of settings you want to delete.
+
+`digest`: `<string>` ::
+
+Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
+
+`dnsbl_sites`: `<string>` ::
+
+Optional list of DNS white/blacklist domains (see postscreen_dnsbl_sites parameter).
+
+`dwarning`: `<integer> (0 - N)` ('default =' `4`)::
+
+SMTP delay warning time (in hours).
+
+`greylist`: `<boolean>` ('default =' `1`)::
+
+Use Greylisting.
+
+`helotests`: `<boolean>` ('default =' `0`)::
+
+Use SMTP HELO tests.
+
+`hide_received`: `<boolean>` ('default =' `0`)::
+
+Hide received header in outgoing mails.
+
+`max_filters`: `<integer> (3 - 40)` ('default =' `15`)::
+
+Maximum number of pmg-smtp-filter processes.
+
+`max_policy`: `<integer> (2 - 10)` ('default =' `5`)::
+
+Maximum number of pmgpolicy processes.
+
+`max_smtpd_in`: `<integer> (3 - 100)` ('default =' `99`)::
+
+Maximum number of SMTP daemon processes (in).
+
+`max_smtpd_out`: `<integer> (3 - 100)` ('default =' `99`)::
+
+Maximum number of SMTP daemon processes (out).
+
+`maxsize`: `<integer> (1024 - N)` ('default =' `10485760`)::
+
+Maximum email size. Larger mails are rejected.
+
+`message_rate_limit`: `<integer> (0 - N)` ('default =' `0`)::
+
+The maximal number of message delivery requests that any client is allowed to make to this service per minute.To disable this feature, specify a limit of 0.
+
+`rejectunknown`: `<boolean>` ('default =' `0`)::
+
+Reject unknown clients.
+
+`rejectunknownsender`: `<boolean>` ('default =' `0`)::
+
+Reject unknown senders.
+
+`relay`: `<string>` ::
+
+The default mail delivery transport (incoming mails).
+
+`relaynomx`: `<boolean>` ('default =' `0`)::
+
+Disable MX lookups for default relay.
+
+`relayport`: `<integer> (1 - 65535)` ('default =' `25`)::
+
+SMTP port number for relay host.
+
+`spf`: `<boolean>` ('default =' `1`)::
+
+Use Sender Policy Framework.
+
+`tls`: `<boolean>` ('default =' `0`)::
+
+Use TLS.
+
+`use_rbl`: `<boolean>` ('default =' `1`)::
+
+Use Realtime Blacklists.
+
+`verifyreceivers`: `<integer> (0 - 599)` ('default =' `0`)::
+
+Enable receiver verification. The value (if greater than 0) spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address (450 or 550).
+
+.Section 'spam'
+
+`bounce_score`: `<integer> (0 - 1000)` ('default =' `0`)::
+
+Additional score for bounce mails.
+
+`delete`: `<string>` ::
+
+A list of settings you want to delete.
+
+`digest`: `<string>` ::
+
+Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
+
+`languages`: `(all|([a-z][a-z])+( ([a-z][a-z])+)*)` ('default =' `all`)::
+
+This option is used to specify which languages are considered OK for incoming mail.
+
+`maxspamsize`: `<integer> (64 - N)` ('default =' `204800`)::
+
+Maximum size of spam messages in bytes.
+
+`rbl_checks`: `<boolean>` ('default =' `1`)::
+
+Enable real time blacklists (RBL) checks.
+
+`use_awl`: `<boolean>` ('default =' `1`)::
+
+Use the Auto-Whitelist plugin.
+
+`use_bayes`: `<boolean>` ('default =' `1`)::
+
+Whether to use the naive-Bayesian-style classifier.
+
+`use_ocr`: `<boolean>` ('default =' `0`)::
+
+Enable OCR to scan pictures.
+
+`use_razor`: `<boolean>` ('default =' `1`)::
+
+Whether to use Razor2, if it is available.
+
+`wl_bounce_relays`: `<string>` ::
+
+Whitelist legitimate bounce relays.
+

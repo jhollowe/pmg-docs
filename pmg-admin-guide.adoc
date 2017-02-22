@@ -80,10 +80,9 @@ TODO
 Configuration Files
 -------------------
 
-TODO
-
 :leveloffset: 2
-//include::datacenter.cfg.adoc[]
+
+include::pmg.conf.adoc[]
 
 :leveloffset: 0
 
