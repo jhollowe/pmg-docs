@@ -1,0 +1,51 @@
+*pmgdb* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgdb delete*
+
+Delete PMG rule database.
+
+
+
+*pmgdb dump*
+
+Print the PMG rule database.
+
+
+
+
+*pmgdb help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`-verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgdb init* `[OPTIONS]`
+
+Initialize/Upgrade the PMG rule database.
+
+`-force` `<boolean>` ('default =' `0`)::
+
+Delete existing database.
+
+`-statistics` `<boolean>` ('default =' `0`)::
+
+Reset and update statistic database.
+
+
+
+*pmgdb update*
+
+Update the PMG statistic database.
+
+
+
+

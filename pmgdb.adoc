@@ -1,0 +1,33 @@
+[[chapter_pmgdb]]
+ifdef::manvolnum[]
+pmgdb(1)
+========
+:pmg-toplevel:
+
+NAME
+----
+
+pmgdb - Proxmox Mail Gateway Database Management Toolkit
+
+
+SYNOPSIS
+--------
+
+include::pmgdb.1-synopsis.adoc[]
+
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Database Management Toolkit
+===========================
+:pmg-toplevel:
+endif::manvolnum[]
+
+Toolkit to simplify common database management tasks.
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
+
