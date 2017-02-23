@@ -1,0 +1,24 @@
+`cid`: `<integer> (1 - N)` ::
+
+Cluster Node ID.
+
+`hostrsapubkey`: `<string>` ::
+
+Public SSH RSA key for the host.
+
+`ip`: `<string>` ::
+
+IP address.
+
+`maxcid`: `<integer> (1 - N)` ::
+
+Maximum used cluster node ID (used internally, do not modify).
+
+`name`: `<string>` ::
+
+Node name.
+
+`rootrsapubkey`: `<string>` ::
+
+Public SSH RSA key for the root user.
+

@@ -1,0 +1,62 @@
+[[pmg_cluster_configuration_file]]
+ifdef::manvolnum[]
+cluster.conf(5)
+===============
+:pmg-toplevel:
+
+NAME
+----
+
+cluster.conf - Proxmox Mail Gateway Cluster Configuration
+
+
+SYNOPSIS
+--------
+
+`/etc/pmg/cluster.conf`
+
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Cluster Configuration
+=====================
+endif::manvolnum[]
+ifdef::wiki[]
+:title: Manual: cluster.conf
+:pmg-toplevel:
+endif::wiki[]
+
+The file `/etc/pmg/cluster.conf` contains the cluster configuration.
+
+
+File Format
+-----------
+
+The file is divided into several section. There is one 'master' and
+several 'node' sections.
+
+----
+master: <cid>
+	 OPTION value
+	 ...
+
+node: <cid>
+	 OPTION value
+	 ...
+----
+
+Blank lines in the file separates sections, and lines starting with a `#`
+character are treated as comments and are also ignored.
+
+
+Options
+-------
+
+include::cluster.conf.5-opts.adoc[]
+
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
