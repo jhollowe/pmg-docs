@@ -14,6 +14,13 @@ PMG_COMMON_DOC_SOURCES=                 \
 
 all:
 
+pmg-smtp-filter.8-synopsis.adoc:
+	@echo 'Please use systemd tools to manage this service.' >$@.tmp
+	@echo '' >>$@.tmp
+	@echo '*systemctl* `(start|stop|restart|reload)` `pmg-smtp-filter`' >>$@.tmp
+	mv $@.tmp $@
+
+
 docinfo.xml:
 	cp ${DGDIR}/$@ $@.tmp
 	mv $@.tmp $@
@@ -75,3 +82,4 @@ chapter-%.html: %.adoc ${PMG_COMMON_DOC_SOURCES}
 .PHONY: cleanup-docgen
 cleanup-docgen:
 	rm -f *.xml.tmp *.1 *.5 *.8 *.adoc docinfo.xml
+

@@ -1,0 +1,39 @@
+ifdef::manvolnum[]
+pmg-smtp-filter(8)
+==================
+:pmg-toplevel:
+
+NAME
+----
+
+pmg-smtp-filter - Proxmox SMTP Filter Daemon
+
+
+SYNOPSIS
+--------
+
+include::pmg-smtp-filter.8-synopsis.adoc[]
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+
+ifndef::manvolnum[]
+pmg-smtp-filter - Proxmox SMTP Filter Daemon
+============================================
+endif::manvolnum[]
+
+This is the Proxmox SMTP filter daemon, which does the actual SPAM
+filtering using the SpamAssassin and the rule database. It listens on
+127.0.0.1:10023 and 127.0.0.1:10024. The daemon listens to a local
+address only, so you cannot access it from outside.
+
+With our postfix configuration, incoming mails are sent to
+127.0.0.1:10024. Outgoing (trusted) mails are sent to
+127.0.0.1:10023. After filtering, mails are reinjected into postfix at
+127.0.0.1:10025.
+
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]

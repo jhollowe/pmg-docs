@@ -60,6 +60,8 @@ include::pmgdaemon.adoc[]
 
 include::pmgproxy.adoc[]
 
+include::pmg-smtp-filter.adoc[]
+
 :leveloffset: 0
 
 
@@ -110,6 +112,7 @@ include::pmgdaemon.8-synopsis.adoc[]
 
 :leveloffset: 0
 
+
 *pmgproxy* - {pmg} API Proxy Daemon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -117,6 +120,16 @@ include::pmgdaemon.8-synopsis.adoc[]
 include::pmgproxy.8-synopsis.adoc[]
 
 :leveloffset: 0
+
+
+*pmg-smtp-filter* - Proxmox SMTP Filter Daemon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:leveloffset: 1
+include::pmg-smtp-filter.8-synopsis.adoc[]
+
+:leveloffset: 0
+
 
 *pmgpolicy* - Policy Daemon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
