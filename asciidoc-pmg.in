@@ -605,7 +605,7 @@ if ($clicmd eq 'compile-wiki') {
 	    die "not title for '$manpage'";
 
 	# hack - remove command name prefix from titles
-	$title =~ s/^[a-z]+\s*-\s*//;
+	$title =~ s/^[a-z_\-]+\s+-\s*//;
 	
 	my $target = $filelist->{$manpage};
 	print "|$mantitle 3+|$title|link:$target.html\[$target\]\n";
