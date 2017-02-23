@@ -1,0 +1,57 @@
+[[chapter_pmgperf]]
+ifdef::manvolnum[]
+pmgperf(1)
+==========
+:pmg-toplevel:
+
+NAME
+----
+
+pmgperf - Proxmox Simple Performance Benchmark
+
+
+SYNOPSIS
+--------
+
+include::pmgperf.1-synopsis.adoc[]
+
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Proxmox Simple Performance Benchmark
+====================================
+:pmg-toplevel:
+endif::manvolnum[]
+
+This tool tries to gather some CPU/Hardisk performance data on the
+hardisk (mounted at 'path').
+
+* CPU BOGOMIPS: bogomips sum of all CPUs
+
+* REGEX/SECOND: regular expressions per second (perl performance
+  test), should be above 300000
+
+* HD SIZE: harddisk size
+
+* BUFFERED READS: simple HD read test. Modern HDs should reach at
+least 40 MB/sec
+
+* AVERAGE SEEK TIME: tests average seek time. Fast SCSI HDs reach
+values < 8 milliseconds. Common IDE/SATA disks get values from 15 to
+20 ms. SSD seek times should be below 1ms.
+
+* FSYNCS/SECOND: value should be greater than 200 (you should enable
+'write back' cache mode on you RAID controller - needs a battery
+backed cache (BBWC)).
+
+* DNS EXT: average time to resolve an external DNS name
+
+* DNS INT: average time to resolve a local DNS name
+
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
+

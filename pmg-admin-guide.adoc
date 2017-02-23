@@ -73,6 +73,8 @@ include::pmgdb.adoc[]
 
 include::pmgsh.adoc[]
 
+include::pmgperf.adoc[]
+
 :leveloffset: 0
 
 
@@ -84,6 +86,12 @@ Command Line Interface
 ~~~~~~~~~~~~~~~~~~~
 
 include::pmgsh.1-synopsis.adoc[]
+
+
+*pmgperf* - Proxmox Simple Performance Benchmark
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+include::pmgperf.1-synopsis.adoc[]
 
 
 *pmgconfig* - Configuration Management Toolkit
