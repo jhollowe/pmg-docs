@@ -14,6 +14,16 @@ PMG_COMMON_DOC_SOURCES=                 \
 
 all:
 
+pmgsh.1-synopsis.adoc:
+	@echo 'Interactive session:' >$@.tmp
+	@echo '' >>$@.tmp
+	@echo '*pmgsh*' >>$@.tmp
+	@echo '' >>$@.tmp
+	@echo 'Directly call API functions:' >>$@.tmp
+	@echo '' >>$@.tmp
+	@echo '*pmgsh* `(get|set|create|help)` `<path>` `[OPTIONS]`' >>$@.tmp
+	mv $@.tmp $@
+
 pmg-smtp-filter.8-synopsis.adoc:
 	@echo 'Please use systemd tools to manage this service.' >$@.tmp
 	@echo '' >>$@.tmp

@@ -27,8 +27,6 @@ include::pmg-planning-deployment.adoc[]
 
 include::pmgconfig.adoc[]
 
-include::pmgdb.adoc[]
-
 // Return to normal title levels.
 :leveloffset: 0
 
@@ -70,10 +68,10 @@ include::pmgpolicy.adoc[]
 Useful Command Line Tools
 -------------------------
 
-TODO
-
 :leveloffset: 2
-//include::pveceph.adoc[]
+include::pmgdb.adoc[]
+
+include::pmgsh.adoc[]
 
 :leveloffset: 0
 
@@ -84,7 +82,11 @@ Command Line Interface
 *pmgsh* - API Shell
 ~~~~~~~~~~~~~~~~~~~
 
-TODO
+:leveloffset: 1
+include::pmgsh.1-synopsis.adoc[]
+
+:leveloffset: 0
+
 
 *pmgconfig* - Configuration Management Toolkit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

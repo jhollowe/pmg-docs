@@ -193,7 +193,7 @@ clean:
 	find . -name '*~' -exec rm {} ';'
 	rm -rf *.html *.pdf *.epub *.tmp *.1 *.5 *.8
 	rm -f *.deb *.changes *.buildinfo
-	rm -f api-viewer/apidoc.js chapter-*.html *-plain.html chapter-*.html pmg-admin-guide.chunked asciidoc-pmg link-refs.json .asciidoc-pmg-tmp_* pmg-smtp-filter.8-synopsis.adoc pmgpolicy.8-synopsis.adoc
+	rm -f api-viewer/apidoc.js chapter-*.html *-plain.html chapter-*.html pmg-admin-guide.chunked asciidoc-pmg link-refs.json .asciidoc-pmg-tmp_* pmg-smtp-filter.8-synopsis.adoc pmgpolicy.8-synopsis.adoc pmgsh.1-synopsis.adoc
 	rm -rf .pmg-doc-depends 
 	rm -f pmg-doc-generator.mk chapter-index-table.adoc man1-index-table.adoc man5-index-table.adoc man8-index-table.adoc pmg-admin-guide-docinfo.xml
 	rm -rf build-*
