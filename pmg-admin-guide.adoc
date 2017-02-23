@@ -50,8 +50,6 @@ fitering_outgoing_mail
 Important Service Daemons
 -------------------------
 
-TODO
-
 :leveloffset: 2
 
 include::pmgdaemon.adoc[]

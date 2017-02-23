@@ -60,7 +60,7 @@ Disable option 'spf' in '/config/mail'
 # pmgsh set /config/mail  -spf 0
 ----
 
-Delete spf setting from '/config/mail'
+Delete 'spf' setting from '/config/mail'
 
 ----
 # pmgsh set /config/mail  -delete spf
