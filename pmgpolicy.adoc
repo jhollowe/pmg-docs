@@ -1,0 +1,34 @@
+ifdef::manvolnum[]
+pmgpolicy(8)
+============
+:pmg-toplevel:
+
+NAME
+----
+
+pmgpolicy - Proxmox Mail Gateway Policy Daemon
+
+
+SYNOPSIS
+--------
+
+include::pmgpolicy.8-synopsis.adoc[]
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+
+ifndef::manvolnum[]
+pmgpolicy - Proxmox Mail Gateway Policy Daemon
+==============================================
+endif::manvolnum[]
+
+This daemon implements the Postfix SMTP access policy delegation
+protocol on `127.0.0.1:10022`. The daemon listens to a local address
+only, so you cannot access it from outside. We configure Postfix to
+use this service for greylisting and as SPF policy server.
+
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]

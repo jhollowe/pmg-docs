@@ -62,6 +62,8 @@ include::pmgproxy.adoc[]
 
 include::pmg-smtp-filter.adoc[]
 
+include::pmgpolicy.adoc[]
+
 :leveloffset: 0
 
 
@@ -131,15 +133,14 @@ include::pmg-smtp-filter.8-synopsis.adoc[]
 :leveloffset: 0
 
 
-*pmgpolicy* - Policy Daemon
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-TODO
+*pmgpolicy* - {pmg} Policy Daemon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :leveloffset: 1
-//include::pve-firewall.8-synopsis.adoc[]
+include::pmgpolicy.8-synopsis.adoc[]
 
 :leveloffset: 0
+
 
 [appendix]
 include::pmg-rule-macros.adoc[]

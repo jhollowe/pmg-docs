@@ -17,9 +17,14 @@ all:
 pmg-smtp-filter.8-synopsis.adoc:
 	@echo 'Please use systemd tools to manage this service.' >$@.tmp
 	@echo '' >>$@.tmp
-	@echo '*systemctl* `(start|stop|restart|reload)` `pmg-smtp-filter`' >>$@.tmp
+	@echo '*systemctl* `(start|stop|restart|reload|status)` `pmg-smtp-filter`' >>$@.tmp
 	mv $@.tmp $@
 
+pmgpolicy.8-synopsis.adoc:
+	@echo 'Please use systemd tools to manage this service.' >$@.tmp
+	@echo '' >>$@.tmp
+	@echo '*systemctl* `(start|stop|restart|reload|status)` `pmgpolicy`' >>$@.tmp
+	mv $@.tmp $@
 
 docinfo.xml:
 	cp ${DGDIR}/$@ $@.tmp
