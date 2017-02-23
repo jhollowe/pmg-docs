@@ -38,6 +38,7 @@ GEN_DEB_SOURCES=				\
 	docinfo.xml
 
 GEN_SCRIPTS=					\
+	gen-cluster.conf.5-opts.pl		\
 	gen-pmg.conf.5-opts.pl
 
 API_VIEWER_SOURCES=				\
