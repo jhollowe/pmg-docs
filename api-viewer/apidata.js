@@ -16,9 +16,19 @@ var pmgapi = [
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
-                              "properties" : {},
+                              "properties" : {
+                                 "id" : {
+                                    "type" : "integer"
+                                 }
+                              },
                               "type" : "object"
                            },
+                           "links" : [
+                              {
+                                 "href" : "{id}",
+                                 "rel" : "child"
+                              }
+                           ],
                            "type" : "array"
                         }
                      }
@@ -30,9 +40,9 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
-                        "description" : "Get list of 'action' objects.",
+                        "description" : "Get list of 'action' groups.",
                         "method" : "GET",
-                        "name" : "list_actions",
+                        "name" : "list_action_groups",
                         "parameters" : {
                            "additionalProperties" : 0
                         },
@@ -40,23 +50,55 @@ var pmgapi = [
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
-                              "properties" : {},
+                              "properties" : {
+                                 "id" : {
+                                    "type" : "integer"
+                                 }
+                              },
                               "type" : "object"
                            },
                            "type" : "array"
                         }
+                     },
+                     "POST" : {
+                        "description" : "Create a new 'action' group.",
+                        "method" : "POST",
+                        "name" : "create_action_group",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "info" : {
+                                 "description" : "Informational comment.",
+                                 "maxLength" : 255,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "name" : {
+                                 "description" : "Group name.",
+                                 "maxLength" : 255,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "integer"
+                        }
                      }
                   },
                   "leaf" : 1,
-                  "path" : "/config/ruledb/actions",
-                  "text" : "actions"
+                  "path" : "/config/ruledb/action",
+                  "text" : "action"
                },
                {
                   "info" : {
                      "GET" : {
-                        "description" : "Get list of 'what' objects.",
+                        "description" : "Get list of 'what' groups.",
                         "method" : "GET",
-                        "name" : "list_what_object",
+                        "name" : "list_what_groups",
                         "parameters" : {
                            "additionalProperties" : 0
                         },
@@ -64,10 +106,42 @@ var pmgapi = [
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
-                              "properties" : {},
+                              "properties" : {
+                                 "id" : {
+                                    "type" : "integer"
+                                 }
+                              },
                               "type" : "object"
                            },
                            "type" : "array"
+                        }
+                     },
+                     "POST" : {
+                        "description" : "Create a new 'what' group.",
+                        "method" : "POST",
+                        "name" : "create_what_group",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "info" : {
+                                 "description" : "Informational comment.",
+                                 "maxLength" : 255,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "name" : {
+                                 "description" : "Group name.",
+                                 "maxLength" : 255,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "integer"
                         }
                      }
                   },
@@ -78,9 +152,9 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
-                        "description" : "Get list of 'when' objects.",
+                        "description" : "Get list of 'when' groups.",
                         "method" : "GET",
-                        "name" : "list_when_object",
+                        "name" : "list_when_groups",
                         "parameters" : {
                            "additionalProperties" : 0
                         },
@@ -88,10 +162,42 @@ var pmgapi = [
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
-                              "properties" : {},
+                              "properties" : {
+                                 "id" : {
+                                    "type" : "integer"
+                                 }
+                              },
                               "type" : "object"
                            },
                            "type" : "array"
+                        }
+                     },
+                     "POST" : {
+                        "description" : "Create a new 'when' group.",
+                        "method" : "POST",
+                        "name" : "create_when_group",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "info" : {
+                                 "description" : "Informational comment.",
+                                 "maxLength" : 255,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "name" : {
+                                 "description" : "Group name.",
+                                 "maxLength" : 255,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "integer"
                         }
                      }
                   },
@@ -100,11 +206,652 @@ var pmgapi = [
                   "text" : "when"
                },
                {
+                  "children" : [
+                     {
+                        "children" : [
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Remove an object from the group.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_object",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Group ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/who/{ogroup}/objects/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "List group objects.",
+                                    "method" : "GET",
+                                    "name" : "objects",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "id" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "links" : [
+                                          {
+                                             "href" : "{id}",
+                                             "rel" : "child"
+                                          }
+                                       ],
+                                       "type" : "array"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/who/{ogroup}/objects",
+                              "text" : "objects"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'Mail address' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_email",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'Mail address' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_email",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "email" : {
+                                                   "description" : "Email address.",
+                                                   "format" : "email",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/who/{ogroup}/email/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'Mail address' object.",
+                                    "method" : "POST",
+                                    "name" : "email",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "email" : {
+                                             "description" : "Email address.",
+                                             "format" : "email",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/who/{ogroup}/email",
+                              "text" : "email"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'Domain' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_domain",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'Domain' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_domain",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "domain" : {
+                                                   "description" : "DNS domain name (Sender).",
+                                                   "format" : "dns-name",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/who/{ogroup}/domain/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'Domain' object.",
+                                    "method" : "POST",
+                                    "name" : "domain",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "domain" : {
+                                             "description" : "DNS domain name (Sender).",
+                                             "format" : "dns-name",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/who/{ogroup}/domain",
+                              "text" : "domain"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'Regular Expression' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_regex",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'Regular Expression' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_regex",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "regex" : {
+                                                   "description" : "Email address regular expression.",
+                                                   "maxLength" : 1024,
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/who/{ogroup}/regex/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'Regular Expression' object.",
+                                    "method" : "POST",
+                                    "name" : "regex",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "regex" : {
+                                             "description" : "Email address regular expression.",
+                                             "maxLength" : 1024,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/who/{ogroup}/regex",
+                              "text" : "regex"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'IP Address' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_ip",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'IP Address' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_ip",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ip" : {
+                                                   "description" : "IP address",
+                                                   "format" : "ip",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/who/{ogroup}/ip/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'IP Address' object.",
+                                    "method" : "POST",
+                                    "name" : "ip",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ip" : {
+                                             "description" : "IP address",
+                                             "format" : "ip",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/who/{ogroup}/ip",
+                              "text" : "ip"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'IP Network' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_network",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'IP Network' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_network",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "cidr" : {
+                                                   "description" : "Network address in CIDR notation.",
+                                                   "format" : "CIDR",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/who/{ogroup}/network/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'IP Network' object.",
+                                    "method" : "POST",
+                                    "name" : "network",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "cidr" : {
+                                             "description" : "Network address in CIDR notation.",
+                                             "format" : "CIDR",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/who/{ogroup}/network",
+                              "text" : "network"
+                           }
+                        ],
+                        "info" : {
+                           "DELETE" : {
+                              "description" : "Delete a 'who' group.",
+                              "method" : "DELETE",
+                              "name" : "delete_who_group",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "ogroup" : {
+                                       "description" : "Object Group ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           },
+                           "GET" : {
+                              "description" : "Directory index.",
+                              "method" : "GET",
+                              "name" : "index",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "ogroup" : {
+                                       "description" : "Object Group ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "subdir" : {
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "links" : [
+                                    {
+                                       "href" : "{subdir}",
+                                       "rel" : "child"
+                                    }
+                                 ],
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/who/{ogroup}",
+                        "text" : "{ogroup}"
+                     }
+                  ],
                   "info" : {
                      "GET" : {
-                        "description" : "Get list of 'who' objects.",
+                        "description" : "Get list of 'who' groups.",
                         "method" : "GET",
-                        "name" : "list_who_object",
+                        "name" : "list_who_groups",
                         "parameters" : {
                            "additionalProperties" : 0
                         },
@@ -112,14 +859,46 @@ var pmgapi = [
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
-                              "properties" : {},
+                              "properties" : {
+                                 "id" : {
+                                    "type" : "integer"
+                                 }
+                              },
                               "type" : "object"
                            },
                            "type" : "array"
                         }
+                     },
+                     "POST" : {
+                        "description" : "Create a new 'who' group.",
+                        "method" : "POST",
+                        "name" : "create_who_group",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "info" : {
+                                 "description" : "Informational comment.",
+                                 "maxLength" : 255,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "name" : {
+                                 "description" : "Group name.",
+                                 "maxLength" : 255,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "integer"
+                        }
                      }
                   },
-                  "leaf" : 1,
+                  "leaf" : 0,
                   "path" : "/config/ruledb/who",
                   "text" : "who"
                }
@@ -150,6 +929,789 @@ var pmgapi = [
             "leaf" : 0,
             "path" : "/config/ruledb",
             "text" : "ruledb"
+         },
+         {
+            "children" : [
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "DELETE" : {
+                              "description" : "Remove an object from the SMTP whitelist.",
+                              "method" : "DELETE",
+                              "name" : "delete_object",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/objects/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "Get list of all SMTP whitelist entries.",
+                        "method" : "GET",
+                        "name" : "objects",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "id" : {
+                                    "type" : "integer"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{id}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/objects",
+                  "text" : "objects"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Read 'Mail address' object settings.",
+                              "method" : "GET",
+                              "name" : "read_email",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "id" : {
+                                       "type" : "integer"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update 'Mail address' object.",
+                              "method" : "PUT",
+                              "name" : "update_email",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "email" : {
+                                       "description" : "Email address.",
+                                       "format" : "email",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/email/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "POST" : {
+                        "description" : "Add 'Mail address' object.",
+                        "method" : "POST",
+                        "name" : "email",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "email" : {
+                                 "description" : "Email address.",
+                                 "format" : "email",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "The object ID.",
+                           "type" : "integer"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/email",
+                  "text" : "email"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Read 'Mail address' object settings.",
+                              "method" : "GET",
+                              "name" : "read_receiver",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "id" : {
+                                       "type" : "integer"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update 'Mail address' object.",
+                              "method" : "PUT",
+                              "name" : "update_receiver",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "email" : {
+                                       "description" : "Email address.",
+                                       "format" : "email",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/receiver/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "POST" : {
+                        "description" : "Add 'Mail address' object.",
+                        "method" : "POST",
+                        "name" : "receiver",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "email" : {
+                                 "description" : "Email address.",
+                                 "format" : "email",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "The object ID.",
+                           "type" : "integer"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/receiver",
+                  "text" : "receiver"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Read 'Domain' object settings.",
+                              "method" : "GET",
+                              "name" : "read_domain",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "id" : {
+                                       "type" : "integer"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update 'Domain' object.",
+                              "method" : "PUT",
+                              "name" : "update_domain",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "domain" : {
+                                       "description" : "DNS domain name (Sender).",
+                                       "format" : "dns-name",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/domain/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "POST" : {
+                        "description" : "Add 'Domain' object.",
+                        "method" : "POST",
+                        "name" : "domain",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "domain" : {
+                                 "description" : "DNS domain name (Sender).",
+                                 "format" : "dns-name",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "The object ID.",
+                           "type" : "integer"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/domain",
+                  "text" : "domain"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Read 'Domain' object settings.",
+                              "method" : "GET",
+                              "name" : "read_receiver_domain",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "id" : {
+                                       "type" : "integer"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update 'Domain' object.",
+                              "method" : "PUT",
+                              "name" : "update_receiver_domain",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "domain" : {
+                                       "description" : "DNS domain name (Sender).",
+                                       "format" : "dns-name",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/receiver_domain/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "POST" : {
+                        "description" : "Add 'Domain' object.",
+                        "method" : "POST",
+                        "name" : "receiver_domain",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "domain" : {
+                                 "description" : "DNS domain name (Sender).",
+                                 "format" : "dns-name",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "The object ID.",
+                           "type" : "integer"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/receiver_domain",
+                  "text" : "receiver_domain"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Read 'Regular Expression' object settings.",
+                              "method" : "GET",
+                              "name" : "read_regex",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "id" : {
+                                       "type" : "integer"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update 'Regular Expression' object.",
+                              "method" : "PUT",
+                              "name" : "update_regex",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    },
+                                    "regex" : {
+                                       "description" : "Email address regular expression.",
+                                       "maxLength" : 1024,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/regex/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "POST" : {
+                        "description" : "Add 'Regular Expression' object.",
+                        "method" : "POST",
+                        "name" : "regex",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "regex" : {
+                                 "description" : "Email address regular expression.",
+                                 "maxLength" : 1024,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "The object ID.",
+                           "type" : "integer"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/regex",
+                  "text" : "regex"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Read 'Regular Expression' object settings.",
+                              "method" : "GET",
+                              "name" : "read_receiver_regex",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "id" : {
+                                       "type" : "integer"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update 'Regular Expression' object.",
+                              "method" : "PUT",
+                              "name" : "update_receiver_regex",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    },
+                                    "regex" : {
+                                       "description" : "Email address regular expression.",
+                                       "maxLength" : 1024,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/receiver_regex/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "POST" : {
+                        "description" : "Add 'Regular Expression' object.",
+                        "method" : "POST",
+                        "name" : "receiver_regex",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "regex" : {
+                                 "description" : "Email address regular expression.",
+                                 "maxLength" : 1024,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "The object ID.",
+                           "type" : "integer"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/receiver_regex",
+                  "text" : "receiver_regex"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Read 'IP Address' object settings.",
+                              "method" : "GET",
+                              "name" : "read_ip",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "id" : {
+                                       "type" : "integer"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update 'IP Address' object.",
+                              "method" : "PUT",
+                              "name" : "update_ip",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    },
+                                    "ip" : {
+                                       "description" : "IP address",
+                                       "format" : "ip",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/ip/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "POST" : {
+                        "description" : "Add 'IP Address' object.",
+                        "method" : "POST",
+                        "name" : "ip",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "ip" : {
+                                 "description" : "IP address",
+                                 "format" : "ip",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "The object ID.",
+                           "type" : "integer"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/ip",
+                  "text" : "ip"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Read 'IP Network' object settings.",
+                              "method" : "GET",
+                              "name" : "read_network",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "id" : {
+                                       "type" : "integer"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update 'IP Network' object.",
+                              "method" : "PUT",
+                              "name" : "update_network",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "cidr" : {
+                                       "description" : "Network address in CIDR notation.",
+                                       "format" : "CIDR",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "id" : {
+                                       "description" : "Object ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/whitelist/network/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "POST" : {
+                        "description" : "Add 'IP Network' object.",
+                        "method" : "POST",
+                        "name" : "network",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "cidr" : {
+                                 "description" : "Network address in CIDR notation.",
+                                 "format" : "CIDR",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "The object ID.",
+                           "type" : "integer"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/whitelist/network",
+                  "text" : "network"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "Directory index.",
+                  "method" : "GET",
+                  "name" : "index",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "subdir" : {
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{subdir}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/config/whitelist",
+            "text" : "whitelist"
          },
          {
             "children" : [
@@ -477,6 +2039,60 @@ var pmgapi = [
                         "returns" : {
                            "type" : "null"
                         }
+                     },
+                     "GET" : {
+                        "description" : "Read Domain data (comment).",
+                        "method" : "GET",
+                        "name" : "read",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "dns-name",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "properties" : {
+                              "comment" : {
+                                 "type" : "string"
+                              },
+                              "domain" : {
+                                 "type" : "string"
+                              }
+                           },
+                           "type" : "object"
+                        }
+                     },
+                     "PUT" : {
+                        "description" : "Update relay domain data (comment).",
+                        "method" : "PUT",
+                        "name" : "write",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "comment" : {
+                                 "description" : "Comment.",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "dns-name",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
                      }
                   },
                   "leaf" : 1,
@@ -496,6 +2112,9 @@ var pmgapi = [
                   "returns" : {
                      "items" : {
                         "properties" : {
+                           "comment" : {
+                              "type" : "string"
+                           },
                            "domain" : {
                               "type" : "string"
                            }
@@ -504,7 +2123,7 @@ var pmgapi = [
                      },
                      "links" : [
                         {
-                           "href" : "{section}",
+                           "href" : "{domain}",
                            "rel" : "child"
                         }
                      ],
@@ -518,6 +2137,12 @@ var pmgapi = [
                   "parameters" : {
                      "additionalProperties" : 0,
                      "properties" : {
+                        "comment" : {
+                           "description" : "Comment.",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
                         "domain" : {
                            "description" : "Domain name.",
                            "format" : "dns-name",
@@ -536,6 +2161,358 @@ var pmgapi = [
             "leaf" : 0,
             "path" : "/config/domains",
             "text" : "domains"
+         },
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "description" : "Delete a transport map entry",
+                        "method" : "DELETE",
+                        "name" : "delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "transport-domain",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
+                     "GET" : {
+                        "description" : "Read transport map entry.",
+                        "method" : "GET",
+                        "name" : "read",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "transport-domain",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "properties" : {
+                              "comment" : {
+                                 "type" : "string"
+                              },
+                              "domain" : {
+                                 "type" : "string"
+                              },
+                              "host" : {
+                                 "type" : "string"
+                              },
+                              "port" : {
+                                 "type" : "integer"
+                              },
+                              "use_mx" : {
+                                 "type" : "boolean"
+                              }
+                           },
+                           "type" : "object"
+                        }
+                     },
+                     "PUT" : {
+                        "description" : "Update transport map entry.",
+                        "method" : "PUT",
+                        "name" : "write",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "comment" : {
+                                 "description" : "Comment.",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "transport-domain",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "host" : {
+                                 "description" : "Target host (name or IP address).",
+                                 "format" : "address",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "port" : {
+                                 "description" : "SMTP port.",
+                                 "maximum" : 65535,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 65535)"
+                              },
+                              "use_mx" : {
+                                 "description" : "Enable MX lookups.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/transport/{domain}",
+                  "text" : "{domain}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "List transport map entries.",
+                  "method" : "GET",
+                  "name" : "index",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "proxyto" : "master",
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "comment" : {
+                              "type" : "string"
+                           },
+                           "domain" : {
+                              "type" : "string"
+                           },
+                           "host" : {
+                              "type" : "string"
+                           },
+                           "port" : {
+                              "type" : "integer"
+                           },
+                           "use_mx" : {
+                              "type" : "boolean"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{id}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Add transport map entry.",
+                  "method" : "POST",
+                  "name" : "create",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "comment" : {
+                           "description" : "Comment.",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "domain" : {
+                           "description" : "Domain name.",
+                           "format" : "transport-domain",
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "host" : {
+                           "description" : "Target host (name or IP address).",
+                           "format" : "address",
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "port" : {
+                           "default" : 25,
+                           "description" : "SMTP port.",
+                           "maximum" : 65535,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 65535)"
+                        },
+                        "use_mx" : {
+                           "default" : 1,
+                           "description" : "Enable MX lookups.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        }
+                     }
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/config/transport",
+            "text" : "transport"
+         },
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "description" : "Delete a truster network",
+                        "method" : "DELETE",
+                        "name" : "delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "cidr" : {
+                                 "description" : "IPv4 or IPv6 network in CIDR notation.",
+                                 "format" : "CIDR",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
+                     "GET" : {
+                        "description" : "Read trusted network data (comment).",
+                        "method" : "GET",
+                        "name" : "read",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "cidr" : {
+                                 "description" : "IPv4 or IPv6 network in CIDR notation.",
+                                 "format" : "CIDR",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "properties" : {
+                              "cidr" : {
+                                 "type" : "string"
+                              },
+                              "comment" : {
+                                 "type" : "string"
+                              }
+                           },
+                           "type" : "object"
+                        }
+                     },
+                     "PUT" : {
+                        "description" : "Update trusted data (comment).",
+                        "method" : "PUT",
+                        "name" : "write",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "cidr" : {
+                                 "description" : "IPv4 or IPv6 network in CIDR notation.",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "comment" : {
+                                 "description" : "Comment.",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/mynetworks/{cidr}",
+                  "text" : "{cidr}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "List of trusted networks from where SMTP clients are allowed to relay mail through Proxmox Mail Gateway.",
+                  "method" : "GET",
+                  "name" : "index",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "proxyto" : "master",
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "cidr" : {
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{cide}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Add a trusted network.",
+                  "method" : "POST",
+                  "name" : "create",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "cidr" : {
+                           "description" : "IPv4 or IPv6 network in CIDR notation.",
+                           "format" : "CIDR",
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "comment" : {
+                           "description" : "Comment.",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/config/mynetworks",
+            "text" : "mynetworks"
          },
          {
             "info" : {
@@ -615,6 +2592,14 @@ var pmgapi = [
                         "digest" : {
                            "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
                            "maxLength" : 40,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "email" : {
+                           "default" : "admin@domain.tld",
+                           "description" : "Administrator E-Mail address.",
+                           "format" : "email",
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
@@ -837,6 +2822,15 @@ var pmgapi = [
                            "type" : "integer",
                            "typetext" : "<integer> (0 - N)"
                         },
+                        "ext_port" : {
+                           "default" : 26,
+                           "description" : "SMTP port number for incoming mail (untrusted). This must be a different number than 'int_port'.",
+                           "maximum" : 65535,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 65535)"
+                        },
                         "greylist" : {
                            "default" : 1,
                            "description" : "Use Greylisting.",
@@ -857,6 +2851,15 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
+                        },
+                        "int_port" : {
+                           "default" : 25,
+                           "description" : "SMTP port number for outgoing mail (trusted).",
+                           "maximum" : 65535,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 65535)"
                         },
                         "max_filters" : {
                            "default" : 15,
@@ -926,6 +2929,7 @@ var pmgapi = [
                         },
                         "relay" : {
                            "description" : "The default mail delivery transport (incoming mails).",
+                           "format" : "address",
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
@@ -946,6 +2950,13 @@ var pmgapi = [
                            "type" : "integer",
                            "typetext" : "<integer> (1 - 65535)"
                         },
+                        "smarthost" : {
+                           "description" : "When set, all outgoing mails are deliverd to the specified smarthost.",
+                           "format" : "address",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
                         "spf" : {
                            "default" : 1,
                            "description" : "Use Sender Policy Framework.",
@@ -955,7 +2966,21 @@ var pmgapi = [
                         },
                         "tls" : {
                            "default" : 0,
-                           "description" : "Use TLS.",
+                           "description" : "Enable TLS.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "tlsheader" : {
+                           "default" : 0,
+                           "description" : "Add TLS received header.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "tlslog" : {
+                           "default" : 0,
+                           "description" : "Enable TLS Logging.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -968,13 +2993,13 @@ var pmgapi = [
                            "typetext" : "<boolean>"
                         },
                         "verifyreceivers" : {
-                           "default" : 0,
-                           "description" : "Enable receiver verification. The value (if greater than 0) spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address (450 or 550).",
-                           "maximum" : 599,
-                           "minimum" : 0,
+                           "description" : "Enable receiver verification. The value spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address.",
+                           "enum" : [
+                              "450",
+                              "550"
+                           ],
                            "optional" : 1,
-                           "type" : "integer",
-                           "typetext" : "<integer> (0 - 599)"
+                           "type" : "string"
                         }
                      },
                      "type" : "object"

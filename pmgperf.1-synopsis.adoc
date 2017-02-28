@@ -6,5 +6,5 @@ Proxmox benchmark.
 
 `<path>`: `<string>` ('default =' `/`)::
 
-no description available
+File system localtion to test.
 

@@ -33,6 +33,12 @@ Verbose output format.
 
 
 
+*pmgconfig init*
+
+Generate required files in /etc/pmg/
+
+
+
 *pmgconfig ldapsync*
 
 Syncronize the LDAP database.

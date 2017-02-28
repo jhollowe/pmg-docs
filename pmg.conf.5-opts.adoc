@@ -16,6 +16,10 @@ Demo mode - do not start SMTP filter.
 
 Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 
+`email`: `<string>` ('default =' `admin@domain.tld`)::
+
+Administrator E-Mail address.
+
 `proxypassword`: `<string>` ::
 
 HTTP proxy password.
@@ -100,6 +104,10 @@ Optional list of DNS white/blacklist domains (see postscreen_dnsbl_sites paramet
 
 SMTP delay warning time (in hours).
 
+`ext_port`: `<integer> (1 - 65535)` ('default =' `26`)::
+
+SMTP port number for incoming mail (untrusted). This must be a different number than 'int_port'.
+
 `greylist`: `<boolean>` ('default =' `1`)::
 
 Use Greylisting.
@@ -111,6 +119,10 @@ Use SMTP HELO tests.
 `hide_received`: `<boolean>` ('default =' `0`)::
 
 Hide received header in outgoing mails.
+
+`int_port`: `<integer> (1 - 65535)` ('default =' `25`)::
+
+SMTP port number for outgoing mail (trusted).
 
 `max_filters`: `<integer> (3 - 40)` ('default =' `15`)::
 
@@ -156,21 +168,33 @@ Disable MX lookups for default relay.
 
 SMTP port number for relay host.
 
+`smarthost`: `<string>` ::
+
+When set, all outgoing mails are deliverd to the specified smarthost.
+
 `spf`: `<boolean>` ('default =' `1`)::
 
 Use Sender Policy Framework.
 
 `tls`: `<boolean>` ('default =' `0`)::
 
-Use TLS.
+Enable TLS.
+
+`tlsheader`: `<boolean>` ('default =' `0`)::
+
+Add TLS received header.
+
+`tlslog`: `<boolean>` ('default =' `0`)::
+
+Enable TLS Logging.
 
 `use_rbl`: `<boolean>` ('default =' `1`)::
 
 Use Realtime Blacklists.
 
-`verifyreceivers`: `<integer> (0 - 599)` ('default =' `0`)::
+`verifyreceivers`: `<450 | 550>` ::
 
-Enable receiver verification. The value (if greater than 0) spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address (450 or 550).
+Enable receiver verification. The value spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address.
 
 .Section 'spam'
 
