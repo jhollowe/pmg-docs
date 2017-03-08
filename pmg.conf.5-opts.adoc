@@ -74,6 +74,10 @@ This option sets the lowest number of Credit Card or Social Security numbers fou
 
 Sets the maximum amount of data to be scanned for each input file.
 
+`safebrowsing`: `<boolean>` ('default =' `1`)::
+
+Enables support for Google Safe Browsing.
+
 .Section 'mail'
 
 `banner`: `<string>` ('default =' `ESMTP Proxmox`)::
@@ -230,10 +234,6 @@ Use the Auto-Whitelist plugin.
 
 Whether to use the naive-Bayesian-style classifier.
 
-`use_ocr`: `<boolean>` ('default =' `0`)::
-
-Enable OCR to scan pictures.
-
 `use_razor`: `<boolean>` ('default =' `1`)::
 
 Whether to use Razor2, if it is available.
@@ -241,4 +241,64 @@ Whether to use Razor2, if it is available.
 `wl_bounce_relays`: `<string>` ::
 
 Whitelist legitimate bounce relays.
+
+.Section 'spamquar'
+
+`allowhrefs`: `<boolean>` ('default =' `1`)::
+
+Allow to view hyperlinks.
+
+`authmode`: `<ldap | ldapticket | ticket>` ('default =' `ticket`)::
+
+Authentication mode to access the quarantine interface. Mode 'ticket' allows login using tickets sent with the daily spam report. Mode 'ldap' requires to login using an LDAP account. Finally, mode 'ldapticket' allows both ways.
+
+`delete`: `<string>` ::
+
+A list of settings you want to delete.
+
+`digest`: `<string>` ::
+
+Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
+
+`hostname`: `<string>` ::
+
+Quarantine Host. Usefule if you run a Cluster and want users to connect to a specific host.
+
+`lifetime`: `<integer> (1 - N)` ('default =' `7`)::
+
+Quarantine life time (days)
+
+`mailfrom`: `<string>` ::
+
+Text for 'From' header in daily spam report mails.
+
+`reportstyle`: `<custom | none | outlook | short | verbose>` ('default =' `verbose`)::
+
+Spam report style.
+
+`viewimages`: `<boolean>` ('default =' `1`)::
+
+Allow to view images.
+
+.Section 'virusquar'
+
+`allowhrefs`: `<boolean>` ('default =' `1`)::
+
+Allow to view hyperlinks.
+
+`delete`: `<string>` ::
+
+A list of settings you want to delete.
+
+`digest`: `<string>` ::
+
+Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
+
+`lifetime`: `<integer> (1 - N)` ('default =' `7`)::
+
+Quarantine life time (days)
+
+`viewimages`: `<boolean>` ('default =' `1`)::
+
+Allow to view images.
 

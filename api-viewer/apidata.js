@@ -4,6 +4,623 @@ var pmgapi = [
          {
             "children" : [
                {
+                  "children" : [
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get common rule properties.",
+                                    "method" : "GET",
+                                    "name" : "config",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "active" : {
+                                             "type" : "boolean"
+                                          },
+                                          "direction" : {
+                                             "type" : "integer"
+                                          },
+                                          "id" : {
+                                             "type" : "integer"
+                                          },
+                                          "name" : {
+                                             "type" : "string"
+                                          },
+                                          "priority" : {
+                                             "type" : "integer"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Set rule properties.",
+                                    "method" : "PUT",
+                                    "name" : "update_config",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "active" : {
+                                             "description" : "Flag to activate rule.",
+                                             "optional" : 1,
+                                             "type" : "boolean",
+                                             "typetext" : "<boolean>"
+                                          },
+                                          "direction" : {
+                                             "description" : "Rule direction. Value `0` matches incomming mails, value `1` matches outgoing mails, and value `2` matches both directions.",
+                                             "maximum" : 2,
+                                             "minimum" : 0,
+                                             "optional" : 1,
+                                             "type" : "integer",
+                                             "typetext" : "<integer> (0 - 2)"
+                                          },
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "name" : {
+                                             "description" : "Rule name",
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "priority" : {
+                                             "description" : "Rule priotity.",
+                                             "maximum" : 100,
+                                             "minimum" : 0,
+                                             "optional" : 1,
+                                             "type" : "integer",
+                                             "typetext" : "<integer> (0 - 100)"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/rules/{id}/config",
+                              "text" : "config"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Delete group from 'from' list.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_from_group",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Rule ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/rules/{id}/from/{ogroup}",
+                                    "text" : "{ogroup}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get 'from' group list.",
+                                    "method" : "GET",
+                                    "name" : "from",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "id" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "type" : "array"
+                                    }
+                                 },
+                                 "POST" : {
+                                    "description" : "Add  group to 'from' list.",
+                                    "method" : "POST",
+                                    "name" : "add_from_group",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/rules/{id}/from",
+                              "text" : "from"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Delete group from 'to' list.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_to_group",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Rule ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/rules/{id}/to/{ogroup}",
+                                    "text" : "{ogroup}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get 'to' group list.",
+                                    "method" : "GET",
+                                    "name" : "to",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "id" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "type" : "array"
+                                    }
+                                 },
+                                 "POST" : {
+                                    "description" : "Add  group to 'to' list.",
+                                    "method" : "POST",
+                                    "name" : "add_to_group",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/rules/{id}/to",
+                              "text" : "to"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Delete group from 'when' list.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_when_group",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Rule ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/rules/{id}/when/{ogroup}",
+                                    "text" : "{ogroup}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get 'when' group list.",
+                                    "method" : "GET",
+                                    "name" : "when",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "id" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "type" : "array"
+                                    }
+                                 },
+                                 "POST" : {
+                                    "description" : "Add  group to 'when' list.",
+                                    "method" : "POST",
+                                    "name" : "add_when_group",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/rules/{id}/when",
+                              "text" : "when"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Delete group from 'what' list.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_what_group",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Rule ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/rules/{id}/what/{ogroup}",
+                                    "text" : "{ogroup}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get 'what' group list.",
+                                    "method" : "GET",
+                                    "name" : "what",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "id" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "type" : "array"
+                                    }
+                                 },
+                                 "POST" : {
+                                    "description" : "Add  group to 'what' list.",
+                                    "method" : "POST",
+                                    "name" : "add_what_group",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/rules/{id}/what",
+                              "text" : "what"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Delete group from 'action' list.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_action_group",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Rule ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/rules/{id}/action/{ogroup}",
+                                    "text" : "{ogroup}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get 'action' group list.",
+                                    "method" : "GET",
+                                    "name" : "action",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "id" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "type" : "array"
+                                    }
+                                 },
+                                 "POST" : {
+                                    "description" : "Add  group to 'action' list.",
+                                    "method" : "POST",
+                                    "name" : "add_action_group",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Rule ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/rules/{id}/action",
+                              "text" : "action"
+                           }
+                        ],
+                        "info" : {
+                           "DELETE" : {
+                              "description" : "Delete rule.",
+                              "method" : "DELETE",
+                              "name" : "delete_rule",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Rule ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           },
+                           "GET" : {
+                              "description" : "Directory index.",
+                              "method" : "GET",
+                              "name" : "index",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "id" : {
+                                       "description" : "Rule ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "subdir" : {
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "links" : [
+                                    {
+                                       "href" : "{subdir}",
+                                       "rel" : "child"
+                                    }
+                                 ],
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/rules/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
                   "info" : {
                      "GET" : {
                         "description" : "Get list of rules.",
@@ -31,54 +648,39 @@ var pmgapi = [
                            ],
                            "type" : "array"
                         }
-                     }
-                  },
-                  "leaf" : 1,
-                  "path" : "/config/ruledb/rules",
-                  "text" : "rules"
-               },
-               {
-                  "info" : {
-                     "GET" : {
-                        "description" : "Get list of 'action' groups.",
-                        "method" : "GET",
-                        "name" : "list_action_groups",
-                        "parameters" : {
-                           "additionalProperties" : 0
-                        },
-                        "protected" : 1,
-                        "proxyto" : "master",
-                        "returns" : {
-                           "items" : {
-                              "properties" : {
-                                 "id" : {
-                                    "type" : "integer"
-                                 }
-                              },
-                              "type" : "object"
-                           },
-                           "type" : "array"
-                        }
                      },
                      "POST" : {
-                        "description" : "Create a new 'action' group.",
+                        "description" : "Create new rule.",
                         "method" : "POST",
-                        "name" : "create_action_group",
+                        "name" : "create_rule",
                         "parameters" : {
                            "additionalProperties" : 0,
                            "properties" : {
-                              "info" : {
-                                 "description" : "Informational comment.",
-                                 "maxLength" : 255,
+                              "active" : {
+                                 "description" : "Flag to activate rule.",
                                  "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "direction" : {
+                                 "description" : "Rule direction. Value `0` matches incomming mails, value `1` matches outgoing mails, and value `2` matches both directions.",
+                                 "maximum" : 2,
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - 2)"
+                              },
+                              "name" : {
+                                 "description" : "Rule name",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               },
-                              "name" : {
-                                 "description" : "Group name.",
-                                 "maxLength" : 255,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
+                              "priority" : {
+                                 "description" : "Rule priotity.",
+                                 "maximum" : 100,
+                                 "minimum" : 0,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - 100)"
                               }
                            }
                         },
@@ -89,11 +691,439 @@ var pmgapi = [
                         }
                      }
                   },
-                  "leaf" : 1,
+                  "leaf" : 0,
+                  "path" : "/config/ruledb/rules",
+                  "text" : "rules"
+               },
+               {
+                  "children" : [
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "DELETE" : {
+                                    "description" : "Delete 'actions' object.",
+                                    "method" : "DELETE",
+                                    "name" : "delete_action",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/action/objects/{id}",
+                              "text" : "{id}"
+                           }
+                        ],
+                        "info" : {
+                           "GET" : {
+                              "description" : "List 'actions' objects.",
+                              "method" : "GET",
+                              "name" : "list_actions",
+                              "parameters" : {
+                                 "additionalProperties" : 0
+                              },
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "id" : {
+                                          "description" : "Action Object ID.",
+                                          "pattern" : "\\d+_\\d+",
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "links" : [
+                                    {
+                                       "href" : "{id}",
+                                       "rel" : "child"
+                                    }
+                                 ],
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/action/objects",
+                        "text" : "objects"
+                     },
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Read 'BCC' object settings.",
+                                    "method" : "GET",
+                                    "name" : "read_bcc",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "id" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Update 'BCC' object.",
+                                    "method" : "PUT",
+                                    "name" : "update_bcc",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          },
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Action name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "original" : {
+                                             "default" : 1,
+                                             "description" : "Send the original, unmodified mail.",
+                                             "optional" : 1,
+                                             "type" : "boolean",
+                                             "typetext" : "<boolean>"
+                                          },
+                                          "target" : {
+                                             "description" : "Send a Blind Carbon Copy to this email address.",
+                                             "format" : "email",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/action/bcc/{id}",
+                              "text" : "{id}"
+                           }
+                        ],
+                        "info" : {
+                           "POST" : {
+                              "description" : "Create 'BCC' object.",
+                              "method" : "POST",
+                              "name" : "bcc",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "info" : {
+                                       "description" : "Informational comment.",
+                                       "maxLength" : 255,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "name" : {
+                                       "description" : "Action name.",
+                                       "maxLength" : 255,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "original" : {
+                                       "default" : 1,
+                                       "description" : "Send the original, unmodified mail.",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    },
+                                    "target" : {
+                                       "description" : "Send a Blind Carbon Copy to this email address.",
+                                       "format" : "email",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "description" : "The object ID.",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/action/bcc",
+                        "text" : "bcc"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "Directory index.",
+                        "method" : "GET",
+                        "name" : "index",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "subdir" : {
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{subdir}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
                   "path" : "/config/ruledb/action",
                   "text" : "action"
                },
                {
+                  "children" : [
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get 'what' group properties",
+                                    "method" : "GET",
+                                    "name" : "get_config",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "id" : {
+                                             "type" : "integer"
+                                          },
+                                          "info" : {
+                                             "type" : "string"
+                                          },
+                                          "name" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Modify who group properties",
+                                    "method" : "PUT",
+                                    "name" : "set_config",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Group name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/what/{ogroup}/config",
+                              "text" : "config"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Remove an object from the 'what' group.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_object",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Group ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/what/{ogroup}/objects/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "List 'what' group objects.",
+                                    "method" : "GET",
+                                    "name" : "objects",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "id" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "links" : [
+                                          {
+                                             "href" : "{id}",
+                                             "rel" : "child"
+                                          }
+                                       ],
+                                       "type" : "array"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/what/{ogroup}/objects",
+                              "text" : "objects"
+                           }
+                        ],
+                        "info" : {
+                           "DELETE" : {
+                              "description" : "Delete a 'what' group.",
+                              "method" : "DELETE",
+                              "name" : "delete_{$oclass}_group",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "ogroup" : {
+                                       "description" : "Object Group ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           },
+                           "GET" : {
+                              "description" : "Directory index.",
+                              "method" : "GET",
+                              "name" : "index",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "ogroup" : {
+                                       "description" : "Object Group ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "subdir" : {
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "links" : [
+                                    {
+                                       "href" : "{subdir}",
+                                       "rel" : "child"
+                                    }
+                                 ],
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/what/{ogroup}",
+                        "text" : "{ogroup}"
+                     }
+                  ],
                   "info" : {
                      "GET" : {
                         "description" : "Get list of 'what' groups.",
@@ -145,11 +1175,326 @@ var pmgapi = [
                         }
                      }
                   },
-                  "leaf" : 1,
+                  "leaf" : 0,
                   "path" : "/config/ruledb/what",
                   "text" : "what"
                },
                {
+                  "children" : [
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get 'when' group properties",
+                                    "method" : "GET",
+                                    "name" : "get_config",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "id" : {
+                                             "type" : "integer"
+                                          },
+                                          "info" : {
+                                             "type" : "string"
+                                          },
+                                          "name" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Modify who group properties",
+                                    "method" : "PUT",
+                                    "name" : "set_config",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Group name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/when/{ogroup}/config",
+                              "text" : "config"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Remove an object from the 'when' group.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_object",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Group ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/when/{ogroup}/objects/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "List 'when' group objects.",
+                                    "method" : "GET",
+                                    "name" : "objects",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "id" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "links" : [
+                                          {
+                                             "href" : "{id}",
+                                             "rel" : "child"
+                                          }
+                                       ],
+                                       "type" : "array"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/when/{ogroup}/objects",
+                              "text" : "objects"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'TimeFrame' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_timeframe",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'TimeFrame' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_timeframe",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "end" : {
+                                                   "description" : "End time in `H:i` format (00:00).",
+                                                   "pattern" : "\\d?\\d:\\d?\\d",
+                                                   "type" : "string"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "start" : {
+                                                   "description" : "Start time in `H:i` format (00:00).",
+                                                   "pattern" : "\\d?\\d:\\d?\\d",
+                                                   "type" : "string"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/when/{ogroup}/timeframe/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'TimeFrame' object.",
+                                    "method" : "POST",
+                                    "name" : "timeframe",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "end" : {
+                                             "description" : "End time in `H:i` format (00:00).",
+                                             "pattern" : "\\d?\\d:\\d?\\d",
+                                             "type" : "string"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "start" : {
+                                             "description" : "Start time in `H:i` format (00:00).",
+                                             "pattern" : "\\d?\\d:\\d?\\d",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/when/{ogroup}/timeframe",
+                              "text" : "timeframe"
+                           }
+                        ],
+                        "info" : {
+                           "DELETE" : {
+                              "description" : "Delete a 'when' group.",
+                              "method" : "DELETE",
+                              "name" : "delete_{$oclass}_group",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "ogroup" : {
+                                       "description" : "Object Group ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           },
+                           "GET" : {
+                              "description" : "Directory index.",
+                              "method" : "GET",
+                              "name" : "index",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "ogroup" : {
+                                       "description" : "Object Group ID.",
+                                       "type" : "integer",
+                                       "typetext" : "<integer>"
+                                    }
+                                 }
+                              },
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "subdir" : {
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "links" : [
+                                    {
+                                       "href" : "{subdir}",
+                                       "rel" : "child"
+                                    }
+                                 ],
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/when/{ogroup}",
+                        "text" : "{ogroup}"
+                     }
+                  ],
                   "info" : {
                      "GET" : {
                         "description" : "Get list of 'when' groups.",
@@ -201,7 +1546,7 @@ var pmgapi = [
                         }
                      }
                   },
-                  "leaf" : 1,
+                  "leaf" : 0,
                   "path" : "/config/ruledb/when",
                   "text" : "when"
                },
@@ -210,11 +1555,81 @@ var pmgapi = [
                      {
                         "children" : [
                            {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get 'who' group properties",
+                                    "method" : "GET",
+                                    "name" : "get_config",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "id" : {
+                                             "type" : "integer"
+                                          },
+                                          "info" : {
+                                             "type" : "string"
+                                          },
+                                          "name" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Modify who group properties",
+                                    "method" : "PUT",
+                                    "name" : "set_config",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Group name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Group ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/who/{ogroup}/config",
+                              "text" : "config"
+                           },
+                           {
                               "children" : [
                                  {
                                     "info" : {
                                        "DELETE" : {
-                                          "description" : "Remove an object from the group.",
+                                          "description" : "Remove an object from the 'who' group.",
                                           "method" : "DELETE",
                                           "name" : "delete_object",
                                           "parameters" : {
@@ -245,7 +1660,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
-                                    "description" : "List group objects.",
+                                    "description" : "List 'who' group objects.",
                                     "method" : "GET",
                                     "name" : "objects",
                                     "parameters" : {
@@ -792,7 +2207,7 @@ var pmgapi = [
                            "DELETE" : {
                               "description" : "Delete a 'who' group.",
                               "method" : "DELETE",
-                              "name" : "delete_who_group",
+                              "name" : "delete_{$oclass}_group",
                               "parameters" : {
                                  "additionalProperties" : 0,
                                  "properties" : {
@@ -2733,6 +4148,13 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "integer",
                            "typetext" : "<integer> (1000000 - N)"
+                        },
+                        "safebrowsing" : {
+                           "default" : 1,
+                           "description" : "Enables support for Google Safe Browsing.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
                         }
                      },
                      "type" : "object"
@@ -3096,13 +4518,6 @@ var pmgapi = [
                            "type" : "boolean",
                            "typetext" : "<boolean>"
                         },
-                        "use_ocr" : {
-                           "default" : 0,
-                           "description" : "Enable OCR to scan pictures.",
-                           "optional" : 1,
-                           "type" : "boolean",
-                           "typetext" : "<boolean>"
-                        },
                         "use_razor" : {
                            "default" : 1,
                            "description" : "Whether to use Razor2, if it is available.",
@@ -3129,6 +4544,187 @@ var pmgapi = [
             "leaf" : 1,
             "path" : "/config/spam",
             "text" : "spam"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Read spamquar configuration properties.",
+                  "method" : "GET",
+                  "name" : "read_spamquar_section",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "object"
+                  }
+               },
+               "PUT" : {
+                  "description" : "Update spamquar configuration properties.",
+                  "method" : "PUT",
+                  "name" : "update_spamquar_section",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "allowhrefs" : {
+                           "default" : 1,
+                           "description" : "Allow to view hyperlinks.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "authmode" : {
+                           "default" : "ticket",
+                           "description" : "Authentication mode to access the quarantine interface. Mode 'ticket' allows login using tickets sent with the daily spam report. Mode 'ldap' requires to login using an LDAP account. Finally, mode 'ldapticket' allows both ways.",
+                           "enum" : [
+                              "ticket",
+                              "ldap",
+                              "ldapticket"
+                           ],
+                           "optional" : 1,
+                           "type" : "string"
+                        },
+                        "delete" : {
+                           "description" : "A list of settings you want to delete.",
+                           "format" : "pve-configid-list",
+                           "maxLength" : 4096,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "digest" : {
+                           "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                           "maxLength" : 40,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "hostname" : {
+                           "description" : "Quarantine Host. Usefule if you run a Cluster and want users to connect to a specific host.",
+                           "format" : "address",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "lifetime" : {
+                           "default" : 7,
+                           "description" : "Quarantine life time (days)",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "mailfrom" : {
+                           "description" : "Text for 'From' header in daily spam report mails.",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "reportstyle" : {
+                           "default" : "verbose",
+                           "description" : "Spam report style.",
+                           "enum" : [
+                              "none",
+                              "short",
+                              "verbose",
+                              "outlook",
+                              "custom"
+                           ],
+                           "optional" : 1,
+                           "type" : "string"
+                        },
+                        "viewimages" : {
+                           "default" : 1,
+                           "description" : "Allow to view images.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        }
+                     },
+                     "type" : "object"
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/config/spamquar",
+            "text" : "spamquar"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Read virusquar configuration properties.",
+                  "method" : "GET",
+                  "name" : "read_virusquar_section",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "object"
+                  }
+               },
+               "PUT" : {
+                  "description" : "Update virusquar configuration properties.",
+                  "method" : "PUT",
+                  "name" : "update_virusquar_section",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "allowhrefs" : {
+                           "default" : 1,
+                           "description" : "Allow to view hyperlinks.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "delete" : {
+                           "description" : "A list of settings you want to delete.",
+                           "format" : "pve-configid-list",
+                           "maxLength" : 4096,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "digest" : {
+                           "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                           "maxLength" : 40,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "lifetime" : {
+                           "default" : 7,
+                           "description" : "Quarantine life time (days)",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "viewimages" : {
+                           "default" : 1,
+                           "description" : "Allow to view images.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        }
+                     },
+                     "type" : "object"
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/config/virusquar",
+            "text" : "virusquar"
          }
       ],
       "info" : {
@@ -3166,6 +4762,110 @@ var pmgapi = [
       "children" : [
          {
             "children" : [
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "ClamAV virus database status.",
+                              "method" : "GET",
+                              "name" : "database_status",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "build_time" : {
+                                          "type" : "string"
+                                       },
+                                       "nsigs" : {
+                                          "type" : "integer"
+                                       },
+                                       "type" : {
+                                          "type" : "string"
+                                       },
+                                       "version" : {
+                                          "optional" : 1,
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "type" : "array"
+                              }
+                           },
+                           "POST" : {
+                              "description" : "Update ClamAV virus databases.",
+                              "method" : "POST",
+                              "name" : "update_database",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "protected" : 1,
+                              "returns" : {
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/clamav/database",
+                        "text" : "database"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "Directory index.",
+                        "method" : "GET",
+                        "name" : "index",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "items" : {
+                              "properties" : {},
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{subdir}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/nodes/{node}/clamav",
+                  "text" : "clamav"
+               },
                {
                   "children" : [
                      {
