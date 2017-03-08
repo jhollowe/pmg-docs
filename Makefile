@@ -182,7 +182,7 @@ $(DOC_DEB): index.html $(API_VIEWER_SOURCES) verify-images
 
 .PHONY: upload
 upload: ${GEN_DEB} ${DOC_DEB}
-	tar cf - ${GEN_DEB} ${DOC_DEB} | ssh repoman@repo.proxmox.com upload-pmg
+	tar cf - ${GEN_DEB} ${DOC_DEB} | ssh -X repoman@repo.proxmox.com -- upload --product pmg --dist stretch
 
 .PHONY: update
 update: clean
