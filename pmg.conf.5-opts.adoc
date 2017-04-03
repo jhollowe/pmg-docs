@@ -36,6 +36,10 @@ HTTP proxy server address.
 
 HTTP proxy user name.
 
+`statlifetime`: `<integer> (1 - N)` ('default =' `7`)::
+
+User Statistics Lifetime (days)
+
 .Section 'clamav'
 
 `archiveblockencrypted`: `<boolean>` ('default =' `0`)::

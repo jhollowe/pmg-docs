@@ -954,7 +954,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
-                                    "description" : "Modify who group properties",
+                                    "description" : "Modify 'what' group properties",
                                     "method" : "PUT",
                                     "name" : "set_config",
                                     "parameters" : {
@@ -1014,6 +1014,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -1216,7 +1217,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
-                                    "description" : "Modify who group properties",
+                                    "description" : "Modify 'when' group properties",
                                     "method" : "PUT",
                                     "name" : "set_config",
                                     "parameters" : {
@@ -1276,6 +1277,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -1388,6 +1390,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -1424,6 +1427,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "description" : "The object ID.",
@@ -1587,7 +1591,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
-                                    "description" : "Modify who group properties",
+                                    "description" : "Modify 'who' group properties",
                                     "method" : "PUT",
                                     "name" : "set_config",
                                     "parameters" : {
@@ -1647,6 +1651,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -1755,6 +1760,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -1787,6 +1793,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "description" : "The object ID.",
@@ -1856,6 +1863,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -1888,6 +1896,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "description" : "The object ID.",
@@ -1957,6 +1966,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -1989,6 +1999,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "description" : "The object ID.",
@@ -2058,6 +2069,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -2090,6 +2102,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "description" : "The object ID.",
@@ -2159,6 +2172,7 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
                                              "type" : "null"
@@ -2191,6 +2205,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "description" : "The object ID.",
@@ -2201,6 +2216,262 @@ var pmgapi = [
                               "leaf" : 0,
                               "path" : "/config/ruledb/who/{ogroup}/network",
                               "text" : "network"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'LDAP Group' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_ldap",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'LDAP Group' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_ldap",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "group" : {
+                                                   "description" : "LDAP Group DN",
+                                                   "maxLength" : 1024,
+                                                   "minLength" : 1,
+                                                   "optional" : 1,
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "mode" : {
+                                                   "description" : "Operational mode. You can either match 'any' user, match when no such user exists with 'none', or match when the user is member of a specific group.",
+                                                   "enum" : [
+                                                      "any",
+                                                      "none",
+                                                      "group"
+                                                   ],
+                                                   "type" : "string"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "profile" : {
+                                                   "description" : "Profile ID.",
+                                                   "format" : "pve-configid",
+                                                   "optional" : 1,
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/who/{ogroup}/ldap/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'LDAP Group' object.",
+                                    "method" : "POST",
+                                    "name" : "ldap",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "group" : {
+                                             "description" : "LDAP Group DN",
+                                             "maxLength" : 1024,
+                                             "minLength" : 1,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "mode" : {
+                                             "description" : "Operational mode. You can either match 'any' user, match when no such user exists with 'none', or match when the user is member of a specific group.",
+                                             "enum" : [
+                                                "any",
+                                                "none",
+                                                "group"
+                                             ],
+                                             "type" : "string"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "profile" : {
+                                             "description" : "Profile ID.",
+                                             "format" : "pve-configid",
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/who/{ogroup}/ldap",
+                              "text" : "ldap"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'LDAP User' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_ldapuser",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'LDAP User' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_ldapuser",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "account" : {
+                                                   "description" : "LDAP user account name.",
+                                                   "maxLength" : 1024,
+                                                   "minLength" : 1,
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "profile" : {
+                                                   "description" : "Profile ID.",
+                                                   "format" : "pve-configid",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/who/{ogroup}/ldapuser/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'LDAP User' object.",
+                                    "method" : "POST",
+                                    "name" : "ldapuser",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "account" : {
+                                             "description" : "LDAP user account name.",
+                                             "maxLength" : 1024,
+                                             "minLength" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "profile" : {
+                                             "description" : "Profile ID.",
+                                             "format" : "pve-configid",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/who/{ogroup}/ldapuser",
+                              "text" : "ldapuser"
                            }
                         ],
                         "info" : {
@@ -2456,6 +2727,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -2483,6 +2755,7 @@ var pmgapi = [
                               }
                            }
                         },
+                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "description" : "The object ID.",
@@ -2542,6 +2815,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -2569,6 +2843,7 @@ var pmgapi = [
                               }
                            }
                         },
+                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "description" : "The object ID.",
@@ -2628,6 +2903,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -2655,6 +2931,7 @@ var pmgapi = [
                               }
                            }
                         },
+                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "description" : "The object ID.",
@@ -2714,6 +2991,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -2741,6 +3019,7 @@ var pmgapi = [
                               }
                            }
                         },
+                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "description" : "The object ID.",
@@ -2800,6 +3079,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -2827,6 +3107,7 @@ var pmgapi = [
                               }
                            }
                         },
+                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "description" : "The object ID.",
@@ -2886,6 +3167,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -2913,6 +3195,7 @@ var pmgapi = [
                               }
                            }
                         },
+                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "description" : "The object ID.",
@@ -2972,6 +3255,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -2999,6 +3283,7 @@ var pmgapi = [
                               }
                            }
                         },
+                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "description" : "The object ID.",
@@ -3058,6 +3343,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -3085,6 +3371,7 @@ var pmgapi = [
                               }
                            }
                         },
+                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "description" : "The object ID.",
@@ -3131,21 +3418,365 @@ var pmgapi = [
          {
             "children" : [
                {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Get LDAP profile configuration.",
+                              "method" : "GET",
+                              "name" : "read_config",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "profile" : {
+                                       "description" : "Profile ID.",
+                                       "format" : "pve-configid",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "proxyto" : "master",
+                              "returns" : {}
+                           },
+                           "PUT" : {
+                              "description" : "Update LDAP profile settings.",
+                              "method" : "PUT",
+                              "name" : "update_config",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "accountattr" : {
+                                       "default" : "sAMAccountName",
+                                       "description" : "Account attribute name name.",
+                                       "optional" : 1,
+                                       "pattern" : "[a-zA-Z0-9]+",
+                                       "type" : "string"
+                                    },
+                                    "basedn" : {
+                                       "description" : "Base domain name.",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "binddn" : {
+                                       "description" : "Bind domain name.",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "bindpw" : {
+                                       "description" : "Bind password.",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "comment" : {
+                                       "description" : "Description.",
+                                       "maxLength" : 4096,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "delete" : {
+                                       "description" : "A list of settings you want to delete.",
+                                       "format" : "pve-configid-list",
+                                       "maxLength" : 4096,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "digest" : {
+                                       "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                                       "maxLength" : 40,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "disable" : {
+                                       "description" : "Flag to disable/deactivate the entry.",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    },
+                                    "filter" : {
+                                       "description" : "LDAP filter.",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "groupbasedn" : {
+                                       "description" : "Base domain name for groups.",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "mailattr" : {
+                                       "default" : "mail, userPrincipalName, proxyAddresses, othermailbox",
+                                       "description" : "List of mail attribute names.",
+                                       "format" : "string-list",
+                                       "optional" : 1,
+                                       "pattern" : "[a-zA-Z0-9]+",
+                                       "type" : "string"
+                                    },
+                                    "mode" : {
+                                       "default" : "ldap",
+                                       "description" : "LDAP protocol mode ('ldap' or 'ldaps').",
+                                       "enum" : [
+                                          "ldap",
+                                          "ldaps"
+                                       ],
+                                       "optional" : 1,
+                                       "type" : "string"
+                                    },
+                                    "port" : {
+                                       "description" : "Specify the port to connect to.",
+                                       "maximum" : 65535,
+                                       "minimum" : 1,
+                                       "optional" : 1,
+                                       "type" : "integer",
+                                       "typetext" : "<integer> (1 - 65535)"
+                                    },
+                                    "profile" : {
+                                       "description" : "Profile ID.",
+                                       "format" : "pve-configid",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "server1" : {
+                                       "description" : "Server address.",
+                                       "format" : "address",
+                                       "maxLength" : 256,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "server2" : {
+                                       "description" : "Fallback server address. Userd when the first server is not available.",
+                                       "format" : "address",
+                                       "maxLength" : 256,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 },
+                                 "type" : "object"
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/ldap/{profile}/config",
+                        "text" : "config"
+                     },
+                     {
+                        "info" : {
+                           "POST" : {
+                              "description" : "Synchronice LDAP users to local database.",
+                              "method" : "POST",
+                              "name" : "sync_profile",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "profile" : {
+                                       "description" : "Profile ID.",
+                                       "format" : "pve-configid",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/ldap/{profile}/sync",
+                        "text" : "sync"
+                     },
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Get all email addresses for the specified user.",
+                                    "method" : "GET",
+                                    "name" : "address_list",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "email" : {
+                                             "description" : "Email address.",
+                                             "format" : "email",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "profile" : {
+                                             "description" : "Profile ID.",
+                                             "format" : "pve-configid",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "email" : {
+                                                "type" : "string"
+                                             },
+                                             "primary" : {
+                                                "type" : "boolean"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "type" : "array"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ldap/{profile}/users/{email}",
+                              "text" : "{email}"
+                           }
+                        ],
+                        "info" : {
+                           "GET" : {
+                              "description" : "List LDAP users.",
+                              "method" : "GET",
+                              "name" : "profile_list_users",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "profile" : {
+                                       "description" : "Profile ID.",
+                                       "format" : "pve-configid",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "account" : {
+                                          "type" : "string"
+                                       },
+                                       "dn" : {
+                                          "type" : "string"
+                                       },
+                                       "pmail" : {
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ldap/{profile}/users",
+                        "text" : "users"
+                     },
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "List LDAP groups.",
+                              "method" : "GET",
+                              "name" : "profile_list_groups",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "profile" : {
+                                       "description" : "Profile ID.",
+                                       "format" : "pve-configid",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "dn" : {
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/ldap/{profile}/groups",
+                        "text" : "groups"
+                     }
+                  ],
                   "info" : {
                      "DELETE" : {
-                        "description" : "Delete an LDAP server entry.",
+                        "description" : "Delete an LDAP profile",
                         "method" : "DELETE",
                         "name" : "delete",
                         "parameters" : {
                            "additionalProperties" : 0,
                            "properties" : {
-                              "section" : {
-                                 "description" : "Secion ID.",
+                              "profile" : {
+                                 "description" : "Profile ID.",
                                  "format" : "pve-configid",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -3154,172 +3785,102 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
-                        "description" : "Get LDAP server configuration.",
+                        "description" : "Directory index",
                         "method" : "GET",
-                        "name" : "read",
+                        "name" : "profile_index",
                         "parameters" : {
                            "additionalProperties" : 0,
                            "properties" : {
-                              "section" : {
-                                 "description" : "Secion ID.",
+                              "profile" : {
+                                 "description" : "Profile ID.",
                                  "format" : "pve-configid",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
                            }
                         },
-                        "protected" : 1,
-                        "proxyto" : "master",
-                        "returns" : {}
-                     },
-                     "PUT" : {
-                        "description" : "Update LDAP server settings.",
-                        "method" : "PUT",
-                        "name" : "update",
-                        "parameters" : {
-                           "additionalProperties" : 0,
-                           "properties" : {
-                              "accountattr" : {
-                                 "default" : "sAMAccountName",
-                                 "description" : "Account attribute name name.",
-                                 "optional" : 1,
-                                 "pattern" : "[a-zA-Z0-9]+",
-                                 "type" : "string"
-                              },
-                              "basedn" : {
-                                 "description" : "Base domain name.",
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "binddn" : {
-                                 "description" : "Bind domain name.",
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "bindpw" : {
-                                 "description" : "Bind password.",
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "delete" : {
-                                 "description" : "A list of settings you want to delete.",
-                                 "format" : "pve-configid-list",
-                                 "maxLength" : 4096,
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "digest" : {
-                                 "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
-                                 "maxLength" : 40,
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "filter" : {
-                                 "description" : "LDAP filter.",
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "groupbasedn" : {
-                                 "description" : "Base domain name for groups.",
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "mailattr" : {
-                                 "default" : "mail, userPrincipalName, proxyAddresses, othermailbox",
-                                 "description" : "List of mail attribute names.",
-                                 "format" : "string-list",
-                                 "optional" : 1,
-                                 "pattern" : "[a-zA-Z0-9]+",
-                                 "type" : "string"
-                              },
-                              "mode" : {
-                                 "default" : "ldap",
-                                 "description" : "LDAP protocol mode ('ldap' or 'ldaps').",
-                                 "enum" : [
-                                    "ldap",
-                                    "ldaps"
-                                 ],
-                                 "optional" : 1,
-                                 "type" : "string"
-                              },
-                              "port" : {
-                                 "description" : "Specify the port to connect to.",
-                                 "maximum" : 65535,
-                                 "minimum" : 1,
-                                 "optional" : 1,
-                                 "type" : "integer",
-                                 "typetext" : "<integer> (1 - 65535)"
-                              },
-                              "section" : {
-                                 "description" : "Secion ID.",
-                                 "format" : "pve-configid",
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "server1" : {
-                                 "description" : "Server address.",
-                                 "format" : "address",
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "server2" : {
-                                 "description" : "Fallback server address. Userd when the first server is not available.",
-                                 "format" : "address",
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              }
-                           },
-                           "type" : "object"
+                        "permissions" : {
+                           "user" : "all"
                         },
-                        "protected" : 1,
-                        "proxyto" : "master",
                         "returns" : {
-                           "type" : "null"
+                           "items" : {
+                              "properties" : {
+                                 "subdir" : {
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{subdir}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
                         }
                      }
                   },
-                  "leaf" : 1,
-                  "path" : "/config/ldap/{section}",
-                  "text" : "{section}"
+                  "leaf" : 0,
+                  "path" : "/config/ldap/{profile}",
+                  "text" : "{profile}"
                }
             ],
             "info" : {
                "GET" : {
-                  "description" : "LDAP server list.",
+                  "description" : "List configured LDAP profiles.",
                   "method" : "GET",
                   "name" : "index",
                   "parameters" : {
                      "additionalProperties" : 0
                   },
-                  "protected" : 1,
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "proxyto" : "master",
                   "returns" : {
                      "items" : {
                         "properties" : {
+                           "comment" : {
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "disable" : {
+                              "type" : "boolean"
+                           },
+                           "gcount" : {
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "mcount" : {
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
                            "mode" : {
                               "type" : "string"
                            },
-                           "section" : {
+                           "profile" : {
                               "type" : "string"
                            },
                            "server1" : {
                               "type" : "string"
+                           },
+                           "server2" : {
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "ucount" : {
+                              "optional" : 1,
+                              "type" : "integer"
                            }
                         },
                         "type" : "object"
                      },
                      "links" : [
                         {
-                           "href" : "{section}",
+                           "href" : "{profile}",
                            "rel" : "child"
                         }
                      ],
@@ -3327,7 +3888,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
-                  "description" : "Add LDAP server.",
+                  "description" : "Add LDAP profile.",
                   "method" : "POST",
                   "name" : "create",
                   "parameters" : {
@@ -3357,6 +3918,19 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
+                        },
+                        "comment" : {
+                           "description" : "Description.",
+                           "maxLength" : 4096,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "disable" : {
+                           "description" : "Flag to disable/deactivate the entry.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
                         },
                         "filter" : {
                            "description" : "LDAP filter.",
@@ -3396,8 +3970,8 @@ var pmgapi = [
                            "type" : "integer",
                            "typetext" : "<integer> (1 - 65535)"
                         },
-                        "section" : {
-                           "description" : "Secion ID.",
+                        "profile" : {
+                           "description" : "Profile ID.",
                            "format" : "pve-configid",
                            "type" : "string",
                            "typetext" : "<string>"
@@ -3405,6 +3979,7 @@ var pmgapi = [
                         "server1" : {
                            "description" : "Server address.",
                            "format" : "address",
+                           "maxLength" : 256,
                            "optional" : 0,
                            "type" : "string",
                            "typetext" : "<string>"
@@ -3412,12 +3987,18 @@ var pmgapi = [
                         "server2" : {
                            "description" : "Fallback server address. Userd when the first server is not available.",
                            "format" : "address",
+                           "maxLength" : 256,
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
                         }
                      },
                      "type" : "object"
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
                   },
                   "protected" : 1,
                   "proxyto" : "master",
@@ -4044,6 +4625,14 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
+                        },
+                        "statlifetime" : {
+                           "default" : 7,
+                           "description" : "User Statistics Lifetime (days)",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
                         }
                      },
                      "type" : "object"
@@ -4762,6 +5351,463 @@ var pmgapi = [
       "children" : [
          {
             "children" : [
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Print Postfix queue domain and age distribution.",
+                              "method" : "GET",
+                              "name" : "qshape",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "queue" : {
+                                       "default" : "deferred",
+                                       "description" : "Postfix queue name.",
+                                       "enum" : [
+                                          "deferred",
+                                          "active",
+                                          "incoming",
+                                          "hold"
+                                       ],
+                                       "optional" : 1,
+                                       "type" : "string"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {},
+                                    "type" : "object"
+                                 },
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/postfix/qshape",
+                        "text" : "qshape"
+                     },
+                     {
+                        "children" : [
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "DELETE" : {
+                                          "description" : "Delete one message with the named queue ID.",
+                                          "method" : "DELETE",
+                                          "name" : "delete_queued_mail",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "node" : {
+                                                   "description" : "The cluster node name.",
+                                                   "format" : "pve-node",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "queue" : {
+                                                   "description" : "Postfix queue name.",
+                                                   "enum" : [
+                                                      "deferred",
+                                                      "active",
+                                                      "incoming",
+                                                      "hold"
+                                                   ],
+                                                   "type" : "string"
+                                                },
+                                                "queue_id" : {
+                                                   "description" : "The Message queue ID.",
+                                                   "maxLength" : 20,
+                                                   "minLength" : 8,
+                                                   "pattern" : "[a-zA-Z0-9]+",
+                                                   "type" : "string"
+                                                }
+                                             }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "node",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       },
+                                       "GET" : {
+                                          "description" : "Get the contents of a queued mail.",
+                                          "method" : "GET",
+                                          "name" : "read_queued_mail",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "body" : {
+                                                   "default" : 0,
+                                                   "description" : "Include body content.",
+                                                   "optional" : 1,
+                                                   "type" : "boolean",
+                                                   "typetext" : "<boolean>"
+                                                },
+                                                "header" : {
+                                                   "default" : 1,
+                                                   "description" : "Show message header content.",
+                                                   "optional" : 1,
+                                                   "type" : "boolean",
+                                                   "typetext" : "<boolean>"
+                                                },
+                                                "node" : {
+                                                   "description" : "The cluster node name.",
+                                                   "format" : "pve-node",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "queue" : {
+                                                   "description" : "Postfix queue name.",
+                                                   "enum" : [
+                                                      "deferred",
+                                                      "active",
+                                                      "incoming",
+                                                      "hold"
+                                                   ],
+                                                   "type" : "string"
+                                                },
+                                                "queue_id" : {
+                                                   "description" : "The Message queue ID.",
+                                                   "maxLength" : 20,
+                                                   "minLength" : 8,
+                                                   "pattern" : "[a-zA-Z0-9]+",
+                                                   "type" : "string"
+                                                }
+                                             }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "node",
+                                          "returns" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "POST" : {
+                                          "description" : "Schedule immediate delivery of deferred mail with the specified queue ID.",
+                                          "method" : "POST",
+                                          "name" : "flush_queued_mail",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "node" : {
+                                                   "description" : "The cluster node name.",
+                                                   "format" : "pve-node",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "queue" : {
+                                                   "description" : "Postfix queue name.",
+                                                   "enum" : [
+                                                      "deferred",
+                                                      "active",
+                                                      "incoming",
+                                                      "hold"
+                                                   ],
+                                                   "type" : "string"
+                                                },
+                                                "queue_id" : {
+                                                   "description" : "The Message queue ID.",
+                                                   "maxLength" : 20,
+                                                   "minLength" : 8,
+                                                   "pattern" : "[a-zA-Z0-9]+",
+                                                   "type" : "string"
+                                                }
+                                             }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "node",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/nodes/{node}/postfix/queue/{queue}/{queue_id}",
+                                    "text" : "{queue_id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "DELETE" : {
+                                    "description" : "Delete all mails in the queue.",
+                                    "method" : "DELETE",
+                                    "name" : "delete_queue",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "node" : {
+                                             "description" : "The cluster node name.",
+                                             "format" : "pve-node",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "queue" : {
+                                             "description" : "Postfix queue name.",
+                                             "enum" : [
+                                                "deferred",
+                                                "active",
+                                                "incoming",
+                                                "hold"
+                                             ],
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "node",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 },
+                                 "GET" : {
+                                    "description" : "List the mail queue for a specific domain.",
+                                    "method" : "GET",
+                                    "name" : "mailq",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "filter" : {
+                                             "description" : "Filter string.",
+                                             "maxLength" : 64,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "limit" : {
+                                             "minimum" : 0,
+                                             "optional" : 1,
+                                             "type" : "integer",
+                                             "typetext" : "<integer> (0 - N)"
+                                          },
+                                          "node" : {
+                                             "description" : "The cluster node name.",
+                                             "format" : "pve-node",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "queue" : {
+                                             "description" : "Postfix queue name.",
+                                             "enum" : [
+                                                "deferred",
+                                                "active",
+                                                "incoming",
+                                                "hold"
+                                             ],
+                                             "type" : "string"
+                                          },
+                                          "start" : {
+                                             "minimum" : 0,
+                                             "optional" : 1,
+                                             "type" : "integer",
+                                             "typetext" : "<integer> (0 - N)"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "node",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {},
+                                          "type" : "object"
+                                       },
+                                       "links" : [
+                                          {
+                                             "href" : "{queue_id}",
+                                             "rel" : "child"
+                                          }
+                                       ],
+                                       "type" : "array"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/nodes/{node}/postfix/queue/{queue}",
+                              "text" : "{queue}"
+                           }
+                        ],
+                        "info" : {
+                           "GET" : {
+                              "description" : "Directory index.",
+                              "method" : "GET",
+                              "name" : "queue_index",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "user" : "all"
+                              },
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {},
+                                    "type" : "object"
+                                 },
+                                 "links" : [
+                                    {
+                                       "href" : "{name}",
+                                       "rel" : "child"
+                                    }
+                                 ],
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/nodes/{node}/postfix/queue",
+                        "text" : "queue"
+                     },
+                     {
+                        "info" : {
+                           "POST" : {
+                              "description" : "Flush the queue: attempt to deliver all queued mail.",
+                              "method" : "POST",
+                              "name" : "flush_queues",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/postfix/flush_queues",
+                        "text" : "flush_queues"
+                     },
+                     {
+                        "info" : {
+                           "POST" : {
+                              "description" : "Discards the address verification cache.",
+                              "method" : "POST",
+                              "name" : "discard_verify_cache",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/postfix/discard_verify_cache",
+                        "text" : "discard_verify_cache"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "Directory index.",
+                        "method" : "GET",
+                        "name" : "index",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "user" : "all"
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {},
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{name}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/nodes/{node}/postfix",
+                  "text" : "postfix"
+               },
                {
                   "children" : [
                      {
@@ -5663,14 +6709,18 @@ var pmgapi = [
                                           "service" : {
                                              "description" : "Service ID",
                                              "enum" : [
+                                                "clamav-daemon",
+                                                "clamav-freshclam",
                                                 "pmgproxy",
                                                 "pmgdaemon",
+                                                "pmgpolicy",
                                                 "pmg-smtp-filter",
                                                 "sshd",
                                                 "syslog",
-                                                "cron",
                                                 "postfix",
-                                                "systemd-timesyncd"
+                                                "systemd-timesyncd",
+                                                "pmg-hourly",
+                                                "pmg-daily"
                                              ],
                                              "type" : "string"
                                           }
@@ -5706,14 +6756,18 @@ var pmgapi = [
                                           "service" : {
                                              "description" : "Service ID",
                                              "enum" : [
+                                                "clamav-daemon",
+                                                "clamav-freshclam",
                                                 "pmgproxy",
                                                 "pmgdaemon",
+                                                "pmgpolicy",
                                                 "pmg-smtp-filter",
                                                 "sshd",
                                                 "syslog",
-                                                "cron",
                                                 "postfix",
-                                                "systemd-timesyncd"
+                                                "systemd-timesyncd",
+                                                "pmg-hourly",
+                                                "pmg-daily"
                                              ],
                                              "type" : "string"
                                           }
@@ -5748,14 +6802,18 @@ var pmgapi = [
                                           "service" : {
                                              "description" : "Service ID",
                                              "enum" : [
+                                                "clamav-daemon",
+                                                "clamav-freshclam",
                                                 "pmgproxy",
                                                 "pmgdaemon",
+                                                "pmgpolicy",
                                                 "pmg-smtp-filter",
                                                 "sshd",
                                                 "syslog",
-                                                "cron",
                                                 "postfix",
-                                                "systemd-timesyncd"
+                                                "systemd-timesyncd",
+                                                "pmg-hourly",
+                                                "pmg-daily"
                                              ],
                                              "type" : "string"
                                           }
@@ -5790,14 +6848,18 @@ var pmgapi = [
                                           "service" : {
                                              "description" : "Service ID",
                                              "enum" : [
+                                                "clamav-daemon",
+                                                "clamav-freshclam",
                                                 "pmgproxy",
                                                 "pmgdaemon",
+                                                "pmgpolicy",
                                                 "pmg-smtp-filter",
                                                 "sshd",
                                                 "syslog",
-                                                "cron",
                                                 "postfix",
-                                                "systemd-timesyncd"
+                                                "systemd-timesyncd",
+                                                "pmg-hourly",
+                                                "pmg-daily"
                                              ],
                                              "type" : "string"
                                           }
@@ -5832,14 +6894,18 @@ var pmgapi = [
                                           "service" : {
                                              "description" : "Service ID",
                                              "enum" : [
+                                                "clamav-daemon",
+                                                "clamav-freshclam",
                                                 "pmgproxy",
                                                 "pmgdaemon",
+                                                "pmgpolicy",
                                                 "pmg-smtp-filter",
                                                 "sshd",
                                                 "syslog",
-                                                "cron",
                                                 "postfix",
-                                                "systemd-timesyncd"
+                                                "systemd-timesyncd",
+                                                "pmg-hourly",
+                                                "pmg-daily"
                                              ],
                                              "type" : "string"
                                           }
@@ -5874,14 +6940,18 @@ var pmgapi = [
                                     "service" : {
                                        "description" : "Service ID",
                                        "enum" : [
+                                          "clamav-daemon",
+                                          "clamav-freshclam",
                                           "pmgproxy",
                                           "pmgdaemon",
+                                          "pmgpolicy",
                                           "pmg-smtp-filter",
                                           "sshd",
                                           "syslog",
-                                          "cron",
                                           "postfix",
-                                          "systemd-timesyncd"
+                                          "systemd-timesyncd",
+                                          "pmg-hourly",
+                                          "pmg-daily"
                                        ],
                                        "type" : "string"
                                     }
@@ -5947,6 +7017,58 @@ var pmgapi = [
                   "leaf" : 0,
                   "path" : "/nodes/{node}/services",
                   "text" : "services"
+               },
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Read node RRD statistics",
+                        "method" : "GET",
+                        "name" : "rrddata",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "cf" : {
+                                 "description" : "The RRD consolidation function",
+                                 "enum" : [
+                                    "AVERAGE",
+                                    "MAX"
+                                 ],
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "timeframe" : {
+                                 "description" : "Specify the time frame you are interested in.",
+                                 "enum" : [
+                                    "hour",
+                                    "day",
+                                    "week",
+                                    "month",
+                                    "year"
+                                 ],
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "items" : {
+                              "properties" : {},
+                              "type" : "object"
+                           },
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/nodes/{node}/rrddata",
+                  "text" : "rrddata"
                },
                {
                   "info" : {
@@ -6345,6 +7467,312 @@ var pmgapi = [
    {
       "children" : [
          {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "description" : "Delete a user.",
+                        "method" : "DELETE",
+                        "name" : "delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "userid" : {
+                                 "description" : "User ID",
+                                 "format" : "pmg-userid",
+                                 "maxLength" : 64,
+                                 "minLength" : 4,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
+                     "GET" : {
+                        "description" : "Read User data.",
+                        "method" : "GET",
+                        "name" : "read",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "userid" : {
+                                 "description" : "User ID",
+                                 "format" : "pmg-userid",
+                                 "maxLength" : 64,
+                                 "minLength" : 4,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "properties" : {},
+                           "type" : "object"
+                        }
+                     },
+                     "PUT" : {
+                        "description" : "Update user data.",
+                        "method" : "PUT",
+                        "name" : "write",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "comment" : {
+                                 "description" : "Comment.",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "crypt_pass" : {
+                                 "description" : "Encrypted password (see `man crypt`)",
+                                 "optional" : 1,
+                                 "pattern" : "\\$\\d\\$[a-zA-Z0-9\\.\\/]+\\$[a-zA-Z0-9\\.\\/]+",
+                                 "type" : "string"
+                              },
+                              "delete" : {
+                                 "description" : "A list of settings you want to delete.",
+                                 "format" : "pve-configid-list",
+                                 "maxLength" : 4096,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "email" : {
+                                 "description" : "Users E-Mail address.",
+                                 "format" : "email",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "enable" : {
+                                 "default" : 0,
+                                 "description" : "Flag to enable or disable the account.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "expire" : {
+                                 "default" : 0,
+                                 "description" : "Account expiration date (seconds since epoch). '0' means no expiration date.",
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              },
+                              "firstname" : {
+                                 "description" : "First name.",
+                                 "maxLength" : 64,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "keys" : {
+                                 "description" : "Keys for two factor auth (yubico).",
+                                 "maxLength" : 128,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "lastname" : {
+                                 "description" : "Last name.",
+                                 "maxLength" : 64,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "password" : {
+                                 "description" : "Password",
+                                 "maxLength" : 32,
+                                 "minLength" : 5,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "role" : {
+                                 "description" : "User role. Role 'root' is reseved for the Unix Superuser.",
+                                 "enum" : [
+                                    "root",
+                                    "admin",
+                                    "qmanager",
+                                    "audit"
+                                 ],
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
+                              "userid" : {
+                                 "description" : "User ID",
+                                 "format" : "pmg-userid",
+                                 "maxLength" : 64,
+                                 "minLength" : 4,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/access/users/{userid}",
+                  "text" : "{userid}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "List users.",
+                  "method" : "GET",
+                  "name" : "index",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "comment" : {
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "enable" : {
+                              "type" : "boolean"
+                           },
+                           "role" : {
+                              "type" : "string"
+                           },
+                           "userid" : {
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{userid}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Creat new user",
+                  "method" : "POST",
+                  "name" : "create",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "comment" : {
+                           "description" : "Comment.",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "crypt_pass" : {
+                           "description" : "Encrypted password (see `man crypt`)",
+                           "optional" : 1,
+                           "pattern" : "\\$\\d\\$[a-zA-Z0-9\\.\\/]+\\$[a-zA-Z0-9\\.\\/]+",
+                           "type" : "string"
+                        },
+                        "email" : {
+                           "description" : "Users E-Mail address.",
+                           "format" : "email",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "enable" : {
+                           "default" : 0,
+                           "description" : "Flag to enable or disable the account.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "expire" : {
+                           "default" : 0,
+                           "description" : "Account expiration date (seconds since epoch). '0' means no expiration date.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "firstname" : {
+                           "description" : "First name.",
+                           "maxLength" : 64,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "keys" : {
+                           "description" : "Keys for two factor auth (yubico).",
+                           "maxLength" : 128,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "lastname" : {
+                           "description" : "Last name.",
+                           "maxLength" : 64,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "password" : {
+                           "description" : "Password",
+                           "maxLength" : 32,
+                           "minLength" : 5,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "role" : {
+                           "description" : "User role. Role 'root' is reseved for the Unix Superuser.",
+                           "enum" : [
+                              "root",
+                              "admin",
+                              "qmanager",
+                              "audit"
+                           ],
+                           "type" : "string"
+                        },
+                        "userid" : {
+                           "description" : "User ID",
+                           "format" : "pmg-userid",
+                           "maxLength" : 64,
+                           "minLength" : 4,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/access/users",
+            "text" : "users"
+         },
+         {
             "info" : {
                "GET" : {
                   "description" : "Dummy. Useful for formaters which want to priovde a login page.",
@@ -6405,6 +7833,10 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "string"
                         },
+                        "role" : {
+                           "optional" : 1,
+                           "type" : "string"
+                        },
                         "ticket" : {
                            "optional" : 1,
                            "type" : "string"
@@ -6441,10 +7873,15 @@ var pmgapi = [
                            "description" : "User ID",
                            "format" : "pmg-userid",
                            "maxLength" : 64,
+                           "minLength" : 4,
                            "type" : "string",
                            "typetext" : "<string>"
                         }
                      }
+                  },
+                  "permissions" : {
+                     "description" : "Each user is allowed to change his own password. Only root can change the password of another user.",
+                     "user" : "all"
                   },
                   "protected" : 1,
                   "returns" : {
