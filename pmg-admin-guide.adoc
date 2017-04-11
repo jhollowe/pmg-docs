@@ -60,6 +60,8 @@ include::pmg-smtp-filter.adoc[]
 
 include::pmgpolicy.adoc[]
 
+include::pmgtunnel.adoc[]
+
 :leveloffset: 0
 
 
@@ -130,6 +132,12 @@ include::pmg-smtp-filter.8-synopsis.adoc[]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 include::pmgpolicy.8-synopsis.adoc[]
+
+
+*pmgtunnel* - Cluster Tunnel Daemon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+include::pmgtunnel.8-synopsis.adoc[]
 
 
 [appendix]
