@@ -1,0 +1,30 @@
+ifdef::manvolnum[]
+pmgtunnel(8)
+============
+:pmg-toplevel:
+
+NAME
+----
+
+pmgtunnel - Proxmox Mail Gateway Cluster Tunnel Daemon
+
+
+SYNOPSIS
+--------
+
+include::pmgtunnel.8-synopsis.adoc[]
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+
+ifndef::manvolnum[]
+pmgtunnel - Cluster Tunnel Daemon
+=================================
+endif::manvolnum[]
+
+TODO
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
