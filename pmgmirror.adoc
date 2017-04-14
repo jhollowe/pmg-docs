@@ -1,0 +1,34 @@
+ifdef::manvolnum[]
+pmgmirror(8)
+============
+:pmg-toplevel:
+
+NAME
+----
+
+pmgmirror - Proxmox Mail Gateway Database Mirror Daemon
+
+
+SYNOPSIS
+--------
+
+include::pmgmirror.8-synopsis.adoc[]
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+
+ifndef::manvolnum[]
+pmgmirror - Database Mirror Daemon
+==================================
+endif::manvolnum[]
+
+{pmg} use an application specific asynchronous replication
+algorythm to replicate the database to all cluster nodes.
+
+The daemon uses the ssh tunnel provided by 'pmgtunnel' to access
+the database on remote nodes.
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]

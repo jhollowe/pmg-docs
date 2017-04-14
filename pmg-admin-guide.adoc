@@ -62,6 +62,8 @@ include::pmgpolicy.adoc[]
 
 include::pmgtunnel.adoc[]
 
+include::pmgmirror.adoc[]
+
 :leveloffset: 0
 
 
@@ -138,6 +140,12 @@ include::pmgpolicy.8-synopsis.adoc[]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 include::pmgtunnel.8-synopsis.adoc[]
+
+
+*pmgmirror* - Database Mirror Daemon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+include::pmgmirror.8-synopsis.adoc[]
 
 
 [appendix]
