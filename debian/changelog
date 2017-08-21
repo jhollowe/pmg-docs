@@ -1,3 +1,13 @@
+pmg-docs (5.0-2) unstable; urgency=medium
+
+  * add pmgqm.adoc
+
+  * add pmgreport.adoc
+
+  * update generated API docs
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 21 Aug 2017 09:31:21 +0200
+
 pmg-docs (5.0-1) unstable; urgency=medium
 
   * first version using asciidoc
