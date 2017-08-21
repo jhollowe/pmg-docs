@@ -42,6 +42,14 @@ Reset and update statistic database.
 
 
 
+
+*pmgdb reset*
+
+Reset PMG rule database back to factory defaults.
+
+
+
+
 *pmgdb update*
 
 Update the PMG statistic database.

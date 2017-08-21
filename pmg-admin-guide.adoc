@@ -77,6 +77,10 @@ include::pmgsh.adoc[]
 
 include::pmgperf.adoc[]
 
+include::pmgqm.adoc[]
+
+include::pmgreport.adoc[]
+
 :leveloffset: 0
 
 

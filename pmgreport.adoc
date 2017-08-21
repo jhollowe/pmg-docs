@@ -1,0 +1,33 @@
+[[chapter_pmgreport]]
+ifdef::manvolnum[]
+pmgreport(1)
+============
+:pmg-toplevel:
+
+NAME
+----
+
+pmgreport - Send daily system report email.
+
+
+SYNOPSIS
+--------
+
+include::pmgreport.1-synopsis.adoc[]
+
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Send daily system report email
+==============================
+:pmg-toplevel:
+endif::manvolnum[]
+
+This binary generates and send daily system report email.
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
+

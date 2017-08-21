@@ -4,6 +4,24 @@ var pmgapi = [
          {
             "children" : [
                {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Returns the rule database digest. This is used internally for cluster synchronization.",
+                        "method" : "GET",
+                        "name" : "ruledb_digest",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "returns" : {
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/ruledb/digest",
+                  "text" : "digest"
+               },
+               {
                   "children" : [
                      {
                         "children" : [
@@ -579,6 +597,8 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
+                              "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
                               }
@@ -629,7 +649,6 @@ var pmgapi = [
                         "parameters" : {
                            "additionalProperties" : 0
                         },
-                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
@@ -715,6 +734,8 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
                                     "returns" : {
                                        "type" : "null"
                                     }
@@ -733,6 +754,7 @@ var pmgapi = [
                               "parameters" : {
                                  "additionalProperties" : 0
                               },
+                              "proxyto" : "master",
                               "returns" : {
                                  "items" : {
                                     "properties" : {
@@ -827,6 +849,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "type" : "null"
@@ -874,6 +897,7 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "description" : "The object ID.",
@@ -981,6 +1005,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "type" : "null"
@@ -1133,7 +1158,6 @@ var pmgapi = [
                         "parameters" : {
                            "additionalProperties" : 0
                         },
-                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
@@ -1244,6 +1268,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "type" : "null"
@@ -1507,7 +1532,6 @@ var pmgapi = [
                         "parameters" : {
                            "additionalProperties" : 0
                         },
-                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
@@ -1618,6 +1642,7 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
                                        "type" : "null"
@@ -2541,7 +2566,6 @@ var pmgapi = [
                         "parameters" : {
                            "additionalProperties" : 0
                         },
-                        "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
                            "items" : {
@@ -2609,6 +2633,18 @@ var pmgapi = [
                         }
                      ],
                      "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Reset PMG rule database back to factory defaults.",
+                  "method" : "POST",
+                  "name" : "reset_ruledb",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "protected" : 1,
+                  "returns" : {
+                     "type" : "null"
                   }
                }
             },
@@ -4511,26 +4547,258 @@ var pmgapi = [
             "text" : "mynetworks"
          },
          {
+            "children" : [
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Cluster node index.",
+                        "method" : "GET",
+                        "name" : "nodes",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "cid" : {
+                                    "type" : "integer"
+                                 },
+                                 "fingerprint" : {
+                                    "type" : "string"
+                                 },
+                                 "hostrsapubkey" : {
+                                    "type" : "string"
+                                 },
+                                 "ip" : {
+                                    "type" : "string"
+                                 },
+                                 "name" : {
+                                    "type" : "string"
+                                 },
+                                 "rootrsapubkey" : {
+                                    "type" : "string"
+                                 },
+                                 "type" : {
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{cid}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     },
+                     "POST" : {
+                        "description" : "Add an node to the cluster config.",
+                        "method" : "POST",
+                        "name" : "add_node",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "fingerprint" : {
+                                 "description" : "SSL certificate fingerprint.",
+                                 "optional" : 0,
+                                 "pattern" : "^(:?[A-Z0-9][A-Z0-9]:){31}[A-Z0-9][A-Z0-9]$",
+                                 "type" : "string"
+                              },
+                              "hostrsapubkey" : {
+                                 "description" : "Public SSH RSA key for the host.",
+                                 "optional" : 0,
+                                 "pattern" : "^[A-Za-z0-9\\.\\/\\+]{200,}$",
+                                 "type" : "string"
+                              },
+                              "ip" : {
+                                 "description" : "IP address.",
+                                 "format" : "ip",
+                                 "optional" : 0,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "maxcid" : {
+                                 "description" : "Maximum used cluster node ID (used internally, do not modify).",
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - N)"
+                              },
+                              "name" : {
+                                 "description" : "Node name.",
+                                 "format" : "pve-node",
+                                 "optional" : 0,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "rootrsapubkey" : {
+                                 "description" : "Public SSH RSA key for the root user.",
+                                 "optional" : 0,
+                                 "pattern" : "^[A-Za-z0-9\\.\\/\\+]{200,}$",
+                                 "type" : "string"
+                              }
+                           },
+                           "type" : "object"
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "description" : "Returns the resulting node list.",
+                           "items" : {
+                              "properties" : {
+                                 "cid" : {
+                                    "type" : "integer"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/cluster/nodes",
+                  "text" : "nodes"
+               },
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Cluster node status.",
+                        "method" : "GET",
+                        "name" : "status",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "cid" : {
+                                    "type" : "integer"
+                                 },
+                                 "fingerprint" : {
+                                    "type" : "string"
+                                 },
+                                 "hostrsapubkey" : {
+                                    "type" : "string"
+                                 },
+                                 "ip" : {
+                                    "type" : "string"
+                                 },
+                                 "name" : {
+                                    "type" : "string"
+                                 },
+                                 "rootrsapubkey" : {
+                                    "type" : "string"
+                                 },
+                                 "type" : {
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{cid}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/cluster/status",
+                  "text" : "status"
+               },
+               {
+                  "info" : {
+                     "POST" : {
+                        "description" : "Create initial cluster config with current node as master.",
+                        "method" : "POST",
+                        "name" : "create",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "protected" : 1,
+                        "returns" : {
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/cluster/create",
+                  "text" : "create"
+               },
+               {
+                  "info" : {
+                     "POST" : {
+                        "description" : "Join local node to an existing cluster.",
+                        "method" : "POST",
+                        "name" : "join",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "fingerprint" : {
+                                 "description" : "SSL certificate fingerprint.",
+                                 "pattern" : "^(:?[A-Z0-9][A-Z0-9]:){31}[A-Z0-9][A-Z0-9]$",
+                                 "type" : "string"
+                              },
+                              "master_ip" : {
+                                 "description" : "IP address.",
+                                 "format" : "ip",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "password" : {
+                                 "description" : "Superuser password.",
+                                 "maxLength" : 128,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "returns" : {
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/cluster/join",
+                  "text" : "join"
+               }
+            ],
             "info" : {
                "GET" : {
-                  "description" : "Cluster node index.",
+                  "description" : "Directory index.",
                   "method" : "GET",
                   "name" : "index",
                   "parameters" : {
                      "additionalProperties" : 0
                   },
+                  "permissions" : {
+                     "user" : "all"
+                  },
                   "returns" : {
                      "items" : {
-                        "properties" : {
-                           "cid" : {
-                              "type" : "integer"
-                           }
-                        },
+                        "properties" : {},
                         "type" : "object"
                      },
                      "links" : [
                         {
-                           "href" : "{cid}",
+                           "href" : "{name}",
                            "rel" : "child"
                         }
                      ],
@@ -4538,7 +4806,7 @@ var pmgapi = [
                   }
                }
             },
-            "leaf" : 1,
+            "leaf" : 0,
             "path" : "/config/cluster",
             "text" : "cluster"
          },
@@ -5216,7 +5484,6 @@ var pmgapi = [
                               "none",
                               "short",
                               "verbose",
-                              "outlook",
                               "custom"
                            ],
                            "optional" : 1,
@@ -6715,12 +6982,16 @@ var pmgapi = [
                                                 "pmgdaemon",
                                                 "pmgpolicy",
                                                 "pmg-smtp-filter",
-                                                "sshd",
-                                                "syslog",
+                                                "pmgtunnel",
+                                                "pmgmirror",
+                                                "ssh",
+                                                "rsyslog",
                                                 "postfix",
+                                                "postgres",
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
-                                                "pmg-daily"
+                                                "pmg-daily",
+                                                "pmgspamreport"
                                              ],
                                              "type" : "string"
                                           }
@@ -6762,12 +7033,16 @@ var pmgapi = [
                                                 "pmgdaemon",
                                                 "pmgpolicy",
                                                 "pmg-smtp-filter",
-                                                "sshd",
-                                                "syslog",
+                                                "pmgtunnel",
+                                                "pmgmirror",
+                                                "ssh",
+                                                "rsyslog",
                                                 "postfix",
+                                                "postgres",
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
-                                                "pmg-daily"
+                                                "pmg-daily",
+                                                "pmgspamreport"
                                              ],
                                              "type" : "string"
                                           }
@@ -6808,12 +7083,16 @@ var pmgapi = [
                                                 "pmgdaemon",
                                                 "pmgpolicy",
                                                 "pmg-smtp-filter",
-                                                "sshd",
-                                                "syslog",
+                                                "pmgtunnel",
+                                                "pmgmirror",
+                                                "ssh",
+                                                "rsyslog",
                                                 "postfix",
+                                                "postgres",
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
-                                                "pmg-daily"
+                                                "pmg-daily",
+                                                "pmgspamreport"
                                              ],
                                              "type" : "string"
                                           }
@@ -6854,12 +7133,16 @@ var pmgapi = [
                                                 "pmgdaemon",
                                                 "pmgpolicy",
                                                 "pmg-smtp-filter",
-                                                "sshd",
-                                                "syslog",
+                                                "pmgtunnel",
+                                                "pmgmirror",
+                                                "ssh",
+                                                "rsyslog",
                                                 "postfix",
+                                                "postgres",
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
-                                                "pmg-daily"
+                                                "pmg-daily",
+                                                "pmgspamreport"
                                              ],
                                              "type" : "string"
                                           }
@@ -6900,12 +7183,16 @@ var pmgapi = [
                                                 "pmgdaemon",
                                                 "pmgpolicy",
                                                 "pmg-smtp-filter",
-                                                "sshd",
-                                                "syslog",
+                                                "pmgtunnel",
+                                                "pmgmirror",
+                                                "ssh",
+                                                "rsyslog",
                                                 "postfix",
+                                                "postgres",
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
-                                                "pmg-daily"
+                                                "pmg-daily",
+                                                "pmgspamreport"
                                              ],
                                              "type" : "string"
                                           }
@@ -6946,12 +7233,16 @@ var pmgapi = [
                                           "pmgdaemon",
                                           "pmgpolicy",
                                           "pmg-smtp-filter",
-                                          "sshd",
-                                          "syslog",
+                                          "pmgtunnel",
+                                          "pmgmirror",
+                                          "ssh",
+                                          "rsyslog",
                                           "postfix",
+                                          "postgres",
                                           "systemd-timesyncd",
                                           "pmg-hourly",
-                                          "pmg-daily"
+                                          "pmg-daily",
+                                          "pmgspamreport"
                                        ],
                                        "type" : "string"
                                     }
@@ -7088,6 +7379,13 @@ var pmgapi = [
                               "node" : {
                                  "description" : "The cluster node name.",
                                  "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "service" : {
+                                 "description" : "Service ID",
+                                 "maxLength" : 128,
+                                 "optional" : 1,
                                  "type" : "string",
                                  "typetext" : "<string>"
                               },
@@ -7393,6 +7691,51 @@ var pmgapi = [
                   "leaf" : 1,
                   "path" : "/nodes/{node}/time",
                   "text" : "time"
+               },
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Read server status. This is used by the cluster manager to test the node health.",
+                        "method" : "GET",
+                        "name" : "status",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "additionalProperties" : 1,
+                           "properties" : {
+                              "insync" : {
+                                 "description" : "Database is synced with other nodes.",
+                                 "type" : "boolean"
+                              },
+                              "time" : {
+                                 "description" : "Seconds since 1970-01-01 00:00:00 UTC.",
+                                 "minimum" : 1297163644,
+                                 "type" : "integer"
+                              },
+                              "uptime" : {
+                                 "description" : "The uptime of the system in seconds.",
+                                 "minimum" : 0,
+                                 "type" : "integer"
+                              }
+                           },
+                           "type" : "object"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/nodes/{node}/status",
+                  "text" : "status"
                }
             ],
             "info" : {
@@ -7927,6 +8270,576 @@ var pmgapi = [
       "leaf" : 0,
       "path" : "/access",
       "text" : "access"
+   },
+   {
+      "children" : [
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "description" : "Delete user whitelist entries.",
+                        "method" : "DELETE",
+                        "name" : "whitelist_delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "address" : {
+                                 "description" : "The address you want to remove.",
+                                 "maxLength" : 512,
+                                 "pattern" : "[a-zA-Z0-9\\+\\-\\_\\*\\.\\@]+",
+                                 "type" : "string"
+                              },
+                              "pmail" : {
+                                 "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                                 "format" : "email",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit",
+                              "quser"
+                           ]
+                        },
+                        "protected" : 1,
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/quarantine/whitelist/{address}",
+                  "text" : "{address}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "Show user whitelist.",
+                  "method" : "GET",
+                  "name" : "whitelist",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "pmail" : {
+                           "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                           "format" : "email",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "address" : {
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Add user whitelist entries.",
+                  "method" : "POST",
+                  "name" : "whitelist_add",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "address" : {
+                           "description" : "The address you want to add.",
+                           "maxLength" : 512,
+                           "pattern" : "[a-zA-Z0-9\\+\\-\\_\\*\\.\\@]+",
+                           "type" : "string"
+                        },
+                        "pmail" : {
+                           "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                           "format" : "email",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "protected" : 1,
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/quarantine/whitelist",
+            "text" : "whitelist"
+         },
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "description" : "Delete user blacklist entries.",
+                        "method" : "DELETE",
+                        "name" : "blacklist_delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "address" : {
+                                 "description" : "The address you want to remove.",
+                                 "maxLength" : 512,
+                                 "pattern" : "[a-zA-Z0-9\\+\\-\\_\\*\\.\\@]+",
+                                 "type" : "string"
+                              },
+                              "pmail" : {
+                                 "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                                 "format" : "email",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit",
+                              "quser"
+                           ]
+                        },
+                        "protected" : 1,
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/quarantine/blacklist/{address}",
+                  "text" : "{address}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "Show user blacklist.",
+                  "method" : "GET",
+                  "name" : "blacklist",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "pmail" : {
+                           "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                           "format" : "email",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "address" : {
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Add user blacklist entries.",
+                  "method" : "POST",
+                  "name" : "blacklist_add",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "address" : {
+                           "description" : "The address you want to add.",
+                           "maxLength" : 512,
+                           "pattern" : "[a-zA-Z0-9\\+\\-\\_\\*\\.\\@]+",
+                           "type" : "string"
+                        },
+                        "pmail" : {
+                           "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                           "format" : "email",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "protected" : 1,
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/quarantine/blacklist",
+            "text" : "blacklist"
+         },
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Show spam mails distribution (per day).",
+                        "method" : "GET",
+                        "name" : "spamlist",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "endtime" : {
+                                 "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - N)"
+                              },
+                              "pmail" : {
+                                 "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                                 "format" : "email",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "starttime" : {
+                                 "description" : "Only consider entries newer than 'starttime' (unix epoch).",
+                                 "minimum" : 0,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit",
+                              "quser"
+                           ]
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "bytes" : {
+                                    "description" : "Size of raw email.",
+                                    "type" : "integer"
+                                 },
+                                 "envelope_sender" : {
+                                    "description" : "SMTP envelope sender.",
+                                    "type" : "string"
+                                 },
+                                 "from" : {
+                                    "description" : "Header 'From' field.",
+                                    "type" : "string"
+                                 },
+                                 "id" : {
+                                    "description" : "Unique ID",
+                                    "type" : "string"
+                                 },
+                                 "receiver" : {
+                                    "description" : "Receiver email address",
+                                    "type" : "string"
+                                 },
+                                 "sender" : {
+                                    "description" : "Header 'Sender' field.",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 },
+                                 "spamlevel" : {
+                                    "description" : "Spam score.",
+                                    "type" : "number"
+                                 },
+                                 "subject" : {
+                                    "description" : "Header 'Subject' field.",
+                                    "type" : "string"
+                                 },
+                                 "time" : {
+                                    "description" : "Receive time stamp",
+                                    "type" : "integer"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/quarantine/spam/{starttime}",
+                  "text" : "{starttime}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "Show spam mails distribution (per day).",
+                  "method" : "GET",
+                  "name" : "spam",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch).",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "pmail" : {
+                           "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                           "format" : "email",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'startime' (unix epoch).",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "count" : {
+                              "description" : "Number of quarantine entries.",
+                              "type" : "integer"
+                           },
+                           "day" : {
+                              "description" : "Day (as unix epoch).",
+                              "type" : "integer"
+                           },
+                           "spamavg" : {
+                              "description" : "Average spam level.",
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{day}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/quarantine/spam",
+            "text" : "spam"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get email data. There is a special formatter called 'htmlmail' to get sanitized html view of the mail content (use the '/api2/htmlmail/quarantine/content' url).",
+                  "method" : "GET",
+                  "name" : "content",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "id" : {
+                           "description" : "Unique ID",
+                           "maxLength" : 40,
+                           "pattern" : "C\\d+R\\d+",
+                           "type" : "string"
+                        },
+                        "raw" : {
+                           "default" : 0,
+                           "description" : "Display 'raw' eml data. This is only used with the 'htmlmail' formatter.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "returns" : {
+                     "properties" : {
+                        "bytes" : {
+                           "description" : "Size of raw email.",
+                           "type" : "integer"
+                        },
+                        "content" : {
+                           "description" : "Raw email data (first 4096 bytes). Useful for preview. NOTE: The  'htmlmail' formatter displays the whole email.",
+                           "type" : "string"
+                        },
+                        "envelope_sender" : {
+                           "description" : "SMTP envelope sender.",
+                           "type" : "string"
+                        },
+                        "from" : {
+                           "description" : "Header 'From' field.",
+                           "type" : "string"
+                        },
+                        "header" : {
+                           "description" : "Raw email header data.",
+                           "type" : "string"
+                        },
+                        "id" : {
+                           "description" : "Unique ID",
+                           "type" : "string"
+                        },
+                        "receiver" : {
+                           "description" : "Receiver email address",
+                           "type" : "string"
+                        },
+                        "sender" : {
+                           "description" : "Header 'Sender' field.",
+                           "optional" : 1,
+                           "type" : "string"
+                        },
+                        "spaminfo" : {
+                           "description" : "Information about matched spam tests (name, score, desc, url).",
+                           "type" : "array"
+                        },
+                        "spamlevel" : {
+                           "description" : "Spam score.",
+                           "type" : "number"
+                        },
+                        "subject" : {
+                           "description" : "Header 'Subject' field.",
+                           "type" : "string"
+                        },
+                        "time" : {
+                           "description" : "Receive time stamp",
+                           "type" : "integer"
+                        }
+                     },
+                     "type" : "object"
+                  }
+               },
+               "POST" : {
+                  "description" : "Execute quarantine actions.",
+                  "method" : "POST",
+                  "name" : "action",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "action" : {
+                           "description" : "Action - specify what you want to do with the mail.",
+                           "enum" : [
+                              "whitelist",
+                              "blacklist",
+                              "deliver",
+                              "delete"
+                           ],
+                           "type" : "string"
+                        },
+                        "id" : {
+                           "description" : "Unique ID",
+                           "maxLength" : 40,
+                           "pattern" : "C\\d+R\\d+",
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "quser"
+                     ]
+                  },
+                  "protected" : 1,
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/content",
+            "text" : "content"
+         }
+      ],
+      "info" : {
+         "GET" : {
+            "description" : "Directory index.",
+            "method" : "GET",
+            "name" : "index",
+            "parameters" : {
+               "additionalProperties" : 0
+            },
+            "permissions" : {
+               "user" : "all"
+            },
+            "returns" : {
+               "items" : {
+                  "properties" : {},
+                  "type" : "object"
+               },
+               "links" : [
+                  {
+                     "href" : "{name}",
+                     "rel" : "child"
+                  }
+               ],
+               "type" : "array"
+            }
+         }
+      },
+      "leaf" : 0,
+      "path" : "/quarantine",
+      "text" : "quarantine"
    },
    {
       "info" : {

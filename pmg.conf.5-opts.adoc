@@ -276,7 +276,7 @@ Quarantine life time (days)
 
 Text for 'From' header in daily spam report mails.
 
-`reportstyle`: `<custom | none | outlook | short | verbose>` ('default =' `verbose`)::
+`reportstyle`: `<custom | none | short | verbose>` ('default =' `verbose`)::
 
 Spam report style.
 
