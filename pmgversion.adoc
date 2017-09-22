@@ -1,0 +1,53 @@
+[[chapter_pmgversion]]
+ifdef::manvolnum[]
+pmgversion(1)
+=============
+:pmg-toplevel:
+
+NAME
+----
+
+pmgversion - Proxmox Mail Gateway Version Info
+
+
+SYNOPSIS
+--------
+
+include::pmgversion.1-synopsis.adoc[]
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Proxmox Mail Gateway Version Info
+=================================
+:pmg-toplevel:
+endif::manvolnum[]
+
+Print version information for Proxmox Mail Gateway packages.
+
+Examples
+--------
+
+Print Proxmox Mail Gateway version:
+
+----
+# pmgversion
+----
+
+List version details for important packages: 
+
+----
+# pmgversion -v
+----
+
+Please use the Debian package management for details about other packages
+
+----
+# dpkg -l
+----
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
+
