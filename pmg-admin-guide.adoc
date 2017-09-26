@@ -83,6 +83,8 @@ include::pmgqm.adoc[]
 
 include::pmgreport.adoc[]
 
+include::pmgupgrade.adoc[]
+
 :leveloffset: 0
 
 

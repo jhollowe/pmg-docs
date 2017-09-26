@@ -1,0 +1,42 @@
+[[chapter_pmgupgrade]]
+ifdef::manvolnum[]
+pmgupgrade(1)
+=============
+:pmg-toplevel:
+
+NAME
+----
+
+pmgupgrade - Upgrade Proxmox Mail Gateway
+
+
+SYNOPSIS
+--------
+
+include::pmgupgrade.1-synopsis.adoc[]
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Upgrade Proxmox Mail Gateway
+============================
+:pmg-toplevel:
+endif::manvolnum[]
+
+This is a small wrapper around `apt-get dist-upgrade`. We use this to
+print additional information (kernel restart required?), and
+optionally run an interactive shell after the update. This binary is
+invoked when starting an upgrade using the web GUI.
+
+If you are already logged in on the console, it is peferable to invoke
+`apt-get` directly.
+
+----
+# apt-get dist-upgrade
+----
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
+
