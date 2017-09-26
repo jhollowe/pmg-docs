@@ -1089,6 +1089,533 @@ var pmgapi = [
                               "leaf" : 0,
                               "path" : "/config/ruledb/what/{ogroup}/objects",
                               "text" : "objects"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'ContentType Filter' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_contenttype",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'ContentType Filter' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_contenttype",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "contenttype" : {
+                                                   "description" : "Content Type",
+                                                   "maxLength" : 1024,
+                                                   "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                                   "type" : "string"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/what/{ogroup}/contenttype/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'ContentType Filter' object.",
+                                    "method" : "POST",
+                                    "name" : "contenttype",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "contenttype" : {
+                                             "description" : "Content Type",
+                                             "maxLength" : 1024,
+                                             "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                             "type" : "string"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/what/{ogroup}/contenttype",
+                              "text" : "contenttype"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'Match Field' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_matchfield",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'Match Field' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_matchfield",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "field" : {
+                                                   "description" : "The Field",
+                                                   "maxLength" : 1024,
+                                                   "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                                   "type" : "string"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "value" : {
+                                                   "description" : "The Value",
+                                                   "maxLength" : 1024,
+                                                   "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                                   "type" : "string"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/what/{ogroup}/matchfield/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'Match Field' object.",
+                                    "method" : "POST",
+                                    "name" : "matchfield",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "field" : {
+                                             "description" : "The Field",
+                                             "maxLength" : 1024,
+                                             "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                             "type" : "string"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "value" : {
+                                             "description" : "The Value",
+                                             "maxLength" : 1024,
+                                             "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/what/{ogroup}/matchfield",
+                              "text" : "matchfield"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'Spam Filter' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_spamfilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'Spam Filter' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_spamfilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "spamlevel" : {
+                                                   "description" : "Spam Level",
+                                                   "minimum" : 0,
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer> (0 - N)"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/what/{ogroup}/spamfilter/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'Spam Filter' object.",
+                                    "method" : "POST",
+                                    "name" : "spamfilter",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          },
+                                          "spamlevel" : {
+                                             "description" : "Spam Level",
+                                             "minimum" : 0,
+                                             "type" : "integer",
+                                             "typetext" : "<integer> (0 - N)"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/what/{ogroup}/spamfilter",
+                              "text" : "spamfilter"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'Archive Filter' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_archivefilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'Archive Filter' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_archivefilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "contenttype" : {
+                                                   "description" : "Content Type",
+                                                   "maxLength" : 1024,
+                                                   "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                                   "type" : "string"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/what/{ogroup}/archivefilter/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'Archive Filter' object.",
+                                    "method" : "POST",
+                                    "name" : "archivefilter",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "contenttype" : {
+                                             "description" : "Content Type",
+                                             "maxLength" : 1024,
+                                             "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                             "type" : "string"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/what/{ogroup}/archivefilter",
+                              "text" : "archivefilter"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'Match Filename' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_filenamefilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'Match Filename' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_filenamefilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "filename" : {
+                                                   "description" : "Filename filter",
+                                                   "maxLength" : 1024,
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/what/{ogroup}/filenamefilter/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'Match Filename' object.",
+                                    "method" : "POST",
+                                    "name" : "filenamefilter",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "filename" : {
+                                             "description" : "Filename filter",
+                                             "maxLength" : 1024,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/what/{ogroup}/filenamefilter",
+                              "text" : "filenamefilter"
                            }
                         ],
                         "info" : {
@@ -4813,6 +5340,35 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "description" : "Get Mime Types List",
+                  "method" : "GET",
+                  "name" : "index",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "mimetype" : {
+                              "type" : "string"
+                           },
+                           "text" : {
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/config/mimetypes",
+            "text" : "mimetypes"
+         },
+         {
+            "info" : {
+               "GET" : {
                   "description" : "Read admin configuration properties.",
                   "method" : "GET",
                   "name" : "read_admin_section",
@@ -4831,6 +5387,13 @@ var pmgapi = [
                   "parameters" : {
                      "additionalProperties" : 0,
                      "properties" : {
+                        "advfilter" : {
+                           "default" : 1,
+                           "description" : "Use advanced filters for statistic.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
                         "dailyreport" : {
                            "default" : 1,
                            "description" : "Send daily reports.",
@@ -4868,31 +5431,11 @@ var pmgapi = [
                            "type" : "string",
                            "typetext" : "<string>"
                         },
-                        "proxypassword" : {
-                           "description" : "HTTP proxy password.",
+                        "http_proxy" : {
+                           "description" : "Specify external http proxy which is used for downloads (example: 'http://username:password@host:port/')",
                            "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
-                        },
-                        "proxyport" : {
-                           "default" : 8080,
-                           "description" : "HTTP proxy port.",
-                           "minimum" : 1,
-                           "optional" : 1,
-                           "type" : "integer",
-                           "typetext" : "<integer> (1 - N)"
-                        },
-                        "proxyserver" : {
-                           "description" : "HTTP proxy server address.",
-                           "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
-                        },
-                        "proxyuser" : {
-                           "description" : "HTTP proxy user name.",
-                           "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
+                           "pattern" : "http://.*",
+                           "type" : "string"
                         },
                         "statlifetime" : {
                            "default" : 7,
@@ -5581,6 +6124,46 @@ var pmgapi = [
             "leaf" : 1,
             "path" : "/config/virusquar",
             "text" : "virusquar"
+         },
+         {
+            "info" : {
+               "POST" : {
+                  "description" : "Test Regex",
+                  "method" : "POST",
+                  "name" : "regextest",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "regex" : {
+                           "description" : "The Regex to test",
+                           "maxLength" : 1024,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "text" : {
+                           "description" : "The String to test",
+                           "maxLength" : 1024,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "protected" : 0,
+                  "returns" : {
+                     "type" : "number"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/config/regextest",
+            "text" : "regextest"
          }
       ],
       "info" : {
@@ -5933,6 +6516,32 @@ var pmgapi = [
                            }
                         ],
                         "info" : {
+                           "DELETE" : {
+                              "description" : "Delete all mails in all posfix queues.",
+                              "method" : "DELETE",
+                              "name" : "delete_all_queues",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           },
                            "GET" : {
                               "description" : "Directory index.",
                               "method" : "GET",
@@ -6991,6 +7600,7 @@ var pmgapi = [
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
                                                 "pmg-daily",
+                                                "pmgreport",
                                                 "pmgspamreport"
                                              ],
                                              "type" : "string"
@@ -7042,6 +7652,7 @@ var pmgapi = [
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
                                                 "pmg-daily",
+                                                "pmgreport",
                                                 "pmgspamreport"
                                              ],
                                              "type" : "string"
@@ -7092,6 +7703,7 @@ var pmgapi = [
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
                                                 "pmg-daily",
+                                                "pmgreport",
                                                 "pmgspamreport"
                                              ],
                                              "type" : "string"
@@ -7142,6 +7754,7 @@ var pmgapi = [
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
                                                 "pmg-daily",
+                                                "pmgreport",
                                                 "pmgspamreport"
                                              ],
                                              "type" : "string"
@@ -7192,6 +7805,7 @@ var pmgapi = [
                                                 "systemd-timesyncd",
                                                 "pmg-hourly",
                                                 "pmg-daily",
+                                                "pmgreport",
                                                 "pmgspamreport"
                                              ],
                                              "type" : "string"
@@ -7242,6 +7856,7 @@ var pmgapi = [
                                           "systemd-timesyncd",
                                           "pmg-hourly",
                                           "pmg-daily",
+                                          "pmgreport",
                                           "pmgspamreport"
                                        ],
                                        "type" : "string"
@@ -7308,6 +7923,489 @@ var pmgapi = [
                   "leaf" : 0,
                   "path" : "/nodes/{node}/services",
                   "text" : "services"
+               },
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Read subscription info.",
+                        "method" : "GET",
+                        "name" : "get",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit",
+                              "quser"
+                           ]
+                        },
+                        "proxyto" : "node",
+                        "returns" : {
+                           "type" : "object"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/nodes/{node}/subscription",
+                  "text" : "subscription"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "List available updates.",
+                              "method" : "GET",
+                              "name" : "list_updates",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {},
+                                    "type" : "object"
+                                 },
+                                 "type" : "array"
+                              }
+                           },
+                           "POST" : {
+                              "description" : "This is used to resynchronize the package index files from their sources (apt-get update).",
+                              "method" : "POST",
+                              "name" : "update_database",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "notify" : {
+                                       "default" : 0,
+                                       "description" : "Send notification mail about new packages (to email address specified for user 'root@pam').",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    },
+                                    "quiet" : {
+                                       "default" : 0,
+                                       "description" : "Only produces output suitable for logging, omitting progress indicators.",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    }
+                                 }
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/apt/update",
+                        "text" : "update"
+                     },
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Get package changelogs.",
+                              "method" : "GET",
+                              "name" : "changelog",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "name" : {
+                                       "description" : "Package name.",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "version" : {
+                                       "description" : "Package version.",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/apt/changelog",
+                        "text" : "changelog"
+                     },
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Get package information for important Proxmox packages.",
+                              "method" : "GET",
+                              "name" : "versions",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "perm",
+                                    "/nodes/{node}",
+                                    [
+                                       "Sys.Audit"
+                                    ]
+                                 ]
+                              },
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {},
+                                    "type" : "object"
+                                 },
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/apt/versions",
+                        "text" : "versions"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "Directory index for apt (Advanced Package Tool).",
+                        "method" : "GET",
+                        "name" : "index",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "user" : "all"
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "id" : {
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{id}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/nodes/{node}/apt",
+                  "text" : "apt"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "Get the detailed syslog entries for a specific mail ID.",
+                              "method" : "GET",
+                              "name" : "maillog",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "endtime" : {
+                                       "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                                       "minimum" : 1,
+                                       "optional" : 1,
+                                       "type" : "integer",
+                                       "typetext" : "<integer> (1 - N)"
+                                    },
+                                    "id" : {
+                                       "description" : "Mail ID (as returend by the list API).",
+                                       "maxLength" : 64,
+                                       "minLength" : 3,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "starttime" : {
+                                       "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                                       "minimum" : 0,
+                                       "optional" : 1,
+                                       "type" : "integer",
+                                       "typetext" : "<integer> (0 - N)"
+                                    }
+                                 }
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "properties" : {
+                                    "client" : {
+                                       "description" : "Client address",
+                                       "optional" : 1,
+                                       "type" : "string"
+                                    },
+                                    "dstatus" : {
+                                       "description" : "Delivery status.",
+                                       "maxLength" : 1,
+                                       "minLength" : 1,
+                                       "type" : "string"
+                                    },
+                                    "from" : {
+                                       "description" : "Sender email address.",
+                                       "type" : "string"
+                                    },
+                                    "id" : {
+                                       "description" : "Unique ID.",
+                                       "type" : "string"
+                                    },
+                                    "logs" : {
+                                       "items" : {
+                                          "type" : "string"
+                                       },
+                                       "type" : "array"
+                                    },
+                                    "msgid" : {
+                                       "description" : "SMTP message ID.",
+                                       "optional" : 1,
+                                       "type" : "string"
+                                    },
+                                    "qid" : {
+                                       "description" : "Postfix qmgr ID.",
+                                       "optional" : 1,
+                                       "type" : "string"
+                                    },
+                                    "relay" : {
+                                       "description" : "ID of relayed mail.",
+                                       "optional" : 1,
+                                       "type" : "string"
+                                    },
+                                    "rstatus" : {
+                                       "description" : "Delivery status of relayed mail.",
+                                       "maxLength" : 1,
+                                       "minLength" : 1,
+                                       "optional" : 1,
+                                       "type" : "string"
+                                    },
+                                    "size" : {
+                                       "description" : "The size of the raw email.",
+                                       "optional" : 1,
+                                       "type" : "number"
+                                    },
+                                    "time" : {
+                                       "description" : "Delivery timestamp.",
+                                       "type" : "integer"
+                                    },
+                                    "to" : {
+                                       "description" : "Receiver email address.",
+                                       "type" : "string"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/tracker/{id}",
+                        "text" : "{id}"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "Read mail list.",
+                        "method" : "GET",
+                        "name" : "list_mails",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "endtime" : {
+                                 "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - N)"
+                              },
+                              "from" : {
+                                 "description" : "Sender email address filter.",
+                                 "maxLength" : 256,
+                                 "minLength" : 1,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "greylist" : {
+                                 "default" : 0,
+                                 "description" : "Include Greylisted entries.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "ndr" : {
+                                 "default" : 0,
+                                 "description" : "Include NDRs (non delivery reports).",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "starttime" : {
+                                 "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              },
+                              "target" : {
+                                 "description" : "Receiver email address filter.",
+                                 "maxLength" : 256,
+                                 "minLength" : 1,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "xfilter" : {
+                                 "description" : "Only include mails containing this filter string.",
+                                 "maxLength" : 256,
+                                 "minLength" : 1,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "client" : {
+                                    "description" : "Client address",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 },
+                                 "dstatus" : {
+                                    "description" : "Delivery status.",
+                                    "maxLength" : 1,
+                                    "minLength" : 1,
+                                    "type" : "string"
+                                 },
+                                 "from" : {
+                                    "description" : "Sender email address.",
+                                    "type" : "string"
+                                 },
+                                 "id" : {
+                                    "description" : "Unique ID.",
+                                    "type" : "string"
+                                 },
+                                 "msgid" : {
+                                    "description" : "SMTP message ID.",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 },
+                                 "qid" : {
+                                    "description" : "Postfix qmgr ID.",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 },
+                                 "relay" : {
+                                    "description" : "ID of relayed mail.",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 },
+                                 "rstatus" : {
+                                    "description" : "Delivery status of relayed mail.",
+                                    "maxLength" : 1,
+                                    "minLength" : 1,
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 },
+                                 "size" : {
+                                    "description" : "The size of the raw email.",
+                                    "optional" : 1,
+                                    "type" : "number"
+                                 },
+                                 "time" : {
+                                    "description" : "Delivery timestamp.",
+                                    "type" : "integer"
+                                 },
+                                 "to" : {
+                                    "description" : "Receiver email address.",
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{id}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/nodes/{node}/tracker",
+                  "text" : "tracker"
                },
                {
                   "info" : {
@@ -7447,6 +8545,13 @@ var pmgapi = [
                                  "format" : "pve-node",
                                  "type" : "string",
                                  "typetext" : "<string>"
+                              },
+                              "upgrade" : {
+                                 "default" : 0,
+                                 "description" : "Run 'apt-get dist-upgrade' instead of normal shell.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
                               },
                               "websocket" : {
                                  "default" : 1,
@@ -8287,7 +9392,8 @@ var pmgapi = [
                               "address" : {
                                  "description" : "The address you want to remove.",
                                  "maxLength" : 512,
-                                 "pattern" : "[a-zA-Z0-9\\+\\-\\_\\*\\.\\@]+",
+                                 "minLength" : 3,
+                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
                                  "type" : "string"
                               },
                               "pmail" : {
@@ -8365,7 +9471,8 @@ var pmgapi = [
                         "address" : {
                            "description" : "The address you want to add.",
                            "maxLength" : 512,
-                           "pattern" : "[a-zA-Z0-9\\+\\-\\_\\*\\.\\@]+",
+                           "minLength" : 3,
+                           "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
                            "type" : "string"
                         },
                         "pmail" : {
@@ -8409,7 +9516,8 @@ var pmgapi = [
                               "address" : {
                                  "description" : "The address you want to remove.",
                                  "maxLength" : 512,
-                                 "pattern" : "[a-zA-Z0-9\\+\\-\\_\\*\\.\\@]+",
+                                 "minLength" : 3,
+                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
                                  "type" : "string"
                               },
                               "pmail" : {
@@ -8487,7 +9595,8 @@ var pmgapi = [
                         "address" : {
                            "description" : "The address you want to add.",
                            "maxLength" : 512,
-                           "pattern" : "[a-zA-Z0-9\\+\\-\\_\\*\\.\\@]+",
+                           "minLength" : 3,
+                           "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
                            "type" : "string"
                         },
                         "pmail" : {
@@ -8518,108 +9627,143 @@ var pmgapi = [
             "text" : "blacklist"
          },
          {
-            "children" : [
-               {
-                  "info" : {
-                     "GET" : {
-                        "description" : "Show spam mails distribution (per day).",
-                        "method" : "GET",
-                        "name" : "spamlist",
-                        "parameters" : {
-                           "additionalProperties" : 0,
-                           "properties" : {
-                              "endtime" : {
-                                 "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
-                                 "minimum" : 1,
-                                 "optional" : 1,
-                                 "type" : "integer",
-                                 "typetext" : "<integer> (1 - N)"
-                              },
-                              "pmail" : {
-                                 "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
-                                 "format" : "email",
-                                 "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
-                              },
-                              "starttime" : {
-                                 "description" : "Only consider entries newer than 'starttime' (unix epoch).",
-                                 "minimum" : 0,
-                                 "type" : "integer",
-                                 "typetext" : "<integer> (0 - N)"
-                              }
-                           }
+            "info" : {
+               "GET" : {
+                  "description" : "Get a list of receivers of spam in the given timespan (Default the last 24 hours).",
+                  "method" : "GET",
+                  "name" : "spamusers",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
                         },
-                        "permissions" : {
-                           "check" : [
-                              "admin",
-                              "qmanager",
-                              "audit",
-                              "quser"
-                           ]
-                        },
-                        "returns" : {
-                           "items" : {
-                              "properties" : {
-                                 "bytes" : {
-                                    "description" : "Size of raw email.",
-                                    "type" : "integer"
-                                 },
-                                 "envelope_sender" : {
-                                    "description" : "SMTP envelope sender.",
-                                    "type" : "string"
-                                 },
-                                 "from" : {
-                                    "description" : "Header 'From' field.",
-                                    "type" : "string"
-                                 },
-                                 "id" : {
-                                    "description" : "Unique ID",
-                                    "type" : "string"
-                                 },
-                                 "receiver" : {
-                                    "description" : "Receiver email address",
-                                    "type" : "string"
-                                 },
-                                 "sender" : {
-                                    "description" : "Header 'Sender' field.",
-                                    "optional" : 1,
-                                    "type" : "string"
-                                 },
-                                 "spamlevel" : {
-                                    "description" : "Spam score.",
-                                    "type" : "number"
-                                 },
-                                 "subject" : {
-                                    "description" : "Header 'Subject' field.",
-                                    "type" : "string"
-                                 },
-                                 "time" : {
-                                    "description" : "Receive time stamp",
-                                    "type" : "integer"
-                                 }
-                              },
-                              "type" : "object"
-                           },
-                           "type" : "array"
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
                         }
                      }
                   },
-                  "leaf" : 1,
-                  "path" : "/quarantine/spam/{starttime}",
-                  "text" : "{starttime}"
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "mail" : {
+                              "description" : "the receiving email",
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
                }
-            ],
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/spamusers",
+            "text" : "spamusers"
+         },
+         {
             "info" : {
                "GET" : {
-                  "description" : "Show spam mails distribution (per day).",
+                  "description" : "Get Spam Quarantine Status",
+                  "method" : "GET",
+                  "name" : "spamstatus",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "properties" : {
+                        "avgbytes" : {
+                           "description" : "Average size of stored mails in bytes.",
+                           "type" : "number"
+                        },
+                        "avgspam" : {
+                           "description" : "Average spam level.",
+                           "type" : "number"
+                        },
+                        "count" : {
+                           "description" : "Number of stored mails.",
+                           "type" : "integer"
+                        },
+                        "mbytes" : {
+                           "description" : "Estimated disk space usage in MByte.",
+                           "type" : "number"
+                        }
+                     },
+                     "type" : "object"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/spamstatus",
+            "text" : "spamstatus"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get a list of users with whitelist/blacklist setttings.",
+                  "method" : "GET",
+                  "name" : "quarusers",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "mail" : {
+                              "description" : "the receiving email",
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/quarusers",
+            "text" : "quarusers"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get a list of quarantined spam mails in the given timeframe (default the last 24 hours) for the given user.",
                   "method" : "GET",
                   "name" : "spam",
                   "parameters" : {
                      "additionalProperties" : 0,
                      "properties" : {
                         "endtime" : {
-                           "description" : "Only consider entries older than 'endtime' (unix epoch).",
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
                            "minimum" : 1,
                            "optional" : 1,
                            "type" : "integer",
@@ -8633,7 +9777,7 @@ var pmgapi = [
                            "typetext" : "<string>"
                         },
                         "starttime" : {
-                           "description" : "Only consider entries newer than 'startime' (unix epoch).",
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
                            "minimum" : 0,
                            "optional" : 1,
                            "type" : "integer",
@@ -8652,34 +9796,175 @@ var pmgapi = [
                   "returns" : {
                      "items" : {
                         "properties" : {
-                           "count" : {
-                              "description" : "Number of quarantine entries.",
+                           "bytes" : {
+                              "description" : "Size of raw email.",
                               "type" : "integer"
                            },
-                           "day" : {
-                              "description" : "Day (as unix epoch).",
-                              "type" : "integer"
+                           "envelope_sender" : {
+                              "description" : "SMTP envelope sender.",
+                              "type" : "string"
                            },
-                           "spamavg" : {
-                              "description" : "Average spam level.",
+                           "from" : {
+                              "description" : "Header 'From' field.",
+                              "type" : "string"
+                           },
+                           "id" : {
+                              "description" : "Unique ID",
+                              "type" : "string"
+                           },
+                           "receiver" : {
+                              "description" : "Receiver email address",
+                              "type" : "string"
+                           },
+                           "sender" : {
+                              "description" : "Header 'Sender' field.",
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "spamlevel" : {
+                              "description" : "Spam score.",
                               "type" : "number"
+                           },
+                           "subject" : {
+                              "description" : "Header 'Subject' field.",
+                              "type" : "string"
+                           },
+                           "time" : {
+                              "description" : "Receive time stamp",
+                              "type" : "integer"
                            }
                         },
                         "type" : "object"
                      },
-                     "links" : [
-                        {
-                           "href" : "{day}",
-                           "rel" : "child"
-                        }
-                     ],
                      "type" : "array"
                   }
                }
             },
-            "leaf" : 0,
+            "leaf" : 1,
             "path" : "/quarantine/spam",
             "text" : "spam"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get a list of quarantined virus mails in the given timeframe (default the last 24 hours).",
+                  "method" : "GET",
+                  "name" : "virus",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "bytes" : {
+                              "description" : "Size of raw email.",
+                              "type" : "integer"
+                           },
+                           "envelope_sender" : {
+                              "description" : "SMTP envelope sender.",
+                              "type" : "string"
+                           },
+                           "from" : {
+                              "description" : "Header 'From' field.",
+                              "type" : "string"
+                           },
+                           "id" : {
+                              "description" : "Unique ID",
+                              "type" : "string"
+                           },
+                           "receiver" : {
+                              "description" : "Receiver email address",
+                              "type" : "string"
+                           },
+                           "sender" : {
+                              "description" : "Header 'Sender' field.",
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "subject" : {
+                              "description" : "Header 'Subject' field.",
+                              "type" : "string"
+                           },
+                           "time" : {
+                              "description" : "Receive time stamp",
+                              "type" : "integer"
+                           },
+                           "virusname" : {
+                              "description" : "Virus name.",
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/virus",
+            "text" : "virus"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get Virus Quarantine Status",
+                  "method" : "GET",
+                  "name" : "virusstatus",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "properties" : {
+                        "avgbytes" : {
+                           "description" : "Average size of stored mails in bytes.",
+                           "type" : "number"
+                        },
+                        "count" : {
+                           "description" : "Number of stored mails.",
+                           "type" : "integer"
+                        },
+                        "mbytes" : {
+                           "description" : "Estimated disk space usage in MByte.",
+                           "type" : "number"
+                        }
+                     },
+                     "type" : "object"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/virusstatus",
+            "text" : "virusstatus"
          },
          {
             "info" : {
@@ -8840,6 +10125,1447 @@ var pmgapi = [
       "leaf" : 0,
       "path" : "/quarantine",
       "text" : "quarantine"
+   },
+   {
+      "children" : [
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Detailed Contact Statistics.",
+                        "method" : "GET",
+                        "name" : "contactdetails",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "contact" : {
+                                 "description" : "Contact email address.",
+                                 "maxLength" : 512,
+                                 "minLength" : 3,
+                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "type" : "string"
+                              },
+                              "day" : {
+                                 "description" : "Day of month. Get statistics for a single day.",
+                                 "maximum" : 31,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 31)"
+                              },
+                              "endtime" : {
+                                 "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - N)"
+                              },
+                              "filter" : {
+                                 "description" : "Sender address filter.",
+                                 "maxLength" : 512,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "month" : {
+                                 "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                                 "maximum" : 12,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 12)"
+                              },
+                              "orderby" : {
+                                 "description" : "Remote sorting configuration(JSON, ExtJS compatible).",
+                                 "maxLength" : 4096,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "starttime" : {
+                                 "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              },
+                              "year" : {
+                                 "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                                 "maximum" : 3000,
+                                 "minimum" : 1900,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1900 - 3000)"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit"
+                           ]
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "blocked" : {
+                                    "description" : "Mail was blocked.",
+                                    "type" : "boolean"
+                                 },
+                                 "bytes" : {
+                                    "description" : "Mail traffic (Bytes).",
+                                    "type" : "number"
+                                 },
+                                 "sender" : {
+                                    "description" : "Sender email.",
+                                    "type" : "string"
+                                 },
+                                 "spamlevel" : {
+                                    "description" : "Spam score.",
+                                    "type" : "number"
+                                 },
+                                 "time" : {
+                                    "description" : "Receive time stamp",
+                                    "type" : "integer"
+                                 },
+                                 "virusinfo" : {
+                                    "description" : "Virus name.",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/statistics/contact/{contact}",
+                  "text" : "{contact}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "Contact Address Statistics.",
+                  "method" : "GET",
+                  "name" : "contact",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "filter" : {
+                           "description" : "Contact address filter.",
+                           "maxLength" : 512,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "orderby" : {
+                           "description" : "Remote sorting configuration(JSON, ExtJS compatible).",
+                           "maxLength" : 4096,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "bytes" : {
+                              "description" : "Mail traffic (Bytes).",
+                              "type" : "number"
+                           },
+                           "contact" : {
+                              "description" : "Contact email.",
+                              "type" : "string"
+                           },
+                           "count" : {
+                              "description" : "Mail count.",
+                              "optional" : 1,
+                              "type" : "number"
+                           },
+                           "viruscount" : {
+                              "description" : "Number of sent virus mails.",
+                              "optional" : 1,
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{contact}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/statistics/contact",
+            "text" : "contact"
+         },
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Detailed Sender Statistics.",
+                        "method" : "GET",
+                        "name" : "senderdetails",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "day" : {
+                                 "description" : "Day of month. Get statistics for a single day.",
+                                 "maximum" : 31,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 31)"
+                              },
+                              "endtime" : {
+                                 "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - N)"
+                              },
+                              "filter" : {
+                                 "description" : "Receiver address filter.",
+                                 "maxLength" : 512,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "month" : {
+                                 "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                                 "maximum" : 12,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 12)"
+                              },
+                              "orderby" : {
+                                 "description" : "Remote sorting configuration(JSON, ExtJS compatible).",
+                                 "maxLength" : 4096,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "sender" : {
+                                 "description" : "Sender email address.",
+                                 "maxLength" : 512,
+                                 "minLength" : 3,
+                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "type" : "string"
+                              },
+                              "starttime" : {
+                                 "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              },
+                              "year" : {
+                                 "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                                 "maximum" : 3000,
+                                 "minimum" : 1900,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1900 - 3000)"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit"
+                           ]
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "blocked" : {
+                                    "description" : "Mail was blocked.",
+                                    "type" : "boolean"
+                                 },
+                                 "bytes" : {
+                                    "description" : "Mail traffic (Bytes).",
+                                    "type" : "number"
+                                 },
+                                 "receiver" : {
+                                    "description" : "Receiver email.",
+                                    "type" : "string"
+                                 },
+                                 "spamlevel" : {
+                                    "description" : "Spam score.",
+                                    "type" : "number"
+                                 },
+                                 "time" : {
+                                    "description" : "Receive time stamp",
+                                    "type" : "integer"
+                                 },
+                                 "virusinfo" : {
+                                    "description" : "Virus name.",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/statistics/sender/{sender}",
+                  "text" : "{sender}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "Sender Address Statistics.",
+                  "method" : "GET",
+                  "name" : "sender",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "filter" : {
+                           "description" : "Sender address filter.",
+                           "maxLength" : 512,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "orderby" : {
+                           "description" : "Remote sorting configuration(JSON, ExtJS compatible).",
+                           "maxLength" : 4096,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "bytes" : {
+                              "description" : "Mail traffic (Bytes).",
+                              "type" : "number"
+                           },
+                           "count" : {
+                              "description" : "Mail count.",
+                              "optional" : 1,
+                              "type" : "number"
+                           },
+                           "sender" : {
+                              "description" : "Sender email.",
+                              "type" : "string"
+                           },
+                           "viruscount" : {
+                              "description" : "Number of sent virus mails.",
+                              "optional" : 1,
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{sender}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/statistics/sender",
+            "text" : "sender"
+         },
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Detailed Receiver Statistics.",
+                        "method" : "GET",
+                        "name" : "receiverdetails",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "day" : {
+                                 "description" : "Day of month. Get statistics for a single day.",
+                                 "maximum" : 31,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 31)"
+                              },
+                              "endtime" : {
+                                 "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - N)"
+                              },
+                              "filter" : {
+                                 "description" : "Sender address filter.",
+                                 "maxLength" : 512,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "month" : {
+                                 "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                                 "maximum" : 12,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 12)"
+                              },
+                              "orderby" : {
+                                 "description" : "Remote sorting configuration(JSON, ExtJS compatible).",
+                                 "maxLength" : 4096,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "receiver" : {
+                                 "description" : "Receiver email address.",
+                                 "maxLength" : 512,
+                                 "minLength" : 3,
+                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "type" : "string"
+                              },
+                              "starttime" : {
+                                 "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              },
+                              "year" : {
+                                 "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                                 "maximum" : 3000,
+                                 "minimum" : 1900,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1900 - 3000)"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit"
+                           ]
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "blocked" : {
+                                    "description" : "Mail was blocked.",
+                                    "type" : "boolean"
+                                 },
+                                 "bytes" : {
+                                    "description" : "Mail traffic (Bytes).",
+                                    "type" : "number"
+                                 },
+                                 "sender" : {
+                                    "description" : "Sender email.",
+                                    "type" : "string"
+                                 },
+                                 "spamlevel" : {
+                                    "description" : "Spam score.",
+                                    "type" : "number"
+                                 },
+                                 "time" : {
+                                    "description" : "Receive time stamp",
+                                    "type" : "integer"
+                                 },
+                                 "virusinfo" : {
+                                    "description" : "Virus name.",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/statistics/receiver/{receiver}",
+                  "text" : "{receiver}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "Receiver Address Statistics.",
+                  "method" : "GET",
+                  "name" : "receiver",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "filter" : {
+                           "description" : "Receiver address filter.",
+                           "maxLength" : 512,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "orderby" : {
+                           "description" : "Remote sorting configuration(JSON, ExtJS compatible).",
+                           "maxLength" : 4096,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "bytes" : {
+                              "description" : "Mail traffic (Bytes).",
+                              "type" : "number"
+                           },
+                           "count" : {
+                              "description" : "Mail count.",
+                              "optional" : 1,
+                              "type" : "number"
+                           },
+                           "receiver" : {
+                              "description" : "Sender email.",
+                              "type" : "string"
+                           },
+                           "spamcount" : {
+                              "description" : "Number of sent spam mails.",
+                              "optional" : 1,
+                              "type" : "number"
+                           },
+                           "viruscount" : {
+                              "description" : "Number of sent virus mails.",
+                              "optional" : 1,
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{receiver}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/statistics/receiver",
+            "text" : "receiver"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Mail Domains Statistics.",
+                  "method" : "GET",
+                  "name" : "domains",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "count_in" : {
+                              "description" : "Incoming mail count.",
+                              "type" : "number"
+                           },
+                           "count_out" : {
+                              "description" : "Outgoing mail count.",
+                              "type" : "number"
+                           },
+                           "domain" : {
+                              "description" : "Domain name.",
+                              "type" : "string"
+                           },
+                           "mbytes_in" : {
+                              "description" : "Incoming mail traffic (Mebibytes).",
+                              "type" : "number"
+                           },
+                           "mbytes_out" : {
+                              "description" : "Outgoing mail traffic (Mebibytes).",
+                              "type" : "number"
+                           },
+                           "spamcount_in" : {
+                              "description" : "Incoming spam mails.",
+                              "type" : "number"
+                           },
+                           "spamcount_out" : {
+                              "description" : "Outgoing spam mails.",
+                              "type" : "number"
+                           },
+                           "viruscount_in" : {
+                              "description" : "Number of incoming virus mails.",
+                              "type" : "number"
+                           },
+                           "viruscount_out" : {
+                              "description" : "Number of outgoing virus mails.",
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/domains",
+            "text" : "domains"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "General Mail Statistics.",
+                  "method" : "GET",
+                  "name" : "mail",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "properties" : {
+                        "avptime" : {
+                           "description" : "Average mail processing time in seconds.",
+                           "type" : "number"
+                        },
+                        "bounces_in" : {
+                           "description" : "Incoming bounce mail count (sender = <>).",
+                           "type" : "number"
+                        },
+                        "bounces_out" : {
+                           "description" : "Outgoing bounce mail count (sender = <>).",
+                           "type" : "number"
+                        },
+                        "bytes_in" : {
+                           "description" : "Incoming mail traffic (bytes).",
+                           "type" : "number"
+                        },
+                        "bytes_out" : {
+                           "description" : "Outgoing mail traffic (bytes).",
+                           "type" : "number"
+                        },
+                        "count" : {
+                           "description" : "Overall mail count (in and out).",
+                           "type" : "number"
+                        },
+                        "count_in" : {
+                           "description" : "Incoming mail count.",
+                           "type" : "number"
+                        },
+                        "count_out" : {
+                           "description" : "Outgoing mail count.",
+                           "type" : "number"
+                        },
+                        "glcount" : {
+                           "description" : "Number of greylisted mails.",
+                           "type" : "number"
+                        },
+                        "junk_in" : {
+                           "description" : "Incoming junk mail count (viruscount_in + spamcount_in + glcount + spfcount).",
+                           "type" : "number"
+                        },
+                        "junk_out" : {
+                           "description" : "Outgoing junk mail count (viruscount_out + spamcount_out).",
+                           "type" : "number"
+                        },
+                        "spamcount_in" : {
+                           "description" : "Incoming spam mails.",
+                           "type" : "number"
+                        },
+                        "spamcount_out" : {
+                           "description" : "Outgoing spam mails.",
+                           "type" : "number"
+                        },
+                        "spfcount" : {
+                           "description" : "Mails rejected by SPF.",
+                           "type" : "number"
+                        },
+                        "viruscount_in" : {
+                           "description" : "Number of incoming virus mails.",
+                           "type" : "number"
+                        },
+                        "viruscount_out" : {
+                           "description" : "Number of outgoing virus mails.",
+                           "type" : "number"
+                        }
+                     },
+                     "type" : "object"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/mail",
+            "text" : "mail"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Mail Count Statistics.",
+                  "method" : "GET",
+                  "name" : "mailcount",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "timespan" : {
+                           "default" : 3600,
+                           "description" : "Return Mails/<timespan>, where <timespan> is specified in seconds.",
+                           "maximum" : 31622400,
+                           "minimum" : 3600,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (3600 - 31622400)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "bounces_in" : {
+                              "description" : "Incoming bounce mail count (sender = <>).",
+                              "type" : "number"
+                           },
+                           "bounces_out" : {
+                              "description" : "Outgoing bounce mail count (sender = <>).",
+                              "type" : "number"
+                           },
+                           "count" : {
+                              "description" : "Overall mail count (in and out).",
+                              "type" : "number"
+                           },
+                           "count_in" : {
+                              "description" : "Incoming mail count.",
+                              "type" : "number"
+                           },
+                           "count_out" : {
+                              "description" : "Outgoing mail count.",
+                              "type" : "number"
+                           },
+                           "index" : {
+                              "description" : "Time index.",
+                              "type" : "integer"
+                           },
+                           "spamcount_in" : {
+                              "description" : "Incoming spam mails (spamcount_in + glcount + spfcount).",
+                              "type" : "number"
+                           },
+                           "spamcount_out" : {
+                              "description" : "Outgoing spam mails.",
+                              "type" : "number"
+                           },
+                           "time" : {
+                              "description" : "Time (Unix epoch).",
+                              "type" : "integer"
+                           },
+                           "viruscount_in" : {
+                              "description" : "Number of incoming virus mails.",
+                              "type" : "number"
+                           },
+                           "viruscount_out" : {
+                              "description" : "Number of outgoing virus mails.",
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/mailcount",
+            "text" : "mailcount"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get Statistics about detected Viruses.",
+                  "method" : "GET",
+                  "name" : "virus",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "count" : {
+                              "description" : "Detection count.",
+                              "type" : "integer"
+                           },
+                           "name" : {
+                              "description" : "Virus name.",
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/virus",
+            "text" : "virus"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get the count of spam mails grouped by spam score. Count for score 10 includes mails with spam score > 10.",
+                  "method" : "GET",
+                  "name" : "spamscores",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "count" : {
+                              "description" : "Detection count.",
+                              "type" : "integer"
+                           },
+                           "level" : {
+                              "description" : "Spam level.",
+                              "type" : "string"
+                           },
+                           "ratio" : {
+                              "description" : "Portion of overall mail count.",
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/spamscores",
+            "text" : "spamscores"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get the count of spam mails grouped by spam score. Count for score 10 includes mails with spam score > 10.",
+                  "method" : "GET",
+                  "name" : "maildistribution",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "bounces_in" : {
+                              "description" : "Incoming bounce mail count (sender = <>).",
+                              "type" : "number"
+                           },
+                           "bounces_out" : {
+                              "description" : "Outgoing bounce mail count (sender = <>).",
+                              "type" : "number"
+                           },
+                           "count" : {
+                              "description" : "Overall mail count (in and out).",
+                              "type" : "number"
+                           },
+                           "count_in" : {
+                              "description" : "Incoming mail count.",
+                              "type" : "number"
+                           },
+                           "count_out" : {
+                              "description" : "Outgoing mail count.",
+                              "type" : "number"
+                           },
+                           "index" : {
+                              "description" : "Hour (0-23).",
+                              "type" : "integer"
+                           },
+                           "spamcount_in" : {
+                              "description" : "Incoming spam mails (spamcount_in + glcount + spfcount).",
+                              "type" : "number"
+                           },
+                           "spamcount_out" : {
+                              "description" : "Outgoing spam mails.",
+                              "type" : "number"
+                           },
+                           "viruscount_in" : {
+                              "description" : "Number of incoming virus mails.",
+                              "type" : "number"
+                           },
+                           "viruscount_out" : {
+                              "description" : "Number of outgoing virus mails.",
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/maildistribution",
+            "text" : "maildistribution"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Mail RBL Count Statistics.",
+                  "method" : "GET",
+                  "name" : "rblcount",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "day" : {
+                           "description" : "Day of month. Get statistics for a single day.",
+                           "maximum" : 31,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 31)"
+                        },
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "month" : {
+                           "description" : "Month. You will get statistics for the whole month if you do not specify a day.",
+                           "maximum" : 12,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 12)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
+                        "timespan" : {
+                           "default" : 3600,
+                           "description" : "Return RBL rejects/<timespan>, where <timespan> is specified in seconds.",
+                           "maximum" : 31622400,
+                           "minimum" : 3600,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (3600 - 31622400)"
+                        },
+                        "year" : {
+                           "description" : "Year. Defaults to current year. You will get statistics for the whole year if you do not specify a month or day.",
+                           "maximum" : 3000,
+                           "minimum" : 1900,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1900 - 3000)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "count" : {
+                              "description" : "RBL recject count.",
+                              "type" : "number"
+                           },
+                           "index" : {
+                              "description" : "Time index.",
+                              "type" : "integer"
+                           },
+                           "time" : {
+                              "description" : "Time (Unix epoch).",
+                              "type" : "integer"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/rblcount",
+            "text" : "rblcount"
+         }
+      ],
+      "info" : {
+         "GET" : {
+            "description" : "Directory index.",
+            "method" : "GET",
+            "name" : "index",
+            "parameters" : {
+               "additionalProperties" : 0
+            },
+            "permissions" : {
+               "check" : [
+                  "admin",
+                  "qmanager",
+                  "audit"
+               ]
+            },
+            "returns" : {
+               "items" : {
+                  "properties" : {},
+                  "type" : "object"
+               },
+               "links" : [
+                  {
+                     "href" : "{name}",
+                     "rel" : "child"
+                  }
+               ],
+               "type" : "array"
+            }
+         }
+      },
+      "leaf" : 0,
+      "path" : "/statistics",
+      "text" : "statistics"
    },
    {
       "info" : {

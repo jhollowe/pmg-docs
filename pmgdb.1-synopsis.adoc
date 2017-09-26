@@ -21,7 +21,7 @@ Get help about specified command.
 
 Command name
 
-`-verbose` `<boolean>` ::
+`--verbose` `<boolean>` ::
 
 Verbose output format.
 
@@ -32,11 +32,11 @@ Verbose output format.
 
 Initialize/Upgrade the PMG rule database.
 
-`-force` `<boolean>` ('default =' `0`)::
+`--force` `<boolean>` ('default =' `0`)::
 
 Delete existing database.
 
-`-statistics` `<boolean>` ('default =' `0`)::
+`--statistics` `<boolean>` ('default =' `0`)::
 
 Reset and update statistic database.
 

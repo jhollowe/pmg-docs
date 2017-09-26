@@ -1,5 +1,9 @@
 .Section 'admin'
 
+`advfilter`: `<boolean>` ('default =' `1`)::
+
+Use advanced filters for statistic.
+
 `dailyreport`: `<boolean>` ('default =' `1`)::
 
 Send daily reports.
@@ -20,21 +24,9 @@ Prevent changes if current configuration file has different SHA1 digest. This ca
 
 Administrator E-Mail address.
 
-`proxypassword`: `<string>` ::
+`http_proxy`: `http://.*` ::
 
-HTTP proxy password.
-
-`proxyport`: `<integer> (1 - N)` ('default =' `8080`)::
-
-HTTP proxy port.
-
-`proxyserver`: `<string>` ::
-
-HTTP proxy server address.
-
-`proxyuser`: `<string>` ::
-
-HTTP proxy user name.
+Specify external http proxy which is used for downloads (example: 'http://username:password@host:port/')
 
 `statlifetime`: `<integer> (1 - N)` ('default =' `7`)::
 

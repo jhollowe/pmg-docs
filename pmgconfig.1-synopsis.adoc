@@ -5,7 +5,7 @@
 Generate /etc/pmg/pmg-api.pem (self signed certificate for GUI and REST
 API).
 
-`-force` `<boolean>` ('default =' `0`)::
+`--force` `<boolean>` ('default =' `0`)::
 
 Overwrite existing certificate.
 
@@ -26,7 +26,7 @@ Get help about specified command.
 
 Command name
 
-`-verbose` `<boolean>` ::
+`--verbose` `<boolean>` ::
 
 Verbose output format.
 
@@ -49,7 +49,7 @@ Syncronize the LDAP database.
 
 Syncronize Proxmox Mail Gateway configurations with system configuration.
 
-`-restart` `<boolean>` ('default =' `0`)::
+`--restart` `<boolean>` ('default =' `0`)::
 
 Restart services if necessary.
 
@@ -60,7 +60,7 @@ Restart services if necessary.
 Generate /etc/pmg/pmg-tls.pem (self signed certificate for encrypted SMTP
 traffic).
 
-`-force` `<boolean>` ('default =' `0`)::
+`--force` `<boolean>` ('default =' `0`)::
 
 Overwrite existing certificate.
 
