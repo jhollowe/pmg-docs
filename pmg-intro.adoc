@@ -13,3 +13,18 @@ products are self-installing and can be used without deep knowledge of
 Linux.
 
 image::images/Proxmox-Mailprocessing.png[]
+
+Your benefit with {pmg}
+-----------------------
+
+* Open source software
+* No vendor lock-in
+* Linux kernel
+* Fast installation and easy-to-use
+* Web-based management interface
+* REST API
+* Huge active community
+* Low administration costs and simple deployment
+
+
+include::getting-help.adoc[]

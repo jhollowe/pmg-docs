@@ -1,0 +1,37 @@
+[[getting_help]]
+Getting Help
+------------
+ifdef::wiki[]
+:pmg-toplevel:
+endif::wiki[]
+
+
+Community Support Forum
+~~~~~~~~~~~~~~~~~~~~~~~
+
+{pmg} itself is fully open source, so we always encourage our users to
+discuss and share their knowledge using the {forum}. The forum is fully
+moderated by the Proxmox support team, and has a quite large user base
+around the whole world. Needless to say that such a large forum is a
+great place to get information.
+
+
+Commercial Support
+~~~~~~~~~~~~~~~~~~
+
+{proxmoxGmbh} also offers commercial 
+https://www.proxmox.com/en/proxmox-mail-gateway/pricing[{pmg} Subscription Service Plans]. System Administrators with a standard subscription plan can access a 
+dedicated support portal with guaranteed reponse time, where {pmg}
+developers help them should an issue appear.
+Please contact the mailto:office@proxmox.com[Proxmox sales team]
+for more information or volume discounts.
+
+
+Bug Tracker
+~~~~~~~~~~~
+
+We also run a public a public bug tracker at
+https://bugzilla.proxmox.com. If you ever detect a bug, you can file
+an bug entry there. This makes it easy to track the bug status, and
+you will get notified as soon as the bug is fixed.
+
