@@ -1,0 +1,29 @@
+ifdef::manvolnum[]
+pmgsubscription(1)
+==================
+:pmg-toplevel:
+
+NAME
+----
+
+pmgsubscription - Proxmox Mail Gateway Subscription Manager
+
+SYNOPSIS
+--------
+
+include::pmgsubscription.1-synopsis.adoc[]
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+
+ifndef::manvolnum[]
+pmgsubscription - Subscription Management
+=========================================
+endif::manvolnum[]
+
+This tool is used to handle {pmg} subscriptions.
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]

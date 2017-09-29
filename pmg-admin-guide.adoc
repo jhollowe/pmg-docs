@@ -77,6 +77,8 @@ include::pmgsh.adoc[]
 
 include::pmgversion.adoc[]
 
+include::pmgsubscription.adoc[]
+
 include::pmgperf.adoc[]
 
 include::pmgqm.adoc[]
