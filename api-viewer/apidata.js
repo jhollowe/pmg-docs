@@ -12,6 +12,12 @@ var pmgapi = [
                         "parameters" : {
                            "additionalProperties" : 0
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
                         "returns" : {
                            "type" : "string"
                         }
@@ -40,6 +46,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -105,6 +117,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -139,6 +156,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -165,6 +187,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -197,6 +225,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -232,6 +265,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -258,6 +296,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -290,6 +334,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -325,6 +374,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -351,6 +405,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -383,6 +443,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -418,6 +483,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -444,6 +514,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -476,6 +552,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -511,6 +592,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -537,6 +623,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -570,6 +662,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -597,6 +694,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -616,6 +718,12 @@ var pmgapi = [
                                        "typetext" : "<integer>"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "returns" : {
                                  "items" : {
@@ -648,6 +756,12 @@ var pmgapi = [
                         "name" : "list_rules",
                         "parameters" : {
                            "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "master",
                         "returns" : {
@@ -703,6 +817,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -734,6 +853,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -753,6 +877,12 @@ var pmgapi = [
                               "name" : "list_actions",
                               "parameters" : {
                                  "additionalProperties" : 0
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "proxyto" : "master",
                               "returns" : {
@@ -797,6 +927,12 @@ var pmgapi = [
                                              "type" : "string"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -849,6 +985,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -897,6 +1038,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -908,6 +1054,592 @@ var pmgapi = [
                         "leaf" : 0,
                         "path" : "/config/ruledb/action/bcc",
                         "text" : "bcc"
+                     },
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Read 'Header Attribute' object settings.",
+                                    "method" : "GET",
+                                    "name" : "read_field",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "id" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Update 'Header Attribute' object.",
+                                    "method" : "PUT",
+                                    "name" : "update_field",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "field" : {
+                                             "description" : "The Field",
+                                             "maxLength" : 1024,
+                                             "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                             "type" : "string"
+                                          },
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          },
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Action name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "value" : {
+                                             "description" : "The Value",
+                                             "maxLength" : 1024,
+                                             "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/action/field/{id}",
+                              "text" : "{id}"
+                           }
+                        ],
+                        "info" : {
+                           "POST" : {
+                              "description" : "Create 'Header Attribute' object.",
+                              "method" : "POST",
+                              "name" : "field",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "field" : {
+                                       "description" : "The Field",
+                                       "maxLength" : 1024,
+                                       "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                       "type" : "string"
+                                    },
+                                    "info" : {
+                                       "description" : "Informational comment.",
+                                       "maxLength" : 255,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "name" : {
+                                       "description" : "Action name.",
+                                       "maxLength" : 255,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "value" : {
+                                       "description" : "The Value",
+                                       "maxLength" : 1024,
+                                       "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
+                                       "type" : "string"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "description" : "The object ID.",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/action/field",
+                        "text" : "field"
+                     },
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Read 'Notification' object settings.",
+                                    "method" : "GET",
+                                    "name" : "read_notification",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "id" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Update 'Notification' object.",
+                                    "method" : "PUT",
+                                    "name" : "update_notification",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "attach" : {
+                                             "default" : 0,
+                                             "description" : "Attach original E-Mail",
+                                             "optional" : 1,
+                                             "type" : "boolean",
+                                             "typetext" : "<boolean>"
+                                          },
+                                          "body" : {
+                                             "description" : "The Notification Body",
+                                             "maxLength" : 2048,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          },
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Action name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "subject" : {
+                                             "description" : "The Notification subject",
+                                             "maxLength" : 100,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "to" : {
+                                             "description" : "The Receiver E-Mail address",
+                                             "maxLength" : 200,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/action/notification/{id}",
+                              "text" : "{id}"
+                           }
+                        ],
+                        "info" : {
+                           "POST" : {
+                              "description" : "Create 'Notification' object.",
+                              "method" : "POST",
+                              "name" : "notification",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "attach" : {
+                                       "default" : 0,
+                                       "description" : "Attach original E-Mail",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    },
+                                    "body" : {
+                                       "description" : "The Notification Body",
+                                       "maxLength" : 2048,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "info" : {
+                                       "description" : "Informational comment.",
+                                       "maxLength" : 255,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "name" : {
+                                       "description" : "Action name.",
+                                       "maxLength" : 255,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "subject" : {
+                                       "description" : "The Notification subject",
+                                       "maxLength" : 100,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "to" : {
+                                       "description" : "The Receiver E-Mail address",
+                                       "maxLength" : 200,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "description" : "The object ID.",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/action/notification",
+                        "text" : "notification"
+                     },
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Read 'Disclaimer' object settings.",
+                                    "method" : "GET",
+                                    "name" : "read_disclaimer",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "id" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Update 'Disclaimer' object.",
+                                    "method" : "PUT",
+                                    "name" : "update_disclaimer",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "disclaimer" : {
+                                             "description" : "The Disclaimer",
+                                             "maxLength" : 2048,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          },
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Action name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/action/disclaimer/{id}",
+                              "text" : "{id}"
+                           }
+                        ],
+                        "info" : {
+                           "POST" : {
+                              "description" : "Create 'Disclaimer' object.",
+                              "method" : "POST",
+                              "name" : "disclaimer",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "disclaimer" : {
+                                       "description" : "The Disclaimer",
+                                       "maxLength" : 2048,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "info" : {
+                                       "description" : "Informational comment.",
+                                       "maxLength" : 255,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "name" : {
+                                       "description" : "Action name.",
+                                       "maxLength" : 255,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "description" : "The object ID.",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/action/disclaimer",
+                        "text" : "disclaimer"
+                     },
+                     {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "Read 'Remove attachments' object settings.",
+                                    "method" : "GET",
+                                    "name" : "read_removeattachments",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "properties" : {
+                                          "id" : {
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "PUT" : {
+                                    "description" : "Update 'Remove attachments' object.",
+                                    "method" : "PUT",
+                                    "name" : "update_removeattachments",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "all" : {
+                                             "description" : "Remove all attachments",
+                                             "optional" : 1,
+                                             "type" : "boolean",
+                                             "typetext" : "<boolean>"
+                                          },
+                                          "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
+                                             "type" : "string"
+                                          },
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Action name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "text" : {
+                                             "description" : "The replacement text.",
+                                             "maxLength" : 2048,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ruledb/action/removeattachments/{id}",
+                              "text" : "{id}"
+                           }
+                        ],
+                        "info" : {
+                           "POST" : {
+                              "description" : "Create 'Remove attachments' object.",
+                              "method" : "POST",
+                              "name" : "removeattachments",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "all" : {
+                                       "description" : "Remove all attachments",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    },
+                                    "info" : {
+                                       "description" : "Informational comment.",
+                                       "maxLength" : 255,
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "name" : {
+                                       "description" : "Action name.",
+                                       "maxLength" : 255,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "text" : {
+                                       "description" : "The replacement text.",
+                                       "maxLength" : 2048,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "description" : "The object ID.",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/config/ruledb/action/removeattachments",
+                        "text" : "removeattachments"
                      }
                   ],
                   "info" : {
@@ -917,6 +1649,12 @@ var pmgapi = [
                         "name" : "index",
                         "parameters" : {
                            "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "returns" : {
                            "items" : {
@@ -960,6 +1698,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -1005,6 +1749,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -1039,6 +1788,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -1065,6 +1819,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -1616,6 +2376,97 @@ var pmgapi = [
                               "leaf" : 0,
                               "path" : "/config/ruledb/what/{ogroup}/filenamefilter",
                               "text" : "filenamefilter"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "description" : "Read 'Virus Filter' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_virusfilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "description" : "Update 'Virus Filter' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_virusfilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/what/{ogroup}/virusfilter/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "description" : "Add 'Virus Filter' object.",
+                                    "method" : "POST",
+                                    "name" : "virusfilter",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/what/{ogroup}/virusfilter",
+                              "text" : "virusfilter"
                            }
                         ],
                         "info" : {
@@ -1632,6 +2483,11 @@ var pmgapi = [
                                        "typetext" : "<integer>"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
                               },
                               "protected" : 1,
                               "proxyto" : "master",
@@ -1652,6 +2508,12 @@ var pmgapi = [
                                        "typetext" : "<integer>"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "returns" : {
                                  "items" : {
@@ -1684,6 +2546,12 @@ var pmgapi = [
                         "name" : "list_what_groups",
                         "parameters" : {
                            "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "master",
                         "returns" : {
@@ -1720,6 +2588,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -1750,6 +2623,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -1795,6 +2674,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -1829,6 +2713,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -1855,6 +2744,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -2007,6 +2902,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -2026,6 +2926,12 @@ var pmgapi = [
                                        "typetext" : "<integer>"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "returns" : {
                                  "items" : {
@@ -2058,6 +2964,12 @@ var pmgapi = [
                         "name" : "list_when_groups",
                         "parameters" : {
                            "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "master",
                         "returns" : {
@@ -2094,6 +3006,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -2124,6 +3041,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -2169,6 +3092,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -2203,6 +3131,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2229,6 +3162,12 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "proxyto" : "master",
                                     "returns" : {
@@ -3041,6 +3980,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -3060,6 +4004,12 @@ var pmgapi = [
                                        "typetext" : "<integer>"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "returns" : {
                                  "items" : {
@@ -3092,6 +4042,12 @@ var pmgapi = [
                         "name" : "list_who_groups",
                         "parameters" : {
                            "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "master",
                         "returns" : {
@@ -3128,6 +4084,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -3147,6 +4108,12 @@ var pmgapi = [
                   "name" : "index",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "returns" : {
                      "items" : {
@@ -3199,6 +4166,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -3217,6 +4189,12 @@ var pmgapi = [
                         "name" : "objects",
                         "parameters" : {
                            "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "master",
                         "returns" : {
@@ -3955,6 +4933,12 @@ var pmgapi = [
                   "parameters" : {
                      "additionalProperties" : 0
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
+                  },
                   "returns" : {
                      "items" : {
                         "properties" : {
@@ -4015,8 +4999,9 @@ var pmgapi = [
                                  "additionalProperties" : 0,
                                  "properties" : {
                                     "accountattr" : {
-                                       "default" : "sAMAccountName",
+                                       "default" : "sAMAccountName, uid",
                                        "description" : "Account attribute name name.",
+                                       "format" : "string-list",
                                        "optional" : 1,
                                        "pattern" : "[a-zA-Z0-9]+",
                                        "type" : "string"
@@ -4075,6 +5060,14 @@ var pmgapi = [
                                     },
                                     "groupbasedn" : {
                                        "description" : "Base domain name for groups.",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "groupclass" : {
+                                       "default" : "group, univentionGroup, ipausergroup",
+                                       "description" : "List of objectclasses for groups.",
+                                       "format" : "string-list",
                                        "optional" : 1,
                                        "type" : "string",
                                        "typetext" : "<string>"
@@ -4270,6 +5263,12 @@ var pmgapi = [
                                     },
                                     "type" : "object"
                                  },
+                                 "links" : [
+                                    {
+                                       "href" : "{pmail}",
+                                       "rel" : "child"
+                                    }
+                                 ],
                                  "type" : "array"
                               }
                            }
@@ -4279,6 +5278,60 @@ var pmgapi = [
                         "text" : "users"
                      },
                      {
+                        "children" : [
+                           {
+                              "info" : {
+                                 "GET" : {
+                                    "description" : "List LDAP group members.",
+                                    "method" : "GET",
+                                    "name" : "profile_list_group_members",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "gid" : {
+                                             "description" : "Group ID",
+                                             "type" : "number",
+                                             "typetext" : "<number>"
+                                          },
+                                          "profile" : {
+                                             "description" : "Profile ID.",
+                                             "format" : "pve-configid",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "account" : {
+                                                "type" : "string"
+                                             },
+                                             "dn" : {
+                                                "type" : "string"
+                                             },
+                                             "pmail" : {
+                                                "type" : "string"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "type" : "array"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/config/ldap/{profile}/groups/{gid}",
+                              "text" : "{gid}"
+                           }
+                        ],
                         "info" : {
                            "GET" : {
                               "description" : "List LDAP groups.",
@@ -4307,15 +5360,24 @@ var pmgapi = [
                                     "properties" : {
                                        "dn" : {
                                           "type" : "string"
+                                       },
+                                       "gid" : {
+                                          "type" : "number"
                                        }
                                     },
                                     "type" : "object"
                                  },
+                                 "links" : [
+                                    {
+                                       "href" : "{gid}",
+                                       "rel" : "child"
+                                    }
+                                 ],
                                  "type" : "array"
                               }
                            }
                         },
-                        "leaf" : 1,
+                        "leaf" : 0,
                         "path" : "/config/ldap/{profile}/groups",
                         "text" : "groups"
                      }
@@ -4458,8 +5520,9 @@ var pmgapi = [
                      "additionalProperties" : 0,
                      "properties" : {
                         "accountattr" : {
-                           "default" : "sAMAccountName",
+                           "default" : "sAMAccountName, uid",
                            "description" : "Account attribute name name.",
+                           "format" : "string-list",
                            "optional" : 1,
                            "pattern" : "[a-zA-Z0-9]+",
                            "type" : "string"
@@ -4503,6 +5566,14 @@ var pmgapi = [
                         },
                         "groupbasedn" : {
                            "description" : "Base domain name for groups.",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "groupclass" : {
+                           "default" : "group, univentionGroup, ipausergroup",
+                           "description" : "List of objectclasses for groups.",
+                           "format" : "string-list",
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
@@ -4593,6 +5664,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -4613,6 +5689,12 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "master",
                         "returns" : {
@@ -4647,6 +5729,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -4666,6 +5753,12 @@ var pmgapi = [
                   "name" : "index",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "proxyto" : "master",
                   "returns" : {
@@ -4710,6 +5803,11 @@ var pmgapi = [
                         }
                      }
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "protected" : 1,
                   "proxyto" : "master",
                   "returns" : {
@@ -4720,6 +5818,451 @@ var pmgapi = [
             "leaf" : 0,
             "path" : "/config/domains",
             "text" : "domains"
+         },
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "description" : "Delete a fetchmail configuration entry.",
+                        "method" : "DELETE",
+                        "name" : "delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "id" : {
+                                 "description" : "Unique ID",
+                                 "maxLength" : 16,
+                                 "pattern" : "[A-Za-z0-9]+",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
+                     "GET" : {
+                        "description" : "Read fetchmail user configuration.",
+                        "method" : "GET",
+                        "name" : "read",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "id" : {
+                                 "description" : "Unique ID",
+                                 "maxLength" : 16,
+                                 "pattern" : "[A-Za-z0-9]+",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "properties" : {
+                              "enable" : {
+                                 "default" : 0,
+                                 "description" : "Flag to enable or disable polling.",
+                                 "optional" : 1,
+                                 "type" : "boolean"
+                              },
+                              "id" : {
+                                 "description" : "Unique ID",
+                                 "maxLength" : 16,
+                                 "pattern" : "[A-Za-z0-9]+",
+                                 "type" : "string"
+                              },
+                              "interval" : {
+                                 "description" : "Only check this site every <interval> poll cycles. A poll cycle is 5 minutes.",
+                                 "maximum" : 2016,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer"
+                              },
+                              "keep" : {
+                                 "default" : 0,
+                                 "description" : "Keep retrieved messages on the remote mailserver.",
+                                 "optional" : 1,
+                                 "type" : "boolean"
+                              },
+                              "pass" : {
+                                 "description" : "The password used tfor server login.",
+                                 "maxLength" : 64,
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
+                              "port" : {
+                                 "description" : "Port number.",
+                                 "maximum" : 65535,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer"
+                              },
+                              "protocol" : {
+                                 "description" : "Specify  the  protocol to use when communicating with the remote mailserver",
+                                 "enum" : [
+                                    "pop3",
+                                    "imap"
+                                 ],
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
+                              "server" : {
+                                 "description" : "Server address (IP or DNS name).",
+                                 "format" : "address",
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
+                              "ssl" : {
+                                 "default" : 0,
+                                 "description" : "Use SSL.",
+                                 "optional" : 1,
+                                 "type" : "boolean"
+                              },
+                              "target" : {
+                                 "description" : "The target email address (where to deliver fetched mails).",
+                                 "maxLength" : 512,
+                                 "minLength" : 3,
+                                 "optional" : 1,
+                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "type" : "string"
+                              },
+                              "user" : {
+                                 "description" : "The user identification to be used when logging in to the server",
+                                 "maxLength" : 64,
+                                 "minLength" : 1,
+                                 "optional" : 1,
+                                 "type" : "string"
+                              }
+                           },
+                           "type" : "object"
+                        }
+                     },
+                     "PUT" : {
+                        "description" : "Update fetchmail user configuration.",
+                        "method" : "PUT",
+                        "name" : "write",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "enable" : {
+                                 "default" : 0,
+                                 "description" : "Flag to enable or disable polling.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "id" : {
+                                 "description" : "Unique ID",
+                                 "maxLength" : 16,
+                                 "pattern" : "[A-Za-z0-9]+",
+                                 "type" : "string"
+                              },
+                              "interval" : {
+                                 "description" : "Only check this site every <interval> poll cycles. A poll cycle is 5 minutes.",
+                                 "maximum" : 2016,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 2016)"
+                              },
+                              "keep" : {
+                                 "default" : 0,
+                                 "description" : "Keep retrieved messages on the remote mailserver.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "pass" : {
+                                 "description" : "The password used tfor server login.",
+                                 "maxLength" : 64,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "port" : {
+                                 "description" : "Port number.",
+                                 "maximum" : 65535,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 65535)"
+                              },
+                              "protocol" : {
+                                 "description" : "Specify  the  protocol to use when communicating with the remote mailserver",
+                                 "enum" : [
+                                    "pop3",
+                                    "imap"
+                                 ],
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
+                              "server" : {
+                                 "description" : "Server address (IP or DNS name).",
+                                 "format" : "address",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "ssl" : {
+                                 "default" : 0,
+                                 "description" : "Use SSL.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "target" : {
+                                 "description" : "The target email address (where to deliver fetched mails).",
+                                 "maxLength" : 512,
+                                 "minLength" : 3,
+                                 "optional" : 1,
+                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "type" : "string"
+                              },
+                              "user" : {
+                                 "description" : "The user identification to be used when logging in to the server",
+                                 "maxLength" : 64,
+                                 "minLength" : 1,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/fetchmail/{id}",
+                  "text" : "{id}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "List fetchmail users.",
+                  "method" : "GET",
+                  "name" : "index",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "enable" : {
+                              "default" : 0,
+                              "description" : "Flag to enable or disable polling.",
+                              "optional" : 1,
+                              "type" : "boolean"
+                           },
+                           "id" : {
+                              "description" : "Unique ID",
+                              "maxLength" : 16,
+                              "pattern" : "[A-Za-z0-9]+",
+                              "type" : "string"
+                           },
+                           "interval" : {
+                              "description" : "Only check this site every <interval> poll cycles. A poll cycle is 5 minutes.",
+                              "maximum" : 2016,
+                              "minimum" : 1,
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "keep" : {
+                              "default" : 0,
+                              "description" : "Keep retrieved messages on the remote mailserver.",
+                              "optional" : 1,
+                              "type" : "boolean"
+                           },
+                           "pass" : {
+                              "description" : "The password used tfor server login.",
+                              "maxLength" : 64,
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "port" : {
+                              "description" : "Port number.",
+                              "maximum" : 65535,
+                              "minimum" : 1,
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "protocol" : {
+                              "description" : "Specify  the  protocol to use when communicating with the remote mailserver",
+                              "enum" : [
+                                 "pop3",
+                                 "imap"
+                              ],
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "server" : {
+                              "description" : "Server address (IP or DNS name).",
+                              "format" : "address",
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "ssl" : {
+                              "default" : 0,
+                              "description" : "Use SSL.",
+                              "optional" : 1,
+                              "type" : "boolean"
+                           },
+                           "target" : {
+                              "description" : "The target email address (where to deliver fetched mails).",
+                              "maxLength" : 512,
+                              "minLength" : 3,
+                              "optional" : 1,
+                              "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                              "type" : "string"
+                           },
+                           "user" : {
+                              "description" : "The user identification to be used when logging in to the server",
+                              "maxLength" : 64,
+                              "minLength" : 1,
+                              "optional" : 1,
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{id}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Create fetchmail user configuration.",
+                  "method" : "POST",
+                  "name" : "create",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "enable" : {
+                           "default" : 0,
+                           "description" : "Flag to enable or disable polling.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "interval" : {
+                           "description" : "Only check this site every <interval> poll cycles. A poll cycle is 5 minutes.",
+                           "maximum" : 2016,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 2016)"
+                        },
+                        "keep" : {
+                           "default" : 0,
+                           "description" : "Keep retrieved messages on the remote mailserver.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "pass" : {
+                           "description" : "The password used tfor server login.",
+                           "maxLength" : 64,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "port" : {
+                           "description" : "Port number.",
+                           "maximum" : 65535,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 65535)"
+                        },
+                        "protocol" : {
+                           "description" : "Specify  the  protocol to use when communicating with the remote mailserver",
+                           "enum" : [
+                              "pop3",
+                              "imap"
+                           ],
+                           "type" : "string"
+                        },
+                        "server" : {
+                           "description" : "Server address (IP or DNS name).",
+                           "format" : "address",
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "ssl" : {
+                           "default" : 0,
+                           "description" : "Use SSL.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "target" : {
+                           "description" : "The target email address (where to deliver fetched mails).",
+                           "maxLength" : 512,
+                           "minLength" : 3,
+                           "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                           "type" : "string"
+                        },
+                        "user" : {
+                           "description" : "The user identification to be used when logging in to the server",
+                           "maxLength" : 64,
+                           "minLength" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "description" : "Unique ID",
+                     "maxLength" : 16,
+                     "pattern" : "[A-Za-z0-9]+",
+                     "type" : "string"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/config/fetchmail",
+            "text" : "fetchmail"
          },
          {
             "children" : [
@@ -4739,6 +6282,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -4760,6 +6308,12 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "master",
                         "returns" : {
@@ -4825,6 +6379,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -4844,6 +6403,12 @@ var pmgapi = [
                   "name" : "index",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "proxyto" : "master",
                   "returns" : {
@@ -4919,6 +6484,11 @@ var pmgapi = [
                         }
                      }
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "protected" : 1,
                   "proxyto" : "master",
                   "returns" : {
@@ -4949,6 +6519,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -4969,6 +6544,12 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "master",
                         "returns" : {
@@ -5002,6 +6583,11 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -5021,6 +6607,12 @@ var pmgapi = [
                   "name" : "index",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "proxyto" : "master",
                   "returns" : {
@@ -5061,6 +6653,11 @@ var pmgapi = [
                            "typetext" : "<string>"
                         }
                      }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
                   },
                   "protected" : 1,
                   "proxyto" : "master",
@@ -5375,6 +6972,12 @@ var pmgapi = [
                   "parameters" : {
                      "additionalProperties" : 0
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
+                  },
                   "proxyto" : "master",
                   "returns" : {
                      "type" : "object"
@@ -5448,6 +7051,11 @@ var pmgapi = [
                      },
                      "type" : "object"
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "protected" : 1,
                   "proxyto" : "master",
                   "returns" : {
@@ -5467,6 +7075,12 @@ var pmgapi = [
                   "name" : "read_clamav_section",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "proxyto" : "master",
                   "returns" : {
@@ -5559,6 +7173,11 @@ var pmgapi = [
                      },
                      "type" : "object"
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "protected" : 1,
                   "proxyto" : "master",
                   "returns" : {
@@ -5578,6 +7197,12 @@ var pmgapi = [
                   "name" : "read_mail_section",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "proxyto" : "master",
                   "returns" : {
@@ -5826,6 +7451,11 @@ var pmgapi = [
                      },
                      "type" : "object"
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "protected" : 1,
                   "proxyto" : "master",
                   "returns" : {
@@ -5845,6 +7475,12 @@ var pmgapi = [
                   "name" : "read_spam_section",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "proxyto" : "master",
                   "returns" : {
@@ -5934,6 +7570,11 @@ var pmgapi = [
                      },
                      "type" : "object"
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "protected" : 1,
                   "proxyto" : "master",
                   "returns" : {
@@ -5953,6 +7594,12 @@ var pmgapi = [
                   "name" : "read_spamquar_section",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "proxyto" : "master",
                   "returns" : {
@@ -6042,6 +7689,11 @@ var pmgapi = [
                      },
                      "type" : "object"
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "protected" : 1,
                   "proxyto" : "master",
                   "returns" : {
@@ -6061,6 +7713,12 @@ var pmgapi = [
                   "name" : "read_virusquar_section",
                   "parameters" : {
                      "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
                   },
                   "proxyto" : "master",
                   "returns" : {
@@ -6113,6 +7771,11 @@ var pmgapi = [
                         }
                      },
                      "type" : "object"
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
                   },
                   "protected" : 1,
                   "proxyto" : "master",
@@ -6234,7 +7897,8 @@ var pmgapi = [
                               },
                               "permissions" : {
                                  "check" : [
-                                    "admin"
+                                    "admin",
+                                    "audit"
                                  ]
                               },
                               "protected" : 1,
@@ -6490,7 +8154,8 @@ var pmgapi = [
                                     },
                                     "permissions" : {
                                        "check" : [
-                                          "admin"
+                                          "admin",
+                                          "audit"
                                        ]
                                     },
                                     "protected" : 1,
@@ -6844,6 +8509,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "node",
                               "returns" : {
                                  "properties" : {
@@ -7117,6 +8788,12 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
                         "proxyto" : "node",
                         "returns" : {
                            "items" : {
@@ -7367,6 +9044,12 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "node",
                                     "returns" : {
@@ -7412,6 +9095,12 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "node",
                                     "returns" : {
@@ -7456,6 +9145,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "node",
                               "returns" : {
@@ -7480,6 +9174,12 @@ var pmgapi = [
                                        "typetext" : "<string>"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "returns" : {
                                  "items" : {
@@ -7539,6 +9239,12 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
                         "proxyto" : "node",
                         "returns" : {
                            "items" : {
@@ -7587,6 +9293,7 @@ var pmgapi = [
                                              "enum" : [
                                                 "clamav-daemon",
                                                 "clamav-freshclam",
+                                                "fetchmail",
                                                 "pmgproxy",
                                                 "pmgdaemon",
                                                 "pmgpolicy",
@@ -7606,6 +9313,12 @@ var pmgapi = [
                                              "type" : "string"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "node",
@@ -7639,6 +9352,7 @@ var pmgapi = [
                                              "enum" : [
                                                 "clamav-daemon",
                                                 "clamav-freshclam",
+                                                "fetchmail",
                                                 "pmgproxy",
                                                 "pmgdaemon",
                                                 "pmgpolicy",
@@ -7658,6 +9372,11 @@ var pmgapi = [
                                              "type" : "string"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "node",
@@ -7690,6 +9409,7 @@ var pmgapi = [
                                              "enum" : [
                                                 "clamav-daemon",
                                                 "clamav-freshclam",
+                                                "fetchmail",
                                                 "pmgproxy",
                                                 "pmgdaemon",
                                                 "pmgpolicy",
@@ -7709,6 +9429,11 @@ var pmgapi = [
                                              "type" : "string"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "node",
@@ -7741,6 +9466,7 @@ var pmgapi = [
                                              "enum" : [
                                                 "clamav-daemon",
                                                 "clamav-freshclam",
+                                                "fetchmail",
                                                 "pmgproxy",
                                                 "pmgdaemon",
                                                 "pmgpolicy",
@@ -7760,6 +9486,11 @@ var pmgapi = [
                                              "type" : "string"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "node",
@@ -7792,6 +9523,7 @@ var pmgapi = [
                                              "enum" : [
                                                 "clamav-daemon",
                                                 "clamav-freshclam",
+                                                "fetchmail",
                                                 "pmgproxy",
                                                 "pmgdaemon",
                                                 "pmgpolicy",
@@ -7811,6 +9543,11 @@ var pmgapi = [
                                              "type" : "string"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "node",
@@ -7843,6 +9580,7 @@ var pmgapi = [
                                        "enum" : [
                                           "clamav-daemon",
                                           "clamav-freshclam",
+                                          "fetchmail",
                                           "pmgproxy",
                                           "pmgdaemon",
                                           "pmgpolicy",
@@ -7862,6 +9600,12 @@ var pmgapi = [
                                        "type" : "string"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "returns" : {
                                  "items" : {
@@ -7902,6 +9646,12 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "node",
@@ -7953,6 +9703,66 @@ var pmgapi = [
                         "returns" : {
                            "type" : "object"
                         }
+                     },
+                     "POST" : {
+                        "description" : "Update subscription info.",
+                        "method" : "POST",
+                        "name" : "update",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "force" : {
+                                 "default" : 0,
+                                 "description" : "Always connect to server, even if we have up to date info inside local cache.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
+                     "PUT" : {
+                        "description" : "Set subscription key.",
+                        "method" : "PUT",
+                        "name" : "set",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "key" : {
+                                 "description" : "Proxmox Mail Gateway subscription key",
+                                 "maxLength" : 32,
+                                 "pattern" : "pmg([cbsp])-[0-9a-f]{10}",
+                                 "type" : "string"
+                              },
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "type" : "null"
+                        }
                      }
                   },
                   "leaf" : 1,
@@ -7977,6 +9787,12 @@ var pmgapi = [
                                        "typetext" : "<string>"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "protected" : 1,
                               "proxyto" : "node",
@@ -8017,6 +9833,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "node",
                               "returns" : {
@@ -8056,6 +9877,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "node",
                               "returns" : {
                                  "type" : "string"
@@ -8085,11 +9912,8 @@ var pmgapi = [
                               },
                               "permissions" : {
                                  "check" : [
-                                    "perm",
-                                    "/nodes/{node}",
-                                    [
-                                       "Sys.Audit"
-                                    ]
+                                    "admin",
+                                    "audit"
                                  ]
                               },
                               "proxyto" : "node",
@@ -8188,6 +10012,12 @@ var pmgapi = [
                                        "typetext" : "<integer> (0 - N)"
                                     }
                                  }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
                               },
                               "protected" : 1,
                               "proxyto" : "node",
@@ -8331,6 +10161,12 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "node",
                         "returns" : {
@@ -8444,6 +10280,12 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "node",
                         "returns" : {
@@ -8506,6 +10348,12 @@ var pmgapi = [
                                  "type" : "string"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "node",
@@ -8647,6 +10495,12 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
                         "proxyto" : "node",
                         "returns" : {
                            "additionalProperties" : 0,
@@ -8743,6 +10597,12 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
                         },
                         "proxyto" : "node",
                         "returns" : {
@@ -9256,11 +11116,14 @@ var pmgapi = [
                         },
                         "realm" : {
                            "description" : "You can optionally pass the realm using this parameter. Normally the realm is simply added to the username <username>@<relam>.",
-                           "format" : "pmg-realm",
+                           "enum" : [
+                              "pam",
+                              "pmg",
+                              "quarantine"
+                           ],
                            "maxLength" : 32,
                            "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
+                           "type" : "string"
                         },
                         "username" : {
                            "description" : "User name",
@@ -11047,6 +12910,166 @@ var pmgapi = [
             "leaf" : 1,
             "path" : "/statistics/mail",
             "text" : "mail"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Mail Count Statistics.",
+                  "method" : "GET",
+                  "name" : "recent",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "hours" : {
+                           "default" : 12,
+                           "description" : "How many hours you want to get",
+                           "maximum" : 24,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 24)"
+                        },
+                        "timespan" : {
+                           "default" : 1800,
+                           "description" : "The Timespan for one datapoint (in seconds)",
+                           "maximum" : 1800,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 1800)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "bytes_in" : {
+                              "description" : "Number of incoming bytes mails.",
+                              "type" : "number"
+                           },
+                           "bytes_out" : {
+                              "description" : "Number of outgoing bytes mails.",
+                              "type" : "number"
+                           },
+                           "count" : {
+                              "description" : "Overall mail count (in and out).",
+                              "type" : "number"
+                           },
+                           "count_in" : {
+                              "description" : "Incoming mail count.",
+                              "type" : "number"
+                           },
+                           "count_out" : {
+                              "description" : "Outgoing mail count.",
+                              "type" : "number"
+                           },
+                           "index" : {
+                              "description" : "Time index.",
+                              "type" : "integer"
+                           },
+                           "spam" : {
+                              "description" : "Overall spam mail count (in and out).",
+                              "type" : "number"
+                           },
+                           "spam_in" : {
+                              "description" : "Incoming spam mails (spamcount_in + glcount + spfcount).",
+                              "type" : "number"
+                           },
+                           "spam_out" : {
+                              "description" : "Outgoing spam mails.",
+                              "type" : "number"
+                           },
+                           "time" : {
+                              "description" : "Time (Unix epoch).",
+                              "type" : "integer"
+                           },
+                           "timespan" : {
+                              "description" : "Timespan in seconds for one data point",
+                              "type" : "number"
+                           },
+                           "virus_in" : {
+                              "description" : "Number of incoming virus mails.",
+                              "type" : "number"
+                           },
+                           "virus_out" : {
+                              "description" : "Number of outgoing virus mails.",
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/recent",
+            "text" : "recent"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Top recent Mail Receivers (including spam)",
+                  "method" : "GET",
+                  "name" : "recentreceivers",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "hours" : {
+                           "default" : 12,
+                           "description" : "How many hours you want to get",
+                           "maximum" : 24,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 24)"
+                        },
+                        "limit" : {
+                           "default" : 5,
+                           "description" : "The maximum number of receivers to return.",
+                           "maximum" : 50,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 50)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "count" : {
+                              "description" : "The count of incoming not blocked E-Mails",
+                              "type" : "integer"
+                           },
+                           "receiver" : {
+                              "description" : "The receiver",
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/statistics/recentreceivers",
+            "text" : "recentreceivers"
          },
          {
             "info" : {
