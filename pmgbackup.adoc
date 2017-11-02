@@ -1,0 +1,33 @@
+[[chapter_pmgbackup]]
+ifdef::manvolnum[]
+pmgbackup(1)
+============
+:pmg-toplevel:
+
+NAME
+----
+
+pmgbackup - Proxmox Mail Gateway Backup and Restore Utility
+
+
+SYNOPSIS
+--------
+
+include::pmgbackup.1-synopsis.adoc[]
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+Backup and Restore
+==================
+:pmg-toplevel:
+endif::manvolnum[]
+
+Please fix this page.
+
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]
+
