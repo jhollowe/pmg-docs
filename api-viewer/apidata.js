@@ -4171,6 +4171,7 @@ var pmgapi = [
                                     "admin"
                                  ]
                               },
+                              "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
                                  "type" : "null"
@@ -6683,7 +6684,9 @@ var pmgapi = [
                         },
                         "permissions" : {
                            "check" : [
-                              "admin"
+                              "admin",
+                              "qmanager",
+                              "audit"
                            ]
                         },
                         "returns" : {
@@ -6713,12 +6716,6 @@ var pmgapi = [
                               },
                               "type" : "object"
                            },
-                           "links" : [
-                              {
-                                 "href" : "{cid}",
-                                 "rel" : "child"
-                              }
-                           ],
                            "type" : "array"
                         }
                      },
@@ -6798,11 +6795,22 @@ var pmgapi = [
                         "method" : "GET",
                         "name" : "status",
                         "parameters" : {
-                           "additionalProperties" : 0
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "list_single_node" : {
+                                 "default" : 0,
+                                 "description" : "List local node if there is no cluster defined. Please note that RSA keys and fingerprint are not valid in that case.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              }
+                           }
                         },
                         "permissions" : {
                            "check" : [
-                              "admin"
+                              "admin",
+                              "qmanager",
+                              "audit"
                            ]
                         },
                         "returns" : {
@@ -8368,6 +8376,13 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
+                              "proxyto" : "node",
                               "returns" : {
                                  "items" : {
                                     "properties" : {
@@ -8405,7 +8420,13 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
+                              "proxyto" : "node",
                               "returns" : {
                                  "type" : "string"
                               }
@@ -8432,8 +8453,12 @@ var pmgapi = [
                               }
                            }
                         },
-                        "protected" : 1,
-                        "proxyto" : "node",
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
                         "returns" : {
                            "items" : {
                               "properties" : {},
@@ -8452,6 +8477,132 @@ var pmgapi = [
                   "leaf" : 0,
                   "path" : "/nodes/{node}/clamav",
                   "text" : "clamav"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "GET" : {
+                              "description" : "SpamAssassin rules status.",
+                              "method" : "GET",
+                              "name" : "rules_status",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "channel" : {
+                                          "type" : "string"
+                                       },
+                                       "last_updated" : {
+                                          "optional" : 1,
+                                          "type" : "integer"
+                                       },
+                                       "update_avail" : {
+                                          "type" : "boolean"
+                                       },
+                                       "update_version" : {
+                                          "optional" : 1,
+                                          "type" : "string"
+                                       },
+                                       "version" : {
+                                          "optional" : 1,
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "type" : "array"
+                              }
+                           },
+                           "POST" : {
+                              "description" : "Update SpamAssassin rules.",
+                              "method" : "POST",
+                              "name" : "update_rules",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/spamassassin/rules",
+                        "text" : "rules"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "Directory index.",
+                        "method" : "GET",
+                        "name" : "index",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "returns" : {
+                           "items" : {
+                              "properties" : {},
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{subdir}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/nodes/{node}/spamassassin",
+                  "text" : "spamassassin"
                },
                {
                   "children" : [
@@ -10242,6 +10393,229 @@ var pmgapi = [
                   "leaf" : 0,
                   "path" : "/nodes/{node}/tracker",
                   "text" : "tracker"
+               },
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "DELETE" : {
+                              "description" : "Delete a backup file.",
+                              "method" : "DELETE",
+                              "name" : "delete",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "filename" : {
+                                       "description" : "The backup file name.",
+                                       "maxLength" : 256,
+                                       "minLength" : 4,
+                                       "pattern" : "pmg-backup_[0-9A-Za-z_-]+\\.tgz",
+                                       "type" : "string"
+                                    },
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           },
+                           "GET" : {
+                              "description" : "Download a backup file.",
+                              "download" : 1,
+                              "method" : "GET",
+                              "name" : "download",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "filename" : {
+                                       "description" : "The backup file name.",
+                                       "maxLength" : 256,
+                                       "minLength" : 4,
+                                       "pattern" : "pmg-backup_[0-9A-Za-z_-]+\\.tgz",
+                                       "type" : "string"
+                                    },
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "string"
+                              }
+                           },
+                           "POST" : {
+                              "description" : "Restore the system configuration.",
+                              "method" : "POST",
+                              "name" : "restore",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "config" : {
+                                       "default" : 0,
+                                       "description" : "Restore system configuration.",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    },
+                                    "database" : {
+                                       "default" : 1,
+                                       "description" : "Restore the rule database. This is the default.",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    },
+                                    "filename" : {
+                                       "description" : "The backup file name.",
+                                       "maxLength" : 256,
+                                       "minLength" : 4,
+                                       "pattern" : "pmg-backup_[0-9A-Za-z_-]+\\.tgz",
+                                       "type" : "string"
+                                    },
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "statistic" : {
+                                       "default" : 0,
+                                       "description" : "Restore statistic databases. Only considered when you restore the 'database'.",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "node",
+                              "returns" : {
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/nodes/{node}/backup/{filename}",
+                        "text" : "{filename}"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "List all stored backups (files named proxmox-backup_{DATE}.tgz).",
+                        "method" : "GET",
+                        "name" : "list",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "filename" : {
+                                    "description" : "The backup file name.",
+                                    "maxLength" : 256,
+                                    "minLength" : 4,
+                                    "pattern" : "pmg-backup_[0-9A-Za-z_-]+\\.tgz",
+                                    "type" : "string"
+                                 },
+                                 "size" : {
+                                    "description" : "Size of backup file in bytes.",
+                                    "type" : "integer"
+                                 },
+                                 "timestamp" : {
+                                    "description" : "Backup timestamp (Unix epoch).",
+                                    "type" : "integer"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{filename}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     },
+                     "POST" : {
+                        "description" : "Backup the system configuration.",
+                        "method" : "POST",
+                        "name" : "backup",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "statistic" : {
+                                 "default" : 1,
+                                 "description" : "Backup statistic databases.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/nodes/{node}/backup",
+                  "text" : "backup"
                },
                {
                   "info" : {

@@ -1,3 +1,11 @@
+pmg-docs (5.0-6) unstable; urgency=medium
+
+  * add manual page for pmgbackup (dummy)
+
+  * update generated API schema
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 14 Nov 2017 08:17:15 +0100
+
 pmg-docs (5.0-5) unstable; urgency=medium
 
   * update generated API schema
