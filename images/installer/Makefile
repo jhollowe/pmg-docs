@@ -14,5 +14,6 @@ all: $(addsuffix .png, ${PPMS})
 %.png: %.ppm
 	convert $< -bordercolor black -border 10x10 $@
 
-clean:
+update:
 	rm -f $(addsuffix .png, ${PPMS})
+	$(MAKE)
