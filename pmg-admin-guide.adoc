@@ -25,6 +25,8 @@ include::pmg-quick-start.adoc[]
 
 include::pmg-planning-deployment.adoc[]
 
+include::pmg-installation.adoc[]
+
 include::pmgconfig.adoc[]
 
 // Return to normal title levels.
