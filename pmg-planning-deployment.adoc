@@ -108,7 +108,7 @@ Minimum System Requirements
 
 * CPU: 64bit (Intel EMT64 or AMD64)
 
-* 1 GB RAM
+* 2 GB RAM
 
 * bootable CD-ROM-drive or USB boot support
 
