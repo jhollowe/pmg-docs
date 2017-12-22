@@ -18,12 +18,13 @@ it requires more detailed knowledge about {pmg} and Debian.
 Using the {pmg} Installation CD-ROM
 -----------------------------------
 
-Includes the following:
+You can download the ISO from http://www.proxmox.com. It includes the
+following:
 
 * Complete operating system (Debian Linux, 64-bit)
 
-* Partitioning of the hard drive(s) containing the operating system
-  with ext4, ext3, xfs or ZFS
+* The {pmg} installer, which partitions the hard drive(s) with ext4,
+  ext3, xfs or ZFS and installs the operating system.
 
 * Linux kernel
 
@@ -31,9 +32,12 @@ Includes the following:
 
 * Web based management interface for using the toolset
 
-Please insert the installation CD-ROM, then boot from that
-drive. Immediately afterwards you can choose the following menu
-options:
+Please burn the downloaded ISO image to a CD or create a
+xref:create_bootable_usb[bootable USB stick].
+
+Then insert the installation CD-ROM on the physical host where you want
+to install {pmg} and boot from that drive. Immediately afterwards you
+can choose the following menu options:
 
 image::images/installer/pmg-grub-menu.png[]
 
@@ -131,8 +135,32 @@ Further configuration is done via the Proxmox web interface. Just
 point your browser to the IP address given during installation
 (https://youripaddress:8006).
 
+. Login and upload subscription key.
++
 NOTE: Default login is "root" and the root password is
 defined during the installation process.
+
+. Check the IP configuration and hostname.
+
+. Check and save the Time Zone.
+
+. Check your xref:firewall_settings[Firewall settings].
+
+. Configure {pmg} to forward the incoming SMTP traffic to your Mail
+server ('Configuration/Mail Proxy/Default Relay') - 'Default
+Relay' is your e-mail server.
+
+. Configure your e-mail server to send all outgoing messages through
+your {pmg} ('Smart Host', port 26 by default) - see
+xref:fitering_outgoing_mail[Filtering outgoing e-mails].
+
+For detailed deployment scenarios see chapter
+xref:chapter_deployment[Planning for Deployment].
+
+If the installation succeeds you have to route all your incoming and
+outgoing e-mail traffic to the Mail Gateway. For incoming traffic you
+have to configure your firewall and/or DNS settings. For outgoing
+traffic you need to change the existing e-mail server configuration.
 
 
 [[advanced_lvm_options]]

@@ -21,8 +21,6 @@ ifndef::manvolnum[]
 
 include::pmg-intro.adoc[]
 
-include::pmg-quick-start.adoc[]
-
 include::pmg-planning-deployment.adoc[]
 
 include::pmg-installation.adoc[]
