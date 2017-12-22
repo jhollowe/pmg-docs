@@ -1,9 +1,7 @@
 
 PPMS= 			\
 pmg-grub-menu		\
-pmg-installation-done	\
 pmg-installation	\
-pmg-license-agreement	\
 pmg-select-location	\
 pmg-select-target-disk	\
 pmg-set-password	\
