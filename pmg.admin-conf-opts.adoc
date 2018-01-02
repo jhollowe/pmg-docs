@@ -1,0 +1,24 @@
+`advfilter`: `<boolean>` ('default =' `1`)::
+
+Use advanced filters for statistic.
+
+`dailyreport`: `<boolean>` ('default =' `1`)::
+
+Send daily reports.
+
+`demo`: `<boolean>` ('default =' `0`)::
+
+Demo mode - do not start SMTP filter.
+
+`email`: `<string>` ('default =' `admin@domain.tld`)::
+
+Administrator E-Mail address.
+
+`http_proxy`: `http://.*` ::
+
+Specify external http proxy which is used for downloads (example: 'http://username:password@host:port/')
+
+`statlifetime`: `<integer> (1 - N)` ('default =' `7`)::
+
+User Statistics Lifetime (days)
+
