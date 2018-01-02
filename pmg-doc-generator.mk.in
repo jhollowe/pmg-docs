@@ -44,6 +44,10 @@ docinfo.xml:
 	$(PERL_DOC_ENV) perl -I. ${DGDIR}/gen-$*-opts.pl >$@.tmp
 	mv $@.tmp $@
 
+pmg.%-conf-opts.adoc: ${DGDIR}/gen-pmg.conf.5-opts.pl
+	$(PERL_DOC_ENV) perl -I. ${DGDIR}/gen-pmg.conf.5-opts.pl $* >$@.tmp
+	mv $@.tmp $@
+
 %.adoc: ${DGDIR}/gen-%-adoc.pl
 	$(PERL_DOC_ENV) perl -I. ${DGDIR}/gen-$*-adoc.pl >$@.tmp
 	mv $@.tmp $@
