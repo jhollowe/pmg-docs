@@ -1,0 +1,65 @@
+*pmgqm* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgqm help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`--verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgqm purge* `[OPTIONS]`
+
+Cleanup Quarantine database. Remove entries older than configured
+quarantine lifetime.
+
+`--check` `<boolean>` ('default =' `0`)::
+
+Only search for quarantine files older than configured quarantine lifetime. Just print found files, but do not remove them.
+
+
+
+*pmgqm send* `[OPTIONS]`
+
+Generate and send spam report emails.
+
+`--debug` `<boolean>` ('default =' `0`)::
+
+Debug mode. Print raw email to stdout instead of sending them.
+
+`--receiver` `<string>` ::
+
+Generate report for a single email address. If not specified, generate reports for all users.
+
+`--redirect` `<string>` ::
+
+Redirect spam report email to this address.
+
+`--style` `<custom | short | verbose>` ::
+
+Spam report style. Default value is read from spam quarantine configuration.
+
+`--timespan` `<today | week | yesterday>` ('default =' `today`)::
+
+Select time span.
+
+
+
+*pmgqm status* `[OPTIONS]`
+
+Print quarantine status (mails per user) for specified time span.
+
+`--timespan` `<today | week | yesterday>` ('default =' `today`)::
+
+Select time span.
+
+
+
+

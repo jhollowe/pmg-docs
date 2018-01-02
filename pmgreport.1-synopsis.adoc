@@ -1,0 +1,24 @@
+*pmgreport* `help`
+
+*pmgreport* `[OPTIONS]`
+
+Generate and send daily system report email.
+
+`--auto` `<boolean>` ('default =' `0`)::
+
+Auto mode. Use setting from system configuration (set when invoked fron cron).
+
+`--debug` `<boolean>` ('default =' `0`)::
+
+Debug mode. Print raw email to stdout instead of sending them.
+
+`--receiver` `<string>` ::
+
+Send report to this email address. Default is the administratior email address.
+
+`--timespan` `<today | yesterday>` ('default =' `today`)::
+
+Select time span for included email statistics.
++
+NOTE: System and cluster performance data is always from current time (when script is run).
+

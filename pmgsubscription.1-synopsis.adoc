@@ -1,0 +1,45 @@
+*pmgsubscription* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgsubscription get*
+
+Read subscription info.
+
+
+
+
+*pmgsubscription help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`--verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgsubscription set* `<key>`
+
+Set subscription key.
+
+`<key>`: `pmg([cbsp])-[0-9a-f]{10}` ::
+
+Proxmox Mail Gateway subscription key
+
+
+
+*pmgsubscription update* `[OPTIONS]`
+
+Update subscription info.
+
+`--force` `<boolean>` ('default =' `0`)::
+
+Always connect to server, even if we have up to date info inside local cache.
+
+
+
+

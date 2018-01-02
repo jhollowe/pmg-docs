@@ -5002,10 +5002,10 @@ var pmgapi = [
                                     "accountattr" : {
                                        "default" : "sAMAccountName, uid",
                                        "description" : "Account attribute name name.",
-                                       "format" : "string-list",
+                                       "format" : "ldap-simple-attr-list",
                                        "optional" : 1,
-                                       "pattern" : "[a-zA-Z0-9]+",
-                                       "type" : "string"
+                                       "type" : "string",
+                                       "typetext" : "<string>"
                                     },
                                     "basedn" : {
                                        "description" : "Base domain name.",
@@ -5068,18 +5068,18 @@ var pmgapi = [
                                     "groupclass" : {
                                        "default" : "group, univentionGroup, ipausergroup",
                                        "description" : "List of objectclasses for groups.",
-                                       "format" : "string-list",
+                                       "format" : "ldap-simple-attr-list",
                                        "optional" : 1,
                                        "type" : "string",
                                        "typetext" : "<string>"
                                     },
                                     "mailattr" : {
-                                       "default" : "mail, userPrincipalName, proxyAddresses, othermailbox",
+                                       "default" : "mail, userPrincipalName, proxyAddresses, othermailbox, mailAlternativeAddress",
                                        "description" : "List of mail attribute names.",
-                                       "format" : "string-list",
+                                       "format" : "ldap-simple-attr-list",
                                        "optional" : 1,
-                                       "pattern" : "[a-zA-Z0-9]+",
-                                       "type" : "string"
+                                       "type" : "string",
+                                       "typetext" : "<string>"
                                     },
                                     "mode" : {
                                        "default" : "ldap",
@@ -5523,10 +5523,10 @@ var pmgapi = [
                         "accountattr" : {
                            "default" : "sAMAccountName, uid",
                            "description" : "Account attribute name name.",
-                           "format" : "string-list",
+                           "format" : "ldap-simple-attr-list",
                            "optional" : 1,
-                           "pattern" : "[a-zA-Z0-9]+",
-                           "type" : "string"
+                           "type" : "string",
+                           "typetext" : "<string>"
                         },
                         "basedn" : {
                            "description" : "Base domain name.",
@@ -5574,18 +5574,18 @@ var pmgapi = [
                         "groupclass" : {
                            "default" : "group, univentionGroup, ipausergroup",
                            "description" : "List of objectclasses for groups.",
-                           "format" : "string-list",
+                           "format" : "ldap-simple-attr-list",
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
                         },
                         "mailattr" : {
-                           "default" : "mail, userPrincipalName, proxyAddresses, othermailbox",
+                           "default" : "mail, userPrincipalName, proxyAddresses, othermailbox, mailAlternativeAddress",
                            "description" : "List of mail attribute names.",
-                           "format" : "string-list",
+                           "format" : "ldap-simple-attr-list",
                            "optional" : 1,
-                           "pattern" : "[a-zA-Z0-9]+",
-                           "type" : "string"
+                           "type" : "string",
+                           "typetext" : "<string>"
                         },
                         "mode" : {
                            "default" : "ldap",
@@ -7265,6 +7265,7 @@ var pmgapi = [
                         },
                         "dnsbl_sites" : {
                            "description" : "Optional list of DNS white/blacklist domains (see postscreen_dnsbl_sites parameter).",
+                           "format" : "dnsbl-entry-list",
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
@@ -7440,13 +7441,6 @@ var pmgapi = [
                            "type" : "boolean",
                            "typetext" : "<boolean>"
                         },
-                        "use_rbl" : {
-                           "default" : 1,
-                           "description" : "Use Realtime Blacklists.",
-                           "optional" : 1,
-                           "type" : "boolean",
-                           "typetext" : "<boolean>"
-                        },
                         "verifyreceivers" : {
                            "description" : "Enable receiver verification. The value spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address.",
                            "enum" : [
@@ -7511,6 +7505,15 @@ var pmgapi = [
                            "type" : "integer",
                            "typetext" : "<integer> (0 - 1000)"
                         },
+                        "clamav_heuristic_score" : {
+                           "default" : 3,
+                           "description" : "Score for ClamaAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).",
+                           "maximum" : 1000,
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - 1000)"
+                        },
                         "delete" : {
                            "description" : "A list of settings you want to delete.",
                            "format" : "pve-configid-list",
@@ -7534,7 +7537,7 @@ var pmgapi = [
                            "type" : "string"
                         },
                         "maxspamsize" : {
-                           "default" : 204800,
+                           "default" : 262144,
                            "description" : "Maximum size of spam messages in bytes.",
                            "minimum" : 64,
                            "optional" : 1,
@@ -10756,9 +10759,9 @@ var pmgapi = [
                {
                   "info" : {
                      "POST" : {
-                        "description" : "Creates a VNC Shell proxy.",
+                        "description" : "Creates a Terminal proxy.",
                         "method" : "POST",
-                        "name" : "vncshell",
+                        "name" : "termproxy",
                         "parameters" : {
                            "additionalProperties" : 0,
                            "properties" : {
@@ -10774,15 +10777,13 @@ var pmgapi = [
                                  "optional" : 1,
                                  "type" : "boolean",
                                  "typetext" : "<boolean>"
-                              },
-                              "websocket" : {
-                                 "default" : 1,
-                                 "description" : "use websocket instead of standard vnc.",
-                                 "optional" : 1,
-                                 "type" : "boolean",
-                                 "typetext" : "<boolean>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "returns" : {
@@ -10805,8 +10806,8 @@ var pmgapi = [
                      }
                   },
                   "leaf" : 1,
-                  "path" : "/nodes/{node}/vncshell",
-                  "text" : "vncshell"
+                  "path" : "/nodes/{node}/termproxy",
+                  "text" : "termproxy"
                },
                {
                   "info" : {
@@ -10837,6 +10838,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "returns" : {
                            "properties" : {
@@ -11069,6 +11075,40 @@ var pmgapi = [
                               }
                            },
                            "type" : "object"
+                        }
+                     },
+                     "POST" : {
+                        "description" : "Reboot or shutdown a node.",
+                        "method" : "POST",
+                        "name" : "node_cmd",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "command" : {
+                                 "description" : "Specify the command.",
+                                 "enum" : [
+                                    "reboot",
+                                    "shutdown"
+                                 ],
+                                 "type" : "string"
+                              },
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "type" : "null"
                         }
                      }
                   },
@@ -11485,6 +11525,13 @@ var pmgapi = [
                         },
                         "password" : {
                            "description" : "The secret password. This can also be a valid ticket.",
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "path" : {
+                           "description" : "Verify ticket, and check if user have access on 'path'",
+                           "maxLength" : 64,
+                           "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
                         },
@@ -12214,8 +12261,8 @@ var pmgapi = [
                      "properties" : {
                         "id" : {
                            "description" : "Unique ID",
-                           "maxLength" : 40,
-                           "pattern" : "C\\d+R\\d+",
+                           "maxLength" : 60,
+                           "pattern" : "C\\d+R\\d+T\\d+",
                            "type" : "string"
                         },
                         "raw" : {
@@ -12309,8 +12356,8 @@ var pmgapi = [
                         },
                         "id" : {
                            "description" : "Unique ID",
-                           "maxLength" : 40,
-                           "pattern" : "C\\d+R\\d+",
+                           "maxLength" : 60,
+                           "pattern" : "C\\d+R\\d+T\\d+",
                            "type" : "string"
                         }
                      }
@@ -13107,6 +13154,14 @@ var pmgapi = [
                   "returns" : {
                      "items" : {
                         "properties" : {
+                           "bytes_in" : {
+                              "description" : "Incoming mail traffic (Bytes).",
+                              "type" : "number"
+                           },
+                           "bytes_out" : {
+                              "description" : "Outgoing mail traffic (Bytes).",
+                              "type" : "number"
+                           },
                            "count_in" : {
                               "description" : "Incoming mail count.",
                               "type" : "number"
@@ -13118,14 +13173,6 @@ var pmgapi = [
                            "domain" : {
                               "description" : "Domain name.",
                               "type" : "string"
-                           },
-                           "mbytes_in" : {
-                              "description" : "Incoming mail traffic (Mebibytes).",
-                              "type" : "number"
-                           },
-                           "mbytes_out" : {
-                              "description" : "Outgoing mail traffic (Mebibytes).",
-                              "type" : "number"
                            },
                            "spamcount_in" : {
                               "description" : "Incoming spam mails.",
@@ -13249,12 +13296,20 @@ var pmgapi = [
                            "type" : "number"
                         },
                         "junk_in" : {
-                           "description" : "Incoming junk mail count (viruscount_in + spamcount_in + glcount + spfcount).",
+                           "description" : "Incoming junk mail count (viruscount_in + spamcount_in + glcount + spfcount + rbl_rejects + pregreet_rejects).",
                            "type" : "number"
                         },
                         "junk_out" : {
                            "description" : "Outgoing junk mail count (viruscount_out + spamcount_out).",
                            "type" : "number"
+                        },
+                        "pregreet_rejects" : {
+                           "description" : "PREGREET recject count.",
+                           "type" : "integer"
+                        },
+                        "rbl_rejects" : {
+                           "description" : "Number of RBL rejects.",
+                           "type" : "integer"
                         },
                         "spamcount_in" : {
                            "description" : "Incoming spam mails.",
@@ -13537,8 +13592,16 @@ var pmgapi = [
                               "description" : "Time index.",
                               "type" : "integer"
                            },
+                           "pregreet_rejects" : {
+                              "description" : "PREGREET recject count.",
+                              "type" : "integer"
+                           },
+                           "rbl_rejects" : {
+                              "description" : "Number of RBL rejects.",
+                              "type" : "integer"
+                           },
                            "spamcount_in" : {
-                              "description" : "Incoming spam mails (spamcount_in + glcount + spfcount).",
+                              "description" : "Incoming spam mails (spamcount_in + glcount + spfcount + rbl_rejects + pregreet_rejects).",
                               "type" : "number"
                            },
                            "spamcount_out" : {
@@ -13841,9 +13904,9 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
-                  "description" : "Mail RBL Count Statistics.",
+                  "description" : "Early SMTP reject count statistic (RBL, PREGREET rejects with postscreen)",
                   "method" : "GET",
-                  "name" : "rblcount",
+                  "name" : "rejectcount",
                   "parameters" : {
                      "additionalProperties" : 0,
                      "properties" : {
@@ -13879,7 +13942,7 @@ var pmgapi = [
                         },
                         "timespan" : {
                            "default" : 3600,
-                           "description" : "Return RBL rejects/<timespan>, where <timespan> is specified in seconds.",
+                           "description" : "Return RBL/PREGREET rejects/<timespan>, where <timespan> is specified in seconds.",
                            "maximum" : 31622400,
                            "minimum" : 3600,
                            "optional" : 1,
@@ -13906,12 +13969,16 @@ var pmgapi = [
                   "returns" : {
                      "items" : {
                         "properties" : {
-                           "count" : {
-                              "description" : "RBL recject count.",
-                              "type" : "number"
-                           },
                            "index" : {
                               "description" : "Time index.",
+                              "type" : "integer"
+                           },
+                           "pregreet_rejects" : {
+                              "description" : "PREGREET recject count.",
+                              "type" : "integer"
+                           },
+                           "rbl_rejects" : {
+                              "description" : "RBL recject count.",
                               "type" : "integer"
                            },
                            "time" : {
@@ -13926,8 +13993,8 @@ var pmgapi = [
                }
             },
             "leaf" : 1,
-            "path" : "/statistics/rblcount",
-            "text" : "rblcount"
+            "path" : "/statistics/rejectcount",
+            "text" : "rejectcount"
          }
       ],
       "info" : {

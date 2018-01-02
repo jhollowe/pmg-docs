@@ -1,0 +1,46 @@
+*pmgtunnel* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgtunnel help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`--verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgtunnel restart*
+
+Restart the Cluster Tunnel Daemon
+
+
+
+*pmgtunnel start* `[OPTIONS]`
+
+Start the Cluster Tunnel Daemon
+
+`--debug` `<boolean>` ('default =' `0`)::
+
+Debug mode - stay in foreground
+
+
+
+*pmgtunnel status*
+
+Print cluster tunnel status.
+
+
+
+*pmgtunnel stop*
+
+Stop the Cluster Tunnel Daemon
+
+
+
+

@@ -1,0 +1,10 @@
+*pmgversion* `help`
+
+*pmgversion* `[OPTIONS]`
+
+Print version information for Proxmox Mail Gateway packages.
+
+`--verbose` `<boolean>` ('default =' `0`)::
+
+List version details for important packages.
+

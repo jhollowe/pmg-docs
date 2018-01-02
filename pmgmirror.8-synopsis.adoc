@@ -1,0 +1,40 @@
+*pmgmirror* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgmirror help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`--verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgmirror restart*
+
+Restart the Database Mirror Daemon
+
+
+
+*pmgmirror start* `[OPTIONS]`
+
+Start the Database Mirror Daemon
+
+`--debug` `<boolean>` ('default =' `0`)::
+
+Debug mode - stay in foreground
+
+
+
+*pmgmirror stop*
+
+Stop the Database Mirror Daemon
+
+
+
+

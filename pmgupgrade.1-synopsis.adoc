@@ -1,0 +1,10 @@
+*pmgupgrade* `help`
+
+*pmgupgrade* `[OPTIONS]`
+
+Upgrade Proxmox Mail Gateway
+
+`--shell` `<boolean>` ('default =' `0`)::
+
+Run an interactive shell after the update.
+

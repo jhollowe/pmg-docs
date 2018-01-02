@@ -1,0 +1,57 @@
+*pmgbackup* `<COMMAND> [ARGS] [OPTIONS]`
+
+*pmgbackup backup* `[OPTIONS]`
+
+Backup the system configuration.
+
+`--statistic` `<boolean>` ('default =' `1`)::
+
+Backup statistic databases.
+
+
+
+
+*pmgbackup help* `[<cmd>]` `[OPTIONS]`
+
+Get help about specified command.
+
+`<cmd>`: `<string>` ::
+
+Command name
+
+`--verbose` `<boolean>` ::
+
+Verbose output format.
+
+
+
+
+*pmgbackup list*
+
+List all stored backups (files named proxmox-backup_{DATE}.tgz).
+
+
+
+*pmgbackup restore* `--filename <string>` `[OPTIONS]`
+
+Restore the system configuration.
+
+`--config` `<boolean>` ('default =' `0`)::
+
+Restore system configuration.
+
+`--database` `<boolean>` ('default =' `1`)::
+
+Restore the rule database. This is the default.
+
+`--filename` `pmg-backup_[0-9A-Za-z_-]+\.tgz` ::
+
+The backup file name.
+
+`--statistic` `<boolean>` ('default =' `0`)::
+
+Restore statistic databases. Only considered when you restore the 'database'.
+
+
+
+
