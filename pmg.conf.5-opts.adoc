@@ -8,17 +8,9 @@ Use advanced filters for statistic.
 
 Send daily reports.
 
-`delete`: `<string>` ::
-
-A list of settings you want to delete.
-
 `demo`: `<boolean>` ('default =' `0`)::
 
 Demo mode - do not start SMTP filter.
-
-`digest`: `<string>` ::
-
-Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 
 `email`: `<string>` ('default =' `admin@domain.tld`)::
 
@@ -54,14 +46,6 @@ Files larger than this limit won't be scanned.
 
 ClamAV database mirror server.
 
-`delete`: `<string>` ::
-
-A list of settings you want to delete.
-
-`digest`: `<string>` ::
-
-Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
-
 `maxcccount`: `<integer> (0 - N)` ('default =' `0`)::
 
 This option sets the lowest number of Credit Card or Social Security numbers found in a file to generate a detect.
@@ -87,14 +71,6 @@ How many simultaneous connections any client is allowed to make to this service.
 `conn_rate_limit`: `<integer> (0 - N)` ('default =' `0`)::
 
 The maximal number of connection attempts any client is allowed to make to this service per minute. To disable this feature, specify a limit of 0.
-
-`delete`: `<string>` ::
-
-A list of settings you want to delete.
-
-`digest`: `<string>` ::
-
-Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 
 `dnsbl_sites`: `<string>` ::
 
@@ -188,10 +164,6 @@ Add TLS received header.
 
 Enable TLS Logging.
 
-`use_rbl`: `<boolean>` ('default =' `1`)::
-
-Use Realtime Blacklists.
-
 `verifyreceivers`: `<450 | 550>` ::
 
 Enable receiver verification. The value spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address.
@@ -202,19 +174,15 @@ Enable receiver verification. The value spefifies the numerical reply code when 
 
 Additional score for bounce mails.
 
-`delete`: `<string>` ::
+`clamav_heuristic_score`: `<integer> (0 - 1000)` ('default =' `3`)::
 
-A list of settings you want to delete.
-
-`digest`: `<string>` ::
-
-Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
+Score for ClamaAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).
 
 `languages`: `(all|([a-z][a-z])+( ([a-z][a-z])+)*)` ('default =' `all`)::
 
 This option is used to specify which languages are considered OK for incoming mail.
 
-`maxspamsize`: `<integer> (64 - N)` ('default =' `204800`)::
+`maxspamsize`: `<integer> (64 - N)` ('default =' `262144`)::
 
 Maximum size of spam messages in bytes.
 
@@ -248,14 +216,6 @@ Allow to view hyperlinks.
 
 Authentication mode to access the quarantine interface. Mode 'ticket' allows login using tickets sent with the daily spam report. Mode 'ldap' requires to login using an LDAP account. Finally, mode 'ldapticket' allows both ways.
 
-`delete`: `<string>` ::
-
-A list of settings you want to delete.
-
-`digest`: `<string>` ::
-
-Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
-
 `hostname`: `<string>` ::
 
 Quarantine Host. Usefule if you run a Cluster and want users to connect to a specific host.
@@ -281,14 +241,6 @@ Allow to view images.
 `allowhrefs`: `<boolean>` ('default =' `1`)::
 
 Allow to view hyperlinks.
-
-`delete`: `<string>` ::
-
-A list of settings you want to delete.
-
-`digest`: `<string>` ::
-
-Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
 
 `lifetime`: `<integer> (1 - N)` ('default =' `7`)::
 

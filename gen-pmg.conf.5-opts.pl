@@ -17,8 +17,16 @@ foreach my $section (@$types) {
     my $properties = $schema->{properties};
     
     print ".Section '$section'\n\n";
+
+    my $filter = sub {
+	my ($key, $phash) = @_;
+	return 1 if $key eq 'digest';
+	return 1 if $key eq 'delete';
+	return 0;
+    };
     
-    print PVE::RESTHandler::dump_properties($properties);
+    print PVE::RESTHandler::dump_properties(
+	$properties, 'asciidoc', 'config', $filter);
 }
  
 exit(0);
