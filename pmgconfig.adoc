@@ -113,7 +113,46 @@ Key and certificate (combined) to encrypt mail traffic (TLS).
 Service Configuration Templates
 -------------------------------
 
-{pmg}
+{pmg} uses various services to implement mail filtering, for example
+the {postfix} Mail Transport Agent (MTA), the {clamav} antivirus
+engine and the Apache {spamassassin} project. Those services use
+separate configuration files, so we need to rewrite those files when
+configuration is changed.
+
+We use a template based approach to generate those files. The {tts} is
+a well known, fast and flexible template processing system. You can
+find the default templates in `/var/lib/pmg/templates/`. Please do not
+modify them directly, because your modification would get lost on the
+next update. Instead, copy them to `/etc/pmg/templates/`, then apply
+your changes there.
+
+Templates can access any configuration setting, and you can use the
+`pmgconfig dump` command to get a list of all variable names:
+
+----
+# pmgconfig dump
+...
+dns.domain = yourdomain.tld
+dns.hostname = pmg
+ipconfig.int_ip = 192.168.2.127
+pmg.admin.advfilter = 1
+...
+----
+
+The same tool is used to force regeneration of all template based
+configuration files. You need to run that after modifying a template,
+or when you directly edit configuration files
+
+----
+# pmgconfig sync --restart 1
+----
+
+Above commands also restarts services if underlying configuration
+files are changed. Please note that this is automatically done when
+you change the configuration using the GUI or API.
+
+NOTE: Modified templates from `/etc/pmg/templates/` are automatically
+synced from the master node to all cluster members.
 
 
 System Configuration
