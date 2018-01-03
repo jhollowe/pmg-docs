@@ -20,19 +20,101 @@ DESCRIPTION
 -----------
 endif::manvolnum[]
 ifndef::manvolnum[]
-Configuration Management Toolkit
-================================
+Configuration Management
+========================
 :pmg-toplevel:
 endif::manvolnum[]
 
 {pmg} is usually configured using the web-based Graphical User
 Interface (GUI), but it is also possible to directly edit the
 configuration files, use the REST API over 'https'
-or the command line tool 'pmgsh'.
+or the command line tool `pmgsh`.
 
-The command line tool 'pmgconfig' is used to simplify some common
+The command line tool `pmgconfig` is used to simplify some common
 configuration tasks, i.e. to generate cerificates and to rewrite
 service configuration files.
+
+NOTE: We use a Postgres database to store mail filter rules and
+statistic data. See chapter xref:chapter_pmgdb[Database Management]
+for more information.
+
+
+Configuration files overview
+----------------------------
+
+`/etc/network/interfaces`::
+
+Network setup. We never modify this files directly. Instead, we write
+changes to `/etc/network/interfaces.new`. When you reboot, we rename
+the file to `/etc/network/interfaces`, so any changes gets activated
+on the next reboot.
+
+`/etc/pmg/pmg.conf`::
+
+Stores common administration options, i.e. the spam and mail proxy setup.
+
+`/etc/pmg/cluster.conf`::
+
+The cluster setup.
+
+`/etc/pmg/domains`::
+
+The list of relay domains.
+
+`/etc/pmg/fetchmailrc`::
+
+Fetchmail configuration (POP3 and IMAP setup).
+
+`/etc/pmg/ldap.conf`::
+
+LDAP configuration.
+
+`/etc/pmg/mynetworks`::
+
+List of local (trusted) networks.
+
+`/etc/pmg/subscription`::
+
+Stores your subscription key and status.
+
+`/etc/pmg/transports`::
+
+Message delivery transport setup.
+
+`/etc/pmg/user.conf`::
+
+GUI user configuration.
+
+
+Keys and Certificates
+---------------------
+
+`/etc/pmg/pmg-api.pem`::
+
+Key and certificate (combined) used be the HTTPs server (API).
+
+`/etc/pmg/pmg-authkey.key`::
+
+Privat key use to generate authentication tickets.
+
+`/etc/pmg/pmg-authkey.pub`::
+
+Public key use to verify authentication tickets.
+
+`/etc/pmg/pmg-csrf.key`::
+
+Internally used to generate CSRF tokens.
+
+`/etc/pmg/pmg-tls.pem`::
+
+Key and certificate (combined) to encrypt mail traffic (TLS).
+
+
+Service Configuration Templates
+-------------------------------
+
+{pmg}
+
 
 System Configuration
 --------------------
