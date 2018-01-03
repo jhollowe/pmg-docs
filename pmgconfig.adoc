@@ -44,7 +44,37 @@ ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-network-config.png[]
 endif::manvolnum[]
 
-TODO
+Normally the network and time is already configured when you visit the
+GUI. The installer asks for those setting and sets up the correct
+values.
+
+The default setup uses a single Ethernet adapter and static IP
+assignment. The configuration is stored at '/etc/network/interfaces',
+and the actual network setup is done the standard Debian way using
+package 'ifupdown'.
+
+.Example network setup '/etc/network/interfaces'
+----
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+auto ens18
+iface ens18 inet static
+	address  192.168.2.127
+	netmask  255.255.240.0
+	gateway  192.168.2.1
+----
+
+.DNS recommendations
+
+Many tests to detect SPAM mails use DNS queries, so it is important to
+have a fast and reliable DNS server. We also query some public
+available DNS Blacklists. Most of them apply rate limits for clients,
+so they simply will not work if you use a public DNS server (because
+they are usually blocked). We recommend to use your own DNS server,
+which need to be configured in 'recursive' mode.
 
 
 Options
