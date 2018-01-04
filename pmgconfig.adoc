@@ -219,18 +219,6 @@ endif::manvolnum[]
 
 include::pmg.admin-conf-opts.adoc[]
 
-
-Backup and Restore
-~~~~~~~~~~~~~~~~~~
-
-ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-backup.png[]
-endif::manvolnum[]
-
-TODO
-
-
-
 ifdef::manvolnum[]
 include::pmg-copyright.adoc[]
 endif::manvolnum[]

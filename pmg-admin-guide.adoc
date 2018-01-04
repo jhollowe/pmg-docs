@@ -27,6 +27,9 @@ include::pmg-installation.adoc[]
 
 include::pmgconfig.adoc[]
 
+include::pmgbackup.adoc[]
+
+
 // Return to normal title levels.
 :leveloffset: 0
 
@@ -98,6 +101,12 @@ include::pmg-bibliography.adoc[]
 [appendix]
 Command Line Interface
 ----------------------
+
+*pmgbackup* - Proxmox Mail Gateway Backup and Restore Utility
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+include::pmgbackup.1-synopsis.adoc[]
+
 
 *pmgsh* - API Shell
 ~~~~~~~~~~~~~~~~~~~

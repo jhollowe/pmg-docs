@@ -24,7 +24,73 @@ Backup and Restore
 :pmg-toplevel:
 endif::manvolnum[]
 
-Please fix this page.
+ifndef::manvolnum[]
+image::images/screenshot/pmg-gui-backup.png[]
+endif::manvolnum[]
+
+{pmg} includes the ability to backup and restore the
+configuration. This includes the complete config from `/etc/pmg/`, the
+mail filter rules and the statistic database.
+
+NOTE: The backup does not include the network setup, and also no mail
+data from the postfix queue or the spam or virus quarantine.
+
+You can create a backup by simply pressing the 'Backup' button on the
+GUI, or by using the command line interface:
+
+----
+# pmgbackup backup
+starting backup to: /var/lib/pmg/backup/pmg-backup_2018_01_04_5A4E0436.tgz
+backup finished
+----
+
+Backups are stored inside directory `/var/lib/pmg/backup/`. It is
+usually best to mount a remote file system to that directory, so that
+the resulting backups gets stored remotely.
+
+You can list the contents of that directory with:
+
+----
+# pmgbackup list
+....
+pmg-backup_2017_11_10_5A05D4B9.tgz      17012
+pmg-backup_2017_11_13_5A09676A.tgz      16831
+pmg-backup_2018_01_04_5A4E0436.tgz      21514
+----
+
+Restores are also possible using the GUI or command line, and you can
+select what parts you want to restore:
+
+System Configuration::
+
+Basically the contents of `/etc/pmg/`.
+
+Rule Database::
+
+The mail filter rule database.
+
+Statistic::
+
+All statistical data.
+
+For examply, you can selectively restore the mail filter rules from an
+older backup:
+
+----
+# pmgbackup restore --filename pmg-backup_2018_01_04_5A4E0436.tgz --database 
+starting restore: /var/lib/pmg/backup/pmg-backup_2018_01_04_5A4E0436.tgz
+config_backup.tar: OK
+Proxmox_ruledb.sql: OK
+Proxmox_statdb.sql: OK
+version.txt: OK
+Destroy existing rule database
+Create new database
+run analyze to speed up database queries
+Analyzing/Upgrading existing Databases...done
+restore finished
+----
+
+
 
 
 ifdef::manvolnum[]
