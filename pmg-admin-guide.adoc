@@ -87,6 +87,11 @@ include::pmgreport.adoc[]
 
 include::pmgupgrade.adoc[]
 
+
+:leveloffset: 1
+
+include::pmg-bibliography.adoc[]
+
 :leveloffset: 0
 
 
