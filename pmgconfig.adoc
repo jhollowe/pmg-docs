@@ -49,6 +49,18 @@ changes to `/etc/network/interfaces.new`. When you reboot, we rename
 the file to `/etc/network/interfaces`, so any changes gets activated
 on the next reboot.
 
+`/etc/resolv.conf`::
+
+DNS search domain and nameserver setup.
+
+`/etc/hostname`::
+
+The system's host name.
+
+`/etc/hosts`::
+
+Static table lookup for hostnames.
+
 `/etc/pmg/pmg.conf`::
 
 Stores common administration options, i.e. the spam and mail proxy setup.
