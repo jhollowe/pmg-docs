@@ -221,6 +221,10 @@ ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-system-options.png[]
 endif::manvolnum[]
 
+
+Those settings are saved to subsection 'admin' in `/etc/pmg/pmg.conf`,
+using the following configuration keys:
+
 include::pmg.admin-conf-opts.adoc[]
 
 
@@ -230,12 +234,14 @@ Mail Proxy Configuration
 Relaying
 ~~~~~~~~
 
-
 ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-mailproxy-relaying.png[]
 endif::manvolnum[]
 
-TODO
+Those settings are saved to subsection 'mail' in `/etc/pmg/pmg.conf`,
+using the following configuration keys:
+
+include::pmg.mail-relaying-conf-opts.adoc[]
 
 Relay Domains
 ~~~~~~~~~~~~~
