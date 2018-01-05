@@ -97,6 +97,10 @@ Message delivery transport setup.
 
 GUI user configuration.
 
+`/etc/mail/spamassassin/custom.cf`::
+
+Custom {spamassassin} setup.
+
 
 Keys and Certificates
 ---------------------
