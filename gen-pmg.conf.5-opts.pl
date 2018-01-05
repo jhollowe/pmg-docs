@@ -15,6 +15,11 @@ my $single_section = shift;
 my $found = 0;
 
 my $key_groups = {
+    'mail-ports' => [
+	'mail' , {
+	    int_port => 1,
+	    ext_port => 1,
+	}],
     'mail-relaying' => [
 	'mail' , {
 	    relay => 1,
