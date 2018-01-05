@@ -400,6 +400,10 @@ include::pmg.spamquar-conf-opts.adoc[]
 Virus Detector Configuration
 ----------------------------
 
+ifndef::manvolnum[]
+image::images/screenshot/pmg-gui-virus-options.png[]
+endif::manvolnum[]
+
 All mails are automatically passed to the included virus detector
 ({clamav}). The default setting are considered safe, so it is usually
 not required to change them.
@@ -409,9 +413,21 @@ using the following configuration keys:
 
 include::pmg.clamav-conf-opts.adoc[]
 
+ifndef::manvolnum[]
+image::images/screenshot/pmg-gui-clamav-database.png[]
+endif::manvolnum[]
+
+Please note that the virus signature database it automatically
+updated. But you can see the database status on the GUI, and you can
+trigger manual updates there.
+
 
 Virus Quarantine Configuration
 ------------------------------
+
+ifndef::manvolnum[]
+image::images/screenshot/pmg-gui-virusquar-options.png[]
+endif::manvolnum[]
 
 Indentified virus mails are automatically moved to the virus
 quarantine. The administartor can view those mails using the GUI, or
