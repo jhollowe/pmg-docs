@@ -307,7 +307,11 @@ ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-mailproxy-tls.png[]
 endif::manvolnum[]
 
-TODO
+Those settings are saved to subsection 'mail' in `/etc/pmg/pmg.conf`,
+using the following configuration keys:
+
+include::pmg.mail-tls-conf-opts.adoc[]
+
 
 Whitelist
 ~~~~~~~~~
