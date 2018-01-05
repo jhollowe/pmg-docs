@@ -246,12 +246,13 @@ include::pmg.mail-relaying-conf-opts.adoc[]
 Relay Domains
 ~~~~~~~~~~~~~
 
-
 ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-mailproxy-relaydomains.png[]
 endif::manvolnum[]
 
-TODO
+List of relayed mail domains, i.e. what destination domains this
+system will relay mail to. The system will reject incoming mails to
+other domains.
 
 
 Ports
@@ -352,7 +353,11 @@ ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-mailproxy-whitelist.png[]
 endif::manvolnum[]
 
-TODO
+All SMTP checks are disabled for those entries (e. g. Greylisting,
+SPF, RBL, ...)
+
+NOTE: If you use a backup MX server (e.g. your ISP offers this service
+for you) you should always add those servers here.
 
 
 Spam Detector Configuration
