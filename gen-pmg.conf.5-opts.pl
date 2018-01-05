@@ -14,6 +14,11 @@ my $types = PMG::Config::Base->lookup_types;
 my $single_section = shift;
 my $found = 0;
 
+my $skiped_keys = {
+    'delete' => 1,
+    digest => 1,
+};
+
 my $key_groups = {
     'mail-options' => [
 	'mail' , {
@@ -32,6 +37,12 @@ my $key_groups = {
 	    message_rate_limit => 1,
 	    banner => 1,
 	}],
+    'mail-tls' => [
+	'mail' , {
+	    tls => 1,
+	    tlsheader => 1,
+	    tlslog => 1,
+	}],
     'mail-ports' => [
 	'mail' , {
 	    int_port => 1,
@@ -45,6 +56,29 @@ my $key_groups = {
 	    smarthost => 1,
 	}],
 };
+
+if (1) {
+    # verify if we document all mail settings
+    my $plugin = PMG::Config::Base->lookup('mail');
+    my $schema = $plugin->updateSchema(1);
+    my $properties = $schema->{properties};
+
+    my $found_mail_keys = {};
+    foreach my $group (keys %$key_groups) {
+	my ($sec, $hash) = @{$key_groups->{$group}};
+	next if $sec ne 'mail';
+	foreach my $k (keys %$hash) {
+	    die "unknown key '$k'" if !defined($properties->{$k});
+	    $found_mail_keys->{$k} = 1;
+	}
+    }
+    foreach my $k (keys %$properties) {
+	next if $skiped_keys->{$k};
+	next if $k =~ m/^max_(filters|policy|smtpd_in|smtpd_out)$/;
+	die "undocumented key '$k'" if !defined($found_mail_keys->{$k});
+    }
+}
+
 
 my $select_keys;
 
@@ -72,8 +106,7 @@ foreach my $section (@$types) {
 
     my $filter = sub {
 	my ($key, $phash) = @_;
-	return 1 if $key eq 'digest';
-	return 1 if $key eq 'delete';
+	return 1 if $skiped_keys->{$key};
 	return 1 if $select_keys && !$select_keys->{$key};
 	return 0;
     };
