@@ -287,7 +287,13 @@ ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-mailproxy-transports.png[]
 endif::manvolnum[]
 
-TODO
+You can use {pmg} to send e-mails to different internal
+e-mail servers. For example you can send e-mails addressed to
+domain.com to your first e-mail server, and e-mails addressed to
+subdomain.domain.com to a second one.
+
+You can add the IP addresses, hostname and SMTP ports and mail domains (or
+just single email addresses) of your additional e-mail servers.
 
 
 Networks
