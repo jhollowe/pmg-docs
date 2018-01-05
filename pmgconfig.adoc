@@ -363,6 +363,10 @@ for you) you should always add those servers here.
 Spam Detector Configuration
 ---------------------------
 
+ifndef::manvolnum[]
+image::images/screenshot/pmg-gui-spam-options.png[]
+endif::manvolnum[]
+
 {pmg} uses a wide variety of local and network tests to identify spam
 signatures. This makes it harder for spammers to identify one aspect
 which they can craft their messages to work around the spam filter.
@@ -377,6 +381,10 @@ include::pmg.spam-conf-opts.adoc[]
 
 Spam Quarantine Configuration
 -----------------------------
+
+ifndef::manvolnum[]
+image::images/screenshot/pmg-gui-spamquar-options.png[]
+endif::manvolnum[]
 
 Proxmox analyses all incoming e-mail messages and decides for each
 e-mail if its ham or spam (or virus). Good e-mails are delivered to
