@@ -303,7 +303,11 @@ ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-mailproxy-networks.png[]
 endif::manvolnum[]
 
-TODO
+You can add additional internal (trusted) IP networks or hosts.
+All hosts in this list are allowed to relay.
+
+NOTE: Hosts in the same subnet with Proxmox can relay by default and
+it’s not needed to add them in this list.
 
 
 TLS
@@ -312,6 +316,28 @@ TLS
 ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-mailproxy-tls.png[]
 endif::manvolnum[]
+
+Transport Layer Security (TLS) provides certificate-based
+authentication and encrypted sessions. An encrypted session protects
+the information that is transmitted with SMTP mail. When you activate
+TLS, {pmg} automatically generates a new self signed
+certificate for you (`/etc/pmg/pmg-tls.pem`).
+
+{pmg} uses opportunistic TLS encryption. The SMTP transaction is
+encrypted if the 'STARTTLS' ESMTP feature is supported by the remote
+server. Otherwise, messages are sent in the clear.
+
+Enable TLS logging::
+
+To get additional information about SMTP TLS activity you can enable
+TLS logging. That way information about TLS sessions and used
+certificate’s is logged via syslog.
+
+Add TLS received header::
+
+Set this option to include information about the protocol and cipher
+used as well as the client and issuer CommonName into the "Received:"
+message header.
 
 Those settings are saved to subsection 'mail' in `/etc/pmg/pmg.conf`,
 using the following configuration keys:
