@@ -363,7 +363,30 @@ for you) you should always add those servers here.
 Spam Detector Configuration
 ---------------------------
 
-TODO
+{pmg} uses a wide variety of local and network tests to identify spam
+signatures. This makes it harder for spammers to identify one aspect
+which they can craft their messages to work around the spam filter.
+
+Every single e-mail will be analyzed and gets a spam score
+assigned. The system attempts to optimize the efficiency of the rules
+that are run in terms of minimizing the number of false positives and
+false negatives.
+
+include::pmg.spam-conf-opts.adoc[]
+
+
+Spam Quarantine Configuration
+-----------------------------
+
+Proxmox analyses all incoming e-mail messages and decides for each
+e-mail if its ham or spam (or virus). Good e-mails are delivered to
+the inbox and spam messages can be moved into the spam quarantine.
+
+The system can be configured to send daily reports to inform users
+about the personal spam messages received the last day. That report is
+only sent if there are new messages in the quarantine.
+
+include::pmg.spamquar-conf-opts.adoc[]
 
 
 Virus Detector Configuration
