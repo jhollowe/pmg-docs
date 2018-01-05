@@ -270,12 +270,14 @@ include::pmg.mail-ports-conf-opts.adoc[]
 Options
 ~~~~~~~
 
-
 ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-mailproxy-options.png[]
 endif::manvolnum[]
 
-TODO
+Those settings are saved to subsection 'mail' in `/etc/pmg/pmg.conf`,
+using the following configuration keys:
+
+include::pmg.mail-options-conf-opts.adoc[]
 
 
 Transports

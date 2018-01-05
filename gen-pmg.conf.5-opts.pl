@@ -15,6 +15,23 @@ my $single_section = shift;
 my $found = 0;
 
 my $key_groups = {
+    'mail-options' => [
+	'mail' , {
+	    maxsize => 1,
+	    rejectunknown => 1,
+	    rejectunknownsender => 1,
+	    helotests => 1,
+	    dnsbl_sites => 1,
+	    verifyreceivers => 1,
+	    greylist => 1,
+	    spf => 1,
+	    hide_received => 1,
+	    dwarning => 1,
+	    conn_count_limit => 1,
+	    conn_rate_limit => 1,
+	    message_rate_limit => 1,
+	    banner => 1,
+	}],
     'mail-ports' => [
 	'mail' , {
 	    int_port => 1,
