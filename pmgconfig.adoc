@@ -392,7 +392,28 @@ include::pmg.spamquar-conf-opts.adoc[]
 Virus Detector Configuration
 ----------------------------
 
-TODO
+All mails are automatically passed to the included virus detector
+({clamav}). The default setting are considered safe, so it is usually
+not required to change them.
+
+{clamav} related settings are saved to subsection 'clamav' in `/etc/pmg/pmg.conf`,
+using the following configuration keys:
+
+include::pmg.clamav-conf-opts.adoc[]
+
+
+Virus Quarantine Configuration
+------------------------------
+
+Indentified virus mails are automatically moved to the virus
+quarantine. The administartor can view those mails using the GUI, or
+deliver them in case of false positives. {pmg} does not notify
+individual users about received virus mails.
+
+Virus quarantine related settings are saved to subsection 'virusquar'
+in `/etc/pmg/pmg.conf`, using the following configuration keys:
+
+include::pmg.virusquar-conf-opts.adoc[]
 
 
 User Management
