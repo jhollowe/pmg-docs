@@ -163,6 +163,17 @@ summarized by an intelligent algorithm.
 - Status of final delivery
 
 
+High Availability with Proxmox HA Cluster
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To provide a 100% secure email system for your business, we developed
+Proxmox High Availability (HA) Cluster. The Proxmox HA Cluster uses a
+unique application level clustering scheme, which provides extremely
+good performance. Fast set-up within minutes and a simple, intuitive
+management keep resource needs low. After temporary failures, nodes
+automatically reintegrate without any operator interaction.
+
+
 Your benefit with {pmg}
 -----------------------
 
