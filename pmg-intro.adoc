@@ -26,7 +26,7 @@ mail. Here is a short list of used filtering methods:
 Receiver Verification::
 
 Many of the junk messages reaching your network are emails to
-non-existent useres. Proxmox Mail Gateway detects these emails on SMTP
+non-existent users. {pmg} detects these emails on SMTP
 level, which means before they are transferred to your networks. This
 reduces the traffic to be analyzed for spam and viruses up to 90% and
 reduces the working load on your mail servers and scanners.
@@ -59,9 +59,9 @@ following to this list: Domains (Sender/Receiver), Mail address
 Bayesian Filter - Automatically trained statistical filters::
 
 Some particular words have a higher probability of occurring in spam
-emails rather than in legitimate emails. By beeing trained to
+emails rather than in legitimate emails. By being trained to
 recognize those words, the Bayesian checks every email and adjusts the
-probabilities of it beeing a spam word or not in its database. This is
+probabilities of it being a spam word or not in its database. This is
 done automatically.
 
 Black- and Whitelists::
@@ -73,7 +73,7 @@ regular expression, IP Network, LDAP Group, and others.
 
 Autolearning algorithm::
 
-Proxmox Mail Gateway gathers statistical information about spam
+{pmg} gathers statistical information about spam
 emails. This information is used by an autolearning algorithm, so the
 system becomes smarter over time.
 
@@ -112,7 +112,7 @@ Virus detection
 ~~~~~~~~~~~~~~~
 
 {pmg} integrates {clamav}, which is an open-source (GPL) antivirus
-engine designed for detecting trojans, viruses, malware and other
+engine designed for detecting Trojans, viruses, malware and other
 malicious threats.
 
 It provides a high performance mutli-threaded scanning daemon, command
@@ -142,7 +142,7 @@ What is in the e-mail?
 
 WHEN - objects::
 
-When is the e-mail received by Proxmox Mail Gateway?
+When is the e-mail received by {pmg}?
 
 Every rule has five categories FROM, TO, WHEN, WHAT and ACTION. Every
 of these categories can contain several objects and a direction (in,
@@ -166,7 +166,7 @@ Tracking and Logging
 
 The innovative Proxmox Message Tracking Center tracks and summarizes
 all available logs. With the web-based and user friendly management
-interface, the IT admins can easily overview and controll all
+interface, the IT admins can easily overview and control all
 functions from a single screen.
 
 The Message Tracking Center is very fast and powerful, tested on {pmg}
@@ -201,7 +201,7 @@ authentication services for the Spam quarantine GUI.
 Fetchmail integration
 ~~~~~~~~~~~~~~~~~~~~~
 
-{pmg} allows you to fetch mail from other IMAP od POP3 servers.
+{pmg} allows you to fetch mail from other IMAP or POP3 servers.
 
 
 Flexible User Management
@@ -214,7 +214,7 @@ Superuser::
 
 This role is allowed to do everything (reserved for user 'root').
 
-Administartor::
+Administrator::
 
 Full access to mail filter setup, but not allowed to change network setup.
 
