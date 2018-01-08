@@ -1,0 +1,36 @@
+`bounce_score`: `<integer> (0 - 1000)` ('default =' `0`)::
+
+Additional score for bounce mails.
+
+`clamav_heuristic_score`: `<integer> (0 - 1000)` ('default =' `3`)::
+
+Score for ClamaAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).
+
+`languages`: `(all|([a-z][a-z])+( ([a-z][a-z])+)*)` ('default =' `all`)::
+
+This option is used to specify which languages are considered OK for incoming mail.
+
+`maxspamsize`: `<integer> (64 - N)` ('default =' `262144`)::
+
+Maximum size of spam messages in bytes.
+
+`rbl_checks`: `<boolean>` ('default =' `1`)::
+
+Enable real time blacklists (RBL) checks.
+
+`use_awl`: `<boolean>` ('default =' `1`)::
+
+Use the Auto-Whitelist plugin.
+
+`use_bayes`: `<boolean>` ('default =' `1`)::
+
+Whether to use the naive-Bayesian-style classifier.
+
+`use_razor`: `<boolean>` ('default =' `1`)::
+
+Whether to use Razor2, if it is available.
+
+`wl_bounce_relays`: `<string>` ::
+
+Whitelist legitimate bounce relays.
+

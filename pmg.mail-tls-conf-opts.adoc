@@ -1,0 +1,12 @@
+`tls`: `<boolean>` ('default =' `0`)::
+
+Enable TLS.
+
+`tlsheader`: `<boolean>` ('default =' `0`)::
+
+Add TLS received header.
+
+`tlslog`: `<boolean>` ('default =' `0`)::
+
+Enable TLS Logging.
+

@@ -1,0 +1,32 @@
+`archiveblockencrypted`: `<boolean>` ('default =' `0`)::
+
+Wether to block encrypted archives. Mark encrypted archives as viruses.
+
+`archivemaxfiles`: `<integer> (0 - N)` ('default =' `1000`)::
+
+Number of files to be scanned within an archive, a document, or any other kind of container. Warning: disabling this limit or setting it too high may result in severe damage to the system.
+
+`archivemaxrec`: `<integer> (1 - N)` ('default =' `5`)::
+
+Nested archives are scanned recursively, e.g. if a ZIP archive contains a TAR  file,  all files within it will also be scanned. This options specifies how deeply the process should be continued. Warning: setting this limit too high may result in severe damage to the system.
+
+`archivemaxsize`: `<integer> (1000000 - N)` ('default =' `25000000`)::
+
+Files larger than this limit won't be scanned.
+
+`dbmirror`: `<string>` ('default =' `database.clamav.net`)::
+
+ClamAV database mirror server.
+
+`maxcccount`: `<integer> (0 - N)` ('default =' `0`)::
+
+This option sets the lowest number of Credit Card or Social Security numbers found in a file to generate a detect.
+
+`maxscansize`: `<integer> (1000000 - N)` ('default =' `100000000`)::
+
+Sets the maximum amount of data to be scanned for each input file.
+
+`safebrowsing`: `<boolean>` ('default =' `1`)::
+
+Enables support for Google Safe Browsing.
+

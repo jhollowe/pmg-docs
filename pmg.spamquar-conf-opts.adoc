@@ -1,0 +1,28 @@
+`allowhrefs`: `<boolean>` ('default =' `1`)::
+
+Allow to view hyperlinks.
+
+`authmode`: `<ldap | ldapticket | ticket>` ('default =' `ticket`)::
+
+Authentication mode to access the quarantine interface. Mode 'ticket' allows login using tickets sent with the daily spam report. Mode 'ldap' requires to login using an LDAP account. Finally, mode 'ldapticket' allows both ways.
+
+`hostname`: `<string>` ::
+
+Quarantine Host. Usefule if you run a Cluster and want users to connect to a specific host.
+
+`lifetime`: `<integer> (1 - N)` ('default =' `7`)::
+
+Quarantine life time (days)
+
+`mailfrom`: `<string>` ::
+
+Text for 'From' header in daily spam report mails.
+
+`reportstyle`: `<custom | none | short | verbose>` ('default =' `verbose`)::
+
+Spam report style.
+
+`viewimages`: `<boolean>` ('default =' `1`)::
+
+Allow to view images.
+

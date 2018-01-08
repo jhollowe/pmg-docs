@@ -1,0 +1,16 @@
+`relay`: `<string>` ::
+
+The default mail delivery transport (incoming mails).
+
+`relaynomx`: `<boolean>` ('default =' `0`)::
+
+Disable MX lookups for default relay.
+
+`relayport`: `<integer> (1 - 65535)` ('default =' `25`)::
+
+SMTP port number for relay host.
+
+`smarthost`: `<string>` ::
+
+When set, all outgoing mails are deliverd to the specified smarthost.
+

@@ -1,0 +1,12 @@
+`allowhrefs`: `<boolean>` ('default =' `1`)::
+
+Allow to view hyperlinks.
+
+`lifetime`: `<integer> (1 - N)` ('default =' `7`)::
+
+Quarantine life time (days)
+
+`viewimages`: `<boolean>` ('default =' `1`)::
+
+Allow to view images.
+

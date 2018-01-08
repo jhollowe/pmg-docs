@@ -1,0 +1,56 @@
+`banner`: `<string>` ('default =' `ESMTP Proxmox`)::
+
+ESMTP banner.
+
+`conn_count_limit`: `<integer> (0 - N)` ('default =' `50`)::
+
+How many simultaneous connections any client is allowed to make to this service. To disable this feature, specify a limit of 0.
+
+`conn_rate_limit`: `<integer> (0 - N)` ('default =' `0`)::
+
+The maximal number of connection attempts any client is allowed to make to this service per minute. To disable this feature, specify a limit of 0.
+
+`dnsbl_sites`: `<string>` ::
+
+Optional list of DNS white/blacklist domains (see postscreen_dnsbl_sites parameter).
+
+`dwarning`: `<integer> (0 - N)` ('default =' `4`)::
+
+SMTP delay warning time (in hours).
+
+`greylist`: `<boolean>` ('default =' `1`)::
+
+Use Greylisting.
+
+`helotests`: `<boolean>` ('default =' `0`)::
+
+Use SMTP HELO tests.
+
+`hide_received`: `<boolean>` ('default =' `0`)::
+
+Hide received header in outgoing mails.
+
+`maxsize`: `<integer> (1024 - N)` ('default =' `10485760`)::
+
+Maximum email size. Larger mails are rejected.
+
+`message_rate_limit`: `<integer> (0 - N)` ('default =' `0`)::
+
+The maximal number of message delivery requests that any client is allowed to make to this service per minute.To disable this feature, specify a limit of 0.
+
+`rejectunknown`: `<boolean>` ('default =' `0`)::
+
+Reject unknown clients.
+
+`rejectunknownsender`: `<boolean>` ('default =' `0`)::
+
+Reject unknown senders.
+
+`spf`: `<boolean>` ('default =' `1`)::
+
+Use Sender Policy Framework.
+
+`verifyreceivers`: `<450 | 550>` ::
+
+Enable receiver verification. The value spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address.
+
