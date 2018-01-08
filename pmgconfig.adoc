@@ -363,6 +363,9 @@ for you) you should always add those servers here.
 Spam Detector Configuration
 ---------------------------
 
+Options
+~~~~~~~
+
 ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-spam-options.png[]
 endif::manvolnum[]
@@ -379,8 +382,8 @@ false negatives.
 include::pmg.spam-conf-opts.adoc[]
 
 
-Spam Quarantine Configuration
------------------------------
+Quarantine
+~~~~~~~~~~
 
 ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-spamquar-options.png[]
@@ -399,6 +402,9 @@ include::pmg.spamquar-conf-opts.adoc[]
 
 Virus Detector Configuration
 ----------------------------
+
+Options
+~~~~~~~
 
 ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-virus-options.png[]
@@ -422,8 +428,8 @@ updated. But you can see the database status on the GUI, and you can
 trigger manual updates there.
 
 
-Virus Quarantine Configuration
-------------------------------
+Quarantine
+~~~~~~~~~~
 
 ifndef::manvolnum[]
 image::images/screenshot/pmg-gui-virusquar-options.png[]
