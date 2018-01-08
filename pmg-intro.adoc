@@ -14,6 +14,122 @@ Linux.
 
 image::images/Proxmox-Mailprocessing.png[]
 
+Features
+--------
+
+Spam detection
+~~~~~~~~~~~~~~
+
+{pmg} uses a wide variety of local and network tests to identify spam
+mail. Here is a short list of used filtering methods:
+
+Receiver Verification::
+
+Many of the junk messages reaching your network are emails to
+non-existent useres. Proxmox Mail Gateway detects these emails on SMTP
+level, which means before they are transferred to your networks. This
+reduces the traffic to be analyzed for spam and viruses up to 90% and
+reduces the working load on your mail servers and scanners.
+
+Sender policy framework (SPF)::
+
+Sender Policy Framework (SPF) is an open standard for validating
+emails and to prevent sender IP address forgery. SPF allows the
+administrator of an Internet domain to specify which computers are
+authorized to send emails with a given domain by creating a specific
+SPF record in the Domain Name System (DNS).
+
+DNS-based Blackhole List::
+
+A DNS-based Blackhole List (DNSBL) is a means by which an Internet
+site may publish a list of IP addresses, in a format which can be
+easily queried by computer programs on the internet. The technology is
+built on top of the Domain Name System. DNSBLs are used to publish
+lists of addresses linked to spamming.
+
+SMTP Whitelist::
+
+Exclude senders from SMTP blocking. To prevent all SMTP checks
+(Greylisting, Receiver Verification, SPF and RBL) and accept all
+e-mails for the analysis in the filter rule system, you can add the
+following to this list: Domains (Sender/Receiver), Mail address
+(Sender/Receiver), Regular Expression (Sender/Receiver), IP address
+(Sender), IP network (Sender)
+
+Bayesian Filter - Automatically trained statistical filters::
+
+Some particular words have a higher probability of occurring in spam
+emails rather than in legitimate emails. By beeing trained to
+recognize those words, the Bayesian checks every email and adjusts the
+probabilities of it beeing a spam word or not in its database. This is
+done automatically.
+
+Black- and Whitelists::
+
+Black- and Whitelists are an access control mechanism to accept,
+block, or quarantine emails to recipients. This allows you to tune the
+rule-system by applying different objects like domains, email address,
+regular expression, IP Network, LDAP Group, and others.
+
+Autolearning algorithm::
+
+Proxmox Mail Gateway gathers statistical information about spam
+emails. This information is used by an autolearning algorithm, so the
+system becomes smarter over time.
+
+Spam Uri Realtime BlockList (SURBL)::
+
+SURBLs are used to detect spam based on message body URIs (usually web
+sites). This makes them different from most other Real-time
+Blocklists, because SURBLs are not used to block spam senders. SURBLs
+allow you to block messages that have spam hosts which are mentioned
+in message bodies.
+
+Greylisting::
+
+Greylisting an email from a sender your system does not recognize,
+means, that it will be temporarily rejected. Since temporary failures
+are built into the RFC specifications for mail delivery, a legitimate
+server will try to resend the email later on. This is an effective
+method because spammers do not queue and reattempt mail delivery as is
+normal for a regular Mail Transport Agent.
++
+Greylisting can reduce e-mail traffic up to 50%. A greylisted email
+never reaches your mail server and thus your mail server will not send
+useless "Non Delivery Reports" to spammers.
+
+
+Virus detection
+~~~~~~~~~~~~~~~
+
+{pmg} integrates {clamav}, which is an open-source (GPL) antivirus
+engine designed for detecting trojans, viruses, malware and other
+malicious threats.
+
+It provides a high performance mutli-threaded scanning daemon, command
+line utilities for on demand file scanning, and an intelligent tool
+for automatic signature updates.
+
+
+Tracking and Logging
+~~~~~~~~~~~~~~~~~~~~
+
+The innovative Proxmox Message Tracking Center tracks and summarizes
+all available logs. With the web-based and user friendly management
+interface, the IT admins can easily overview and controll all
+functions from a single screen.
+
+The Message Tracking Center is very fast and powerful, tested on {pmg}
+sites processing over a million emails per day. All different log
+files from the last 7 days can be queried and the results are
+summarized by an intelligent algorithm.
+
+- Arrival of the email
+- Proxmox filtering processing with results
+- Internal queue to your email server
+- Status of final delivery
+
+
 Your benefit with {pmg}
 -----------------------
 
