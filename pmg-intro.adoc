@@ -98,6 +98,15 @@ Greylisting can reduce e-mail traffic up to 50%. A greylisted email
 never reaches your mail server and thus your mail server will not send
 useless "Non Delivery Reports" to spammers.
 
+SMTP Protocol Tests::
+
+{postfix} is able to do some sophisticated SMTP protocol tests (see
+`man postscreen`). Most spam is sent out by zombies (malware on
+compromised end-user computers), and those zombies often try to
+maximize the amount of mails delivered. In order to do that, many of
+them violates the SMTP protocol specification and can thus be detected
+by these tests.
+
 
 Virus detection
 ~~~~~~~~~~~~~~~
@@ -144,6 +153,14 @@ sophisticated, highly customized configurations blocking certain types
 of e-mails and generating notifications.
 
 
+Spam Quarantine
+~~~~~~~~~~~~~~~
+
+Identified Spam mails can be stored to the user accessible Spam
+quarantine. Thus users can view and manage there Spam mails by
+themselves.
+
+
 Tracking and Logging
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -172,6 +189,43 @@ unique application level clustering scheme, which provides extremely
 good performance. Fast set-up within minutes and a simple, intuitive
 management keep resource needs low. After temporary failures, nodes
 automatically reintegrate without any operator interaction.
+
+LDAP integration
+~~~~~~~~~~~~~~~~
+
+It is possible to query user and group data from LDAP servers. This
+may be used to build special filter rules, or just to provide
+authentication services for the Spam quarantine GUI.
+
+
+Fetchmail integration
+~~~~~~~~~~~~~~~~~~~~~
+
+{pmg} allows you to fetch mail from other IMAP od POP3 servers.
+
+
+Flexible User Management
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The administration interface uses a role based access control scheme,
+using the following roles:
+
+Superuser::
+
+This role is allowed to do everything (reserved for user 'root').
+
+Administartor::
+
+Full access to mail filter setup, but not allowed to change network setup.
+
+Quarantine Manager::
+
+Is able to view and manage the Spam Quarantine.
+
+Auditor::
+
+Has read-only access to the whole configuration, can access logs and
+view statistics.
 
 
 Your benefit with {pmg}
