@@ -1,0 +1,45 @@
+Mail Filter
+===========
+
+{pmg} ships with a highly configurable mail filter. It’s an easy but
+powerful way to define filter rules by user, domains, time frame,
+content type and resulting action.
+
+image::images/screenshot/pmg-gui-mail-filter-rules.png[]
+
+
+Filter rules are composed of object
+to match certain criteria:
+
+WHO - objects::
+
+Who is the sender or receiver of the e-mail? Thos object can be used
+for the 'TO' and/or 'FROM' category.
++
+====
+Example: EMail-object - Who is the sender or receiver of the e-mail?
+====
+
+WHAT - objects::
+
+What is in the e-mail?
++
+====
+Example: Does the e-mail contain spam? 
+====
+
+WHEN - objects::
+
+When is the e-mail received by {pmg}?
++
+====
+Example: Office Hours - Mail is received between 8:00 and 16:00.
+====
+
+ACTIONS - objects::
+
+Defines the final actions.
++
+====
+Example: Mark e-mail with “SPAM:” in the subject.
+====
