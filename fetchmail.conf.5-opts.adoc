@@ -1,0 +1,40 @@
+`enable`: `<boolean>` ('default =' `0`)::
+
+Flag to enable or disable polling.
+
+`interval`: `<integer> (1 - 2016)` ::
+
+Only check this site every <interval> poll cycles. A poll cycle is 5 minutes.
+
+`keep`: `<boolean>` ('default =' `0`)::
+
+Keep retrieved messages on the remote mailserver.
+
+`pass`: `<string>` ::
+
+The password used tfor server login.
+
+`port`: `<integer> (1 - 65535)` ::
+
+Port number.
+
+`protocol`: `<imap | pop3>` ::
+
+Specify  the  protocol to use when communicating with the remote mailserver
+
+`server`: `<string>` ::
+
+Server address (IP or DNS name).
+
+`ssl`: `<boolean>` ('default =' `0`)::
+
+Use SSL.
+
+`target`: `(?:|[^\s\/\@]+\@[^\s\/\@]+)` ::
+
+The target email address (where to deliver fetched mails).
+
+`user`: `<string>` ::
+
+The user identification to be used when logging in to the server
+

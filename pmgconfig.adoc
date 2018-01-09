@@ -452,6 +452,12 @@ User Management
 TODO
 
 
+Fetchmail
+---------
+
+include::fetchmail.conf.5-opts.adoc[]
+
+
 ifdef::manvolnum[]
 include::pmg-copyright.adoc[]
 endif::manvolnum[]
