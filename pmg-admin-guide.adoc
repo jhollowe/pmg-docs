@@ -189,6 +189,8 @@ include::cluster.conf.adoc[]
 
 include::user.conf.adoc[]
 
+include::ldap.conf.adoc[]
+
 :leveloffset: 0
 
 :leveloffset: 1

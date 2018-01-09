@@ -1,0 +1,43 @@
+[[pmg_ldap_configuration_file]]
+ifdef::manvolnum[]
+ldap.conf(5)
+============
+:pmg-toplevel:
+
+NAME
+----
+
+ldap.conf - Proxmox Mail Gateway LDAP Configuration
+
+
+SYNOPSIS
+--------
+
+`/etc/pmg/ldap.conf`
+
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+LDAP Configuration
+==================
+endif::manvolnum[]
+
+The file `/etc/pmg/ldap.conf` contains the LDAP configuration.
+
+
+File Format
+-----------
+
+TODO
+
+Options
+-------
+
+include::ldap.conf.5-opts.adoc[]
+
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]

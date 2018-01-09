@@ -1,0 +1,60 @@
+`accountattr`: `<string>` ('default =' `sAMAccountName, uid`)::
+
+Account attribute name name.
+
+`basedn`: `<string>` ::
+
+Base domain name.
+
+`binddn`: `<string>` ::
+
+Bind domain name.
+
+`bindpw`: `<string>` ::
+
+Bind password.
+
+`comment`: `<string>` ::
+
+Description.
+
+`disable`: `<boolean>` ::
+
+Flag to disable/deactivate the entry.
+
+`filter`: `<string>` ::
+
+LDAP filter.
+
+`groupbasedn`: `<string>` ::
+
+Base domain name for groups.
+
+`groupclass`: `<string>` ('default =' `group, univentionGroup, ipausergroup`)::
+
+List of objectclasses for groups.
+
+`mailattr`: `<string>` ('default =' `mail, userPrincipalName, proxyAddresses, othermailbox, mailAlternativeAddress`)::
+
+List of mail attribute names.
+
+`mode`: `<ldap | ldaps>` ('default =' `ldap`)::
+
+LDAP protocol mode ('ldap' or 'ldaps').
+
+`port`: `<integer> (1 - 65535)` ::
+
+Specify the port to connect to.
+
+`profile`: `<string>` ::
+
+Profile ID.
+
+`server1`: `<string>` ::
+
+Server address.
+
+`server2`: `<string>` ::
+
+Fallback server address. Userd when the first server is not available.
+
