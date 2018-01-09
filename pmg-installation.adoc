@@ -135,6 +135,8 @@ Further configuration is done via the Proxmox web interface. Just
 point your browser to the IP address given during installation
 (https://youripaddress:8006).
 
+image::images/screenshot/pmg-gui-login-window.png[]
+
 . Login and upload subscription key.
 +
 NOTE: Default login is "root" and the root password is
