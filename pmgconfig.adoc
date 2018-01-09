@@ -449,11 +449,96 @@ include::pmg.virusquar-conf-opts.adoc[]
 User Management
 ---------------
 
-TODO
+User management in {pmg} consists of three types of users/accounts:
+
+
+Local Users
+~~~~~~~~~~~
+
+Local users are used to manage and audit {pmg}. Those users can login on the
+management web interface.
+
+There are three roles:
+
+* Administrator
++
+Is allowed to manage settings of {pmg}, except some tasks like
+network configuration and upgrading.
+
+* Quarantine manager
++
+Is allowed to manage quarantines, blacklists and whitelists, but not other
+settings. Has no right to view any other data.
+
+* Auditor
++
+With this role, the user is only allowed to view data and configuration, but
+not to edit it.
+
+In addition there is always the 'root' user, which is used to perform special
+system administrator tasks, such as updgrading a host or changing the
+network configuration.
+
+NOTE: Only pam users are able to login via the webconsole and ssh, which the
+users created with the web interface are not. Those users are created for
+{pmg} administration only.
+
+Local user related settings are saved in `/etc/pmg/user.conf`.
+
+For details of the fields see xref:pmg_user_configuration_file[user.conf]
+
+LDAP/Active Directory
+~~~~~~~~~~~~~~~~~~~~~
+
+You can specify multiple LDAP/Active Directory profiles, so that you can
+create rules matching those users and groups.
+
+Creating a profile requires (at least) the following:
+
+* profile name
+* protocol (LDAP or LDAPS; LDAPS is recommended)
+* at least one server
+* a user and password (if your server does not support anonymous binds)
+
+All other fields should work with the defaults for most setups, but can be
+used to customize the queries.
+
+The settings are saved to `/etc/pmg/ldap.conf`. Details for the options
+can be found here: xref:pmg_ldap_configuration_file[ldap.conf]
+
+Bind user
+^^^^^^^^^
+
+It is highly recommended that the user which you use for connecting to the
+LDAP server only has the permission to query the server. For LDAP servers
+(for example OpenLDAP or FreeIPA), the username has to be of a format like
+'uid=username,cn=users,cn=accounts,dc=domain' , where the specific fields are
+depending on your setup. For Active Directory servers, the format should be
+like 'username@domain' or 'domain\username'.
+
+Sync
+^^^^
+
+{pmg} synchronizes the relevant user and group info periodically, so that
+that information is available in a fast manner, even when the LDAP/AD server
+is temporarily not accessible.
+
+After a successfull sync, the groups and users should be visible on the web
+interface. After that, you can create rules targeting LDAP users and groups.
 
 
 Fetchmail
----------
+~~~~~~~~~
+
+Fetchmail is utility for polling and forwarding e-mails. You can define
+e-mail accounts, which will then be fetched and forwarded to the e-mail
+address you defined.
+
+You have to add an entry for each account/target combination you want to
+fetch and forward. Those will then be regularly polled and forwarded,
+according to your configuration.
+
+The API and web interface offer following configuration options:
 
 include::fetchmail.conf.5-opts.adoc[]
 
