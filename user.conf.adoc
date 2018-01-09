@@ -1,0 +1,43 @@
+[[pmg_user_configuration_file]]
+ifdef::manvolnum[]
+user.conf(5)
+============
+:pmg-toplevel:
+
+NAME
+----
+
+user.conf - Proxmox Mail Gateway User Configuration
+
+
+SYNOPSIS
+--------
+
+`/etc/pmg/user.conf`
+
+
+DESCRIPTION
+-----------
+endif::manvolnum[]
+ifndef::manvolnum[]
+User Configuration
+==================
+endif::manvolnum[]
+
+The file `/etc/pmg/user.conf` contains the user configuration.
+
+
+File Format
+-----------
+
+TODO
+
+Options
+-------
+
+include::user.conf.5-opts.adoc[]
+
+
+ifdef::manvolnum[]
+include::pmg-copyright.adoc[]
+endif::manvolnum[]

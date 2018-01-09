@@ -187,6 +187,8 @@ include::pmg.conf.adoc[]
 
 include::cluster.conf.adoc[]
 
+include::user.conf.adoc[]
+
 :leveloffset: 0
 
 :leveloffset: 1

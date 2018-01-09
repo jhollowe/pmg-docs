@@ -1,0 +1,44 @@
+`comment`: `<string>` ::
+
+Comment.
+
+`crypt_pass`: `\$\d\$[a-zA-Z0-9\.\/]+\$[a-zA-Z0-9\.\/]+` ::
+
+Encrypted password (see `man crypt`)
+
+`email`: `<string>` ::
+
+Users E-Mail address.
+
+`enable`: `<boolean>` ('default =' `0`)::
+
+Flag to enable or disable the account.
+
+`expire`: `<integer> (0 - N)` ('default =' `0`)::
+
+Account expiration date (seconds since epoch). '0' means no expiration date.
+
+`firstname`: `<string>` ::
+
+First name.
+
+`keys`: `<string>` ::
+
+Keys for two factor auth (yubico).
+
+`lastname`: `<string>` ::
+
+Last name.
+
+`password`: `<string>` ::
+
+Password
+
+`role`: `<admin | audit | qmanager | root>` ::
+
+User role. Role 'root' is reseved for the Unix Superuser.
+
+`userid`: `<string>` ::
+
+User ID
+
