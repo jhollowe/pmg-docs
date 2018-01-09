@@ -30,7 +30,12 @@ The file `/etc/pmg/user.conf` contains the user configuration.
 File Format
 -----------
 
-TODO
+The file has the following format for each user:
+
+----
+# comment
+userid:enable:expire:crypt_pass:role:email:firstname:lastname:keys
+----
 
 Options
 -------
