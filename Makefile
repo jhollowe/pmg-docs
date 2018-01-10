@@ -39,7 +39,10 @@ GEN_DEB_SOURCES=				\
 
 GEN_SCRIPTS=					\
 	gen-cluster.conf.5-opts.pl		\
-	gen-pmg.conf.5-opts.pl
+	gen-fetchmail.conf.5-opts.pl		\
+	gen-ldap.conf.5-opts.pl			\
+	gen-pmg.conf.5-opts.pl			\
+	gen-user.conf.5-opts.pl
 
 API_VIEWER_SOURCES=				\
 	api-viewer/index.html			\
