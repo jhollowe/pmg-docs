@@ -455,6 +455,8 @@ User management in {pmg} consists of three types of users/accounts:
 Local Users
 ~~~~~~~~~~~
 
+image::images/screenshot/pmg-gui-local-user-config.png[]
+
 Local users are used to manage and audit {pmg}. Those users can login on the
 management web interface.
 
@@ -489,6 +491,8 @@ For details of the fields see xref:pmg_user_configuration_file[user.conf]
 
 LDAP/Active Directory
 ~~~~~~~~~~~~~~~~~~~~~
+
+image::images/screenshot/pmg-gui-ldap-user-config.png[]
 
 You can specify multiple LDAP/Active Directory profiles, so that you can
 create rules matching those users and groups.
@@ -529,6 +533,8 @@ interface. After that, you can create rules targeting LDAP users and groups.
 
 Fetchmail
 ~~~~~~~~~
+
+image::images/screenshot/pmg-gui-fetchmail-config.png[]
 
 Fetchmail is utility for polling and forwarding e-mails. You can define
 e-mail accounts, which will then be fetched and forwarded to the e-mail
