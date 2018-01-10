@@ -206,6 +206,10 @@ Virus Filter::
 
 Matches on infected mails.
 
+Match Field::
+
+Match specified mail header fields (eg. `Subject:`, `From:`, ...)
+
 Content Type Filter::
 
 Can be used to match specific content types.
