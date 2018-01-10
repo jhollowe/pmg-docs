@@ -187,3 +187,14 @@ Test if the mail address belong to a specific LDAP user or group.
 We have two important WHO objects called 'Blacklist' and
 'Whitelist'. Those are used in the default ruleset to globally block
 or allow specific senders.
+
+WHEN - objects
+--------------
+
+image::images/screenshot/pmg-gui-mail-filter-when-objects.png[]
+
+WHEN - objects are use to activate rules at specific daytimes. You can compose
+them of one or more time-frame items.
+
+The default ruleset defines 'Office Hours', but this is not used by
+the default rules.
