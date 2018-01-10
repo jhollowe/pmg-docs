@@ -188,6 +188,37 @@ We have two important WHO objects called 'Blacklist' and
 'Whitelist'. Those are used in the default ruleset to globally block
 or allow specific senders.
 
+
+WHAT - objects
+--------------
+
+image::images/screenshot/pmg-gui-mail-filter-what-objects.png[]
+
+WHAT - objects are used to classify the mail content. A single object
+can combine multiple items, and the following item types are
+available:
+
+Spam Filter::
+
+Matches if configured value if greater than the detected spam level.
+
+Virus Filter::
+
+Matches on infected mails.
+
+Content Type Filter::
+
+Can be used to match specific content types.
+
+Match Filename::
+
+Uses regular expressions to match attachment filenames.
+
+Archive Filter::
+
+Can be used to match specific content types inside archives.
+
+
 WHEN - objects
 --------------
 
