@@ -125,7 +125,7 @@ Header Attributes
 
 This object is able to add or modify mail header attributes. As notice above, you can use xref:rule_system_macros[macros], making this a very powerful object. For example, the 'Modify Spam Level' actions adds detailed infomation about detected Spam characteristics to the ` X-SPAM-LEVEL` header.
 
-.Modify Spam Level Header Attribute
+.'Modify Spam Level' Header Attribute
 ----
 Field: X-SPAM-LEVEL
 Value: __SPAM_INFO__
@@ -134,7 +134,7 @@ Value: __SPAM_INFO__
 Another prominent example is the 'Modify Spam Subject' action. This
 simply adds the 'SPAM:' prefix to the original mail subject:
 
-.Modify Spam Subject Header Attribute
+.'Modify Spam Subject' Header Attribute
 ----
 Field: subject
 Value: SPAM: __SUBJECT__
