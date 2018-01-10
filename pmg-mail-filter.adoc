@@ -153,3 +153,37 @@ Disclaimer
 ~~~~~~~~~~
 
 Add a Disclaimer.
+
+
+WHO - objects
+-------------
+
+image::images/screenshot/pmg-gui-mail-filter-who-objects.png[]
+
+This type of objects can be used for the 'TO' and/or 'FROM' category,
+and macth the sender or receiver of the e-mail. A single object can
+combine multiple items, and the following item types are available:
+
+EMail::
+
+Allows you to match a single mail address.
+
+Domain::
+
+Only match the domain part of the mail address.
+
+Regular Expression::
+
+This one uses a regular expression to match the whole mail address.
+
+IP Address or Network::
+
+This can be used to match the senders IP address.
+
+LDAP User or Group::
+
+Test if the mail address belong to a specific LDAP user or group.
+
+We have two important WHO objects called 'Blacklist' and
+'Whitelist'. Those are used in the default ruleset to globally block
+or allow specific senders.
