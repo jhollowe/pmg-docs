@@ -31,6 +31,7 @@ include::pmg-mail-filter.adoc[]
 
 include::pmgbackup.adoc[]
 
+include::pmgcm.adoc[]
 
 // Return to normal title levels.
 :leveloffset: 0
@@ -108,6 +109,12 @@ Command Line Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 include::pmgbackup.1-synopsis.adoc[]
+
+
+*pmgcm* - Proxmox Mail Gateway Cluster Management Toolkit
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+include::pmgcm.1-synopsis.adoc[]
 
 
 *pmgsh* - API Shell
