@@ -233,3 +233,47 @@ them of one or more time-frame items.
 
 The default ruleset defines 'Office Hours', but this is not used by
 the default rules.
+
+
+Using regular expressions
+-------------------------
+
+A regular expression is a string of characters which tells us which
+string you are looking for. The following is a short introduction in
+the syntax of regular expressions used by some objects. If you are
+familiar with Perl, you already know the syntax.
+
+Simple regular expressions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In its simplest form, a regular expression is just a word or phrase to
+search for. `Mail` would match the string "Mail". The search is case
+sensitive so "MAIL", "Mail", "mail" would not be matched.
+
+Metacharacters
+~~~~~~~~~~~~~~
+
+Some characters have a special meaning. These characters are called
+metacharacters.  The Period (`.`) is a commonly used metacharacter. It
+matches exactly one character, regardless of what the character is.
+`e.mail` would match either "e-mail" or "e-mail" or "e2mail" but not
+"e-some-mail".
+
+The question mark (`?`) indicates that the character immediately
+preceding it either zero or one time. `e?mail` would match
+either "email" or "mail" but not "e-mail".
+
+Another metacharacter is the star (`*`). This indicates that the
+character immediately to its left may repeated any number of times,
+including zero. `e*mail` would match either "email" or "mail" or
+"eeemail".
+
+The plus (`+`) metacharacter does the same as the star (*) excluding
+zero. So `e+mail` does not match "mail".
+
+Metacharacters may be combined. A common combination includes the
+period and star metacharacters (`.*`), with the star immediately following
+the period. This is used to match an arbitrary string of any length,
+including the null string. For example: `.*company.*` matches
+"company@domain.com" or "company@domain.co.uk" or
+"department.company@domain.com".
