@@ -42,6 +42,11 @@ endif::manvolnum[]
   O'Reilly Media, 2007.
   ISBN 978-0596529260
 
+- [[[Friedl97]]] Jeffrey E. F. Friedl.
+  'Mastering Regular Expressions'.
+  O'Reilly & Associates, 2006.
+  ISBN 978-0596528126
+
 - [[[Mauerer08]]] Wolfgang Mauerer.
   'Professional Linux Kernel Architecture'.
   John Wiley & Sons, 2008.

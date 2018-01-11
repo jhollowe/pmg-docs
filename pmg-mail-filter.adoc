@@ -277,3 +277,5 @@ the period. This is used to match an arbitrary string of any length,
 including the null string. For example: `.*company.*` matches
 "company@domain.com" or "company@domain.co.uk" or
 "department.company@domain.com".
+
+The book xref:Friedl97[] provides a more comprehensive introduction.
