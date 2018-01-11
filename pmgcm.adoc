@@ -72,13 +72,128 @@ subscription. All nodes must have the same subscription level.
 Load balancing
 --------------
 
-You can use one of the mechanism described in chapter 9 if you want to
-distribute mail traffic among the cluster nodes. Please note that this
-is not always required, because it is also reasonable to use only one
-node to handle SMTP traffic. The second node is used as quarantine
-host (provide the web interface to user quarantine).
+It is usually advisable to distribute mail traffic among all cluster
+nodes. Please note that this is not always required, because it is
+also reasonable to use only one node to handle SMTP traffic. The
+second node is used as quarantine host, and only provides the web
+interface to the user quarantine.
+
+The normal mail delivery process looks up DNS Mail Exchange (`MX`)
+records to determine the destination host. A `MX` record tells the
+sending system where to deliver mail for a certain domain. It is also
+possible to have several `MX` records for a single domain, they can have
+different priorities. For example, our `MX` record looks like that:
+
+----
+# dig -t mx proxmox.com
+
+;; ANSWER SECTION:
+proxmox.com.            22879   IN      MX      10 mail.proxmox.com.
+
+;; ADDITIONAL SECTION:
+mail.proxmox.com.       22879   IN      A       213.129.239.114
+----
+
+Please notice that there is one single `MX` record for the Domain
+`proxmox.com`, pointing to `mail.proxmox.com`. The `dig` command
+automatically puts out the corresponding address record if it
+exists. In our case it points to `213.129.239.114`. The priority of
+our `MX` record is set to 10 (preferred default value).
 
 
+Hot standby with backup `MX` records
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Many people do not want to install two redundant mail proxies, instead
+they use the mail proxy of their ISP as fall-back. This is simply done
+by adding an additional `MX` Record with a lower priority (higher
+number). With the example above this looks like that:
+
+----
+proxmox.com.            22879   IN      MX      100 mail.provider.tld.
+----
+
+Sure, your provider must accept mails for your domain and forward
+received mails to you. Please note that such setup is not really
+advisable, because spam detection needs to be done by that backup `MX`
+server also, and external servers provided by ISPs usually don't do
+that.
+
+You will never lose mails with such a setup, because the sending Mail
+Transport Agent (MTA) will simply deliver the mail to the backup
+server (mail.provider.tld) if the primary server (mail.proxmox.com) is
+not available.
+
+NOTE: Any resononable mail server retries mail devivery if the target
+server is not available, i.e. {pmg} stores mail and retries delivery
+for up to one week. So you will not loose mail if you mail server is
+down, even if you run a single server setup.
+
+
+Load balancing with `MX` records
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using your ISPs mail server is not always a good idea, because many
+ISPs do not use advanced spam prevention techniques, or do not filter
+SPAM at all. It is often better to run a second server yourself to
+avoid lower spam detection rates.
+
+Anyways, it’s quite simple to set up a high performance load balanced
+mail cluster using `MX` records. You just need to define two `MX` records
+with the same priority. I will explain this using a complete example
+to make it clearer.
+
+First, you need to have at least 2 working {pmg} servers
+(mail1.example.com and mail2.example.com) configured as cluster (see
+section xref:pmg_cluster_administration[Cluster administration]
+below), each having its own IP address. Let us assume the following
+addresses (DNS address records):
+
+----
+mail1.example.com.       22879   IN      A       1.2.3.4
+mail2.example.com.       22879   IN      A       1.2.3.5
+----
+
+Btw, it is always a good idea to add reverse lookup entries (PTR
+records) for those hosts. Many email systems nowadays reject mails
+from hosts without valid PTR records.  Then you need to define your `MX`
+records:
+
+----
+example.com.            22879   IN      MX      10 mail1.example.com.
+example.com.            22879   IN      MX      10 mail2.example.com.
+----
+
+This is all you need. You will receive mails on both hosts, more or
+less load-balanced using round-robin scheduling. If one host fails the
+other is used.
+
+
+Other ways
+~~~~~~~~~~
+
+Multiple address records
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Using several DNS `MX` record is sometime clumsy if you have many
+domains. It is also possible to use one `MX` record per domain, but
+multiple address records:
+
+----
+example.com.            22879   IN      MX      10 mail.example.com.
+mail.example.com.       22879   IN      A       1.2.3.4
+mail.example.com.       22879   IN      A       1.2.3.5
+----
+
+
+Using firewall features
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Many firewalls can do some kind of RR-Scheduling (round-robin) when
+using DNAT. See your firewall manual for more details.
+
+
+[[pmg_cluster_administration]]
 Cluster administration
 ----------------------
 
