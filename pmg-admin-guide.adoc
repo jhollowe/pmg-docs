@@ -93,6 +93,31 @@ include::pmgreport.adoc[]
 
 include::pmgupgrade.adoc[]
 
+:leveloffset: 0
+
+
+`nmap` - Port Scans
+-----------------
+
+`nmap` is designed to allow system administrators to scan large
+networks to determine which hosts are up and what services they are
+offering. You can use nmap to test your firewall setting, for example
+to see if the required ports are open.
+
+.Test Razor port (tcp port 2703):
+----
+# nmap -P0 -sS -p 2703 c301.cloudmark.com
+
+Starting Nmap 5.00 ( http://nmap.org ) at 2012-07-31 11:10 CEST
+Interesting ports on c301.cloudmark.com (208.83.137.114):
+PORT     STATE SERVICE
+2703/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.17 seconds
+----
+
+See the manual page (`man nmap`) for more information about nmap.
+
 
 :leveloffset: 1
 
