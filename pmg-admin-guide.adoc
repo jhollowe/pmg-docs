@@ -40,8 +40,6 @@ TODO
 ----
 // FIXME
 
-[[nmap]]
-nmap
 
 [[create_bootable_usb]]
 create_bootable_usb
@@ -96,8 +94,9 @@ include::pmgupgrade.adoc[]
 :leveloffset: 0
 
 
+[[nmap]]
 `nmap` - Port Scans
------------------
+-------------------
 
 `nmap` is designed to allow system administrators to scan large
 networks to determine which hosts are up and what services they are
