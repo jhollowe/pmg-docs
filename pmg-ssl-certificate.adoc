@@ -1,0 +1,55 @@
+SSL certificate
+---------------
+
+Access to the administration web interface is always done via
+`https`. The default certificate is never valid for your browser and
+you get always warnings.
+
+If you want to get rid of these warnings, you have to generate a valid
+certificate for your server.
+
+Login to your Proxmox via ssh or use the console:
+
+----
+openssl req -newkey rsa:2048 -nodes -keyout key.pem -out req.pem
+----
+
+Follow the instructions on the screen, see this example:
+
+----
+Country Name (2 letter code) [AU]: AT
+State or Province Name (full name) [Some-State]:Vienna
+Locality Name (eg, city) []:Vienna
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: Proxmox GmbH
+Organizational Unit Name (eg, section) []:Proxmox Mail Gateway
+Common Name (eg, YOUR name) []: yourproxmox.yourdomain.com
+Email Address []:support@yourdomain.com
+
+Please enter the following 'extra' attributes to be sent with your certificate request
+A challenge password []: not necessary
+An optional company name []: not necessary
+----
+
+After you finished this certificate request you have to send the file
+`req.pem` to your Certification Authority (CA). The CA will issue the
+certificate (BASE64 encoded) based on your request – save this file as
+`cert.pem` to your Proxmox.
+
+To activate the new certificate, do the following on your Proxmox:
+
+----
+cat key.pem cert.pem >/etc/pmg/pmg-api.pem
+----
+
+The restart the API servers
+
+----
+systemctl restart pmgproxy
+----
+
+Test your new certificate by using your browser.
+
+NOTE: To transfer files from and to your Proxmox, you can use secure
+copy: If you desktop is Linux, you can use the `scp` command line
+tool. If your desktop PC is windows, please use a scp client like
+WinSCP (see http://winscp.net/).
