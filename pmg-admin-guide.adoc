@@ -36,17 +36,6 @@ include::pmgcm.adoc[]
 // Return to normal title levels.
 :leveloffset: 0
 
-TODO
-----
-// FIXME
-
-
-[[mail_server_config]]
-mail_server_config
-
-[[fitering_outgoing_mail]]
-fitering_outgoing_mail
-
 
 Important Service Daemons
 -------------------------

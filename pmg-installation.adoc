@@ -153,8 +153,7 @@ server ('Configuration/Mail Proxy/Default Relay') - 'Default
 Relay' is your e-mail server.
 
 . Configure your e-mail server to send all outgoing messages through
-your {pmg} ('Smart Host', port 26 by default) - see
-xref:fitering_outgoing_mail[Filtering outgoing e-mails].
+your {pmg} ('Smart Host', port 26 by default).
 
 For detailed deployment scenarios see chapter
 xref:chapter_deployment[Planning for Deployment].

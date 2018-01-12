@@ -42,8 +42,7 @@ does not scan outgoing e-mail cannot do that.
 
 To enable outgoing e-mail filtering you just need to send all outgoing
 e-mails through your {png} (usually by specifying Proxmox as
-"smarthost" on your e-mail server - see
-xref:mail_server_config[Example mail server configuration].
+"smarthost" on your e-mail server.
 
 [[firewall_settings]]
 Firewall settings
