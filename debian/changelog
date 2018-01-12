@@ -1,3 +1,9 @@
+pmg-docs (5.0-7) unstable; urgency=medium
+
+  * major updates to all sections
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 12 Jan 2018 10:31:32 +0100
+
 pmg-docs (5.0-6) unstable; urgency=medium
 
   * add manual page for pmgbackup (dummy)
