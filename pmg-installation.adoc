@@ -209,6 +209,9 @@ installation using the following command:
  zpool add <pool-name> log </dev/path_to_fast_ssd>
 
 
+include::pmg-usbstick.adoc[]
+
+
 Install {pmg} on Debian
 -----------------------
 

@@ -41,9 +41,6 @@ TODO
 // FIXME
 
 
-[[create_bootable_usb]]
-create_bootable_usb
-
 [[mail_server_config]]
 mail_server_config
 
