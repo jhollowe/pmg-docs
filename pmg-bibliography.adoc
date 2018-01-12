@@ -63,6 +63,11 @@ endif::manvolnum[]
   O'Reilly and Associates, 2012.
   ISBN 978-1449316389
 
+- [[[Ahmed16]]] Wasim Ahmed.
+  'Mastering Proxmox - Second Edition'.
+  Packt Publishing, 2016.
+  ISBN 978-1785888243
+
 
 [bibliography]
 .Books about related topics
