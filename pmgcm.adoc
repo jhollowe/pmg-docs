@@ -197,33 +197,40 @@ using DNAT. See your firewall manual for more details.
 Cluster administration
 ----------------------
 
-Cluster administration is done with a single command line utility
-called `pmgcm'. So you need to login via ssh to manage the cluster
-setup.
+Cluster administration can be done on the GUI or using the command
+line utility `pmgcm`. The CLI tool is a bit more verbose, so we suggest
+to use that if you run into problems.
 
 NOTE: Always setup the IP configuration before adding a node to the
 cluster. IP address, network mask, gateway address and hostname can’t
 be changed later.
 
-
 Creating a Cluster
 ~~~~~~~~~~~~~~~~~~
+
+image::images/screenshot/pmg-gui-cluster-panel.png[]
 
 You can create a cluster from any existing Proxmox host. All data is
 preserved.
 
 * make sure you have the right IP configuration
-  (IP/MASK/GATEWAY/HOSTNAME), because you cannot changed that later
+  (IP/MASK/GATEWAY/HOSTNAME), because you cannot change that later
 
-* run the cluster creation command:
+* press the create button on the GUI, or run the cluster creation command:
 +
 ----
 pmgcm create
 ----
 
+NOTE: The node where you run the cluster create command will be the
+'master' node.
 
-List Cluster Status
+
+Show Cluster Status
 ~~~~~~~~~~~~~~~~~~~
+
+The GUI shows the status of all cluster nodes, and it is also possible
+to use the command line tool:
 
 ----
 pmgcm status
@@ -234,6 +241,8 @@ pmg5(1)              192.168.2.127   master A       1 day 21:18   0.30    80%   
 
 Adding Cluster Nodes
 ~~~~~~~~~~~~~~~~~~~~
+
+image::images/screenshot/pmg-gui-cluster-join.png[]
 
 When you add a new node to a cluster (join) all data on that node is
 destroyed. The whole database is initialized with cluster data from
@@ -248,7 +257,9 @@ pmgcm join <master_ip>
 ----
 
 You need to enter the root password of the master host when asked for
-a password.
+a password. When joining a cluster using the GUI, you also need to
+enter the 'fingerprint' of the master node. You get that information
+by pressing the `Join` button on the master node.
 
 CAUTION: Node initialization deletes all existing databases, stops and
 then restarts all services accessing the database. So do not add nodes
