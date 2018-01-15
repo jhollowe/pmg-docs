@@ -27,8 +27,7 @@ endif::manvolnum[]
 The binary `pmgversion` prints detailed version information for {pmg}
 packages.
 
-Examples
---------
+.Examples
 
 Print {pmg} version:
 

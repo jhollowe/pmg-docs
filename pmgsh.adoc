@@ -27,8 +27,7 @@ endif::manvolnum[]
 
 The `pmgsh` tool can be used to access the {pmg} API via the command line.
 
-Examples
---------
+.Examples
 
 List entries:
 
