@@ -29,6 +29,8 @@ include::pmgconfig.adoc[]
 
 include::pmg-mail-filter.adoc[]
 
+include::pmg-administration.adoc[]
+
 include::pmgbackup.adoc[]
 
 include::pmgcm.adoc[]
