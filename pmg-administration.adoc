@@ -61,8 +61,8 @@ Syslog and Tasks
 
 image::images/screenshot/pmg-gui-syslog.png[]
 
-
-TODO
+The syslog page gives you a quick real-time log view. Please use the
+xref:pmg_tracking_center[Tracking Center] to search the logs.
 
 
 Quarantine
@@ -83,7 +83,7 @@ User White- and Blacklist
 
 TODO
 
-
+[[pmg_tracking_center]]
 Tracking Center
 ---------------
 
