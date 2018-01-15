@@ -20,8 +20,8 @@ DESCRIPTION
 -----------
 endif::manvolnum[]
 ifndef::manvolnum[]
-Quarantine Management Toolkit
-=============================
+pmgqm - Quarantine Management Toolkit
+=====================================
 :pmg-toplevel:
 endif::manvolnum[]
 
