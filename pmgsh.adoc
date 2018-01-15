@@ -20,12 +20,12 @@ DESCRIPTION
 -----------
 endif::manvolnum[]
 ifndef::manvolnum[]
-API Shell
-=========
+pmgsh - API Shell
+=================
 :pmg-toplevel:
 endif::manvolnum[]
 
-Toolkit to access the Proxmox Mail Gateway API via the command line.
+The `pmgsh` tool can be used to access the {pmg} API via the command line.
 
 Examples
 --------
