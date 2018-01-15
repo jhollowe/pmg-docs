@@ -19,8 +19,8 @@ DESCRIPTION
 -----------
 endif::manvolnum[]
 ifndef::manvolnum[]
-Upgrade Proxmox Mail Gateway
-============================
+pmgupgrade - Upgrade Proxmox Mail Gateway
+=========================================
 :pmg-toplevel:
 endif::manvolnum[]
 
