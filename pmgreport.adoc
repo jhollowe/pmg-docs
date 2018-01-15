@@ -20,8 +20,8 @@ DESCRIPTION
 -----------
 endif::manvolnum[]
 ifndef::manvolnum[]
-Send daily system report email
-==============================
+pmgreport - Send daily system report email
+==========================================
 :pmg-toplevel:
 endif::manvolnum[]
 
