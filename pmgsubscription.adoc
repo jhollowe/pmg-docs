@@ -22,7 +22,37 @@ pmgsubscription - Subscription Management
 =========================================
 endif::manvolnum[]
 
-This tool is used to handle {pmg} subscriptions.
+{pmg} is free open software, and the company that developed it
+(Proxmox Server Solutions GmbH) offers {pricing-url}[support] in many
+ways, with different support channel, level and pricing.
+
+The tool `pmgsubscription` is used to handle {pmg}
+subscriptions. Please use the GUI or the `set` command to upload a new
+key:
+
+----
+# pmgsubscription set <key>
+----
+
+
+NOTE: Subscription keys are bound to specific servers ('Server ID'),
+so you can use them for exactly one server. Each server needs its own
+key.
+
+
+The `get` command is used to view the current subscription status:
+
+----
+# pmgsubscription get
+key: pmgc-xxxxxxxxxx
+level: c
+productname: Proxmox Mail Gateway Trial Subscription 1 year
+regdate: 2017-12-15 00:00:00
+serverid: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+status: Active
+url: https://www.proxmox.com/en/proxmox-mail-gateway/pricing
+----
+
 
 ifdef::manvolnum[]
 include::pmg-copyright.adoc[]

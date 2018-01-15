@@ -19,12 +19,12 @@ great place to get information.
 Commercial Support
 ~~~~~~~~~~~~~~~~~~
 
-{proxmoxGmbh} also offers commercial 
-https://www.proxmox.com/en/proxmox-mail-gateway/pricing[{pmg} Subscription Service Plans]. System Administrators with a standard subscription plan can access a 
-dedicated support portal with guaranteed reponse time, where {pmg}
-developers help them should an issue appear.
-Please contact the mailto:office@proxmox.com[Proxmox sales team]
-for more information or volume discounts.
+{proxmoxGmbh} also offers commercial {pricing-url}[{pmg} Subscription
+Service Plans]. System Administrators with a standard subscription
+plan can access a dedicated support portal with guaranteed reponse
+time, where {pmg} developers help them should an issue appear.  Please
+contact the mailto:office@proxmox.com[Proxmox sales team] for more
+information or volume discounts.
 
 
 Bug Tracker
