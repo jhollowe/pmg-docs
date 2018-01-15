@@ -19,17 +19,18 @@ DESCRIPTION
 -----------
 endif::manvolnum[]
 ifndef::manvolnum[]
-Proxmox Mail Gateway Version Info
-=================================
+pmgversion - Version Info
+=========================
 :pmg-toplevel:
 endif::manvolnum[]
 
-Print version information for Proxmox Mail Gateway packages.
+The binary `pmgversion` prints detailed version information for {pmg}
+packages.
 
 Examples
 --------
 
-Print Proxmox Mail Gateway version:
+Print {pmg} version:
 
 ----
 # pmgversion
