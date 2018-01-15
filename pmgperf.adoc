@@ -20,8 +20,8 @@ DESCRIPTION
 -----------
 endif::manvolnum[]
 ifndef::manvolnum[]
-Proxmox Simple Performance Benchmark
-====================================
+pmgperf - Proxmox Simple Performance Benchmark
+==============================================
 :pmg-toplevel:
 endif::manvolnum[]
 
