@@ -1,3 +1,17 @@
+pmg-docs (5.0-8) unstable; urgency=medium
+
+  * update generated docs
+
+  * pmgcm.adoc: the 'Add' button displays cluster join infos
+
+  * change subtitle style
+
+  * add binary names to titles
+
+  * improved docs
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 17 Jan 2018 13:19:06 +0100
+
 pmg-docs (5.0-7) unstable; urgency=medium
 
   * major updates to all sections
