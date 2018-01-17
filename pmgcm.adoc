@@ -259,7 +259,7 @@ pmgcm join <master_ip>
 You need to enter the root password of the master host when asked for
 a password. When joining a cluster using the GUI, you also need to
 enter the 'fingerprint' of the master node. You get that information
-by pressing the `Join` button on the master node.
+by pressing the `Add` button on the master node.
 
 CAUTION: Node initialization deletes all existing databases, stops and
 then restarts all services accessing the database. So do not add nodes
