@@ -80,7 +80,7 @@ Optional list of DNS white/blacklist domains (see postscreen_dnsbl_sites paramet
 
 SMTP delay warning time (in hours).
 
-`ext_port`: `<integer> (1 - 65535)` ('default =' `26`)::
+`ext_port`: `<integer> (1 - 65535)` ('default =' `25`)::
 
 SMTP port number for incoming mail (untrusted). This must be a different number than 'int_port'.
 
@@ -96,7 +96,7 @@ Use SMTP HELO tests.
 
 Hide received header in outgoing mails.
 
-`int_port`: `<integer> (1 - 65535)` ('default =' `25`)::
+`int_port`: `<integer> (1 - 65535)` ('default =' `26`)::
 
 SMTP port number for outgoing mail (trusted).
 

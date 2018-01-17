@@ -1124,8 +1124,8 @@ var pmgapi = [
                                           "value" : {
                                              "description" : "The Value",
                                              "maxLength" : 1024,
-                                             "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
-                                             "type" : "string"
+                                             "type" : "string",
+                                             "typetext" : "<string>"
                                           }
                                        }
                                     },
@@ -1176,8 +1176,8 @@ var pmgapi = [
                                     "value" : {
                                        "description" : "The Value",
                                        "maxLength" : 1024,
-                                       "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
-                                       "type" : "string"
+                                       "type" : "string",
+                                       "typetext" : "<string>"
                                     }
                                  }
                               },
@@ -2012,8 +2012,8 @@ var pmgapi = [
                                                 "value" : {
                                                    "description" : "The Value",
                                                    "maxLength" : 1024,
-                                                   "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
-                                                   "type" : "string"
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
                                                 }
                                              }
                                           },
@@ -2051,8 +2051,8 @@ var pmgapi = [
                                           "value" : {
                                              "description" : "The Value",
                                              "maxLength" : 1024,
-                                             "pattern" : "[0-9a-zA-Z\\/\\\\[\\]\\+\\-\\.\\*\\_]+",
-                                             "type" : "string"
+                                             "type" : "string",
+                                             "typetext" : "<string>"
                                           }
                                        }
                                     },
@@ -4136,6 +4136,11 @@ var pmgapi = [
                   "parameters" : {
                      "additionalProperties" : 0
                   },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
                   "protected" : 1,
                   "returns" : {
                      "type" : "null"
@@ -4986,7 +4991,8 @@ var pmgapi = [
                               },
                               "permissions" : {
                                  "check" : [
-                                    "admin"
+                                    "admin",
+                                    "audit"
                                  ]
                               },
                               "proxyto" : "master",
@@ -5200,7 +5206,8 @@ var pmgapi = [
                                     },
                                     "permissions" : {
                                        "check" : [
-                                          "admin"
+                                          "admin",
+                                          "audit"
                                        ]
                                     },
                                     "protected" : 1,
@@ -5244,7 +5251,8 @@ var pmgapi = [
                               },
                               "permissions" : {
                                  "check" : [
-                                    "admin"
+                                    "admin",
+                                    "audit"
                                  ]
                               },
                               "protected" : 1,
@@ -5304,7 +5312,8 @@ var pmgapi = [
                                     },
                                     "permissions" : {
                                        "check" : [
-                                          "admin"
+                                          "admin",
+                                          "audit"
                                        ]
                                     },
                                     "protected" : 1,
@@ -5351,7 +5360,8 @@ var pmgapi = [
                               },
                               "permissions" : {
                                  "check" : [
-                                    "admin"
+                                    "admin",
+                                    "audit"
                                  ]
                               },
                               "protected" : 1,
@@ -5462,7 +5472,8 @@ var pmgapi = [
                   },
                   "permissions" : {
                      "check" : [
-                        "admin"
+                        "admin",
+                        "audit"
                      ]
                   },
                   "proxyto" : "master",
@@ -7279,7 +7290,7 @@ var pmgapi = [
                            "typetext" : "<integer> (0 - N)"
                         },
                         "ext_port" : {
-                           "default" : 26,
+                           "default" : 25,
                            "description" : "SMTP port number for incoming mail (untrusted). This must be a different number than 'int_port'.",
                            "maximum" : 65535,
                            "minimum" : 1,
@@ -7309,7 +7320,7 @@ var pmgapi = [
                            "typetext" : "<boolean>"
                         },
                         "int_port" : {
-                           "default" : 25,
+                           "default" : 26,
                            "description" : "SMTP port number for outgoing mail (trusted).",
                            "maximum" : 65535,
                            "minimum" : 1,
@@ -11232,6 +11243,13 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
@@ -11360,7 +11378,9 @@ var pmgapi = [
                   },
                   "permissions" : {
                      "check" : [
-                        "admin"
+                        "admin",
+                        "qmanager",
+                        "audit"
                      ]
                   },
                   "protected" : 1,
@@ -11394,7 +11414,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
-                  "description" : "Creat new user",
+                  "description" : "Create new user",
                   "method" : "POST",
                   "name" : "create",
                   "parameters" : {
