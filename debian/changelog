@@ -1,3 +1,11 @@
+pmg-docs (5.0-9) unstable; urgency=medium
+
+  * update api schema
+
+  * update screenshots (remove BETA)
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 18 Jan 2018 10:47:59 +0100
+
 pmg-docs (5.0-8) unstable; urgency=medium
 
   * update generated docs
