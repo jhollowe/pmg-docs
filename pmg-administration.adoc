@@ -89,7 +89,33 @@ Tracking Center
 
 image::images/screenshot/pmg-gui-tracking-center.png[]
 
-TODO
+Email processing is a complex task and involves several service
+daemons. Each daemon logs information to the syslog service. The
+problem is that a servers analyzes many emails in parallel, so it is
+usually very hard to find all logs corresponding to a specific mail.
+
+Introduced in {pmg} 2.1, the tracking center simplifies the search for
+emails dramatically. We use highly optimized C-code to search the
+available syslog data. This is very fast and powerful, and works for
+sites processing several million emails per day.
+
+The result is a list of received mails, including the following data:
+
+[cols="s,5d"]
+|====
+|Time | Timestamp of first found syslog entry.
+|From | Envelope 'From' address (the sender).
+|To   | The email receiver address.
+|Status | Delivery status.
+|Syslog | The corresponding syslog entries are shown if you double click such
+entry, or if you press the '+' button on the left.
+|====
+
+Please notice that you can specify filters, most important you can set
+a 'Start' and 'End' time. By default the start time is set to one hour
+ago. If you still get to much result entries, you can try to restrict
+the search to specific sender or receiver addresses, or search for a
+specific text in the logs ('Filter' entry).
 
 
 Postfix Queue Administration
