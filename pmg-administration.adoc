@@ -87,6 +87,8 @@ TODO
 Tracking Center
 ---------------
 
+image::images/screenshot/pmg-gui-tracking-center.png[]
+
 TODO
 
 
