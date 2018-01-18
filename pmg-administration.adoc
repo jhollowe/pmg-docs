@@ -117,6 +117,8 @@ ago. If you still get to much result entries, you can try to restrict
 the search to specific sender or receiver addresses, or search for a
 specific text in the logs ('Filter' entry).
 
+NOTE: Search is faster if you use a short time interval.
+
 
 Postfix Queue Administration
 ----------------------------
