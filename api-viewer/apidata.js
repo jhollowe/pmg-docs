@@ -1873,6 +1873,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -1908,6 +1914,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -1940,6 +1951,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -1975,6 +1991,12 @@ var pmgapi = [
                                                    "typetext" : "<integer>"
                                                 }
                                              }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
                                           },
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2017,6 +2039,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2056,6 +2083,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -2090,6 +2122,12 @@ var pmgapi = [
                                                    "typetext" : "<integer>"
                                                 }
                                              }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
                                           },
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2126,6 +2164,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2158,6 +2201,11 @@ var pmgapi = [
                                              "typetext" : "<integer> (0 - N)"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -2194,6 +2242,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -2229,6 +2283,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2261,6 +2320,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -2297,6 +2361,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -2332,6 +2402,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2364,6 +2439,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -2400,6 +2480,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -2429,6 +2515,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2455,6 +2546,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -2798,6 +2894,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -2837,6 +2939,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -2873,6 +2980,11 @@ var pmgapi = [
                                              "type" : "string"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -3216,6 +3328,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -3251,6 +3369,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3283,6 +3406,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -3319,6 +3447,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -3354,6 +3488,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3386,6 +3525,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -3422,6 +3566,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -3457,6 +3607,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3489,6 +3644,11 @@ var pmgapi = [
                                              "typetext" : "<string>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -3525,6 +3685,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -3560,6 +3726,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3592,6 +3763,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -3628,6 +3804,12 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
                                           "proxyto" : "master",
                                           "returns" : {
                                              "properties" : {
@@ -3663,6 +3845,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3695,6 +3882,11 @@ var pmgapi = [
                                              "typetext" : "<integer>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -3730,6 +3922,12 @@ var pmgapi = [
                                                    "typetext" : "<integer>"
                                                 }
                                              }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
                                           },
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3784,6 +3982,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3835,6 +4038,11 @@ var pmgapi = [
                                           }
                                        }
                                     },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
                                     "protected" : 1,
                                     "proxyto" : "master",
                                     "returns" : {
@@ -3869,6 +4077,12 @@ var pmgapi = [
                                                    "typetext" : "<integer>"
                                                 }
                                              }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
                                           },
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3912,6 +4126,11 @@ var pmgapi = [
                                                 }
                                              }
                                           },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
                                           "protected" : 1,
                                           "proxyto" : "master",
                                           "returns" : {
@@ -3951,6 +4170,11 @@ var pmgapi = [
                                              "typetext" : "<string>"
                                           }
                                        }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
                                     },
                                     "protected" : 1,
                                     "proxyto" : "master",
@@ -4244,6 +4468,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "properties" : {
@@ -4274,6 +4504,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -4301,6 +4536,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -4332,6 +4572,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "properties" : {
@@ -4362,6 +4608,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -4389,6 +4640,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -4420,6 +4676,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "properties" : {
@@ -4450,6 +4712,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -4477,6 +4744,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -4508,6 +4780,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "properties" : {
@@ -4538,6 +4816,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -4565,6 +4848,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -4596,6 +4884,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "properties" : {
@@ -4626,6 +4920,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -4653,6 +4952,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -4684,6 +4988,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "properties" : {
@@ -4714,6 +5024,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -4741,6 +5056,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -4772,6 +5092,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "properties" : {
@@ -4802,6 +5128,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -4829,6 +5160,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -4860,6 +5196,12 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
                               "proxyto" : "master",
                               "returns" : {
                                  "properties" : {
@@ -4890,6 +5232,11 @@ var pmgapi = [
                                     }
                                  }
                               },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
                               "protected" : 1,
                               "proxyto" : "master",
                               "returns" : {
@@ -4917,6 +5264,11 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               }
                            }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
                         },
                         "protected" : 1,
                         "proxyto" : "master",
@@ -6446,7 +6798,7 @@ var pmgapi = [
                      },
                      "links" : [
                         {
-                           "href" : "{id}",
+                           "href" : "{domain}",
                            "rel" : "child"
                         }
                      ],
@@ -6638,7 +6990,7 @@ var pmgapi = [
                      },
                      "links" : [
                         {
-                           "href" : "{cide}",
+                           "href" : "{cidr}",
                            "rel" : "child"
                         }
                      ],
