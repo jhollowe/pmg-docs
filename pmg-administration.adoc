@@ -71,17 +71,29 @@ Quarantine
 Spam
 ~~~~
 
-DODO
+image::images/screenshot/pmg-gui-spam-quarantine.png[]
+
+This panel lets you inspect the mail quarantine. Emails can be safely
+previewed and if desired, delivered to the original user.
+
+The email preview on the web interface is very secure as malicious
+code (attacking your operating system or email client) is removed by
+Proxmox.
+
 
 Virus
 ~~~~~
 
-TODO
+Allows administrators to inspect quarantined virus mails.
+
 
 User White- and Blacklist
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO
+This is mostly useful to debug or verify white- and blacklist user
+settings. The administrator should not change these values because
+users can manage this themselves.
+
 
 [[pmg_tracking_center]]
 Tracking Center
