@@ -45,11 +45,11 @@ my $online_help_links = {
     },
     'pmg_documentation_index' => {
 	link => '/pmg-docs/index.html',
-	title => 'Proxmox VE Documentation Index',
+	title => 'Proxmox Mail Gateway Documentation Index',
     },
     'pmg_admin_guide' => {
 	link => '/pmg-docs/pmg-admin-guide.html',
-	title => 'Proxmox VE Administration Guide',
+	title => 'Proxmox Mail Gateway Administration Guide',
     },
 };
 
