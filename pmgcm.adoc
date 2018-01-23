@@ -48,7 +48,7 @@ management as easy as possible. Complete Cluster setup is done within
 minutes, and nodes automatically reintegrate after temporary failures
 without any operator interaction.
 
-image::images/pmg-ha-cluster.png[]
+image::images/Proxmox_HA_cluster_final_1024.png[]
 
 
 Hardware requirements

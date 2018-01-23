@@ -8,14 +8,14 @@ Easy integration into existing e-mail server architecture
 In this sample configuration, your e-mail traffic (SMTP) arrives on
 the firewall and will be directly forwarded to your e-mail server.
 
-image::images/infrasturcture_without_proxmox_big.jpg[]
+image::images/2018_IT_infrastructure_without_Proxmox_Mail_Gateway_final_1024.png[]
 
 By using the {pmg}, all your e-mail traffic is forwarded to the
 Proxmox Mail Gateway, which filters the whole e-mail traffic and
 removes unwanted e-mails. You can manage incoming and outgoing mail
 traffic.
 
-image::images/infrasturcture_with_proxmox_big.jpg[]
+image::images/2018_IT_infrastructure_with_Proxmox_Mail_Gateway_final_1024.png[]
 
 
 Filtering outgoing e-mails
