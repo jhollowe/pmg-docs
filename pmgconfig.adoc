@@ -397,6 +397,9 @@ The system can be configured to send daily reports to inform users
 about the personal spam messages received the last day. That report is
 only sent if there are new messages in the quarantine.
 
+Some options are only available in the config file `/etc/pmg/pmg.conf`,
+and not in the webinterface.
+
 include::pmg.spamquar-conf-opts.adoc[]
 
 
