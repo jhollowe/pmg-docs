@@ -1,25 +1,20 @@
 *pmgdaemon* `<COMMAND> [ARGS] [OPTIONS]`
 
-*pmgdaemon help* `[<cmd>]` `[OPTIONS]`
+*pmgdaemon help* `[OPTIONS]`
 
 Get help about specified command.
 
-`<cmd>`: `<string>` ::
+`--extra-args` `<array>` ::
 
-Command name
+Shows help for a specific command
 
 `--verbose` `<boolean>` ::
 
 Verbose output format.
 
-
-
-
 *pmgdaemon restart*
 
 Restart the daemon (or start if not running).
-
-
 
 *pmgdaemon start* `[OPTIONS]`
 
@@ -29,18 +24,12 @@ Start the daemon.
 
 Debug mode - stay in foreground
 
-
-
 *pmgdaemon status*
 
 Get daemon status.
 
-
-
 *pmgdaemon stop*
 
 Stop the daemon.
-
-
 
 

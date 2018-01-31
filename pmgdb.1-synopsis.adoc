@@ -4,29 +4,21 @@
 
 Delete PMG rule database.
 
-
-
 *pmgdb dump*
 
 Print the PMG rule database.
 
-
-
-
-*pmgdb help* `[<cmd>]` `[OPTIONS]`
+*pmgdb help* `[OPTIONS]`
 
 Get help about specified command.
 
-`<cmd>`: `<string>` ::
+`--extra-args` `<array>` ::
 
-Command name
+Shows help for a specific command
 
 `--verbose` `<boolean>` ::
 
 Verbose output format.
-
-
-
 
 *pmgdb init* `[OPTIONS]`
 
@@ -40,20 +32,12 @@ Delete existing database.
 
 Reset and update statistic database.
 
-
-
-
 *pmgdb reset*
 
 Reset PMG rule database back to factory defaults.
 
-
-
-
 *pmgdb update*
 
 Update the PMG statistic database.
-
-
 
 

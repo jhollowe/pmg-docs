@@ -8021,7 +8021,7 @@ var pmgapi = [
                            "typetext" : "<string>"
                         },
                         "hostname" : {
-                           "description" : "Quarantine Host. Usefule if you run a Cluster and want users to connect to a specific host.",
+                           "description" : "Quarantine Host. Useful if you run a Cluster and want users to connect to a specific host.",
                            "format" : "address",
                            "optional" : 1,
                            "type" : "string",
@@ -8040,6 +8040,25 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
+                        },
+                        "port" : {
+                           "default" : 8006,
+                           "description" : "Quarantine Port. Useful if you have a reverse proxy or port forwarding for the webinterface. Only used for the generated Spam report.",
+                           "maximum" : 65535,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 65535)"
+                        },
+                        "protocol" : {
+                           "default" : "https",
+                           "description" : "Quarantine Webinterface Protocol. Useful if you have a reverse proxy for the webinterface. Only used for the generated Spam report.",
+                           "enum" : [
+                              "http",
+                              "https"
+                           ],
+                           "optional" : 1,
+                           "type" : "string"
                         },
                         "reportstyle" : {
                            "default" : "verbose",

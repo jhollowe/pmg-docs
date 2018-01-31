@@ -8,29 +8,21 @@ Backup the system configuration.
 
 Backup statistic databases.
 
-
-
-
-*pmgbackup help* `[<cmd>]` `[OPTIONS]`
+*pmgbackup help* `[OPTIONS]`
 
 Get help about specified command.
 
-`<cmd>`: `<string>` ::
+`--extra-args` `<array>` ::
 
-Command name
+Shows help for a specific command
 
 `--verbose` `<boolean>` ::
 
 Verbose output format.
 
-
-
-
 *pmgbackup list*
 
 List all stored backups (files named proxmox-backup_{DATE}.tgz).
-
-
 
 *pmgbackup restore* `--filename <string>` `[OPTIONS]`
 
@@ -51,7 +43,5 @@ The backup file name.
 `--statistic` `<boolean>` ('default =' `0`)::
 
 Restore statistic databases. Only considered when you restore the 'database'.
-
-
 
 

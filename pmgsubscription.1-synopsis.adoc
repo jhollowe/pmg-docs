@@ -4,23 +4,17 @@
 
 Read subscription info.
 
-
-
-
-*pmgsubscription help* `[<cmd>]` `[OPTIONS]`
+*pmgsubscription help* `[OPTIONS]`
 
 Get help about specified command.
 
-`<cmd>`: `<string>` ::
+`--extra-args` `<array>` ::
 
-Command name
+Shows help for a specific command
 
 `--verbose` `<boolean>` ::
 
 Verbose output format.
-
-
-
 
 *pmgsubscription set* `<key>`
 
@@ -30,8 +24,6 @@ Set subscription key.
 
 Proxmox Mail Gateway subscription key
 
-
-
 *pmgsubscription update* `[OPTIONS]`
 
 Update subscription info.
@@ -39,7 +31,5 @@ Update subscription info.
 `--force` `<boolean>` ('default =' `0`)::
 
 Always connect to server, even if we have up to date info inside local cache.
-
-
 
 

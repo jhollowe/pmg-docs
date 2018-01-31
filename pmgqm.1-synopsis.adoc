@@ -1,19 +1,16 @@
 *pmgqm* `<COMMAND> [ARGS] [OPTIONS]`
 
-*pmgqm help* `[<cmd>]` `[OPTIONS]`
+*pmgqm help* `[OPTIONS]`
 
 Get help about specified command.
 
-`<cmd>`: `<string>` ::
+`--extra-args` `<array>` ::
 
-Command name
+Shows help for a specific command
 
 `--verbose` `<boolean>` ::
 
 Verbose output format.
-
-
-
 
 *pmgqm purge* `[OPTIONS]`
 
@@ -23,8 +20,6 @@ quarantine lifetime.
 `--check` `<boolean>` ('default =' `0`)::
 
 Only search for quarantine files older than configured quarantine lifetime. Just print found files, but do not remove them.
-
-
 
 *pmgqm send* `[OPTIONS]`
 
@@ -50,8 +45,6 @@ Spam report style. Default value is read from spam quarantine configuration.
 
 Select time span.
 
-
-
 *pmgqm status* `[OPTIONS]`
 
 Print quarantine status (mails per user) for specified time span.
@@ -59,7 +52,5 @@ Print quarantine status (mails per user) for specified time span.
 `--timespan` `<today | week | yesterday>` ('default =' `today`)::
 
 Select time span.
-
-
 
 

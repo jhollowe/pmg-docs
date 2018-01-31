@@ -9,41 +9,29 @@ API).
 
 Overwrite existing certificate.
 
-
-
 *pmgconfig dump*
 
 Print configuration setting which can be used in templates.
 
-
-
-
-*pmgconfig help* `[<cmd>]` `[OPTIONS]`
+*pmgconfig help* `[OPTIONS]`
 
 Get help about specified command.
 
-`<cmd>`: `<string>` ::
+`--extra-args` `<array>` ::
 
-Command name
+Shows help for a specific command
 
 `--verbose` `<boolean>` ::
 
 Verbose output format.
 
-
-
-
 *pmgconfig init*
 
 Generate required files in /etc/pmg/
 
-
-
 *pmgconfig ldapsync*
 
 Syncronize the LDAP database.
-
-
 
 *pmgconfig sync* `[OPTIONS]`
 
@@ -53,8 +41,6 @@ Syncronize Proxmox Mail Gateway configurations with system configuration.
 
 Restart services if necessary.
 
-
-
 *pmgconfig tlscert* `[OPTIONS]`
 
 Generate /etc/pmg/pmg-tls.pem (self signed certificate for encrypted SMTP
@@ -63,7 +49,5 @@ traffic).
 `--force` `<boolean>` ('default =' `0`)::
 
 Overwrite existing certificate.
-
-
 
 

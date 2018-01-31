@@ -8,7 +8,7 @@ Authentication mode to access the quarantine interface. Mode 'ticket' allows log
 
 `hostname`: `<string>` ::
 
-Quarantine Host. Usefule if you run a Cluster and want users to connect to a specific host.
+Quarantine Host. Useful if you run a Cluster and want users to connect to a specific host.
 
 `lifetime`: `<integer> (1 - N)` ('default =' `7`)::
 
@@ -17,6 +17,14 @@ Quarantine life time (days)
 `mailfrom`: `<string>` ::
 
 Text for 'From' header in daily spam report mails.
+
+`port`: `<integer> (1 - 65535)` ('default =' `8006`)::
+
+Quarantine Port. Useful if you have a reverse proxy or port forwarding for the webinterface. Only used for the generated Spam report.
+
+`protocol`: `<http | https>` ('default =' `https`)::
+
+Quarantine Webinterface Protocol. Useful if you have a reverse proxy for the webinterface. Only used for the generated Spam report.
 
 `reportstyle`: `<custom | none | short | verbose>` ('default =' `verbose`)::
 

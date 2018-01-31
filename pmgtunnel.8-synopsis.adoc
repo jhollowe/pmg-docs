@@ -1,25 +1,20 @@
 *pmgtunnel* `<COMMAND> [ARGS] [OPTIONS]`
 
-*pmgtunnel help* `[<cmd>]` `[OPTIONS]`
+*pmgtunnel help* `[OPTIONS]`
 
 Get help about specified command.
 
-`<cmd>`: `<string>` ::
+`--extra-args` `<array>` ::
 
-Command name
+Shows help for a specific command
 
 `--verbose` `<boolean>` ::
 
 Verbose output format.
 
-
-
-
 *pmgtunnel restart*
 
 Restart the Cluster Tunnel Daemon
-
-
 
 *pmgtunnel start* `[OPTIONS]`
 
@@ -29,18 +24,12 @@ Start the Cluster Tunnel Daemon
 
 Debug mode - stay in foreground
 
-
-
 *pmgtunnel status*
 
 Print cluster tunnel status.
 
-
-
 *pmgtunnel stop*
 
 Stop the Cluster Tunnel Daemon
-
-
 
 

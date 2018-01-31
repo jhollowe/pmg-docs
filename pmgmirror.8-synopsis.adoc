@@ -1,25 +1,20 @@
 *pmgmirror* `<COMMAND> [ARGS] [OPTIONS]`
 
-*pmgmirror help* `[<cmd>]` `[OPTIONS]`
+*pmgmirror help* `[OPTIONS]`
 
 Get help about specified command.
 
-`<cmd>`: `<string>` ::
+`--extra-args` `<array>` ::
 
-Command name
+Shows help for a specific command
 
 `--verbose` `<boolean>` ::
 
 Verbose output format.
 
-
-
-
 *pmgmirror restart*
 
 Restart the Database Mirror Daemon
-
-
 
 *pmgmirror start* `[OPTIONS]`
 
@@ -29,12 +24,8 @@ Start the Database Mirror Daemon
 
 Debug mode - stay in foreground
 
-
-
 *pmgmirror stop*
 
 Stop the Database Mirror Daemon
-
-
 
 
