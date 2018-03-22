@@ -6022,7 +6022,7 @@ var pmgapi = [
                            "properties" : {
                               "domain" : {
                                  "description" : "Domain name.",
-                                 "format" : "dns-name",
+                                 "format" : "transport-domain",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
@@ -6048,7 +6048,7 @@ var pmgapi = [
                            "properties" : {
                               "domain" : {
                                  "description" : "Domain name.",
-                                 "format" : "dns-name",
+                                 "format" : "transport-domain",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
@@ -6087,7 +6087,7 @@ var pmgapi = [
                               },
                               "domain" : {
                                  "description" : "Domain name.",
-                                 "format" : "dns-name",
+                                 "format" : "transport-domain",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
@@ -6161,7 +6161,7 @@ var pmgapi = [
                         },
                         "domain" : {
                            "description" : "Domain name.",
-                           "format" : "dns-name",
+                           "format" : "transport-domain",
                            "type" : "string",
                            "typetext" : "<string>"
                         }
@@ -6641,7 +6641,7 @@ var pmgapi = [
                            "properties" : {
                               "domain" : {
                                  "description" : "Domain name.",
-                                 "format" : "transport-domain",
+                                 "format" : "transport-domain-or-email",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
@@ -6667,7 +6667,7 @@ var pmgapi = [
                            "properties" : {
                               "domain" : {
                                  "description" : "Domain name.",
-                                 "format" : "transport-domain",
+                                 "format" : "transport-domain-or-email",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
@@ -6716,7 +6716,7 @@ var pmgapi = [
                               },
                               "domain" : {
                                  "description" : "Domain name.",
-                                 "format" : "transport-domain",
+                                 "format" : "transport-domain-or-email",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               },
@@ -6820,7 +6820,7 @@ var pmgapi = [
                         },
                         "domain" : {
                            "description" : "Domain name.",
-                           "format" : "transport-domain",
+                           "format" : "transport-domain-or-email",
                            "type" : "string",
                            "typetext" : "<string>"
                         },
@@ -7364,6 +7364,20 @@ var pmgapi = [
                         "advfilter" : {
                            "default" : 1,
                            "description" : "Use advanced filters for statistic.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "avast" : {
+                           "default" : 0,
+                           "description" : "Use Avast Virus Scanner (/bin/scan). You need to buy and install 'Avast Core Security' before you can enable this feature.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "clamav" : {
+                           "default" : 1,
+                           "description" : "Use ClamAV Virus Scanner. This is the default virus scanner and is enabled by default.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -11711,6 +11725,7 @@ var pmgapi = [
                                  "enum" : [
                                     "root",
                                     "admin",
+                                    "helpdesk",
                                     "qmanager",
                                     "audit"
                                  ],
@@ -11859,6 +11874,7 @@ var pmgapi = [
                            "enum" : [
                               "root",
                               "admin",
+                              "helpdesk",
                               "qmanager",
                               "audit"
                            ],

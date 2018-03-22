@@ -4,6 +4,14 @@
 
 Use advanced filters for statistic.
 
+`avast`: `<boolean>` ('default =' `0`)::
+
+Use Avast Virus Scanner (/bin/scan). You need to buy and install 'Avast Core Security' before you can enable this feature.
+
+`clamav`: `<boolean>` ('default =' `1`)::
+
+Use ClamAV Virus Scanner. This is the default virus scanner and is enabled by default.
+
 `dailyreport`: `<boolean>` ('default =' `1`)::
 
 Send daily reports.

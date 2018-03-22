@@ -34,7 +34,7 @@ Last name.
 
 Password
 
-`role`: `<admin | audit | qmanager | root>` ::
+`role`: `<admin | audit | helpdesk | qmanager | root>` ::
 
 User role. Role 'root' is reseved for the Unix Superuser.
 
