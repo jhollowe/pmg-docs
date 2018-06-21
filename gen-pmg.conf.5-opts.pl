@@ -27,6 +27,7 @@ my $key_groups = {
 	    rejectunknownsender => 1,
 	    helotests => 1,
 	    dnsbl_sites => 1,
+	    dnsbl_threshold => 1,
 	    verifyreceivers => 1,
 	    greylist => 1,
 	    spf => 1,
