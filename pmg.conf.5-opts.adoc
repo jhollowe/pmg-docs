@@ -84,6 +84,10 @@ The maximal number of connection attempts any client is allowed to make to this 
 
 Optional list of DNS white/blacklist domains (see postscreen_dnsbl_sites parameter).
 
+`dnsbl_threshold`: `<integer> (0 - N)` ('default =' `1`)::
+
+The inclusive lower bound for blocking a remote SMTP client, based on its combined DNSBL score (see postscreen_dnsbl_threshold parameter).
+
 `dwarning`: `<integer> (0 - N)` ('default =' `4`)::
 
 SMTP delay warning time (in hours).

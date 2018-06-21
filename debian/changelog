@@ -1,3 +1,9 @@
+pmg-docs (5.0-15) unstable; urgency=medium
+
+  * gen-pmg.conf.5-opts.pl: add dnsbl_threshold to known parameters
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 21 Jun 2018 10:20:22 +0200
+
 pmg-docs (5.0-14) unstable; urgency=medium
 
   * update generated docs
