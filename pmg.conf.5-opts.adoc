@@ -160,6 +160,10 @@ SMTP port number for relay host.
 
 When set, all outgoing mails are deliverd to the specified smarthost.
 
+`smarthostport`: `<integer> (1 - 65535)` ('default =' `25`)::
+
+SMTP port number for smarthost.
+
 `spf`: `<boolean>` ('default =' `1`)::
 
 Use Sender Policy Framework.
