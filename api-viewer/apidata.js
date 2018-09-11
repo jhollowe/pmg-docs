@@ -7647,6 +7647,14 @@ var pmgapi = [
                            "type" : "string",
                            "typetext" : "<string>"
                         },
+                        "dnsbl_threshold" : {
+                           "default" : 1,
+                           "description" : "The inclusive lower bound for blocking a remote SMTP client, based on its combined DNSBL score (see postscreen_dnsbl_threshold parameter).",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        },
                         "dwarning" : {
                            "default" : 4,
                            "description" : "SMTP delay warning time (in hours).",
@@ -7789,6 +7797,15 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
+                        },
+                        "smarthostport" : {
+                           "default" : 25,
+                           "description" : "SMTP port number for smarthost.",
+                           "maximum" : 65535,
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - 65535)"
                         },
                         "spf" : {
                            "default" : 1,
@@ -12762,9 +12779,9 @@ var pmgapi = [
                            "type" : "string"
                         },
                         "id" : {
-                           "description" : "Unique ID",
-                           "maxLength" : 60,
-                           "pattern" : "C\\d+R\\d+T\\d+",
+                           "description" : "Unique IDs, seperate with ;",
+                           "maxLength" : 600,
+                           "pattern" : "C\\d+R\\d+T\\d+(;C\\d+R\\d+T\\d+)*",
                            "type" : "string"
                         }
                      }
