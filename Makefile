@@ -11,7 +11,7 @@ ARCH:=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
 
 GEN_DEB=${GEN_PACKAGE}_${DOCRELEASE}-${PKGREL}_${ARCH}.deb
 DOC_DEB=${DOC_PACKAGE}_${DOCRELEASE}-${PKGREL}_all.deb
-DOC_BUILDDEPS := dblatex, source-highlight, inkscape, imagemagick
+DOC_BUILDDEPS := dblatex, source-highlight, imagemagick, librsvg2-bin
 
 
 all: index.html
@@ -102,15 +102,16 @@ pmg-admin-guide.chunked: ${PMG_ADMIN_GUIDE_ADOCDEPENDS}
 	a2x -a docinfo -a docinfo1 -a icons -f chunked pmg-admin-guide.adoc
 
 PMG_DOCBOOK_CONF=-b $(shell pwd)/asciidoc/pmg-docbook -f asciidoc/asciidoc-pmg.conf
+PMG_DBLATEX_OPTS='-p ./asciidoc/pmg-dblatex.xsl -s asciidoc/dblatex-custom.sty -c asciidoc/dblatex-export.conf'
 
 pmg-admin-guide-docinfo.xml: pmg-admin-guide-docinfo.xml.in
 	sed -e 's/@RELEASE@/${DOCRELEASE}/' <$< >$@
 
 pmg-admin-guide.pdf: ${PMG_ADMIN_GUIDE_ADOCDEPENDS} docinfo.xml pmg-admin-guide-docinfo.xml
-	inkscape -z -D --export-pdf=proxmox-logo.pdf images/proxmox-logo.svg
-	inkscape -z -D --export-pdf=proxmox-ci-header.pdf images/proxmox-ci-header.svg
+	rsvg-convert -f pdf -o proxmox-logo.pdf images/proxmox-logo.svg
+	rsvg-convert -f pdf -o proxmox-ci-header.pdf images/proxmox-ci-header.svg
 	grep ">Release ${DOCRELEASE}<" pmg-admin-guide-docinfo.xml || (echo "wrong release in  pmg-admin-guide-docinfo.xml" && false);
-	a2x -a docinfo -a docinfo1 -f pdf -L --asciidoc-opts="${PMG_DOCBOOK_CONF}" --dblatex-opts "-p ./asciidoc/pmg-dblatex.xsl -s asciidoc/dblatex-custom.sty" pmg-admin-guide.adoc
+	a2x -a docinfo -a docinfo1 -f pdf -L --asciidoc-opts="${PMG_DOCBOOK_CONF}" --dblatex-opts ${PMG_DBLATEX_OPTS} pmg-admin-guide.adoc
 	rm proxmox-logo.pdf proxmox-ci-header.pdf
 
 pmg-admin-guide.epub: ${PMG_ADMIN_GUIDE_ADOCDEPENDS}
