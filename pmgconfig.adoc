@@ -89,6 +89,10 @@ List of local (trusted) networks.
 
 Stores your subscription key and status.
 
+`/etc/pmg/tls_policy`::
+
+TLS policy for outbound connections.
+
 `/etc/pmg/transports`::
 
 Message delivery transport setup.
@@ -324,9 +328,13 @@ the information that is transmitted with SMTP mail. When you activate
 TLS, {pmg} automatically generates a new self signed
 certificate for you (`/etc/pmg/pmg-tls.pem`).
 
-{pmg} uses opportunistic TLS encryption. The SMTP transaction is
+{pmg} uses opportunistic TLS encryption by default. The SMTP transaction is
 encrypted if the 'STARTTLS' ESMTP feature is supported by the remote
-server. Otherwise, messages are sent in the clear.
+server.  Otherwise, messages are sent in the clear.
+You can set a different TLS policy per desitination domain, should you for
+example need to prevent e-mail delivery without encryption, or to work around
+a broken 'STARTTLS' ESMTP implementation. See {postfix_tls_readme} for details
+on the supported policies.
 
 Enable TLS logging::
 
