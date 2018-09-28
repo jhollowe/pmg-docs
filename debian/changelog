@@ -1,3 +1,9 @@
+pmg-docs (5.1-2) unstable; urgency=medium
+
+  * fix copyright date
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 28 Sep 2018 07:05:45 +0200
+
 pmg-docs (5.1-1) unstable; urgency=medium
 
   * asciidoc/asciidoc-pmg.conf: update links to https
