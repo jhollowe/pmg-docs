@@ -1,3 +1,13 @@
+pmg-docs (5.1-1) unstable; urgency=medium
+
+  * asciidoc/asciidoc-pmg.conf: update links to https
+
+  * add short documentation for /etc/pmg/tls_policy
+
+  * use rsvg-convert instead of inkscape
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 28 Sep 2018 06:53:56 +0200
+
 pmg-docs (5.0-16) unstable; urgency=medium
 
   * update generated docs
