@@ -1,3 +1,4 @@
+[[chapter_mailfilter]]
 Mail Filter
 ===========
 
@@ -58,6 +59,7 @@ testing and debugging. The 'Factory Defaults' button alows you to
 reset the filter rules.
 
 
+[[pmg_mailfilter_action]]
 'Action' - objects
 ------------------
 
@@ -155,6 +157,7 @@ Disclaimer
 Add a Disclaimer.
 
 
+[[pmg_mailfilter_who]]
 'Who' - objects
 ---------------
 
@@ -189,6 +192,7 @@ We have two important 'Who' - objects called 'Blacklist' and
 or allow specific senders.
 
 
+[[pmg_mailfilter_what]]
 'What' - objects
 ----------------
 
@@ -223,6 +227,7 @@ Archive Filter::
 Can be used to match specific content types inside archives.
 
 
+[[pmg_mailfilter_when]]
 'When' - objects
 ----------------
 
@@ -235,6 +240,7 @@ The default ruleset defines 'Office Hours', but this is not used by
 the default rules.
 
 
+[[pmg_mailfilter_regex]]
 Using regular expressions
 -------------------------
 

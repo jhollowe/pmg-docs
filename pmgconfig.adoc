@@ -175,6 +175,7 @@ NOTE: Modified templates from `/etc/pmg/templates/` are automatically
 synced from the master node to all cluster members.
 
 
+[[pmgconfig_systemconfig]]
 System Configuration
 --------------------
 
@@ -235,6 +236,7 @@ include::pmg.admin-conf-opts.adoc[]
 Mail Proxy Configuration
 ------------------------
 
+[[pmgconfig_mailproxy_relaying]]
 Relaying
 ~~~~~~~~
 
@@ -247,6 +249,7 @@ using the following configuration keys:
 
 include::pmg.mail-relaying-conf-opts.adoc[]
 
+[[pmgconfig_mailproxy_relay_domains]]
 Relay Domains
 ~~~~~~~~~~~~~
 
@@ -259,6 +262,7 @@ system will relay mail to. The system will reject incoming mails to
 other domains.
 
 
+[[pmgconfig_mailproxy_ports]]
 Ports
 ~~~~~
 
@@ -272,6 +276,7 @@ using the following configuration keys:
 include::pmg.mail-ports-conf-opts.adoc[]
 
 
+[[pmgconfig_mailproxy_options]]
 Options
 ~~~~~~~
 
@@ -285,6 +290,7 @@ using the following configuration keys:
 include::pmg.mail-options-conf-opts.adoc[]
 
 
+[[pmgconfig_mailproxy_transports]]
 Transports
 ~~~~~~~~~~
 
@@ -301,6 +307,7 @@ You can add the IP addresses, hostname and SMTP ports and mail domains (or
 just single email addresses) of your additional e-mail servers.
 
 
+[[pmgconfig_mailproxy_networks]]
 Networks
 ~~~~~~~~
 
@@ -315,6 +322,7 @@ NOTE: Hosts in the same subnet with Proxmox can relay by default and
 it’s not needed to add them in this list.
 
 
+[[pmgconfig_mailproxy_tls]]
 TLS
 ~~~
 
@@ -368,6 +376,7 @@ NOTE: If you use a backup MX server (e.g. your ISP offers this service
 for you) you should always add those servers here.
 
 
+[[pmgconfig_spamdetector]]
 Spam Detector Configuration
 ---------------------------
 
@@ -390,6 +399,7 @@ false negatives.
 include::pmg.spam-conf-opts.adoc[]
 
 
+[[pmgconfig_spamdetector_quarantine]]
 Quarantine
 ~~~~~~~~~~
 
@@ -411,9 +421,11 @@ and not in the webinterface.
 include::pmg.spamquar-conf-opts.adoc[]
 
 
+[[pmgconfig_clamav]]
 Virus Detector Configuration
 ----------------------------
 
+[[pmgconfig_clamav_options]]
 Options
 ~~~~~~~
 
@@ -439,6 +451,7 @@ updated. But you can see the database status on the GUI, and you can
 trigger manual updates there.
 
 
+[[pmgconfig_clamav_quarantine]]
 Quarantine
 ~~~~~~~~~~
 
@@ -484,6 +497,7 @@ User Management
 User management in {pmg} consists of three types of users/accounts:
 
 
+[[pmgconfig_localuser]]
 Local Users
 ~~~~~~~~~~~
 
@@ -521,6 +535,7 @@ Local user related settings are saved in `/etc/pmg/user.conf`.
 
 For details of the fields see xref:pmg_user_configuration_file[user.conf]
 
+[[pmgconfig_ldap]]
 LDAP/Active Directory
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -563,6 +578,7 @@ After a successfull sync, the groups and users should be visible on the web
 interface. After that, you can create rules targeting LDAP users and groups.
 
 
+[[pmgconfig_fetchmail]]
 Fetchmail
 ~~~~~~~~~
 

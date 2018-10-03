@@ -1,3 +1,4 @@
+[[chapter_pmgsubscription]]
 ifdef::manvolnum[]
 pmgsubscription(1)
 ==================

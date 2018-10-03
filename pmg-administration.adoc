@@ -87,6 +87,7 @@ Virus
 Allows administrators to inspect quarantined virus mails.
 
 
+[[pmg_userblackwhitelist]]
 User White- and Blacklist
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
