@@ -5,7 +5,7 @@ GEN_PACKAGE=pmg-doc-generator
 DOC_PACKAGE=pmg-docs
 
 # also update debian/changelog
-PKGREL=3
+PKGREL=4
 
 ARCH:=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
 
