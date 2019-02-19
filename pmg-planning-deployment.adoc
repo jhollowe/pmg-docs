@@ -27,7 +27,7 @@ e-mails. This has two major advantages:
 
 . {pmg} is able to detect viruses sent from an internal host. In many
 countries you are liable for not sending viruses to other
-people. {pmg} outgoing e-mail scanning feature is an additional
+people. The {pmg} outgoing e-mail scanning feature is an additional
 protection to avoid that.
 
 . {pmg} can gather statistics about outgoing e-mails too. Statistics
@@ -35,9 +35,9 @@ about incoming e-mails looks nice, but they are quite
 useless. Consider two users, user-1 receives 10 e-mails from news
 portals and wrote 1 e-mail to a person you never heard from. While
 user-2 receives 5 e-mails from a customer and sent 5 e-mails
-back. Which user do you consider more active? I am sure its user-2,
+back. Which user do you consider more active? I am sure it's user-2,
 because he communicates with your customers. {pmg} advanced address
-statistics can show you this important information. Solution which
+statistics can show you this important information. A solution which
 does not scan outgoing e-mail cannot do that.
 
 To enable outgoing e-mail filtering you just need to send all outgoing
