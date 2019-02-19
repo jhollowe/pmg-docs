@@ -26,7 +26,7 @@ that {pmg} is designed to scan both incoming and outgoing
 e-mails. This has two major advantages:
 
 . {pmg} is able to detect viruses sent from an internal host. In many
-countries you are liable for not sending viruses to other
+countries you are liable for sending viruses to other
 people. The {pmg} outgoing e-mail scanning feature is an additional
 protection to avoid that.
 
