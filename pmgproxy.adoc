@@ -25,7 +25,7 @@ endif::manvolnum[]
 
 This daemon exposes the whole {pmg} API on TCP port 8006 using
 HTTPS. It runs as user `www-data` and has very limited permissions.
-Operation requiring more permissions are forwarded to the local
+Operations requiring more permissions are forwarded to the local
 `pmgdaemon`.
 
 Requests targeted for other nodes are automatically forwarded to those
@@ -35,11 +35,10 @@ to a single {pmg} node.
 Alternative HTTPS certificate
 -----------------------------
 
-By default, pmgproxy uses the certificate `/etc/pmg/pmg-api.pem` for
-HTTPS connections.  This certificate is a self signed certificate, and
-therefor not trusted by browsers and operating systems by default. You
-can simply replace this certificate with your own (please include the key
-inside the '.pem' file).
+By default, pmgproxy uses the certificate `/etc/pmg/pmg-api.pem` for HTTPS
+connections.  This certificate is self signed, and therefore not trusted by
+browsers and operating systems by default. You can simply replace this
+certificate with your own (please include the key inside the '.pem' file).
 
 
 ifdef::manvolnum[]
