@@ -7,11 +7,12 @@ DOC_PACKAGE=pmg-docs
 # also update debian/changelog
 PKGREL=4
 
+GITVERSION:=$(shell git rev-parse HEAD)
+
 ARCH:=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
 
 GEN_DEB=${GEN_PACKAGE}_${DOCRELEASE}-${PKGREL}_${ARCH}.deb
 DOC_DEB=${DOC_PACKAGE}_${DOCRELEASE}-${PKGREL}_all.deb
-DOC_BUILDDEPS := dblatex, source-highlight, imagemagick, librsvg2-bin
 
 
 all: index.html
@@ -30,7 +31,7 @@ pmg-doc-generator.mk: .pmg-doc-depends pmg-doc-generator.mk.in
 	cat pmg-doc-generator.mk.in .pmg-doc-depends > $@.tmp
 	mv $@.tmp $@
 
-include ./pmg-doc-generator.mk
+-include ./pmg-doc-generator.mk
 
 GEN_DEB_SOURCES=				\
 	pmg-doc-generator.mk			\
@@ -128,61 +129,50 @@ dinstall: ${GEN_DEB} ${DOC_DEB}
 	dpkg -i ${GEN_DEB} ${DOC_DEB}
 
 .PHONY: deb
-deb:
-	rm -f ${GEN_DEB} ${DOC_DEB}
-	make all-debs
+deb: ${DOC_DEB}
 
-.PHONY: all-debs
-all-debs: ${GEN_DEB} ${DOC_DEB}
+${GEN_DEB}: ${DOC_DEB}
+
+${DOC_DEB}:
+	rm -f ${GEN_DEB} ${DOC_DEB}
+	rm -rf build
+	rsync -a * build/
+	echo "git clone git://git.proxmox.com/git/pmg-docs.git\\ngit checkout ${GITVERSION}" > build/debian/SOURCE
+	cd build; dpkg-buildpackage -b -us -uc
+	lintian $(DOC_DEB) $(GEN_DEB)
 
 .PHONY: clean-build
 clean-build:
 	rm -rf build
 
-define prepare_build
-	rm -rf build-$1
-	mkdir build-$1
-	cp -a debian build-$1/debian
-	mv build-$1/debian/control.in build-$1/debian/control
-	echo >> build-$1/debian/control
-	cat debian/$1.control >> build-$1/debian/control
-	install -dm755 build-$1/usr/share/$1
-	install -dm755 build-$1/usr/share/doc/$1
-endef
+.PHONY: install
+install: gen-install doc-install
 
-.PHONY: gen-deb
-gen-deb: $(GEN_DEB)
-$(GEN_DEB): $(GEN_DEB_SOURCES) asciidoc-pmg
-	$(call prepare_build,$(GEN_PACKAGE))
-	install -dm755 build-$(GEN_PACKAGE)/usr/bin
+.PHONY: gen-install
+gen-install: $(GEN_DEB_SOURCES) asciidoc-pmg
+	install -dm755 ${DESTDIR}/usr/bin
+	install -dm755 $(DESTDIR)/usr/share/${GEN_PACKAGE}
 	# install files
-	install -m 0644 ${GEN_DEB_SOURCES} build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}
-	install -m 0755 ${GEN_SCRIPTS} build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}
+	install -m 0644 ${GEN_DEB_SOURCES} $(DESTDIR)/usr/share/${GEN_PACKAGE}
+	install -m 0755 ${GEN_SCRIPTS} $(DESTDIR)/usr/share/${GEN_PACKAGE}
 	# install asciidoc-pmg
-	install -m 0755 asciidoc-pmg build-$(GEN_PACKAGE)/usr/bin/
-	install -dm755 build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}/asciidoc/
-	install -m 0644 asciidoc/asciidoc-pmg.conf build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}/asciidoc/
-	install -m 0644 asciidoc/pmg-html.conf build-$(GEN_PACKAGE)/usr/share/${GEN_PACKAGE}/asciidoc/
-	cd build-$(GEN_PACKAGE) && dpkg-buildpackage -rfakeroot -b -us -uc
-	lintian ${GEN_DEB}
+	install -m 0755 asciidoc-pmg $(DESTDIR)/usr/bin/
+	install -dm755 $(DESTDIR)/usr/share/${GEN_PACKAGE}/asciidoc/
+	install -m 0644 asciidoc/asciidoc-pmg.conf $(DESTDIR)/usr/share/${GEN_PACKAGE}/asciidoc/
+	install -m 0644 asciidoc/pmg-html.conf $(DESTDIR)/usr/share/${GEN_PACKAGE}/asciidoc/
 
-.PHONY: doc-deb
-doc-deb: $(DOC_DEB)
-$(DOC_DEB): index.html $(API_VIEWER_SOURCES) verify-images
-	$(call prepare_build,$(DOC_PACKAGE))
-	sed -i -e '/^Build-Depends/{s/$$/, $(DOC_BUILDDEPS)/}' build-$(DOC_PACKAGE)/debian/control
+.PHONY: doc-install
+doc-install: index.html $(API_VIEWER_SOURCES) verify-images
 	# install files for pmgdocs package
-	install -dm755 build-$(DOC_PACKAGE)/usr/share/${DOC_PACKAGE}
-	install -dm755 build-$(DOC_PACKAGE)/usr/share/doc/${DOC_PACKAGE}
-	install -m 0644 index.html ${INDEX_INCLUDES} build-$(DOC_PACKAGE)/usr/share/${DOC_PACKAGE}
+	install -dm755 $(DESTDIR)/usr/share/${DOC_PACKAGE}
+	install -dm755 $(DESTDIR)/usr/share/doc/${DOC_PACKAGE}
+	install -m 0644 index.html ${INDEX_INCLUDES} $(DESTDIR)/usr/share/${DOC_PACKAGE}
 	# install screenshot images
-	install -dm755 build-$(DOC_PACKAGE)/usr/share/${DOC_PACKAGE}/images/screenshot
-	install -m 0644 images/screenshot/*.png build-$(DOC_PACKAGE)/usr/share/${DOC_PACKAGE}/images/screenshot
+	install -dm755 $(DESTDIR)/usr/share/${DOC_PACKAGE}/images/screenshot
+	install -m 0644 images/screenshot/*.png $(DESTDIR)/usr/share/${DOC_PACKAGE}/images/screenshot
 	# install api doc viewer
-	install -dm755 build-$(DOC_PACKAGE)/usr/share/${DOC_PACKAGE}/api-viewer
-	install -m 0644 ${API_VIEWER_SOURCES} build-$(DOC_PACKAGE)/usr/share/${DOC_PACKAGE}/api-viewer
-	cd build-$(DOC_PACKAGE) && dpkg-buildpackage -rfakeroot -b -us -uc
-	lintian ${DOC_DEB}
+	install -dm755 $(DESTDIR)/usr/share/${DOC_PACKAGE}/api-viewer
+	install -m 0644 ${API_VIEWER_SOURCES} $(DESTDIR)/usr/share/${DOC_PACKAGE}/api-viewer
 
 .PHONY: upload
 upload: ${GEN_DEB} ${DOC_DEB}
@@ -201,4 +191,4 @@ clean:
 	rm -f api-viewer/apidoc.js chapter-*.html *-plain.html chapter-*.html pmg-admin-guide.chunked asciidoc-pmg link-refs.json .asciidoc-pmg-tmp_* pmg-smtp-filter.8-synopsis.adoc pmgpolicy.8-synopsis.adoc pmgsh.1-synopsis.adoc
 	rm -rf .pmg-doc-depends 
 	rm -f pmg-doc-generator.mk chapter-index-table.adoc man1-index-table.adoc man5-index-table.adoc man8-index-table.adoc pmg-admin-guide-docinfo.xml
-	rm -rf build-*
+	rm -rf build*

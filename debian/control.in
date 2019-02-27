@@ -1,6 +1,0 @@
-Source: pmg-docs
-Section: perl
-Priority: extra
-Maintainer: Proxmox Support Team <support@proxmox.com>
-Build-Depends: asciidoc-dblatex, debhelper (>= 9~), libdbi-perl, libfile-sync-perl, liblockfile-simple-perl, libmime-tools-perl, libnet-ldap-perl, librrds-perl, lintian
-Standards-Version: 3.8.4
