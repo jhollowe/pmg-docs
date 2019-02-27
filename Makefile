@@ -15,6 +15,10 @@ GEN_DEB=${GEN_PACKAGE}_${DOCRELEASE}-${PKGREL}_${ARCH}.deb
 DOC_DEB=${DOC_PACKAGE}_${DOCRELEASE}-${PKGREL}_all.deb
 
 
+export SOURCE_DATE_EPOCH ?= $(shell dpkg-parsechangelog -STimestamp)
+SOURCE_DATE_HUMAN := $(shell date -d "@${SOURCE_DATE_EPOCH}")
+
+
 all: index.html
 
 .PHONY: verify-images
@@ -64,7 +68,7 @@ INDEX_INCLUDES=								\
 	man8-index-table.adoc						\
 	$(sort $(addsuffix .html, ${MANUAL_PAGES}) ${CHAPTER_LIST})
 
-ADOC_STDARG=-b $(shell pwd)/asciidoc/pmg-html -f asciidoc/asciidoc-pmg.conf -a icons -a data-uri -a "date=$(shell date)" -a "revnumber=${DOCRELEASE}"
+ADOC_STDARG=-b $(shell pwd)/asciidoc/pmg-html -f asciidoc/asciidoc-pmg.conf -a icons -a data-uri -a "date=${SOURCE_DATE_HUMAN}" -a "revnumber=${DOCRELEASE}"
 
 BROWSER?=xdg-open
 
