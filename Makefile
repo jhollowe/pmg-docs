@@ -99,8 +99,10 @@ pmg-admin-guide.html: ${PMG_ADMIN_GUIDE_ADOCDEPENDS}
 	asciidoc -a pmglogo ${ADOC_STDARG} -o $@ pmg-admin-guide.adoc
 
 pmg-admin-guide.chunked: ${PMG_ADMIN_GUIDE_ADOCDEPENDS}
-	rm -rf pmg-admin-guide.chunked
-	a2x -a docinfo -a docinfo1 -a icons -f chunked pmg-admin-guide.adoc
+	rm -rf $@.tmp $@
+	mkdir $@.tmp
+	a2x -D $@.tmp -a docinfo -a docinfo1 -a icons -f chunked pmg-admin-guide.adoc
+	mv $@.tmp/$@ $@
 
 PMG_DOCBOOK_CONF=-b $(shell pwd)/asciidoc/pmg-docbook -f asciidoc/asciidoc-pmg.conf
 PMG_DBLATEX_OPTS='-p ./asciidoc/pmg-dblatex.xsl -s asciidoc/dblatex-custom.sty -c asciidoc/dblatex-export.conf'
@@ -116,7 +118,10 @@ pmg-admin-guide.pdf: ${PMG_ADMIN_GUIDE_ADOCDEPENDS} docinfo.xml pmg-admin-guide-
 	rm proxmox-logo.pdf proxmox-ci-header.pdf
 
 pmg-admin-guide.epub: ${PMG_ADMIN_GUIDE_ADOCDEPENDS}
-	a2x -f epub --asciidoc-opts="${PMG_DOCBOOK_CONF}" pmg-admin-guide.adoc
+	rm -rf $@.tmp $@
+	mkdir $@.tmp
+	a2x -D $@.tmp -f epub --asciidoc-opts="${PMG_DOCBOOK_CONF}" pmg-admin-guide.adoc
+	mv $@.tmp/$@ $@
 
 api-viewer/apidata.js: extractapi.pl
 	./extractapi.pl >$@
