@@ -143,8 +143,8 @@ We use a template based approach to generate those files. The {tts} is
 a well known, fast and flexible template processing system. You can
 find the default templates in `/var/lib/pmg/templates/`. Please do not
 modify them directly, because your modification would get lost on the
-next update. Instead, copy them to `/etc/pmg/templates/`, then apply
-your changes there.
+next update. Instead, copy the template you wish to change to
+`/etc/pmg/templates/`, then apply your changes there.
 
 Templates can access any configuration setting, and you can use the
 `pmgconfig dump` command to get a list of all variable names:
@@ -167,7 +167,7 @@ or when you directly edit configuration files
 # pmgconfig sync --restart 1
 ----
 
-Above commands also restarts services if underlying configuration
+The above command also restarts services if the underlying configuration
 files are changed. Please note that this is automatically done when
 you change the configuration using the GUI or API.
 
