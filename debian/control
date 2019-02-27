@@ -3,7 +3,7 @@ Section: perl
 Priority: extra
 Maintainer: Proxmox Support Team <support@proxmox.com>
 Build-Depends: asciidoc-dblatex,
-               debhelper (>= 9~),
+               debhelper (>= 10~),
                libdbi-perl,
                libfile-sync-perl,
                liblockfile-simple-perl,
