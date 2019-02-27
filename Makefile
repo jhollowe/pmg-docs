@@ -111,8 +111,13 @@ pmg-admin-guide.chunked: ${PMG_ADMIN_GUIDE_ADOCDEPENDS}
 PMG_DOCBOOK_CONF=-b $(shell pwd)/asciidoc/pmg-docbook -f asciidoc/asciidoc-pmg.conf
 PMG_DBLATEX_OPTS='-p ./asciidoc/pmg-dblatex.xsl -s asciidoc/dblatex-custom.sty -c asciidoc/dblatex-export.conf'
 
+YEAR:=$(shell date "+%Y")
+
 pmg-admin-guide-docinfo.xml: pmg-admin-guide-docinfo.xml.in
-	sed -e 's/@RELEASE@/${DOCRELEASE}/' <$< >$@
+	sed -e 's/@RELEASE@/${DOCRELEASE}/' -e 's/@YEAR@/${YEAR}/' <$< >$@
+
+pmg-copyright.adoc: pmg-copyright.adoc.in
+	sed -e 's/@YEAR@/${YEAR}/' <$< >$@
 
 pmg-admin-guide.pdf: ${PMG_ADMIN_GUIDE_ADOCDEPENDS} docinfo.xml pmg-admin-guide-docinfo.xml
 	rsvg-convert -f pdf -o proxmox-logo.pdf images/proxmox-logo.svg
@@ -199,5 +204,5 @@ clean:
 	rm -f *.deb *.changes *.buildinfo
 	rm -f api-viewer/apidoc.js chapter-*.html *-plain.html chapter-*.html pmg-admin-guide.chunked asciidoc-pmg link-refs.json .asciidoc-pmg-tmp_* pmg-smtp-filter.8-synopsis.adoc pmgpolicy.8-synopsis.adoc pmgsh.1-synopsis.adoc
 	rm -rf .pmg-doc-depends 
-	rm -f pmg-doc-generator.mk chapter-index-table.adoc man1-index-table.adoc man5-index-table.adoc man8-index-table.adoc pmg-admin-guide-docinfo.xml
+	rm -f pmg-doc-generator.mk chapter-index-table.adoc man1-index-table.adoc man5-index-table.adoc man8-index-table.adoc pmg-admin-guide-docinfo.xml pmg-copyright.adoc
 	rm -rf build*
