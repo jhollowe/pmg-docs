@@ -2,14 +2,21 @@ Source: pmg-docs
 Section: perl
 Priority: extra
 Maintainer: Proxmox Support Team <support@proxmox.com>
-Build-Depends: asciidoc-dblatex, debhelper (>= 9~), libdbi-perl, libfile-sync-perl, liblockfile-simple-perl, libmime-tools-perl, libnet-ldap-perl, librrds-perl, lintian
+Build-Depends: asciidoc-dblatex,
+               debhelper (>= 9~),
+               libdbi-perl,
+               libfile-sync-perl,
+               liblockfile-simple-perl,
+               libmime-tools-perl,
+               libnet-ldap-perl,
+               librrds-perl,
+               lintian
 Standards-Version: 3.8.4
-
 
 Package: pmg-doc-generator
 Section: perl
 Architecture: any
-Depends: ${perl:Depends}, libpve-common-perl, asciidoc-base, xmlto
+Depends: asciidoc-base, libpve-common-perl, xmlto, ${perl:Depends}
 Description: Proxmox Mail Gateway Documentation helpers
  Tool to auto-generate various Proxmox Mail gateway Documentation files and
  manual pages. This package is required to build most other Proxmox Mail
