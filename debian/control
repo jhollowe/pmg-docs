@@ -4,12 +4,10 @@ Priority: extra
 Maintainer: Proxmox Support Team <support@proxmox.com>
 Build-Depends: asciidoc-dblatex,
                debhelper (>= 10~),
-               libdbi-perl,
-               libfile-sync-perl,
-               liblockfile-simple-perl,
-               libmime-tools-perl,
-               libnet-ldap-perl,
-               librrds-perl,
+               git,
+               libjson-perl,
+               imagemagick,
+               librsvg2-bin,
                lintian
 Standards-Version: 3.8.4
 
