@@ -1,3 +1,13 @@
+pmg-docs (5.1-5) unstable; urgency=medium
+
+  * build system improvements
+
+  * fix #2098, update docs for pmgproxy configuration file
+
+  * Some language improvements for the deployment chapter, cleanups
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 28 Feb 2019 07:08:18 +0100
+
 pmg-docs (5.1-4) unstable; urgency=medium
 
   * update TLS config screenshot
