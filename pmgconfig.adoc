@@ -475,7 +475,7 @@ Custom SpamAssassin configuration
 
 This is only for advanced users. To add or change the Proxmox
 {spamassassin} configuration please login to the console via SSH. Go
-to directory `/etc/mail/spamassasin/`. In this directory there are several
+to directory `/etc/mail/spamassassin/`. In this directory there are several
 files (`init.pre`, `local.cf`, ...) – do not change them.
 
 To add your special configuration, you have to create a new file and
