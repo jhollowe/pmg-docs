@@ -81,8 +81,8 @@ section xref:nmap[port scans]).
 System Requirements
 -------------------
 
-{pmg} needs dedicated server hardware but can also run inside a
-virtual machine on any of the following plattforms:
+The {pmg} can run on dedicated server hardware or inside a virtual machine on
+any of the following plattforms:
 
 * Proxmox VE (KVM)
 
@@ -94,7 +94,11 @@ virtual machine on any of the following plattforms:
 
 * Virtual box&trade;
 
-* Citrix XenServer&trade;
+* Citrix Hypervisor&trade; (former XenServer&trade;)
+
+* LXC container
+
+* and others supporting Debian Linux as guest OS
 
 Please see http://www.proxmox.com for details.
 
@@ -111,28 +115,28 @@ Minimum System Requirements
 
 * bootable CD-ROM-drive or USB boot support
 
-* 1024x768 capable VGA/Monitor for Installer
+* Monitor with a resolution of 1024x768 for the installation
 
-* Hard disk 8 GB - ATA/SATA/SCSI/NVME
+* Hard disk with at least 8 GB of disk space
 
-* Ethernet Network interface card
+* Ethernet network interface card
 
 
 Recommended System Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Multicore CPU: 64bit (Intel EMT64 or AMD64)
+* Multicore CPU: 64bit (Intel EMT64 or AMD64), +
+  for use as virtual machine activate Intel VT/AMD-V CPU flag
 
 * 4 GB RAM
 
 * bootable CD-ROM-drive or USB boot support
 
-* 1024x768 capable VGA/Monitor for Installer
+* Monitor with a resolution of 1024x768 for the installation
 
-* 1 GBps Ethernet Network interface card
+* 1 Gbps Ethernet network interface card
 
-* Hardware RAID1 or RAID10, Raid Controllers need write cache with
-  batteries backup module for best performance
-
-* Enterprise class SSD with power loss protection (e.g. Intel SSD DC
-  35xx/36xx/37xx)
+* Storage: at least 8 GB free disk space, best setup with redundancy, +
+  use hardware RAID controller with battery backed write cache (``BBU'') or
+  ZFS. ZFS is not compatible with a hardware RAID controller. For best
+  performance use Enterprise class SSD with power loss protection.
