@@ -491,6 +491,99 @@ If you run a cluster, the `custom.cf` file is synchronized from the
 master node to all cluster members.
 
 
+[[pmgconfig_custom_check]]
+Custom Check Interface
+----------------------
+
+For use cases which are not handled by the {pmg} Virus Detector and
+{spamassassin} configuration, advanced users can create a custom check
+executable which, if enabled will be called before the Virus Detector and before
+passing an e-mail through the Rule System. The custom check API is kept as
+simple as possible, while still providing a great deal of control over the
+treatment of an e-mail. Its input is passed via two CLI arguments:
+
+* the 'api-version' (currently `v1`) - for potential future change of the
+  invocation
+
+* the 'queue-file-name' - a filename, which contains the complete e-mail as
+  rfc822/eml file
+
+The expected output need to be printed on STDOUT and consists of two lines:
+
+* the 'api-version' (currently 'v1') - see above
+
+* one of the following 3 results:
+** 'OK' - e-mail is ok
+** 'VIRUS: <virusdescription>' - e-mail is treated as if it contained a virus
+    (the virusdescription is logged and added to the e-mail's headers)
+** 'SCORE: <number>' - <number> is added (negative numbers are also possible)
+    to the e-mail's spamscore
+
+The check is run with a 5 minute timeout - if it is exceeded the check
+executable is killed and the e-mail is treated as OK.
+
+All output written to STDERR by the check is written with priority 'err' to the
+journal/mail.log.
+
+A simple sample script following the API (and yielding a random result) for
+reference:
+
+----
+#!/bin/sh
+
+echo "called with $*" 1>&2
+
+if [ "$#" -ne 2 ]; then
+  echo "usage: $0 APIVERSION QUEUEFILENAME" 1>&2
+  exit 1
+fi
+
+apiver="$1"
+shift
+
+if [ "$apiver" != "v1" ]; then
+  echo "wrong APIVERSION: $apiver" 1>&2
+  exit 2
+fi
+
+queue_file="$1"
+
+echo "v1"
+
+choice=$(shuf -i 0-3 -n1)
+
+case "$choice" in
+  0)
+    echo OK
+    ;;
+  1)
+    echo SCORE: 4
+    ;;
+  2)
+    echo VIRUS: Random Virus
+    ;;
+  3) #timeout-test
+    for i in $(seq 1 7); do
+      echo "custom checking mail: $queue_file - minute $i" 1>&2
+      sleep 60
+    done
+    ;;
+esac
+
+exit 0
+----
+
+The custom check needs to be enabled in the admin section of `/etc/pmg/pmg.conf`
+
+----
+section: admin
+    custom_check 1
+----
+
+The location of the custom check executable can also be set there with the key
+`custom_check_path` and defaults to `/usr/local/bin/pmg-custom-check`.
+
+
 User Management
 ---------------
 
