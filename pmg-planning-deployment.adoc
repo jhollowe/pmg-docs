@@ -136,7 +136,7 @@ Recommended System Requirements
 
 * 1 Gbps Ethernet network interface card
 
-* Storage: at least 8 GB free disk space, best setup with redundancy, +
+* Storage: at least 8 GB free disk space, best setup with redundancy,
   use hardware RAID controller with battery backed write cache (``BBU'') or
   ZFS. ZFS is not compatible with a hardware RAID controller. For best
   performance use Enterprise class SSD with power loss protection.
