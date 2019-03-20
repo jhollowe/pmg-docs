@@ -1,3 +1,9 @@
+pmg-docs (5.1-7) unstable; urgency=medium
+
+  * Add initial documentation for custom checks
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 20 Mar 2019 06:40:14 +0100
+
 pmg-docs (5.1-6) unstable; urgency=medium
 
   * Update minimal and recommended system requirements

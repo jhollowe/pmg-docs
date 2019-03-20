@@ -5,7 +5,7 @@ GEN_PACKAGE=pmg-doc-generator
 DOC_PACKAGE=pmg-docs
 
 # also update debian/changelog
-PKGREL=6
+PKGREL=7
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
