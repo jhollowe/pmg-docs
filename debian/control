@@ -8,7 +8,8 @@ Build-Depends: asciidoc-dblatex,
                libjson-perl,
                imagemagick,
                librsvg2-bin,
-               lintian
+               lintian,
+               source-highlight,
 Standards-Version: 3.8.4
 
 Package: pmg-doc-generator
