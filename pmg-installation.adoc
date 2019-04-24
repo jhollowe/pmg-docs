@@ -105,7 +105,10 @@ recommend to use stronger passwords - here are some guidelines:
 
 - Include lowercase and uppercase alphabetic characters, numbers and symbols.
 
-- Avoid character repetition, keyboard patterns, dictionary words, letter or number sequences, usernames, relative or pet names, romantic links (current or past) and biographical information (e.g., ID numbers, ancestors' names or dates).
+- Avoid character repetition, keyboard patterns, dictionary words, letter or
+  number sequences, usernames, relative or pet names, romantic links (current
+  or past) and biographical information (e.g., ID numbers, ancestors' names or
+  dates).
 
 It is sometimes necessary to send notification to the system
 administrator, for example:
