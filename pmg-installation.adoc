@@ -233,22 +233,28 @@ NOTE: In general, this is not trivial, especially when you use LVM or
 ZFS.
 
 
-Install {pmg} as a Debian-based Container
------------------------------------------
+Using {pmg} as Linux Container Appliance
+----------------------------------------
+
+A ready-to-use appliance template is available through the
+https://www.proxmox.com/proxmox-ve[Proxmox VE] appliance manager in the `mail`
+section, so if you already use Proxmox VE you can setup a {pmg} instance in a
+minute.
+
+NOTE: It's recommended to use a static network configuration. If DHCP should be
+used ensure that the container can always lease the same IP, for example, by
+reserving one with the containers network MAC address.
 
 The full functionality of {pmg} can also run on top of a Debian-based LXC
 instance. In order to keep the set of installed software, and thus the
 necessary updates, minimal you can install the `proxmox-mailgateway-container`
-meta-package, after configuring the repositories. You need to run:
+meta-package. After configuring the repositories, you need to run:
 
 [source,bash]
 ----
 apt-get update
 apt-get install proxmox-mailgateway-container
 ----
-
-Additionally a ready-to-use appliance-template is available in the Proxmox VE
-appliance manager in the category `mail`.
 
 
 [[pmg_package_repositories]]
