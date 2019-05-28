@@ -1,3 +1,14 @@
+pmg-docs (5.2-2) unstable; urgency=medium
+
+  * set email to office@proxmox.com
+
+  * ensure that code blocks get rendered by building with source-highlight
+    installed
+
+  * installation: add proxmox-mailgateway-container
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 28 May 2019 15:59:51 +0200
+
 pmg-docs (5.2-1) unstable; urgency=medium
 
   * bump for Proxmox Mailgateway 5.2
