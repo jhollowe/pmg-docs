@@ -26,3 +26,10 @@ Section: doc
 Architecture: all
 Description: Proxmox Mail Gateway Documentation
  This package contains the Proxmox Mail Gateway documentation files.
+
+Package: pmg-docs-apache
+Architecture: all
+Section: doc
+Depends: pmg-docs,
+Suggests: apache2,
+Description: Proxmox Mailgateway Documentation - Apache2 config
