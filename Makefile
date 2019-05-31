@@ -6,7 +6,7 @@ DOC_PACKAGE=pmg-docs
 WEB_PACKAGE=pmg-docs-apache
 
 # also update debian/changelog
-PKGREL=2
+PKGREL=3
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
