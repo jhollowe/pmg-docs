@@ -1,6 +1,6 @@
 Source: pmg-docs
 Section: perl
-Priority: extra
+Priority: optional
 Maintainer: Proxmox Support Team <support@proxmox.com>
 Build-Depends: asciidoc-dblatex,
                debhelper (>= 10~),
@@ -33,3 +33,5 @@ Section: doc
 Depends: pmg-docs,
 Suggests: apache2,
 Description: Proxmox Mailgateway Documentation - Apache2 config
+ This package contains configuration files to host the Proxmox Mail Gateway
+ documentation files through an apache2 web server.
