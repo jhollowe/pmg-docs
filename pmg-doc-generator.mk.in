@@ -1,5 +1,4 @@
-# also update debian/changelog
-DOCRELEASE=5.2
+DOCRELEASE=@RELEASE@
 
 DGDIR?=/usr/share/pmg-doc-generator
 

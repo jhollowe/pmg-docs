@@ -1,3 +1,5 @@
+include /usr/share/dpkg/pkg-info.mk
+
 DGDIR=.
 ASCIIDOC_PMG=./asciidoc-pmg
 
@@ -6,15 +8,15 @@ DOC_PACKAGE=pmg-docs
 WEB_PACKAGE=pmg-docs-apache
 
 # also update debian/changelog
-PKGREL=3
+PKGREL=1
 
 GITVERSION:=$(shell git rev-parse HEAD)
 
 ARCH:=$(shell dpkg-architecture -qDEB_BUILD_ARCH)
 
-GEN_DEB=${GEN_PACKAGE}_${DOCRELEASE}-${PKGREL}_${ARCH}.deb
-DOC_DEB=${DOC_PACKAGE}_${DOCRELEASE}-${PKGREL}_all.deb
-WEB_DEB=${WEB_PACKAGE}_${DOCRELEASE}-${PKGREL}_all.deb
+GEN_DEB=${GEN_PACKAGE}_${DEB_VERSION_UPSTREAM_REVISION}_${ARCH}.deb
+DOC_DEB=${DOC_PACKAGE}_${DEB_VERSION_UPSTREAM_REVISION}_all.deb
+WEB_DEB=${WEB_PACKAGE}_${DEB_VERSION_UPSTREAM_REVISION}_all.deb
 
 export SOURCE_DATE_EPOCH ?= $(shell dpkg-parsechangelog -STimestamp)
 SOURCE_DATE_HUMAN := $(shell date -d "@${SOURCE_DATE_EPOCH}")
@@ -34,6 +36,7 @@ ADOC_SOURCES_GUESS=$(filter-out %-synopsis.adoc %-opts.adoc %-table.adoc, $(wild
 
 pmg-doc-generator.mk: .pmg-doc-depends pmg-doc-generator.mk.in
 	cat pmg-doc-generator.mk.in .pmg-doc-depends > $@.tmp
+	sed -i "s/@RELEASE@$$/${DEB_VERSION_UPSTREAM}/" $@.tmp
 	mv $@.tmp $@
 
 -include ./pmg-doc-generator.mk
