@@ -15,6 +15,7 @@ Alternatively, {pmg} can be installed on top of an existing Debian
 system.  This option is only recommended for advanced users since
 it requires more detailed knowledge about {pmg} and Debian.
 
+[[pmg_install_iso]]
 Using the {pmg} Installation CD-ROM
 -----------------------------------
 
@@ -214,6 +215,7 @@ installation using the following command:
 include::pmg-usbstick.adoc[]
 
 
+[[pmg_install_on_debian]]
 Install {pmg} on Debian
 -----------------------
 
@@ -236,6 +238,7 @@ NOTE: In general, this is not trivial, especially when you use LVM or
 ZFS.
 
 
+[[pmg_install_on_debian_container]]
 Install {pmg} as Linux Container Appliance
 ------------------------------------------
 
