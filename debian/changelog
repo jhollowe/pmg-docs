@@ -1,3 +1,16 @@
+pmg-docs (6.0-2) pmg; urgency=medium
+
+  * update static API schema and synopsis definitions
+
+  * change repository urls to buster
+
+  * api-viewer: use our extjs package instead of the cloudflare cdn
+    backed one
+
+  * api-viewer: properly HTML encode properties
+
+ -- Proxmox Support Team <support@proxmox.com>  Sat, 17 Aug 2019 13:08:10 +0200
+
 pmg-docs (6.0-1) unstable; urgency=medium
 
   * bump for PMG 6.0 based on Debian Buster
