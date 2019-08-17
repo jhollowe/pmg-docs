@@ -6,11 +6,19 @@ Use advanced filters for statistic.
 
 `avast`: `<boolean>` ('default =' `0`)::
 
-Use Avast Virus Scanner (/bin/scan). You need to buy and install 'Avast Core Security' before you can enable this feature.
+Use Avast Virus Scanner (/usr/bin/scan). You need to buy and install 'Avast Core Security' before you can enable this feature.
 
 `clamav`: `<boolean>` ('default =' `1`)::
 
 Use ClamAV Virus Scanner. This is the default virus scanner and is enabled by default.
+
+`custom_check`: `<boolean>` ('default =' `0`)::
+
+Use Custom Check Script. The script has to take the defined arguments and can return Virus findings or a Spamscore.
+
+`custom_check_path`: `^/([^/\0]+\/)+[^/\0]+$` ('default =' `/usr/local/bin/pmg-custom-check`)::
+
+Absolute Path to the Custom Check Script
 
 `dailyreport`: `<boolean>` ('default =' `1`)::
 
@@ -36,7 +44,7 @@ User Statistics Lifetime (days)
 
 `archiveblockencrypted`: `<boolean>` ('default =' `0`)::
 
-Wether to block encrypted archives. Mark encrypted archives as viruses.
+Whether to block encrypted archives and documents. Mark encrypted archives and documents as viruses.
 
 `archivemaxfiles`: `<integer> (0 - N)` ('default =' `1000`)::
 
@@ -112,7 +120,7 @@ Hide received header in outgoing mails.
 
 SMTP port number for outgoing mail (trusted).
 
-`max_filters`: `<integer> (3 - 40)` ('default =' `15`)::
+`max_filters`: `<integer> (3 - 40)` ('default =' `35`)::
 
 Maximum number of pmg-smtp-filter processes.
 
@@ -120,11 +128,11 @@ Maximum number of pmg-smtp-filter processes.
 
 Maximum number of pmgpolicy processes.
 
-`max_smtpd_in`: `<integer> (3 - 100)` ('default =' `99`)::
+`max_smtpd_in`: `<integer> (3 - 100)` ('default =' `100`)::
 
 Maximum number of SMTP daemon processes (in).
 
-`max_smtpd_out`: `<integer> (3 - 100)` ('default =' `99`)::
+`max_smtpd_out`: `<integer> (3 - 100)` ('default =' `100`)::
 
 Maximum number of SMTP daemon processes (out).
 
@@ -192,7 +200,7 @@ Additional score for bounce mails.
 
 `clamav_heuristic_score`: `<integer> (0 - 1000)` ('default =' `3`)::
 
-Score for ClamaAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).
+Score for ClamAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).
 
 `languages`: `(all|([a-z][a-z])+( ([a-z][a-z])+)*)` ('default =' `all`)::
 

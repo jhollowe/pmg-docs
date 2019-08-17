@@ -1,6 +1,6 @@
 `archiveblockencrypted`: `<boolean>` ('default =' `0`)::
 
-Wether to block encrypted archives. Mark encrypted archives as viruses.
+Whether to block encrypted archives and documents. Mark encrypted archives and documents as viruses.
 
 `archivemaxfiles`: `<integer> (0 - N)` ('default =' `1000`)::
 

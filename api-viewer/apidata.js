@@ -5383,6 +5383,12 @@ var pmgapi = [
                                        "type" : "string",
                                        "typetext" : "<string>"
                                     },
+                                    "cafile" : {
+                                       "description" : "Path to CA file. Only useful with option 'verify'",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
                                     "comment" : {
                                        "description" : "Description.",
                                        "maxLength" : 4096,
@@ -5441,10 +5447,11 @@ var pmgapi = [
                                     },
                                     "mode" : {
                                        "default" : "ldap",
-                                       "description" : "LDAP protocol mode ('ldap' or 'ldaps').",
+                                       "description" : "LDAP protocol mode ('ldap', 'ldaps' or 'ldap+starttls').",
                                        "enum" : [
                                           "ldap",
-                                          "ldaps"
+                                          "ldaps",
+                                          "ldap+starttls"
                                        ],
                                        "optional" : 1,
                                        "type" : "string"
@@ -5478,6 +5485,13 @@ var pmgapi = [
                                        "optional" : 1,
                                        "type" : "string",
                                        "typetext" : "<string>"
+                                    },
+                                    "verify" : {
+                                       "default" : 0,
+                                       "description" : "Verify server certificate. Only useful with ldaps or ldap+starttls.",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
                                     }
                                  },
                                  "type" : "object"
@@ -5909,6 +5923,12 @@ var pmgapi = [
                            "type" : "string",
                            "typetext" : "<string>"
                         },
+                        "cafile" : {
+                           "description" : "Path to CA file. Only useful with option 'verify'",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
                         "comment" : {
                            "description" : "Description.",
                            "maxLength" : 4096,
@@ -5952,10 +5972,11 @@ var pmgapi = [
                         },
                         "mode" : {
                            "default" : "ldap",
-                           "description" : "LDAP protocol mode ('ldap' or 'ldaps').",
+                           "description" : "LDAP protocol mode ('ldap', 'ldaps' or 'ldap+starttls').",
                            "enum" : [
                               "ldap",
-                              "ldaps"
+                              "ldaps",
+                              "ldap+starttls"
                            ],
                            "optional" : 1,
                            "type" : "string"
@@ -5989,6 +6010,13 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
+                        },
+                        "verify" : {
+                           "default" : 0,
+                           "description" : "Verify server certificate. Only useful with ldaps or ldap+starttls.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
                         }
                      },
                      "type" : "object"
@@ -6302,7 +6330,7 @@ var pmgapi = [
                                  "maxLength" : 512,
                                  "minLength" : 3,
                                  "optional" : 1,
-                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
                                  "type" : "string"
                               },
                               "user" : {
@@ -6394,7 +6422,7 @@ var pmgapi = [
                                  "maxLength" : 512,
                                  "minLength" : 3,
                                  "optional" : 1,
-                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
                                  "type" : "string"
                               },
                               "user" : {
@@ -6507,7 +6535,7 @@ var pmgapi = [
                               "maxLength" : 512,
                               "minLength" : 3,
                               "optional" : 1,
-                              "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                              "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
                               "type" : "string"
                            },
                            "user" : {
@@ -6597,7 +6625,7 @@ var pmgapi = [
                            "description" : "The target email address (where to deliver fetched mails).",
                            "maxLength" : 512,
                            "minLength" : 3,
-                           "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
                            "type" : "string"
                         },
                         "user" : {
@@ -7335,6 +7363,185 @@ var pmgapi = [
             "text" : "mimetypes"
          },
          {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "description" : "Delete a tls_policy entry",
+                        "method" : "DELETE",
+                        "name" : "delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "transport-domain",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
+                     "GET" : {
+                        "description" : "Read tls_policy entry.",
+                        "method" : "GET",
+                        "name" : "read",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "transport-domain",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "properties" : {
+                              "domain" : {
+                                 "format" : "transport-domain",
+                                 "type" : "string"
+                              },
+                              "policy" : {
+                                 "format" : "tls-policy",
+                                 "type" : "string"
+                              }
+                           },
+                           "type" : "object"
+                        }
+                     },
+                     "PUT" : {
+                        "description" : "Update tls_policy entry.",
+                        "method" : "PUT",
+                        "name" : "write",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "transport-domain",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "policy" : {
+                                 "description" : "TLS policy",
+                                 "format" : "tls-policy-strict",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/tlspolicy/{domain}",
+                  "text" : "{domain}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "List tls_policy entries.",
+                  "method" : "GET",
+                  "name" : "index",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
+                  },
+                  "proxyto" : "master",
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "domain" : {
+                              "format" : "transport-domain",
+                              "type" : "string"
+                           },
+                           "policy" : {
+                              "format" : "tls-policy",
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{domain}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Add tls_policy entry.",
+                  "method" : "POST",
+                  "name" : "create",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "domain" : {
+                           "description" : "Domain name.",
+                           "format" : "transport-domain",
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "policy" : {
+                           "description" : "TLS policy",
+                           "format" : "tls-policy-strict",
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/config/tlspolicy",
+            "text" : "tlspolicy"
+         },
+         {
             "info" : {
                "GET" : {
                   "description" : "Read admin configuration properties.",
@@ -7370,7 +7577,7 @@ var pmgapi = [
                         },
                         "avast" : {
                            "default" : 0,
-                           "description" : "Use Avast Virus Scanner (/bin/scan). You need to buy and install 'Avast Core Security' before you can enable this feature.",
+                           "description" : "Use Avast Virus Scanner (/usr/bin/scan). You need to buy and install 'Avast Core Security' before you can enable this feature.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -7381,6 +7588,20 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
+                        },
+                        "custom_check" : {
+                           "default" : 0,
+                           "description" : "Use Custom Check Script. The script has to take the defined arguments and can return Virus findings or a Spamscore.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "custom_check_path" : {
+                           "default" : "/usr/local/bin/pmg-custom-check",
+                           "description" : "Absolute Path to the Custom Check Script",
+                           "optional" : 1,
+                           "pattern" : "^/([^/\\0]+\\/)+[^/\\0]+$",
+                           "type" : "string"
                         },
                         "dailyreport" : {
                            "default" : 1,
@@ -7481,7 +7702,7 @@ var pmgapi = [
                      "properties" : {
                         "archiveblockencrypted" : {
                            "default" : 0,
-                           "description" : "Wether to block encrypted archives. Mark encrypted archives as viruses.",
+                           "description" : "Whether to block encrypted archives and documents. Mark encrypted archives and documents as viruses.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -7703,7 +7924,7 @@ var pmgapi = [
                            "typetext" : "<integer> (1 - 65535)"
                         },
                         "max_filters" : {
-                           "default" : 15,
+                           "default" : 35,
                            "description" : "Maximum number of pmg-smtp-filter processes.",
                            "maximum" : 40,
                            "minimum" : 3,
@@ -7721,7 +7942,7 @@ var pmgapi = [
                            "typetext" : "<integer> (2 - 10)"
                         },
                         "max_smtpd_in" : {
-                           "default" : 99,
+                           "default" : 100,
                            "description" : "Maximum number of SMTP daemon processes (in).",
                            "maximum" : 100,
                            "minimum" : 3,
@@ -7730,7 +7951,7 @@ var pmgapi = [
                            "typetext" : "<integer> (3 - 100)"
                         },
                         "max_smtpd_out" : {
-                           "default" : 99,
+                           "default" : 100,
                            "description" : "Maximum number of SMTP daemon processes (out).",
                            "maximum" : 100,
                            "minimum" : 3,
@@ -7901,7 +8122,7 @@ var pmgapi = [
                         },
                         "clamav_heuristic_score" : {
                            "default" : 3,
-                           "description" : "Score for ClamaAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).",
+                           "description" : "Score for ClamAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).",
                            "maximum" : 1000,
                            "minimum" : 0,
                            "optional" : 1,
@@ -9164,6 +9385,20 @@ var pmgapi = [
                                        "type" : "boolean",
                                        "typetext" : "<boolean>"
                                     },
+                                    "cidr" : {
+                                       "description" : "IPv4 CIDR.",
+                                       "format" : "CIDRv4",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "cidr6" : {
+                                       "description" : "IPv6 CIDR.",
+                                       "format" : "CIDRv6",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
                                     "comments" : {
                                        "description" : "Comments",
                                        "optional" : 1,
@@ -9444,6 +9679,20 @@ var pmgapi = [
                                  "optional" : 1,
                                  "type" : "boolean",
                                  "typetext" : "<boolean>"
+                              },
+                              "cidr" : {
+                                 "description" : "IPv4 CIDR.",
+                                 "format" : "CIDRv4",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "cidr6" : {
+                                 "description" : "IPv6 CIDR.",
+                                 "format" : "CIDRv6",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
                               },
                               "comments" : {
                                  "description" : "Comments",
@@ -9890,7 +10139,6 @@ var pmgapi = [
                                     "protected" : 1,
                                     "proxyto" : "node",
                                     "returns" : {
-                                       "properties" : {},
                                        "type" : "object"
                                     }
                                  }
@@ -11036,6 +11284,40 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "description" : "Gather various system information about a node",
+                        "method" : "GET",
+                        "name" : "report",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/nodes/{node}/report",
+                  "text" : "report"
+               },
+               {
+                  "info" : {
+                     "GET" : {
                         "description" : "Read node RRD statistics",
                         "method" : "GET",
                         "name" : "rrddata",
@@ -11168,6 +11450,76 @@ var pmgapi = [
                   "leaf" : 1,
                   "path" : "/nodes/{node}/syslog",
                   "text" : "syslog"
+               },
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Read Journal",
+                        "method" : "GET",
+                        "name" : "journal",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "endcursor" : {
+                                 "description" : "End before the given Cursor. Conflicts with 'until'.",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "lastentries" : {
+                                 "description" : "Limit to the last X lines. Conflicts with a range.",
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              },
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "since" : {
+                                 "description" : "Display all log since this UNIX epoch. Conflicts with 'startcursor'.",
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              },
+                              "startcursor" : {
+                                 "description" : "Start after the given Cursor. Conflicts with 'since'.",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "until" : {
+                                 "description" : "Display all log until this UNIX epoch. Conflicts with 'endcursor'.",
+                                 "minimum" : 0,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (0 - N)"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "items" : {
+                              "type" : "string"
+                           },
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/nodes/{node}/journal",
+                  "text" : "journal"
                },
                {
                   "info" : {
@@ -11467,6 +11819,13 @@ var pmgapi = [
                               }
                            }
                         },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "qmanager",
+                              "audit"
+                           ]
+                        },
                         "protected" : 1,
                         "proxyto" : "node",
                         "returns" : {
@@ -11655,7 +12014,6 @@ var pmgapi = [
                         "protected" : 1,
                         "proxyto" : "master",
                         "returns" : {
-                           "properties" : {},
                            "type" : "object"
                         }
                      },
@@ -12099,17 +12457,17 @@ var pmgapi = [
                            "properties" : {
                               "address" : {
                                  "description" : "The address you want to remove.",
-                                 "maxLength" : 512,
                                  "minLength" : 3,
-                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "pattern" : "(?:[^\\s\\/\\\\;\\,]+)(?:\\,[^\\s\\/\\\\;\\,]+)*",
                                  "type" : "string"
                               },
                               "pmail" : {
                                  "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
-                                 "format" : "email",
+                                 "maxLength" : 512,
+                                 "minLength" : 3,
                                  "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
+                                 "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                                 "type" : "string"
                               }
                            }
                         },
@@ -12142,10 +12500,11 @@ var pmgapi = [
                      "properties" : {
                         "pmail" : {
                            "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
-                           "format" : "email",
+                           "maxLength" : 512,
+                           "minLength" : 3,
                            "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
                         }
                      }
                   },
@@ -12178,17 +12537,17 @@ var pmgapi = [
                      "properties" : {
                         "address" : {
                            "description" : "The address you want to add.",
-                           "maxLength" : 512,
                            "minLength" : 3,
-                           "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                           "pattern" : "(?:[^\\s\\/\\\\;\\,]+)(?:\\,[^\\s\\/\\\\;\\,]+)*",
                            "type" : "string"
                         },
                         "pmail" : {
                            "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
-                           "format" : "email",
+                           "maxLength" : 512,
+                           "minLength" : 3,
                            "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
                         }
                      }
                   },
@@ -12223,17 +12582,17 @@ var pmgapi = [
                            "properties" : {
                               "address" : {
                                  "description" : "The address you want to remove.",
-                                 "maxLength" : 512,
                                  "minLength" : 3,
-                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "pattern" : "(?:[^\\s\\/\\\\;\\,]+)(?:\\,[^\\s\\/\\\\;\\,]+)*",
                                  "type" : "string"
                               },
                               "pmail" : {
                                  "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
-                                 "format" : "email",
+                                 "maxLength" : 512,
+                                 "minLength" : 3,
                                  "optional" : 1,
-                                 "type" : "string",
-                                 "typetext" : "<string>"
+                                 "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                                 "type" : "string"
                               }
                            }
                         },
@@ -12266,10 +12625,11 @@ var pmgapi = [
                      "properties" : {
                         "pmail" : {
                            "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
-                           "format" : "email",
+                           "maxLength" : 512,
+                           "minLength" : 3,
                            "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
                         }
                      }
                   },
@@ -12302,17 +12662,17 @@ var pmgapi = [
                      "properties" : {
                         "address" : {
                            "description" : "The address you want to add.",
-                           "maxLength" : 512,
                            "minLength" : 3,
-                           "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                           "pattern" : "(?:[^\\s\\/\\\\;\\,]+)(?:\\,[^\\s\\/\\\\;\\,]+)*",
                            "type" : "string"
                         },
                         "pmail" : {
                            "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
-                           "format" : "email",
+                           "maxLength" : 512,
+                           "minLength" : 3,
                            "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
                         }
                      }
                   },
@@ -12434,7 +12794,18 @@ var pmgapi = [
                   "method" : "GET",
                   "name" : "quarusers",
                   "parameters" : {
-                     "additionalProperties" : 0
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "list" : {
+                           "description" : "If set, limits the result to the given list.",
+                           "enum" : [
+                              "BL",
+                              "WL"
+                           ],
+                           "optional" : 1,
+                           "type" : "string"
+                        }
+                     }
                   },
                   "permissions" : {
                      "check" : [
@@ -12479,10 +12850,11 @@ var pmgapi = [
                         },
                         "pmail" : {
                            "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
-                           "format" : "email",
+                           "maxLength" : 512,
+                           "minLength" : 3,
                            "optional" : 1,
-                           "type" : "string",
-                           "typetext" : "<string>"
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
                         },
                         "starttime" : {
                            "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
@@ -12691,7 +13063,7 @@ var pmgapi = [
                         },
                         "raw" : {
                            "default" : 0,
-                           "description" : "Display 'raw' eml data. This is only used with the 'htmlmail' formatter.",
+                           "description" : "Display 'raw' eml data. Deactivates size limit.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -12780,7 +13152,6 @@ var pmgapi = [
                         },
                         "id" : {
                            "description" : "Unique IDs, seperate with ;",
-                           "maxLength" : 600,
                            "pattern" : "C\\d+R\\d+T\\d+(;C\\d+R\\d+T\\d+)*",
                            "type" : "string"
                         }
@@ -12851,7 +13222,7 @@ var pmgapi = [
                                  "description" : "Contact email address.",
                                  "maxLength" : 512,
                                  "minLength" : 3,
-                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
                                  "type" : "string"
                               },
                               "day" : {
@@ -13114,7 +13485,7 @@ var pmgapi = [
                                  "description" : "Sender email address.",
                                  "maxLength" : 512,
                                  "minLength" : 3,
-                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
                                  "type" : "string"
                               },
                               "starttime" : {
@@ -13340,7 +13711,7 @@ var pmgapi = [
                                  "description" : "Receiver email address.",
                                  "maxLength" : 512,
                                  "minLength" : 3,
-                                 "pattern" : "(?:|[^\\s\\/\\@]+\\@[^\\s\\/\\@]+)",
+                                 "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
                                  "type" : "string"
                               },
                               "starttime" : {
@@ -14470,12 +14841,15 @@ var pmgapi = [
             "returns" : {
                "properties" : {
                   "release" : {
+                     "description" : "The current installed Proxmox Mailgateway Release",
                      "type" : "string"
                   },
                   "repoid" : {
+                     "description" : "The short git commit hash ID from which this version was build",
                      "type" : "string"
                   },
                   "version" : {
+                     "description" : "The current installed pmg-api package version",
                      "type" : "string"
                   }
                },

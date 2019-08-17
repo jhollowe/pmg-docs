@@ -14,6 +14,10 @@ Bind domain name.
 
 Bind password.
 
+`cafile`: `<string>` ::
+
+Path to CA file. Only useful with option 'verify'
+
 `comment`: `<string>` ::
 
 Description.
@@ -38,9 +42,9 @@ List of objectclasses for groups.
 
 List of mail attribute names.
 
-`mode`: `<ldap | ldaps>` ('default =' `ldap`)::
+`mode`: `<ldap | ldap+starttls | ldaps>` ('default =' `ldap`)::
 
-LDAP protocol mode ('ldap' or 'ldaps').
+LDAP protocol mode ('ldap', 'ldaps' or 'ldap+starttls').
 
 `port`: `<integer> (1 - 65535)` ::
 
@@ -57,4 +61,8 @@ Server address.
 `server2`: `<string>` ::
 
 Fallback server address. Userd when the first server is not available.
+
+`verify`: `<boolean>` ('default =' `0`)::
+
+Verify server certificate. Only useful with ldaps or ldap+starttls.
 

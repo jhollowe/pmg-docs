@@ -4,7 +4,7 @@ Additional score for bounce mails.
 
 `clamav_heuristic_score`: `<integer> (0 - 1000)` ('default =' `3`)::
 
-Score for ClamaAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).
+Score for ClamAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).
 
 `languages`: `(all|([a-z][a-z])+( ([a-z][a-z])+)*)` ('default =' `all`)::
 
