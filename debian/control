@@ -23,6 +23,7 @@ Description: Proxmox Mail Gateway Documentation helpers
 
 Package: pmg-docs
 Section: doc
+Depends: libjs-extjs
 Architecture: all
 Description: Proxmox Mail Gateway Documentation
  This package contains the Proxmox Mail Gateway documentation files.
