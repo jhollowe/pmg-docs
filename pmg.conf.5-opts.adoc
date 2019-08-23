@@ -44,7 +44,7 @@ User Statistics Lifetime (days)
 
 `archiveblockencrypted`: `<boolean>` ('default =' `0`)::
 
-Whether to block encrypted archives and documents. Mark encrypted archives and documents as viruses.
+Whether to mark encrypted archives and documents as heuristic virus match. A match does not necessarily result in an immediate block, it just raises the Spam Score by 'clamav_heuristic_score'.
 
 `archivemaxfiles`: `<integer> (0 - N)` ('default =' `1000`)::
 
@@ -56,7 +56,7 @@ Nested archives are scanned recursively, e.g. if a ZIP archive contains a TAR  f
 
 `archivemaxsize`: `<integer> (1000000 - N)` ('default =' `25000000`)::
 
-Files larger than this limit won't be scanned.
+Files larger than this limit (in bytes) won't be scanned.
 
 `dbmirror`: `<string>` ('default =' `database.clamav.net`)::
 
@@ -68,7 +68,7 @@ This option sets the lowest number of Credit Card or Social Security numbers fou
 
 `maxscansize`: `<integer> (1000000 - N)` ('default =' `100000000`)::
 
-Sets the maximum amount of data to be scanned for each input file.
+Sets the maximum amount of data (in bytes) to be scanned for each input file.
 
 `safebrowsing`: `<boolean>` ('default =' `1`)::
 
@@ -200,7 +200,7 @@ Additional score for bounce mails.
 
 `clamav_heuristic_score`: `<integer> (0 - 1000)` ('default =' `3`)::
 
-Score for ClamAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).
+Score for ClamAV heuristics (Encrypted Archives/Documents, Google Safe Browsing database, PhishingScanURLs, ...).
 
 `languages`: `(all|([a-z][a-z])+( ([a-z][a-z])+)*)` ('default =' `all`)::
 

@@ -7702,7 +7702,7 @@ var pmgapi = [
                      "properties" : {
                         "archiveblockencrypted" : {
                            "default" : 0,
-                           "description" : "Whether to block encrypted archives and documents. Mark encrypted archives and documents as viruses.",
+                           "description" : "Whether to mark encrypted archives and documents as heuristic virus match. A match does not necessarily result in an immediate block, it just raises the Spam Score by 'clamav_heuristic_score'.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -7725,7 +7725,7 @@ var pmgapi = [
                         },
                         "archivemaxsize" : {
                            "default" : 25000000,
-                           "description" : "Files larger than this limit won't be scanned.",
+                           "description" : "Files larger than this limit (in bytes) won't be scanned.",
                            "minimum" : 1000000,
                            "optional" : 1,
                            "type" : "integer",
@@ -7763,7 +7763,7 @@ var pmgapi = [
                         },
                         "maxscansize" : {
                            "default" : 100000000,
-                           "description" : "Sets the maximum amount of data to be scanned for each input file.",
+                           "description" : "Sets the maximum amount of data (in bytes) to be scanned for each input file.",
                            "minimum" : 1000000,
                            "optional" : 1,
                            "type" : "integer",
@@ -8122,7 +8122,7 @@ var pmgapi = [
                         },
                         "clamav_heuristic_score" : {
                            "default" : 3,
-                           "description" : "Score for ClamAV heuristics (Google Safe Browsing database, PhishingScanURLs, ...).",
+                           "description" : "Score for ClamAV heuristics (Encrypted Archives/Documents, Google Safe Browsing database, PhishingScanURLs, ...).",
                            "maximum" : 1000,
                            "minimum" : 0,
                            "optional" : 1,
