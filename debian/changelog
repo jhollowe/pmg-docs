@@ -1,3 +1,13 @@
+pmg-docs (6.0-3) pmg; urgency=medium
+
+  * add a basic FAQ (Frequently Asked Question) chapter
+
+  * change api-viewer title to PMG
+
+  * update static API schema and synopsis definitions
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 23 Aug 2019 13:09:22 +0200
+
 pmg-docs (6.0-2) pmg; urgency=medium
 
   * update static API schema and synopsis definitions
