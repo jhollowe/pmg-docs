@@ -90,6 +90,8 @@ include::nmap.adoc[]
 
 :leveloffset: 1
 
+include::pmg-faq.adoc[]
+
 include::pmg-bibliography.adoc[]
 
 :leveloffset: 0

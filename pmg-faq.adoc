@@ -1,0 +1,74 @@
+Frequently Asked Questions
+==========================
+ifndef::manvolnum[]
+:pve-toplevel:
+endif::manvolnum[]
+ifdef::wiki[]
+:title: FAQ
+endif::wiki[]
+
+NOTE: New FAQs are appended to the bottom of this section.
+
+/////////////////////////////////////////////////////////////////
+ADD NEW FAQS TO THE BOTTOM OF THIS SECTION TO MAINTAIN NUMBERING
+/////////////////////////////////////////////////////////////////
+
+[qanda]
+
+What distribution is {pmg} based on?::
+
+{pmg} is based on http://www.debian.org[Debian GNU/Linux]
+
+What license does the {pmg} project use?::
+
+{pmg} code is licensed under the GNU Affero General Public License,
+version 3 (since the 5.0 release).
+
+Will {pmg} run on a 32bit processor?::
+
+{pmg} works only on 64-bit CPUs (AMD or Intel). There is no plan
+for 32-bit for the platform.
+
+[[faq-support-table]]
+How long will my {pmg} version be supported?::
+
+{pmg} versions are supported at least as long as the corresponding
+Debian Version is
+https://wiki.debian.org/DebianOldStable[oldstable]. {pmg} uses a
+rolling release model and using the latest stable version is always
+recommended.
++
+[width="100%",cols="5*d",options="header"]
+|===========================================================
+| {pmg} Version | Debian Version    | First Release | Debian EOL | Proxmox EOL
+| {pmg} 6.x     | Debian 10 (Buster)| 2019-08       | tba        | tba
+| {pmg} 5.x     | Debian 9 (Stretch)| 2018-01       | 2020-07    | 2020-07
+|===========================================================
+
+NOTE: {pmg} releases before 5.0 are not listed here. As they are all EOL (End
+Of Life) it's highly recommended to upgrade to a newer version if still in use.
+
+[[faq-upgrade]]
+How can I upgrade {pmg} to the next release?::
+
+Minor version upgrades, for example upgrading from {pmg} in version 5.1
+to 5.2, can be done just like any normal update, either through the
+Webinterface's __Node -> Updates__ panel or through the CLI with:
++
+----
+apt update
+apt full-upgrade
+----
++
+NOTE: Always ensure you correctly setup the
+xref:pmg_package_repositories[package repositories] and only continue with the
+actual upgrade if `apt update` did not hit any error.
++
+Major version upgrades, for example going from {pmg} 5.4 to 6.0, are
+also supported. They must be carefully planned and tested and should
+*never* be started without having a current backup ready.
+Although the specific upgrade steps depend on your respective setup, we
+provide general instructions and advice of how a upgrade should be
+performed:
++
+* https://pmg.proxmox.com/wiki/index.php/Upgrade_from_5.x_to_6.0[Upgrade from {pmg} 5.x to 6.0]
