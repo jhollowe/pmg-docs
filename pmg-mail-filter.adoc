@@ -1,6 +1,6 @@
 [[chapter_mailfilter]]
-Mail Filter
-===========
+Rule-Based Mail Filter
+======================
 
 {pmg} ships with a highly configurable mail filter. It’s an easy but
 powerful way to define filter rules by user, domains, time frame,
