@@ -140,3 +140,15 @@ Recommended System Requirements
   use hardware RAID controller with battery backed write cache (``BBU'') or
   ZFS. ZFS is not compatible with a hardware RAID controller. For best
   performance use Enterprise class SSD with power loss protection.
+
+
+Supported web browsers for accessing the web interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To use the web interface you need a modern browser, this includes:
+
+* Firefox, a release from the current year, or the latest Extended
+Support Release
+* Chrome, a release from the current year
+* Microsofts currently supported version of Edge
+* Safari, a release from the current year
