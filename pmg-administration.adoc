@@ -87,6 +87,15 @@ Virus
 Allows administrators to inspect quarantined virus mails.
 
 
+Attachment
+~~~~~~~~~~
+
+Allows administrators to inspect quarantined mails and download their
+attachments or deliver/delete them.
+
+NOTE: Use the options of the 'Remove attachment' action to control the Attachment Quarantine.
+
+
 [[pmg_userblackwhitelist]]
 User White- and Blacklist
 ~~~~~~~~~~~~~~~~~~~~~~~~~

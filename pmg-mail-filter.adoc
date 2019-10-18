@@ -150,6 +150,12 @@ Remove attachments can either remove all attachments, or only those
 matched by the rules 'What' - object. You can also specify the
 replacement text if you want.
 
+You can optionally move those mails into the attachment quarantine, where
+the original mail with all attachments will be stored. The mail with the
+attachments removed will continue in the rule system.
+
+NOTE: The Attachment Quarantine Lifetime is the same as for the Spam Quarantine.
+
 
 Disclaimer
 ~~~~~~~~~~
