@@ -362,6 +362,62 @@ using the following configuration keys:
 include::pmg.mail-tls-conf-opts.adoc[]
 
 
+[[pmgconfig_mailproxy_dkim]]
+DKIM Signing
+~~~~~~~~~~~~
+
+DomainKeys Identified Mail (DKIM) Signatures (see {dkim_rfc}) is a method to
+cryptographically authenticate a mail as originating from a particular domain.
+Before sending the mail a hash over certain header fields and the body is
+computed, signed with a private key and added in the `DKIM-Signature` header of
+the mail. The 'selector' (a short identifier chosen by you, used to identify
+which system and private key were used for signing) is also included in the
+`DKIM-Signature` header.
+
+The verification is done by the receiver: The public key is fetched
+via DNS TXT lookup for `yourselector._domainkey.yourdomain.example` and used
+for verifying the hash. You can publish multiple selectors for your domain,
+each use by a system which sends e-mail from your domain, without the need to
+share the private key.
+
+{pmg} verifies DKIM Signatures for inbound mail in the Spam Filter by default.
+
+Additionally it supports conditionally signing outbound mail if configured.
+It uses one private key and selector per PMG deployment (all nodes in a cluster
+use the same key). The key has a minimal size of 1024 bits and rsa-sha256 is
+used as signing algorithm.
+
+The headers included in the signature are taken from the list of
+`Mail::DKIM::Signer`. Additionally `Content-Type` (if present), `From`, `To`,
+`CC`, `Reply-To` and `Subject` get oversigned.
+
+You can either sign all mails received on the internal port using the domain of
+the envelope sender address or create a list of domains, for which e-mails
+should be signed, defaulting to the list of relay domains.
+
+
+Enable DKIM Signing::
+
+Controls whether outbound mail should get DKIM signed.
+
+Selector::
+
+The selector used for signing the mail. The private key used for signing is
+saved under `/etc/pmg/yourselector.private`. You can display the DNS TXT
+record which you need to add to all domains signed by {pmg} by clicking on the
+'View DNS Record' Button.
+
+Sign all Outgoing Mail::
+
+Controls whether all outbound mail should get signed or only mails from domains
+listed in `/etc/pmg/dkim/domains` if it exists and `/etc/pmg/domains` otherwise.
+
+Those settings are saved to subsection 'admin' in `/etc/pmg/pmg.conf`,
+using the following configuration keys:
+
+include::pmg.admin-dkim-conf-opts.adoc[]
+
+
 Whitelist
 ~~~~~~~~~
 

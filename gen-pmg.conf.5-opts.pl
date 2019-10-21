@@ -57,6 +57,12 @@ my $key_groups = {
 	    smarthost => 1,
 	    smarthostport => 1,
 	}],
+    'admin-dkim' => [
+	'admin' , {
+	    dkim_selector => 1,
+	    dkim_sign => 1,
+	    dkim_sign_all_mail => 1,
+	}],
 };
 
 if (1) {
