@@ -1,3 +1,11 @@
+pmg-docs (6.0-4) pmg; urgency=medium
+
+  * add the supported browsers to the system requirements
+
+  * Add DKIM documentation
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 23 Oct 2019 16:15:27 +0200
+
 pmg-docs (6.0-3) pmg; urgency=medium
 
   * add a basic FAQ (Frequently Asked Question) chapter
