@@ -403,7 +403,7 @@ Controls whether outbound mail should get DKIM signed.
 Selector::
 
 The selector used for signing the mail. The private key used for signing is
-saved under `/etc/pmg/yourselector.private`. You can display the DNS TXT
+saved under `/etc/pmg/dkim/yourselector.private`. You can display the DNS TXT
 record which you need to add to all domains signed by {pmg} by clicking on the
 'View DNS Record' Button.
 
