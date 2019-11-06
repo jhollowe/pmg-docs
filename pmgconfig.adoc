@@ -529,15 +529,21 @@ include::pmg.virusquar-conf-opts.adoc[]
 Custom SpamAssassin configuration
 ---------------------------------
 
-This is only for advanced users. To add or change the Proxmox
-{spamassassin} configuration please login to the console via SSH. Go
-to directory `/etc/mail/spamassassin/`. In this directory there are several
-files (`init.pre`, `local.cf`, ...) – do not change them.
+This is only for advanced users. {spamassassin}'s rules and their associated
+scores get updated regularly and are trained on a huge corpus, which gets
+classified by experts. In most cases adding a rule for matching a particular
+keyword is the wrong approach, leading to many false positives. Usually bad
+detection rates are better addressed by properly setting up DNS than by adding
+a custom rule - watch out for matches to 'URIBL_BLOCKED' in the logs or
+spam-headers - see the {spamassassin_dnsbl}.
 
-To add your special configuration, you have to create a new file and
-name it `custom.cf` (in this directory), then add your
-configuration there. Be aware to use the {spamassassin}
-syntax, and test with
+To add or change the Proxmox {spamassassin} configuration please login to the
+console via SSH. Go to directory `/etc/mail/spamassassin/`. In this directory
+there are several files (`init.pre`, `local.cf`, ...) – do not change them.
+
+To add your special configuration, you have to create a new file and name it
+`custom.cf` (in this directory), then add your configuration there. Be aware to
+use the {spamassassin} syntax, and test with
 
 ----
 # spamassassin -D --lint
