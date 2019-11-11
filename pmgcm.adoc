@@ -105,7 +105,7 @@ Hot standby with backup `MX` records
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Many people do not want to install two redundant mail proxies, instead
-they use the mail proxy of their ISP as fall-back. This is simply done
+they use the mail proxy of their ISP as fallback. This is simply done
 by adding an additional `MX` Record with a lower priority (higher
 number). With the example above this looks like that:
 
@@ -113,20 +113,19 @@ number). With the example above this looks like that:
 proxmox.com.            22879   IN      MX      100 mail.provider.tld.
 ----
 
-Sure, your provider must accept mails for your domain and forward
-received mails to you. Please note that such setup is not really
-advisable, because spam detection needs to be done by that backup `MX`
-server also, and external servers provided by ISPs usually don't do
-that.
+In such a setup, your provider must accept mails for your domain and
+forward them to you. Please note that this is not advisable, because
+spam detection needs to be done by the backup `MX` server as well, and
+external servers provided by ISPs usually don't.
 
-You will never lose mails with such a setup, because the sending Mail
+However, you will never lose mails with such a setup, because the sending Mail
 Transport Agent (MTA) will simply deliver the mail to the backup
 server (mail.provider.tld) if the primary server (mail.proxmox.com) is
 not available.
 
-NOTE: Any resononable mail server retries mail devivery if the target
+NOTE: Any reasonable mail server retries mail delivery if the target
 server is not available, i.e. {pmg} stores mail and retries delivery
-for up to one week. So you will not loose mail if you mail server is
+for up to one week. So you will not lose mail if your mail server is
 down, even if you run a single server setup.
 
 
@@ -140,8 +139,7 @@ avoid lower spam detection rates.
 
 Anyways, it’s quite simple to set up a high performance load balanced
 mail cluster using `MX` records. You just need to define two `MX` records
-with the same priority. I will explain this using a complete example
-to make it clearer.
+with the same priority. Here is a complete example to make it clearer.
 
 First, you need to have at least 2 working {pmg} servers
 (mail1.example.com and mail2.example.com) configured as cluster (see
@@ -154,7 +152,7 @@ mail1.example.com.       22879   IN      A       1.2.3.4
 mail2.example.com.       22879   IN      A       1.2.3.5
 ----
 
-Btw, it is always a good idea to add reverse lookup entries (PTR
+It is always a good idea to add reverse lookup entries (PTR
 records) for those hosts. Many email systems nowadays reject mails
 from hosts without valid PTR records.  Then you need to define your `MX`
 records:
@@ -166,7 +164,7 @@ example.com.            22879   IN      MX      10 mail2.example.com.
 
 This is all you need. You will receive mails on both hosts, more or
 less load-balanced using round-robin scheduling. If one host fails the
-other is used.
+other one is used.
 
 
 Other ways
@@ -175,7 +173,7 @@ Other ways
 Multiple address records
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Using several DNS `MX` record is sometime clumsy if you have many
+Using several DNS `MX` records is sometimes clumsy if you have many
 domains. It is also possible to use one `MX` record per domain, but
 multiple address records:
 
@@ -210,7 +208,7 @@ Creating a Cluster
 
 image::images/screenshot/pmg-gui-cluster-panel.png[]
 
-You can create a cluster from any existing Proxmox host. All data is
+You can create a cluster from any existing {pmg} host. All data is
 preserved.
 
 * make sure you have the right IP configuration
@@ -245,7 +243,7 @@ Adding Cluster Nodes
 
 image::images/screenshot/pmg-gui-cluster-join.png[]
 
-When you add a new node to a cluster (join) all data on that node is
+When you add a new node to a cluster (using `join`) all data on that node is
 destroyed. The whole database is initialized with cluster data from
 the master.
 
@@ -296,7 +294,7 @@ damaged hardware or disk. {pmg} uses an asynchronous
 clustering algorithm, so you just need to reboot the repaired node,
 and everything will work again transparently.
 
-The following scenarios only apply when you really loose the contents
+The following scenarios only apply when you really lose the contents
 of the hard disk.
 
 
