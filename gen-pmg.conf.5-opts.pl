@@ -37,6 +37,8 @@ my $key_groups = {
 	    conn_rate_limit => 1,
 	    message_rate_limit => 1,
 	    banner => 1,
+	    before_queue_filtering => 1,
+	    ndr_on_block => 1,
 	}],
     'mail-tls' => [
 	'mail' , {
