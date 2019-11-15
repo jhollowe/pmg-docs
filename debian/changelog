@@ -1,3 +1,13 @@
+pmg-docs (6.0-5) pmg; urgency=medium
+
+  * add initial information about the new attachement quarantine
+
+  * document custom SpamAssasin rule configuration
+
+  * improve wording and grammar
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 15 Nov 2019 13:01:08 +0100
+
 pmg-docs (6.0-4) pmg; urgency=medium
 
   * add the supported browsers to the system requirements
