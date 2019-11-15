@@ -538,19 +538,20 @@ a custom rule - watch out for matches to 'URIBL_BLOCKED' in the logs or
 spam-headers - see the {spamassassin_dnsbl}.
 
 To add or change the Proxmox {spamassassin} configuration please login to the
-console via SSH. Go to directory `/etc/mail/spamassassin/`. In this directory
-there are several files (`init.pre`, `local.cf`, ...) – do not change them.
+console via SSH. Change to the `/etc/mail/spamassassin/` directory. In this
+directory there are several files (`init.pre`, `local.cf`, ...) - do not change
+them, as they will be overwritten by any {spamassassin} rule update.
 
 To add your special configuration, you have to create a new file and name it
-`custom.cf` (in this directory), then add your configuration there. Be aware to
-use the {spamassassin} syntax, and test with
+`custom.cf` (in this directory), then add your configuration there. Make sure
+to use the correct {spamassassin} syntax, and test with
 
 ----
 # spamassassin -D --lint
 ----
 
 If you run a cluster, the `custom.cf` file is synchronized from the
-master node to all cluster members.
+master node to all cluster members automatically.
 
 
 [[pmgconfig_custom_check]]
