@@ -141,6 +141,7 @@ Key and certificate (combined) to encrypt mail traffic (TLS).
 Key for DKIM signing mails with selector '<selector>'.
 
 
+[[pmgconfig_template_engine]]
 Service Configuration Templates
 -------------------------------
 
@@ -607,7 +608,9 @@ spam-headers - see the {spamassassin_dnsbl}.
 To add or change the Proxmox {spamassassin} configuration please login to the
 console via SSH. Change to the `/etc/mail/spamassassin/` directory. In this
 directory there are several files (`init.pre`, `local.cf`, ...) - do not change
-them, as they will be overwritten by any {spamassassin} rule update.
+them, as `init.pre`, `v310.pre`, `v320.pre`, `local.cf` will be overwritten by
+the xref:pmgconfig_template_engine[template engine], while the others can
+get updated by any {spamassassin} package upgrade.
 
 To add your special configuration, you have to create a new file and name it
 `custom.cf` (in this directory), then add your configuration there. Make sure
