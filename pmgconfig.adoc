@@ -109,6 +109,9 @@ GUI user configuration.
 
 Custom {spamassassin} setup.
 
+`/etc/mail/spamassassin/pmg-scores.cf`::
+
+Custom {spamassassin} rule scores.
 
 Keys and Certificates
 ---------------------
