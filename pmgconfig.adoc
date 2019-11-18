@@ -545,6 +545,36 @@ and not in the webinterface.
 include::pmg.spamquar-conf-opts.adoc[]
 
 
+[[pmgconfig_spamdetector_customscores]]
+Customization of Rulescores
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+While the default scoring of {spamassassin}'s ruleset provides very good
+detection rates, sometimes your particular environment can benefit from
+slightly adjusting the score of a particular rule. Two examples:
+
+* Your system receives spam mails which are scored at 4.9 and you have
+  a rule which puts all mails above 5 in the quarantine. The one thing the
+  spam mails have in common is that they all hit 'URIBL_BLACK'. By increasing
+  the score of this rule by 0.2 points the spam mails would all be quarantined
+  instead of being sent to your users
+
+* Your system tags many legitimate mails from a partner organization as spam,
+  because the organization has a policy that each mail has to start with
+  'Dear madam or sir' (generating 1.9 points through the rule
+  'DEAR_SOMETHING'). By setting the score of this rule to 0 you can disable
+  it completely.
+
+The system logs all rules which particular mail hits. Analyzing the logs can
+lead to finding such a pattern in your environment.
+
+You can adjust the score of a rule by creating a new 'Custom Rule Score' entry
+in the GUI.
+
+NOTE: In general it is strongly recommended to not make large changes to the
+default scores.
+
+
 [[pmgconfig_clamav]]
 Virus Detector Configuration
 ----------------------------
@@ -622,6 +652,10 @@ to use the correct {spamassassin} syntax, and test with
 
 If you run a cluster, the `custom.cf` file is synchronized from the
 master node to all cluster members automatically.
+
+Should you only wish to adjust the score assigned to a particular rule you
+can also use the xref:pmgconfig_spamdetector_customscores[Custom Rule Score]
+settings in the GUI.
 
 
 [[pmgconfig_custom_check]]
