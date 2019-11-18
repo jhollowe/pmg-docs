@@ -73,6 +73,10 @@ The cluster setup.
 
 The list of relay domains.
 
+`/etc/pmg/dkim/domains`::
+
+The list of domains for outbound DKIM signing.
+
 `/etc/pmg/fetchmailrc`::
 
 Fetchmail configuration (POP3 and IMAP setup).
@@ -128,6 +132,10 @@ Internally used to generate CSRF tokens.
 `/etc/pmg/pmg-tls.pem`::
 
 Key and certificate (combined) to encrypt mail traffic (TLS).
+
+`/etc/pmg/dkim/<selector>.private`::
+
+Key for DKIM signing mails with selector '<selector>'.
 
 
 Service Configuration Templates
