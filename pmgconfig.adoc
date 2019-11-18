@@ -301,6 +301,62 @@ using the following configuration keys:
 include::pmg.mail-options-conf-opts.adoc[]
 
 
+[[pmgconfig_mailproxy_before_after_queue]]
+Before and After Queue scanning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Scanning email can happen at two different stages of mail-processing:
+
+* During the SMTP Session after the complete message has been received (after
+  the 'DATA' command), known as 'before queue filtering'.
+
+* After intially accepting the mail and putting it on a queue for further
+  processing, known as 'after queue filtering'.
+
+The former has the advantage that the system can reject a mail (by sending a
+permanent reject code '554'), and leave the task of notifying the original
+sender to the other mailserver. This is of particular advantage if the
+processed mail is a spam message or contains a virus and has a forged
+sender-address. Sending out a notification in this situation leads so-called
+'backscatter' mail, which might cause your server to get listed as spamming on
+RBLs.
+
+The latter has the advantage of providing faster delivery of mails for the
+sending servers, since queueing mails is much faster than analyzing it for
+spam and viruses.
+
+If a mail is addressed to multiple recipients (e.g. when multiple addresses are
+subscribed to the same mailinglist) the situation is more complicated: Your
+mailserver can only reject or accept the mail for all recipients, after having
+received the complete message, while your rule setup might accept the mail for
+part of the recipients and reject it for others. This can be due to a
+complicated rule setup, or if your users use the 'User White- and Blacklist'
+feature.
+
+If the resulting action of the rule system is the same for all recipients {pmg}
+responds accordingly if configured for before queue filtering (sending '554'
+for a blocked mail and '250' for an accepted or quarantined mail). If some
+mailboxes accept the mail and some reject it the system has to accept the mail.
+
+Whether {pmg} notifies the sender that delivery failed for some recipients by
+sending a non-delivery report, depends on the 'ndr_on_block' setting in
+'/etc/pmg/pmg.conf'. If enabled an NDR is sent. Keeping it disabled prevents
+NDRs being sent to the (possibly forged) sender and thus minimizes the chance
+of getting your IP listed on a RBL. However in certain environments it can be
+unacceptable not to inform the sender about a rejected mail.
+
+The setting has the same effect if after queue filtering is configured, with
+the exception that an NDR is always sent out, even if all recipients block the
+mail, since the mail already got accepted before being analyzed.
+
+The details of integrating the mail proxy with {postfix} in both setups are
+explained in {postfix_beforequeue} and {postfix_afterqueue} respectively.
+
+NOTE: Since before queue filtering is currently incompatible with the
+'Tracking Center' you need to enable it by manually
+editing '/etc/pmg/pmg.conf'.
+
+
 [[pmgconfig_mailproxy_transports]]
 Transports
 ~~~~~~~~~~

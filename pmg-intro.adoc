@@ -107,6 +107,20 @@ maximize the amount of mails delivered. In order to do that, many of
 them violates the SMTP protocol specification and can thus be detected
 by these tests.
 
+Before and After Queue Filtering::
+
+{pmg} can be configured to either accept the mail, by sending a response
+of '250 OK', and scan it afterwards, or alternatively inspect the mail
+directly after it has the content and respond with a reject '554' if the
+mail is blocked by the rule system. These options are known as After Queue
+and Before Queue filtering respectively (see
+xref:pmgconfig_mailproxy_before_after_queue[Before and After Queue Scanning]).
+
+Configurable NDR policy::
+
+In certain environments it can be unacceptable to discard an email, without
+informing the sender about that decision. You can decide whether you want
+to inform the senders of blocked emails or not.
 
 Virus detection
 ~~~~~~~~~~~~~~~
