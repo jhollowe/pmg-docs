@@ -180,6 +180,13 @@ summarized by an intelligent algorithm.
 - Status of final delivery
 
 
+DKIM Signing
+~~~~~~~~~~~~
+
+{pmg} offers the possibility to optionally sign outgoing emails with
+xref:pmgconfig_mailproxy_dkim[DKIM].
+
+
 High Availability with Proxmox HA Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
