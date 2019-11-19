@@ -434,6 +434,10 @@ include::pmg.mail-tls-conf-opts.adoc[]
 DKIM Signing
 ~~~~~~~~~~~~
 
+ifndef::manvolnum[]
+image::images/screenshot/pmg-gui-mailproxy-dkim.png[]
+endif::manvolnum[]
+
 DomainKeys Identified Mail (DKIM) Signatures (see {dkim_rfc}) is a method to
 cryptographically authenticate a mail as originating from a particular domain.
 Before sending the mail a hash over certain header fields and the body is
@@ -548,6 +552,10 @@ include::pmg.spamquar-conf-opts.adoc[]
 [[pmgconfig_spamdetector_customscores]]
 Customization of Rulescores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ifndef::manvolnum[]
+image::images/screenshot/pmg-gui-spam-custom-scores.png[]
+endif::manvolnum[]
 
 While the default scoring of {spamassassin}'s ruleset provides very good
 detection rates, sometimes your particular environment can benefit from
