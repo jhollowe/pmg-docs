@@ -1,3 +1,12 @@
+pmg-docs (6.1-1) pmg; urgency=medium
+
+  * Explain handling of SpamAssasin configuration and document custom
+    SpamAssasin scores
+
+  * Add documentation for before queue filtering
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 19 Nov 2019 11:37:46 +0100
+
 pmg-docs (6.0-5) pmg; urgency=medium
 
   * add initial information about the new attachement quarantine
