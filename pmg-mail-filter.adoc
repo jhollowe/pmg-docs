@@ -6,7 +6,7 @@ Rule-Based Mail Filter
 powerful way to define filter rules by user, domains, time frame,
 content type and resulting action.
 
-image::images/screenshot/pmg-gui-mail-filter-rules.png[]
+[thumbnail="pmg-gui-mail-filter-rules.png", big=1]
 
 Every rule has 5 categories ('FROM', 'TO', 'WHEN', 'WHAT' and
 'ACTION'), and each category may contain several objects to match
@@ -63,7 +63,7 @@ reset the filter rules.
 'Action' - objects
 ------------------
 
-image::images/screenshot/pmg-gui-mail-filter-actions.png[]
+[thumbnail="pmg-gui-mail-filter-actions.png", big=1]
 
 Please note that some actions stops further rule precessing. We call
 such actions 'final'.
@@ -167,7 +167,7 @@ Add a Disclaimer.
 'Who' - objects
 ---------------
 
-image::images/screenshot/pmg-gui-mail-filter-who-objects.png[]
+[thumbnail="pmg-gui-mail-filter-who-objects.png", big=1]
 
 This type of objects can be used for the 'TO' and/or 'FROM' category,
 and macth the sender or receiver of the e-mail. A single object can
@@ -202,7 +202,7 @@ or allow specific senders.
 'What' - objects
 ----------------
 
-image::images/screenshot/pmg-gui-mail-filter-what-objects.png[]
+[thumbnail="pmg-gui-mail-filter-what-objects.png", big=1]
 
 'What' - objects are used to classify the mail content. A single
 object can combine multiple items, and the following item types are
@@ -237,7 +237,7 @@ Can be used to match specific content types inside archives.
 'When' - objects
 ----------------
 
-image::images/screenshot/pmg-gui-mail-filter-when-objects.png[]
+[thumbnail="pmg-gui-mail-filter-when-objects.png", big=1]
 
 'When' - objects are use to activate rules at specific daytimes. You
 can compose them of one or more time-frame items.

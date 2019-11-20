@@ -195,7 +195,7 @@ Network and Time
 ~~~~~~~~~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-network-config.png[]
+[thumbnail="pmg-gui-network-config.png", big=1]
 endif::manvolnum[]
 
 Normally the network and time is already configured when you visit the
@@ -235,7 +235,7 @@ Options
 ~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-system-options.png[]
+[thumbnail="pmg-gui-system-options.png", big=1]
 endif::manvolnum[]
 
 
@@ -253,7 +253,7 @@ Relaying
 ~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-relaying.png[]
+[thumbnail="pmg-gui-mailproxy-relaying.png", big=1]
 endif::manvolnum[]
 
 Those settings are saved to subsection 'mail' in `/etc/pmg/pmg.conf`,
@@ -266,7 +266,7 @@ Relay Domains
 ~~~~~~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-relaydomains.png[]
+[thumbnail="pmg-gui-mailproxy-relaydomains.png", big=1]
 endif::manvolnum[]
 
 List of relayed mail domains, i.e. what destination domains this
@@ -279,7 +279,7 @@ Ports
 ~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-ports.png[]
+[thumbnail="pmg-gui-mailproxy-ports.png", big=1]
 endif::manvolnum[]
 
 Those settings are saved to subsection 'mail' in `/etc/pmg/pmg.conf`,
@@ -293,7 +293,7 @@ Options
 ~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-options.png[]
+[thumbnail="pmg-gui-mailproxy-options.png", big=1]
 endif::manvolnum[]
 
 Those settings are saved to subsection 'mail' in `/etc/pmg/pmg.conf`,
@@ -363,7 +363,7 @@ Transports
 ~~~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-transports.png[]
+[thumbnail="pmg-gui-mailproxy-transports.png", big=1]
 endif::manvolnum[]
 
 You can use {pmg} to send e-mails to different internal
@@ -380,7 +380,7 @@ Networks
 ~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-networks.png[]
+[thumbnail="pmg-gui-mailproxy-networks.png", big=1]
 endif::manvolnum[]
 
 You can add additional internal (trusted) IP networks or hosts.
@@ -395,7 +395,7 @@ TLS
 ~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-tls.png[]
+[thumbnail="pmg-gui-mailproxy-tls.png", big=1]
 endif::manvolnum[]
 
 Transport Layer Security (TLS) provides certificate-based
@@ -435,7 +435,7 @@ DKIM Signing
 ~~~~~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-dkim.png[]
+[thumbnail="pmg-gui-mailproxy-dkim.png", big=1]
 endif::manvolnum[]
 
 DomainKeys Identified Mail (DKIM) Signatures (see {dkim_rfc}) is a method to
@@ -494,7 +494,7 @@ Whitelist
 ~~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-mailproxy-whitelist.png[]
+[thumbnail="pmg-gui-mailproxy-whitelist.png", big=1]
 endif::manvolnum[]
 
 All SMTP checks are disabled for those entries (e. g. Greylisting,
@@ -512,7 +512,7 @@ Options
 ~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-spam-options.png[]
+[thumbnail="pmg-gui-spam-options.png", big=1]
 endif::manvolnum[]
 
 {pmg} uses a wide variety of local and network tests to identify spam
@@ -532,7 +532,7 @@ Quarantine
 ~~~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-spamquar-options.png[]
+[thumbnail="pmg-gui-spamquar-options.png", big=1]
 endif::manvolnum[]
 
 Proxmox analyses all incoming e-mail messages and decides for each
@@ -554,7 +554,7 @@ Customization of Rulescores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-spam-custom-scores.png[]
+[thumbnail="pmg-gui-spam-custom-scores.png", big=1]
 endif::manvolnum[]
 
 While the default scoring of {spamassassin}'s ruleset provides very good
@@ -592,7 +592,7 @@ Options
 ~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-virus-options.png[]
+[thumbnail="pmg-gui-virus-options.png", big=1]
 endif::manvolnum[]
 
 All mails are automatically passed to the included virus detector
@@ -605,7 +605,7 @@ using the following configuration keys:
 include::pmg.clamav-conf-opts.adoc[]
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-clamav-database.png[]
+[thumbnail="pmg-gui-clamav-database.png", big=1]
 endif::manvolnum[]
 
 Please note that the virus signature database it automatically
@@ -618,7 +618,7 @@ Quarantine
 ~~~~~~~~~~
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-virusquar-options.png[]
+[thumbnail="pmg-gui-virusquar-options.png", big=1]
 endif::manvolnum[]
 
 Indentified virus mails are automatically moved to the virus
@@ -769,7 +769,7 @@ User management in {pmg} consists of three types of users/accounts:
 Local Users
 ~~~~~~~~~~~
 
-image::images/screenshot/pmg-gui-local-user-config.png[]
+[thumbnail="pmg-gui-local-user-config.png", big=1]
 
 Local users are used to manage and audit {pmg}. Those users can login on the
 management web interface.
@@ -807,7 +807,7 @@ For details of the fields see xref:pmg_user_configuration_file[user.conf]
 LDAP/Active Directory
 ~~~~~~~~~~~~~~~~~~~~~
 
-image::images/screenshot/pmg-gui-ldap-user-config.png[]
+[thumbnail="pmg-gui-ldap-user-config.png", big=1]
 
 You can specify multiple LDAP/Active Directory profiles, so that you can
 create rules matching those users and groups.
@@ -850,7 +850,7 @@ interface. After that, you can create rules targeting LDAP users and groups.
 Fetchmail
 ~~~~~~~~~
 
-image::images/screenshot/pmg-gui-fetchmail-config.png[]
+[thumbnail="pmg-gui-fetchmail-config.png", big=1]
 
 Fetchmail is utility for polling and forwarding e-mails. You can define
 e-mail accounts, which will then be fetched and forwarded to the e-mail

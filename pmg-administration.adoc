@@ -13,7 +13,7 @@ Server Administration
 Server status
 ~~~~~~~~~~~~~
 
-image::images/screenshot/pmg-gui-server-status.png[]
+[thumbnail="pmg-gui-server-status.png", big=1]
 
 This page shows server statistics about CPU, memory, disk and network
 usage. You can select the displayed time span on the upper right.
@@ -26,7 +26,7 @@ button. It is also possible to trigger a server 'Restart' or
 Services
 ~~~~~~~~
 
-image::images/screenshot/pmg-gui-service-status.png[]
+[thumbnail="pmg-gui-service-status.png", big=1]
 
 This panel lists all major services used for mail processing and
 cluster synchronization. If necessary, you can start, stop or restart
@@ -45,7 +45,7 @@ systemctl status postfix
 Updates
 ~~~~~~~
 
-image::images/screenshot/pmg-gui-updates.png[]
+[thumbnail="pmg-gui-updates.png", big=1]
 
 We release software updates on a regular basis, and it is recommended
 to always run the latest available version. This page shows the
@@ -59,7 +59,7 @@ details abaout available package repositories.
 Syslog and Tasks
 ~~~~~~~~~~~~~~~~
 
-image::images/screenshot/pmg-gui-syslog.png[]
+[thumbnail="pmg-gui-syslog.png", big=1]
 
 The syslog page gives you a quick real-time log view. Please use the
 xref:pmg_tracking_center[Tracking Center] to search the logs.
@@ -71,7 +71,7 @@ Quarantine
 Spam
 ~~~~
 
-image::images/screenshot/pmg-gui-spam-quarantine.png[]
+[thumbnail="pmg-gui-spam-quarantine.png", big=1]
 
 This panel lets you inspect the mail quarantine. Emails can be safely
 previewed and if desired, delivered to the original user.
@@ -109,7 +109,7 @@ users can manage this themselves.
 Tracking Center
 ---------------
 
-image::images/screenshot/pmg-gui-tracking-center.png[]
+[thumbnail="pmg-gui-tracking-center.png", big=1]
 
 Email processing is a complex task and involves several service
 daemons. Each daemon logs information to the syslog service. The

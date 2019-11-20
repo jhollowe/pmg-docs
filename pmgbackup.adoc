@@ -25,7 +25,7 @@ Backup and Restore
 endif::manvolnum[]
 
 ifndef::manvolnum[]
-image::images/screenshot/pmg-gui-backup.png[]
+[thumbnail="pmg-gui-backup.png", big=1]
 endif::manvolnum[]
 
 {pmg} includes the ability to backup and restore the
