@@ -1,3 +1,13 @@
+pmg-docs (6.1-2) pmg; urgency=medium
+
+  * update static API schema definition and synopsis
+
+  * add and update all screenshots
+
+  * use big thumbnails for screenshots
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 20 Nov 2019 11:33:30 +0100
+
 pmg-docs (6.1-1) pmg; urgency=medium
 
   * Explain handling of SpamAssasin configuration and document custom
