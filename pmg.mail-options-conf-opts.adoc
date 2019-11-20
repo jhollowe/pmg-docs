@@ -2,6 +2,10 @@
 
 ESMTP banner.
 
+`before_queue_filtering`: `<boolean>` ('default =' `0`)::
+
+Enable before queue filtering by pmg-smtp-filter
+
 `conn_count_limit`: `<integer> (0 - N)` ('default =' `50`)::
 
 How many simultaneous connections any client is allowed to make to this service. To disable this feature, specify a limit of 0.
@@ -41,6 +45,10 @@ Maximum email size. Larger mails are rejected.
 `message_rate_limit`: `<integer> (0 - N)` ('default =' `0`)::
 
 The maximal number of message delivery requests that any client is allowed to make to this service per minute.To disable this feature, specify a limit of 0.
+
+`ndr_on_block`: `<boolean>` ('default =' `0`)::
+
+Send out NDR when mail gets blocked
 
 `rejectunknown`: `<boolean>` ('default =' `0`)::
 

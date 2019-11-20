@@ -1564,6 +1564,13 @@ var pmgapi = [
                                              "type" : "string",
                                              "typetext" : "<string>"
                                           },
+                                          "quarantine" : {
+                                             "default" : 0,
+                                             "description" : "Copy original mail to attachment Quarantine.",
+                                             "optional" : 1,
+                                             "type" : "boolean",
+                                             "typetext" : "<boolean>"
+                                          },
                                           "text" : {
                                              "description" : "The replacement text.",
                                              "maxLength" : 2048,
@@ -1615,6 +1622,13 @@ var pmgapi = [
                                        "maxLength" : 255,
                                        "type" : "string",
                                        "typetext" : "<string>"
+                                    },
+                                    "quarantine" : {
+                                       "default" : 0,
+                                       "description" : "Copy original mail to attachment Quarantine.",
+                                       "optional" : 1,
+                                       "type" : "boolean",
+                                       "typetext" : "<boolean>"
                                     },
                                     "text" : {
                                        "description" : "The replacement text.",
@@ -7542,6 +7556,546 @@ var pmgapi = [
             "text" : "tlspolicy"
          },
          {
+            "children" : [
+               {
+                  "children" : [
+                     {
+                        "info" : {
+                           "DELETE" : {
+                              "description" : "Delete a DKIM-sign domain",
+                              "method" : "DELETE",
+                              "name" : "delete",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "domain" : {
+                                       "description" : "Domain name.",
+                                       "format" : "transport-domain",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           },
+                           "GET" : {
+                              "description" : "Read Domain data (comment).",
+                              "method" : "GET",
+                              "name" : "read",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "domain" : {
+                                       "description" : "Domain name.",
+                                       "format" : "transport-domain",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin",
+                                    "audit"
+                                 ]
+                              },
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "properties" : {
+                                    "comment" : {
+                                       "type" : "string"
+                                    },
+                                    "domain" : {
+                                       "type" : "string"
+                                    }
+                                 },
+                                 "type" : "object"
+                              }
+                           },
+                           "PUT" : {
+                              "description" : "Update DKIM-sign domain data (comment).",
+                              "method" : "PUT",
+                              "name" : "write",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "comment" : {
+                                       "description" : "Comment.",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "domain" : {
+                                       "description" : "Domain name.",
+                                       "format" : "transport-domain",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "permissions" : {
+                                 "check" : [
+                                    "admin"
+                                 ]
+                              },
+                              "protected" : 1,
+                              "proxyto" : "master",
+                              "returns" : {
+                                 "type" : "null"
+                              }
+                           }
+                        },
+                        "leaf" : 1,
+                        "path" : "/config/dkim/domains/{domain}",
+                        "text" : "{domain}"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "description" : "List DKIM-sign domains.",
+                        "method" : "GET",
+                        "name" : "index",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "proxyto" : "master",
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "comment" : {
+                                    "type" : "string"
+                                 },
+                                 "domain" : {
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{domain}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     },
+                     "POST" : {
+                        "description" : "Add DKIM-sign domain.",
+                        "method" : "POST",
+                        "name" : "create",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "comment" : {
+                                 "description" : "Comment.",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "domain" : {
+                                 "description" : "Domain name.",
+                                 "format" : "transport-domain",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/config/dkim/domains",
+                  "text" : "domains"
+               },
+               {
+                  "info" : {
+                     "GET" : {
+                        "description" : "Get the public key for the configured selector, prepared as DKIM TXT record",
+                        "method" : "GET",
+                        "name" : "get_selector_info",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "properties" : {
+                              "keysize" : {
+                                 "minimum" : 1024,
+                                 "optional" : 1,
+                                 "type" : "integer"
+                              },
+                              "record" : {
+                                 "format" : "pmg-dkim-record",
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
+                              "selector" : {
+                                 "format" : "dns-name",
+                                 "optional" : 1,
+                                 "type" : "string"
+                              }
+                           },
+                           "type" : "object"
+                        }
+                     },
+                     "POST" : {
+                        "description" : "Generate a new private key for selector. All future mail will be signed with the new key!",
+                        "method" : "POST",
+                        "name" : "set_selector",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "keysize" : {
+                                 "description" : "Number of bits for the RSA-Key",
+                                 "minimum" : 1024,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1024 - N)"
+                              },
+                              "selector" : {
+                                 "description" : "DKIM Selector",
+                                 "format" : "dns-name",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/dkim/selector",
+                  "text" : "selector"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "description" : "Directory index.",
+                  "method" : "GET",
+                  "name" : "index",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "section" : {
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{section}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/config/dkim",
+            "text" : "dkim"
+         },
+         {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "description" : "Edit custom SpamAssassin score",
+                        "method" : "DELETE",
+                        "name" : "delete_score",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "digest" : {
+                                 "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                                 "maxLength" : 40,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "name" : {
+                                 "description" : "The name of the rule.",
+                                 "pattern" : "[a-zA-Z\\_\\-\\.0-9]+",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
+                     "GET" : {
+                        "description" : "Get custom SpamAssassin score",
+                        "method" : "GET",
+                        "name" : "get_score",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "name" : {
+                                 "description" : "The name of the rule.",
+                                 "pattern" : "[a-zA-Z\\_\\-\\.0-9]+",
+                                 "type" : "string"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "properties" : {
+                              "comment" : {
+                                 "description" : "The Comment.",
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
+                              "name" : {
+                                 "description" : "The name of the rule.",
+                                 "pattern" : "[a-zA-Z\\_\\-\\.0-9]+",
+                                 "type" : "string"
+                              },
+                              "score" : {
+                                 "description" : "The score the rule should be valued at.",
+                                 "type" : "number"
+                              }
+                           },
+                           "type" : "object"
+                        }
+                     },
+                     "PUT" : {
+                        "description" : "Edit custom SpamAssassin score",
+                        "method" : "PUT",
+                        "name" : "edit_score",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "comment" : {
+                                 "description" : "The Comment.",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "digest" : {
+                                 "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                                 "maxLength" : 40,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "name" : {
+                                 "description" : "The name of the rule.",
+                                 "pattern" : "[a-zA-Z\\_\\-\\.0-9]+",
+                                 "type" : "string"
+                              },
+                              "score" : {
+                                 "description" : "The score the rule should be valued at.",
+                                 "type" : "number",
+                                 "typetext" : "<number>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/customscores/{name}",
+                  "text" : "{name}"
+               }
+            ],
+            "info" : {
+               "DELETE" : {
+                  "description" : "Revert custom score changes.",
+                  "method" : "DELETE",
+                  "name" : "revert_score_changes",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               },
+               "GET" : {
+                  "description" : "List custom scores.",
+                  "method" : "GET",
+                  "name" : "list_scores",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
+                  },
+                  "proxyto" : "master",
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "comment" : {
+                              "description" : "The Comment.",
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "digest" : {
+                              "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                              "maxLength" : 40,
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "name" : {
+                              "description" : "The name of the rule.",
+                              "optional" : 1,
+                              "pattern" : "[a-zA-Z\\_\\-\\.0-9]+",
+                              "type" : "string"
+                           },
+                           "score" : {
+                              "description" : "The score the rule should be valued at.",
+                              "optional" : 1,
+                              "type" : "number"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{name}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "description" : "Create custom SpamAssassin score",
+                  "method" : "POST",
+                  "name" : "create_score",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "comment" : {
+                           "description" : "The Comment.",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "digest" : {
+                           "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                           "maxLength" : 40,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "name" : {
+                           "description" : "The name of the rule.",
+                           "pattern" : "[a-zA-Z\\_\\-\\.0-9]+",
+                           "type" : "string"
+                        },
+                        "score" : {
+                           "description" : "The score the rule should be valued at.",
+                           "type" : "number",
+                           "typetext" : "<number>"
+                        }
+                     }
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               },
+               "PUT" : {
+                  "description" : "Apply custom score changes.",
+                  "method" : "PUT",
+                  "name" : "apply_score_changes",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "digest" : {
+                           "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                           "maxLength" : 40,
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "restart-daemon" : {
+                           "default" : 0,
+                           "description" : "If set, also restarts pmg-smtp-filter. This is necessary for the changes to work.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "string"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/config/customscores",
+            "text" : "customscores"
+         },
+         {
             "info" : {
                "GET" : {
                   "description" : "Read admin configuration properties.",
@@ -7631,6 +8185,27 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
+                        },
+                        "dkim_selector" : {
+                           "description" : "Default DKIM selector",
+                           "format" : "dns-name",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "dkim_sign" : {
+                           "default" : 0,
+                           "description" : "DKIM sign outbound mails with the configured Selector.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "dkim_sign_all_mail" : {
+                           "default" : 0,
+                           "description" : "DKIM sign all outgoing mails irrespective of the Envelope From domain.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
                         },
                         "email" : {
                            "default" : "admin@domain.tld",
@@ -7830,6 +8405,13 @@ var pmgapi = [
                            "type" : "string",
                            "typetext" : "<string>"
                         },
+                        "before_queue_filtering" : {
+                           "default" : 0,
+                           "description" : "Enable before queue filtering by pmg-smtp-filter",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
                         "conn_count_limit" : {
                            "default" : 50,
                            "description" : "How many simultaneous connections any client is allowed to make to this service. To disable this feature, specify a limit of 0.",
@@ -7974,6 +8556,13 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "integer",
                            "typetext" : "<integer> (0 - N)"
+                        },
+                        "ndr_on_block" : {
+                           "default" : 0,
+                           "description" : "Send out NDR when mail gets blocked",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
                         },
                         "rejectunknown" : {
                            "default" : 0,
@@ -13010,6 +13599,85 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "description" : "Get a list of quarantined attachment mails in the given timeframe (default the last 24 hours).",
+                  "method" : "GET",
+                  "name" : "attachment",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "endtime" : {
+                           "description" : "Only consider entries older than 'endtime' (unix epoch). This is set to '<start> + 1day' by default.",
+                           "minimum" : 1,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (1 - N)"
+                        },
+                        "starttime" : {
+                           "description" : "Only consider entries newer than 'starttime' (unix epoch). Default is 'now - 1day'.",
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - N)"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "bytes" : {
+                              "description" : "Size of raw email.",
+                              "type" : "integer"
+                           },
+                           "envelope_sender" : {
+                              "description" : "SMTP envelope sender.",
+                              "type" : "string"
+                           },
+                           "from" : {
+                              "description" : "Header 'From' field.",
+                              "type" : "string"
+                           },
+                           "id" : {
+                              "description" : "Unique ID",
+                              "type" : "string"
+                           },
+                           "receiver" : {
+                              "description" : "Receiver email address",
+                              "type" : "string"
+                           },
+                           "sender" : {
+                              "description" : "Header 'Sender' field.",
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "subject" : {
+                              "description" : "Header 'Subject' field.",
+                              "type" : "string"
+                           },
+                           "time" : {
+                              "description" : "Receive time stamp",
+                              "type" : "integer"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/attachment",
+            "text" : "attachment"
+         },
+         {
+            "info" : {
+               "GET" : {
                   "description" : "Get Virus Quarantine Status",
                   "method" : "GET",
                   "name" : "virusstatus",
@@ -13173,6 +13841,101 @@ var pmgapi = [
             "leaf" : 1,
             "path" : "/quarantine/content",
             "text" : "content"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Get Attachments for E-Mail in Quarantine.",
+                  "method" : "GET",
+                  "name" : "listattachments",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "id" : {
+                           "description" : "Unique ID",
+                           "maxLength" : 60,
+                           "pattern" : "C\\d+R\\d+T\\d+",
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit"
+                     ]
+                  },
+                  "returns" : {
+                     "items" : {
+                        "properties" : {
+                           "content-type" : {
+                              "description" : "Raw email header data.",
+                              "type" : "string"
+                           },
+                           "id" : {
+                              "description" : "Attachment ID",
+                              "type" : "integer"
+                           },
+                           "name" : {
+                              "description" : "Raw email header data.",
+                              "type" : "string"
+                           },
+                           "size" : {
+                              "description" : "Size of raw attachment in bytes.",
+                              "type" : "integer"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "type" : "array"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/listattachments",
+            "text" : "listattachments"
+         },
+         {
+            "info" : {
+               "GET" : {
+                  "description" : "Download E-Mail or Attachment from Quarantine.",
+                  "download" : 1,
+                  "method" : "GET",
+                  "name" : "download",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "attachmentid" : {
+                           "description" : "The Attachment ID for the mail.",
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer>"
+                        },
+                        "mailid" : {
+                           "description" : "Unique ID",
+                           "maxLength" : 60,
+                           "pattern" : "C\\d+R\\d+T\\d+",
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "returns" : {
+                     "type" : "object"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/download",
+            "text" : "download"
          }
       ],
       "info" : {

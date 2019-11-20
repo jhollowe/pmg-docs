@@ -28,6 +28,18 @@ Send daily reports.
 
 Demo mode - do not start SMTP filter.
 
+`dkim_selector`: `<string>` ::
+
+Default DKIM selector
+
+`dkim_sign`: `<boolean>` ('default =' `0`)::
+
+DKIM sign outbound mails with the configured Selector.
+
+`dkim_sign_all_mail`: `<boolean>` ('default =' `0`)::
+
+DKIM sign all outgoing mails irrespective of the Envelope From domain.
+
 `email`: `<string>` ('default =' `admin@domain.tld`)::
 
 Administrator E-Mail address.
@@ -79,6 +91,10 @@ Enables support for Google Safe Browsing.
 `banner`: `<string>` ('default =' `ESMTP Proxmox`)::
 
 ESMTP banner.
+
+`before_queue_filtering`: `<boolean>` ('default =' `0`)::
+
+Enable before queue filtering by pmg-smtp-filter
 
 `conn_count_limit`: `<integer> (0 - N)` ('default =' `50`)::
 
@@ -143,6 +159,10 @@ Maximum email size. Larger mails are rejected.
 `message_rate_limit`: `<integer> (0 - N)` ('default =' `0`)::
 
 The maximal number of message delivery requests that any client is allowed to make to this service per minute.To disable this feature, specify a limit of 0.
+
+`ndr_on_block`: `<boolean>` ('default =' `0`)::
+
+Send out NDR when mail gets blocked
 
 `rejectunknown`: `<boolean>` ('default =' `0`)::
 

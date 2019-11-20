@@ -26,6 +26,18 @@ Send daily reports.
 
 Demo mode - do not start SMTP filter.
 
+`dkim_selector`: `<string>` ::
+
+Default DKIM selector
+
+`dkim_sign`: `<boolean>` ('default =' `0`)::
+
+DKIM sign outbound mails with the configured Selector.
+
+`dkim_sign_all_mail`: `<boolean>` ('default =' `0`)::
+
+DKIM sign all outgoing mails irrespective of the Envelope From domain.
+
 `email`: `<string>` ('default =' `admin@domain.tld`)::
 
 Administrator E-Mail address.

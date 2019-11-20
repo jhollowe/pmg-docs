@@ -9,6 +9,23 @@ API).
 
 Overwrite existing certificate.
 
+*pmgconfig dkim_record*
+
+Get the public key for the configured selector, prepared as DKIM TXT record
+
+*pmgconfig dkim_set* `--keysize <integer> --selector <string>` `[OPTIONS]`
+
+Generate a new private key for selector. All future mail will be signed
+with the new key!
+
+`--keysize` `<integer> (1024 - N)` ::
+
+Number of bits for the RSA-Key
+
+`--selector` `<string>` ::
+
+DKIM Selector
+
 *pmgconfig dump*
 
 Print configuration setting which can be used in templates.
