@@ -141,11 +141,12 @@ image::images/installer/pmg-installation.png[]
 Copying packages usually takes a few minutes. Please wait until that is
 finished, then reboot the server.
 
-Further configuration is done via the Proxmox web interface. Just
-point your browser to the IP address given during installation
-(https://youripaddress:8006).
+Further configuration is done via the Proxmox web interface.
 
-[thumbnail="pmg-gui-login-window.png", big=1]
+[thumbnail="pmg-gui-login-window.png"]
+
+Just point your browser to the IP address given during installation
+(https://youripaddress:8006).
 
 . Login and upload subscription key.
 +
