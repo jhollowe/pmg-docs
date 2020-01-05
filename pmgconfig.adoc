@@ -371,8 +371,10 @@ e-mail servers. For example you can send e-mails addressed to
 domain.com to your first e-mail server, and e-mails addressed to
 subdomain.domain.com to a second one.
 
-You can add the IP addresses, hostname and SMTP ports and mail domains (or
-just single email addresses) of your additional e-mail servers.
+You can add the IP addresses, hostname, transport protocol (smtp/lmtp),
+transport ports and mail domains (or just single email addresses)
+of your additional e-mail servers. When transport protocol is set to `lmtp`,
+the option 'Use MX' is useless and will be automatically set to 'No'.
 
 
 [[pmgconfig_mailproxy_networks]]

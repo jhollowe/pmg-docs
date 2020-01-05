@@ -56,6 +56,7 @@ my $key_groups = {
 	    relay => 1,
 	    relaynomx => 1,
 	    relayport => 1,
+		relayprotocol => 1,
 	    smarthost => 1,
 	    smarthostport => 1,
 	}],
