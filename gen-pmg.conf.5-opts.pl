@@ -7,8 +7,6 @@ use warnings;
 
 use PVE::RESTHandler;
 
-use Data::Dumper;
-
 use PMG::Config;
 
 my $types = PMG::Config::Base->lookup_types;
