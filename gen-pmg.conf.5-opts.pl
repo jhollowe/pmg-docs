@@ -1,8 +1,10 @@
 #!/usr/bin/perl
 
 use lib '.';
+
 use strict;
 use warnings;
+
 use PVE::RESTHandler;
 
 use Data::Dumper;
@@ -56,7 +58,7 @@ my $key_groups = {
 	    relay => 1,
 	    relaynomx => 1,
 	    relayport => 1,
-		relayprotocol => 1,
+	    relayprotocol => 1,
 	    smarthost => 1,
 	    smarthostport => 1,
 	}],
@@ -121,7 +123,7 @@ foreach my $section (@$types) {
 	return 1 if $select_keys && !$select_keys->{$key};
 	return 0;
     };
-    
+
     print PVE::RESTHandler::dump_properties(
 	$properties, 'asciidoc', 'config', $filter);
 }
@@ -129,5 +131,5 @@ foreach my $section (@$types) {
 if (defined($single_section)) {
     die "no such section '$single_section'" if !$found;
 }
- 
+
 exit(0);
