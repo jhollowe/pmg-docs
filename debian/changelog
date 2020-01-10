@@ -1,3 +1,11 @@
+pmg-docs (6.1-3) pmg; urgency=medium
+
+  * document support for lmtp delivery to downstream servers
+
+  * put login-window screenshot inside paragraph context to avoid hinding it
+
+ -- Proxmox Support Team <support@proxmox.com>  Fri, 10 Jan 2020 07:47:21 +0100
+
 pmg-docs (6.1-2) pmg; urgency=medium
 
   * update static API schema definition and synopsis
