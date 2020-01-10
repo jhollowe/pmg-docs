@@ -79,14 +79,21 @@ if (1) {
 	my ($sec, $hash) = @{$key_groups->{$group}};
 	next if $sec ne 'mail';
 	foreach my $k (keys %$hash) {
-	    die "unknown key '$k'" if !defined($properties->{$k});
+	    if (!defined($properties->{$k})) {
+		warn "\n WARNING: unknown key '$k'";
+		next;
+	    }
 	    $found_mail_keys->{$k} = 1;
 	}
     }
     foreach my $k (keys %$properties) {
 	next if $skiped_keys->{$k};
 	next if $k =~ m/^max_(filters|policy|smtpd_in|smtpd_out)$/;
-	die "undocumented key '$k'" if !defined($found_mail_keys->{$k});
+
+	if (!defined($found_mail_keys->{$k})) {
+	    die "undocumented key '$k'" if !$ENV{PMG_DOCS_IGNORE_MISSING_KEY};
+	    warn "WARNING: undocumented key '$k'\n";
+	}
     }
 }
 
