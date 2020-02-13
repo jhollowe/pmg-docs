@@ -178,11 +178,15 @@ The default mail delivery transport (incoming mails).
 
 `relaynomx`: `<boolean>` ('default =' `0`)::
 
-Disable MX lookups for default relay.
+Disable MX lookups for default relay (SMTP only, ignored for LMTP).
 
 `relayport`: `<integer> (1 - 65535)` ('default =' `25`)::
 
-SMTP port number for relay host.
+SMTP/LMTP port number for relay host.
+
+`relayprotocol`: `<lmtp | smtp>` ('default =' `smtp`)::
+
+Transport protocol for relay host.
 
 `smarthost`: `<string>` ::
 

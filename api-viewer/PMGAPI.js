@@ -356,7 +356,7 @@ Ext.onReady(function() {
 		}
 		if (!info.allowtoken) {
 		    // PMG doesn't fully supports API token, and probably won't ever!?
-		    //permhtml += "<br />This API endpoint is not available for API tokens."
+		    permhtml += "<br />This API endpoint is not available for API tokens."
 		}
 
 		sections.push({

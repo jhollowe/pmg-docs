@@ -18,6 +18,10 @@ Get the public key for the configured selector, prepared as DKIM TXT record
 Generate a new private key for selector. All future mail will be signed
 with the new key!
 
+`--force` `<boolean>` ::
+
+Overwrite existing key
+
 `--keysize` `<integer> (1024 - N)` ::
 
 Number of bits for the RSA-Key

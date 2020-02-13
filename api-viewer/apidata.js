@@ -6,6 +6,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Returns the rule database digest. This is used internally for cluster synchronization.",
                         "method" : "GET",
                         "name" : "ruledb_digest",
@@ -34,6 +35,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get common rule properties.",
                                     "method" : "GET",
                                     "name" : "config",
@@ -76,6 +78,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Set rule properties.",
                                     "method" : "PUT",
                                     "name" : "update_config",
@@ -138,6 +141,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Delete group from 'from' list.",
                                           "method" : "DELETE",
                                           "name" : "delete_from_group",
@@ -175,6 +179,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get 'from' group list.",
                                     "method" : "GET",
                                     "name" : "from",
@@ -208,6 +213,7 @@ var pmgapi = [
                                     }
                                  },
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add  group to 'from' list.",
                                     "method" : "POST",
                                     "name" : "add_from_group",
@@ -247,6 +253,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Delete group from 'to' list.",
                                           "method" : "DELETE",
                                           "name" : "delete_to_group",
@@ -284,6 +291,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get 'to' group list.",
                                     "method" : "GET",
                                     "name" : "to",
@@ -317,6 +325,7 @@ var pmgapi = [
                                     }
                                  },
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add  group to 'to' list.",
                                     "method" : "POST",
                                     "name" : "add_to_group",
@@ -356,6 +365,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Delete group from 'when' list.",
                                           "method" : "DELETE",
                                           "name" : "delete_when_group",
@@ -393,6 +403,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get 'when' group list.",
                                     "method" : "GET",
                                     "name" : "when",
@@ -426,6 +437,7 @@ var pmgapi = [
                                     }
                                  },
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add  group to 'when' list.",
                                     "method" : "POST",
                                     "name" : "add_when_group",
@@ -465,6 +477,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Delete group from 'what' list.",
                                           "method" : "DELETE",
                                           "name" : "delete_what_group",
@@ -502,6 +515,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get 'what' group list.",
                                     "method" : "GET",
                                     "name" : "what",
@@ -535,6 +549,7 @@ var pmgapi = [
                                     }
                                  },
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add  group to 'what' list.",
                                     "method" : "POST",
                                     "name" : "add_what_group",
@@ -574,6 +589,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Delete group from 'action' list.",
                                           "method" : "DELETE",
                                           "name" : "delete_action_group",
@@ -611,6 +627,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get 'action' group list.",
                                     "method" : "GET",
                                     "name" : "action",
@@ -644,6 +661,7 @@ var pmgapi = [
                                     }
                                  },
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add  group to 'action' list.",
                                     "method" : "POST",
                                     "name" : "add_action_group",
@@ -681,6 +699,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Delete rule.",
                               "method" : "DELETE",
                               "name" : "delete_rule",
@@ -706,6 +725,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Directory index.",
                               "method" : "GET",
                               "name" : "index",
@@ -751,6 +771,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Get list of rules.",
                         "method" : "GET",
                         "name" : "list_rules",
@@ -783,6 +804,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Create new rule.",
                         "method" : "POST",
                         "name" : "create_rule",
@@ -840,6 +862,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "DELETE" : {
+                                    "allowtoken" : 1,
                                     "description" : "Delete 'actions' object.",
                                     "method" : "DELETE",
                                     "name" : "delete_action",
@@ -872,6 +895,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "List 'actions' objects.",
                               "method" : "GET",
                               "name" : "list_actions",
@@ -915,6 +939,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Read 'BCC' object settings.",
                                     "method" : "GET",
                                     "name" : "read_bcc",
@@ -945,6 +970,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Update 'BCC' object.",
                                     "method" : "PUT",
                                     "name" : "update_bcc",
@@ -1004,6 +1030,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Create 'BCC' object.",
                               "method" : "POST",
                               "name" : "bcc",
@@ -1060,6 +1087,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Read 'Header Attribute' object settings.",
                                     "method" : "GET",
                                     "name" : "read_field",
@@ -1090,6 +1118,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Update 'Header Attribute' object.",
                                     "method" : "PUT",
                                     "name" : "update_field",
@@ -1148,6 +1177,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Create 'Header Attribute' object.",
                               "method" : "POST",
                               "name" : "field",
@@ -1203,6 +1233,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Read 'Notification' object settings.",
                                     "method" : "GET",
                                     "name" : "read_notification",
@@ -1233,6 +1264,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Update 'Notification' object.",
                                     "method" : "PUT",
                                     "name" : "update_notification",
@@ -1304,6 +1336,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Create 'Notification' object.",
                               "method" : "POST",
                               "name" : "notification",
@@ -1372,6 +1405,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Read 'Disclaimer' object settings.",
                                     "method" : "GET",
                                     "name" : "read_disclaimer",
@@ -1402,6 +1436,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Update 'Disclaimer' object.",
                                     "method" : "PUT",
                                     "name" : "update_disclaimer",
@@ -1454,6 +1489,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Create 'Disclaimer' object.",
                               "method" : "POST",
                               "name" : "disclaimer",
@@ -1503,6 +1539,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Read 'Remove attachments' object settings.",
                                     "method" : "GET",
                                     "name" : "read_removeattachments",
@@ -1533,6 +1570,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Update 'Remove attachments' object.",
                                     "method" : "PUT",
                                     "name" : "update_removeattachments",
@@ -1598,6 +1636,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Create 'Remove attachments' object.",
                               "method" : "POST",
                               "name" : "removeattachments",
@@ -1658,6 +1697,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Directory index.",
                         "method" : "GET",
                         "name" : "index",
@@ -1700,6 +1740,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get 'what' group properties",
                                     "method" : "GET",
                                     "name" : "get_config",
@@ -1736,6 +1777,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Modify 'what' group properties",
                                     "method" : "PUT",
                                     "name" : "set_config",
@@ -1784,6 +1826,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Remove an object from the 'what' group.",
                                           "method" : "DELETE",
                                           "name" : "delete_object",
@@ -1821,6 +1864,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "List 'what' group objects.",
                                     "method" : "GET",
                                     "name" : "objects",
@@ -1869,6 +1913,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'ContentType Filter' object settings.",
                                           "method" : "GET",
                                           "name" : "read_contenttype",
@@ -1904,6 +1949,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'ContentType Filter' object.",
                                           "method" : "PUT",
                                           "name" : "update_contenttype",
@@ -1947,6 +1993,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'ContentType Filter' object.",
                                     "method" : "POST",
                                     "name" : "contenttype",
@@ -1988,6 +2035,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'Match Field' object settings.",
                                           "method" : "GET",
                                           "name" : "read_matchfield",
@@ -2023,6 +2071,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'Match Field' object.",
                                           "method" : "PUT",
                                           "name" : "update_matchfield",
@@ -2072,6 +2121,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'Match Field' object.",
                                     "method" : "POST",
                                     "name" : "matchfield",
@@ -2119,6 +2169,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'Spam Filter' object settings.",
                                           "method" : "GET",
                                           "name" : "read_spamfilter",
@@ -2154,6 +2205,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'Spam Filter' object.",
                                           "method" : "PUT",
                                           "name" : "update_spamfilter",
@@ -2197,6 +2249,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'Spam Filter' object.",
                                     "method" : "POST",
                                     "name" : "spamfilter",
@@ -2238,6 +2291,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'Archive Filter' object settings.",
                                           "method" : "GET",
                                           "name" : "read_archivefilter",
@@ -2273,6 +2327,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'Archive Filter' object.",
                                           "method" : "PUT",
                                           "name" : "update_archivefilter",
@@ -2316,6 +2371,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'Archive Filter' object.",
                                     "method" : "POST",
                                     "name" : "archivefilter",
@@ -2357,6 +2413,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'Match Filename' object settings.",
                                           "method" : "GET",
                                           "name" : "read_filenamefilter",
@@ -2392,6 +2449,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'Match Filename' object.",
                                           "method" : "PUT",
                                           "name" : "update_filenamefilter",
@@ -2435,6 +2493,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'Match Filename' object.",
                                     "method" : "POST",
                                     "name" : "filenamefilter",
@@ -2476,6 +2535,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'Virus Filter' object settings.",
                                           "method" : "GET",
                                           "name" : "read_virusfilter",
@@ -2511,6 +2571,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'Virus Filter' object.",
                                           "method" : "PUT",
                                           "name" : "update_virusfilter",
@@ -2548,6 +2609,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'Virus Filter' object.",
                                     "method" : "POST",
                                     "name" : "virusfilter",
@@ -2581,6 +2643,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Delete a 'what' group.",
                               "method" : "DELETE",
                               "name" : "delete_{$oclass}_group",
@@ -2606,6 +2669,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Directory index.",
                               "method" : "GET",
                               "name" : "index",
@@ -2651,6 +2715,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Get list of 'what' groups.",
                         "method" : "GET",
                         "name" : "list_what_groups",
@@ -2677,6 +2742,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Create a new 'what' group.",
                         "method" : "POST",
                         "name" : "create_what_group",
@@ -2721,6 +2787,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get 'when' group properties",
                                     "method" : "GET",
                                     "name" : "get_config",
@@ -2757,6 +2824,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Modify 'when' group properties",
                                     "method" : "PUT",
                                     "name" : "set_config",
@@ -2805,6 +2873,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Remove an object from the 'when' group.",
                                           "method" : "DELETE",
                                           "name" : "delete_object",
@@ -2842,6 +2911,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "List 'when' group objects.",
                                     "method" : "GET",
                                     "name" : "objects",
@@ -2890,6 +2960,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'TimeFrame' object settings.",
                                           "method" : "GET",
                                           "name" : "read_timeframe",
@@ -2925,6 +2996,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'TimeFrame' object.",
                                           "method" : "PUT",
                                           "name" : "update_timeframe",
@@ -2972,6 +3044,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'TimeFrame' object.",
                                     "method" : "POST",
                                     "name" : "timeframe",
@@ -3015,6 +3088,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Delete a 'when' group.",
                               "method" : "DELETE",
                               "name" : "delete_{$oclass}_group",
@@ -3040,6 +3114,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Directory index.",
                               "method" : "GET",
                               "name" : "index",
@@ -3085,6 +3160,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Get list of 'when' groups.",
                         "method" : "GET",
                         "name" : "list_when_groups",
@@ -3111,6 +3187,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Create a new 'when' group.",
                         "method" : "POST",
                         "name" : "create_when_group",
@@ -3155,6 +3232,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get 'who' group properties",
                                     "method" : "GET",
                                     "name" : "get_config",
@@ -3191,6 +3269,7 @@ var pmgapi = [
                                     }
                                  },
                                  "PUT" : {
+                                    "allowtoken" : 1,
                                     "description" : "Modify 'who' group properties",
                                     "method" : "PUT",
                                     "name" : "set_config",
@@ -3239,6 +3318,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Remove an object from the 'who' group.",
                                           "method" : "DELETE",
                                           "name" : "delete_object",
@@ -3276,6 +3356,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "List 'who' group objects.",
                                     "method" : "GET",
                                     "name" : "objects",
@@ -3324,6 +3405,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'Mail address' object settings.",
                                           "method" : "GET",
                                           "name" : "read_email",
@@ -3359,6 +3441,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'Mail address' object.",
                                           "method" : "PUT",
                                           "name" : "update_email",
@@ -3402,6 +3485,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'Mail address' object.",
                                     "method" : "POST",
                                     "name" : "email",
@@ -3443,6 +3527,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'Domain' object settings.",
                                           "method" : "GET",
                                           "name" : "read_domain",
@@ -3478,6 +3563,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'Domain' object.",
                                           "method" : "PUT",
                                           "name" : "update_domain",
@@ -3521,6 +3607,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'Domain' object.",
                                     "method" : "POST",
                                     "name" : "domain",
@@ -3562,6 +3649,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'Regular Expression' object settings.",
                                           "method" : "GET",
                                           "name" : "read_regex",
@@ -3597,6 +3685,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'Regular Expression' object.",
                                           "method" : "PUT",
                                           "name" : "update_regex",
@@ -3640,6 +3729,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'Regular Expression' object.",
                                     "method" : "POST",
                                     "name" : "regex",
@@ -3681,6 +3771,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'IP Address' object settings.",
                                           "method" : "GET",
                                           "name" : "read_ip",
@@ -3716,6 +3807,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'IP Address' object.",
                                           "method" : "PUT",
                                           "name" : "update_ip",
@@ -3759,6 +3851,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'IP Address' object.",
                                     "method" : "POST",
                                     "name" : "ip",
@@ -3800,6 +3893,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'IP Network' object settings.",
                                           "method" : "GET",
                                           "name" : "read_network",
@@ -3835,6 +3929,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'IP Network' object.",
                                           "method" : "PUT",
                                           "name" : "update_network",
@@ -3878,6 +3973,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'IP Network' object.",
                                     "method" : "POST",
                                     "name" : "network",
@@ -3919,6 +4015,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'LDAP Group' object settings.",
                                           "method" : "GET",
                                           "name" : "read_ldap",
@@ -3954,6 +4051,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'LDAP Group' object.",
                                           "method" : "PUT",
                                           "name" : "update_ldap",
@@ -4015,6 +4113,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'LDAP Group' object.",
                                     "method" : "POST",
                                     "name" : "ldap",
@@ -4074,6 +4173,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Read 'LDAP User' object settings.",
                                           "method" : "GET",
                                           "name" : "read_ldapuser",
@@ -4109,6 +4209,7 @@ var pmgapi = [
                                           }
                                        },
                                        "PUT" : {
+                                          "allowtoken" : 1,
                                           "description" : "Update 'LDAP User' object.",
                                           "method" : "PUT",
                                           "name" : "update_ldapuser",
@@ -4159,6 +4260,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Add 'LDAP User' object.",
                                     "method" : "POST",
                                     "name" : "ldapuser",
@@ -4205,6 +4307,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Delete a 'who' group.",
                               "method" : "DELETE",
                               "name" : "delete_{$oclass}_group",
@@ -4230,6 +4333,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Directory index.",
                               "method" : "GET",
                               "name" : "index",
@@ -4275,6 +4379,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Get list of 'who' groups.",
                         "method" : "GET",
                         "name" : "list_who_groups",
@@ -4301,6 +4406,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Create a new 'who' group.",
                         "method" : "POST",
                         "name" : "create_who_group",
@@ -4341,6 +4447,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Directory index.",
                   "method" : "GET",
                   "name" : "index",
@@ -4368,6 +4475,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Reset PMG rule database back to factory defaults.",
                   "method" : "POST",
                   "name" : "reset_ruledb",
@@ -4396,6 +4504,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Remove an object from the SMTP whitelist.",
                               "method" : "DELETE",
                               "name" : "delete_object",
@@ -4428,6 +4537,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Get list of all SMTP whitelist entries.",
                         "method" : "GET",
                         "name" : "objects",
@@ -4469,6 +4579,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read 'Mail address' object settings.",
                               "method" : "GET",
                               "name" : "read_email",
@@ -4499,6 +4610,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update 'Mail address' object.",
                               "method" : "PUT",
                               "name" : "update_email",
@@ -4537,6 +4649,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add 'Mail address' object.",
                         "method" : "POST",
                         "name" : "email",
@@ -4573,6 +4686,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read 'Mail address' object settings.",
                               "method" : "GET",
                               "name" : "read_receiver",
@@ -4603,6 +4717,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update 'Mail address' object.",
                               "method" : "PUT",
                               "name" : "update_receiver",
@@ -4641,6 +4756,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add 'Mail address' object.",
                         "method" : "POST",
                         "name" : "receiver",
@@ -4677,6 +4793,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read 'Domain' object settings.",
                               "method" : "GET",
                               "name" : "read_domain",
@@ -4707,6 +4824,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update 'Domain' object.",
                               "method" : "PUT",
                               "name" : "update_domain",
@@ -4745,6 +4863,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add 'Domain' object.",
                         "method" : "POST",
                         "name" : "domain",
@@ -4781,6 +4900,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read 'Domain' object settings.",
                               "method" : "GET",
                               "name" : "read_receiver_domain",
@@ -4811,6 +4931,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update 'Domain' object.",
                               "method" : "PUT",
                               "name" : "update_receiver_domain",
@@ -4849,6 +4970,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add 'Domain' object.",
                         "method" : "POST",
                         "name" : "receiver_domain",
@@ -4885,6 +5007,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read 'Regular Expression' object settings.",
                               "method" : "GET",
                               "name" : "read_regex",
@@ -4915,6 +5038,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update 'Regular Expression' object.",
                               "method" : "PUT",
                               "name" : "update_regex",
@@ -4953,6 +5077,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add 'Regular Expression' object.",
                         "method" : "POST",
                         "name" : "regex",
@@ -4989,6 +5114,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read 'Regular Expression' object settings.",
                               "method" : "GET",
                               "name" : "read_receiver_regex",
@@ -5019,6 +5145,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update 'Regular Expression' object.",
                               "method" : "PUT",
                               "name" : "update_receiver_regex",
@@ -5057,6 +5184,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add 'Regular Expression' object.",
                         "method" : "POST",
                         "name" : "receiver_regex",
@@ -5093,6 +5221,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read 'IP Address' object settings.",
                               "method" : "GET",
                               "name" : "read_ip",
@@ -5123,6 +5252,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update 'IP Address' object.",
                               "method" : "PUT",
                               "name" : "update_ip",
@@ -5161,6 +5291,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add 'IP Address' object.",
                         "method" : "POST",
                         "name" : "ip",
@@ -5197,6 +5328,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read 'IP Network' object settings.",
                               "method" : "GET",
                               "name" : "read_network",
@@ -5227,6 +5359,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update 'IP Network' object.",
                               "method" : "PUT",
                               "name" : "update_network",
@@ -5265,6 +5398,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add 'IP Network' object.",
                         "method" : "POST",
                         "name" : "network",
@@ -5299,6 +5433,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Directory index.",
                   "method" : "GET",
                   "name" : "index",
@@ -5341,6 +5476,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Get LDAP profile configuration.",
                               "method" : "GET",
                               "name" : "read_config",
@@ -5365,6 +5501,7 @@ var pmgapi = [
                               "returns" : {}
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update LDAP profile settings.",
                               "method" : "PUT",
                               "name" : "update_config",
@@ -5529,6 +5666,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Synchronice LDAP users to local database.",
                               "method" : "POST",
                               "name" : "sync_profile",
@@ -5564,6 +5702,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Get all email addresses for the specified user.",
                                     "method" : "GET",
                                     "name" : "address_list",
@@ -5615,6 +5754,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "List LDAP users.",
                               "method" : "GET",
                               "name" : "profile_list_users",
@@ -5671,6 +5811,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "List LDAP group members.",
                                     "method" : "GET",
                                     "name" : "profile_list_group_members",
@@ -5724,6 +5865,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "List LDAP groups.",
                               "method" : "GET",
                               "name" : "profile_list_groups",
@@ -5775,6 +5917,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete an LDAP profile",
                         "method" : "DELETE",
                         "name" : "delete",
@@ -5801,6 +5944,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Directory index",
                         "method" : "GET",
                         "name" : "profile_index",
@@ -5844,6 +5988,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "List configured LDAP profiles.",
                   "method" : "GET",
                   "name" : "index",
@@ -5905,6 +6050,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Add LDAP profile.",
                   "method" : "POST",
                   "name" : "create",
@@ -6056,6 +6202,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete a relay domain",
                         "method" : "DELETE",
                         "name" : "delete",
@@ -6082,6 +6229,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read Domain data (comment).",
                         "method" : "GET",
                         "name" : "read",
@@ -6116,6 +6264,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Update relay domain data (comment).",
                         "method" : "PUT",
                         "name" : "write",
@@ -6154,6 +6303,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "List relay domains.",
                   "method" : "GET",
                   "name" : "index",
@@ -6189,6 +6339,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Add relay domain.",
                   "method" : "POST",
                   "name" : "create",
@@ -6230,6 +6381,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete a fetchmail configuration entry.",
                         "method" : "DELETE",
                         "name" : "delete",
@@ -6256,6 +6408,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read fetchmail user configuration.",
                         "method" : "GET",
                         "name" : "read",
@@ -6359,6 +6512,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Update fetchmail user configuration.",
                         "method" : "PUT",
                         "name" : "write",
@@ -6468,6 +6622,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "List fetchmail users.",
                   "method" : "GET",
                   "name" : "index",
@@ -6572,6 +6727,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Create fetchmail user configuration.",
                   "method" : "POST",
                   "name" : "create",
@@ -6675,6 +6831,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete a transport map entry",
                         "method" : "DELETE",
                         "name" : "delete",
@@ -6701,6 +6858,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read transport map entry.",
                         "method" : "GET",
                         "name" : "read",
@@ -6736,6 +6894,9 @@ var pmgapi = [
                               "port" : {
                                  "type" : "integer"
                               },
+                              "protocol" : {
+                                 "type" : "string"
+                              },
                               "use_mx" : {
                                  "type" : "boolean"
                               }
@@ -6744,6 +6905,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Update transport map entry.",
                         "method" : "PUT",
                         "name" : "write",
@@ -6770,15 +6932,25 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               },
                               "port" : {
-                                 "description" : "SMTP port.",
+                                 "description" : "Transport port.",
                                  "maximum" : 65535,
                                  "minimum" : 1,
                                  "optional" : 1,
                                  "type" : "integer",
                                  "typetext" : "<integer> (1 - 65535)"
                               },
+                              "protocol" : {
+                                 "default" : "smtp",
+                                 "description" : "Transport protocol.",
+                                 "enum" : [
+                                    "smtp",
+                                    "lmtp"
+                                 ],
+                                 "optional" : 1,
+                                 "type" : "string"
+                              },
                               "use_mx" : {
-                                 "description" : "Enable MX lookups.",
+                                 "description" : "Enable MX lookups (SMTP).",
                                  "optional" : 1,
                                  "type" : "boolean",
                                  "typetext" : "<boolean>"
@@ -6804,6 +6976,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "List transport map entries.",
                   "method" : "GET",
                   "name" : "index",
@@ -6832,6 +7005,9 @@ var pmgapi = [
                            "port" : {
                               "type" : "integer"
                            },
+                           "protocol" : {
+                              "type" : "string"
+                           },
                            "use_mx" : {
                               "type" : "boolean"
                            }
@@ -6848,6 +7024,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Add transport map entry.",
                   "method" : "POST",
                   "name" : "create",
@@ -6874,16 +7051,26 @@ var pmgapi = [
                         },
                         "port" : {
                            "default" : 25,
-                           "description" : "SMTP port.",
+                           "description" : "Transport port.",
                            "maximum" : 65535,
                            "minimum" : 1,
                            "optional" : 1,
                            "type" : "integer",
                            "typetext" : "<integer> (1 - 65535)"
                         },
+                        "protocol" : {
+                           "default" : "smtp",
+                           "description" : "Transport protocol.",
+                           "enum" : [
+                              "smtp",
+                              "lmtp"
+                           ],
+                           "optional" : 1,
+                           "type" : "string"
+                        },
                         "use_mx" : {
                            "default" : 1,
-                           "description" : "Enable MX lookups.",
+                           "description" : "Enable MX lookups (SMTP).",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -6911,6 +7098,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete a truster network",
                         "method" : "DELETE",
                         "name" : "delete",
@@ -6937,6 +7125,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read trusted network data (comment).",
                         "method" : "GET",
                         "name" : "read",
@@ -6971,6 +7160,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Update trusted data (comment).",
                         "method" : "PUT",
                         "name" : "write",
@@ -7008,6 +7198,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "List of trusted networks from where SMTP clients are allowed to relay mail through Proxmox Mail Gateway.",
                   "method" : "GET",
                   "name" : "index",
@@ -7040,6 +7231,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Add a trusted network.",
                   "method" : "POST",
                   "name" : "create",
@@ -7081,6 +7273,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Cluster node index.",
                         "method" : "GET",
                         "name" : "nodes",
@@ -7125,6 +7318,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add an node to the cluster config.",
                         "method" : "POST",
                         "name" : "add_node",
@@ -7196,6 +7390,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Cluster node status.",
                         "method" : "GET",
                         "name" : "status",
@@ -7262,6 +7457,7 @@ var pmgapi = [
                {
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Create initial cluster config with current node as master.",
                         "method" : "POST",
                         "name" : "create",
@@ -7281,6 +7477,7 @@ var pmgapi = [
                {
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Join local node to an existing cluster.",
                         "method" : "POST",
                         "name" : "join",
@@ -7319,6 +7516,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Directory index.",
                   "method" : "GET",
                   "name" : "index",
@@ -7350,6 +7548,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get Mime Types List",
                   "method" : "GET",
                   "name" : "index",
@@ -7381,6 +7580,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete a tls_policy entry",
                         "method" : "DELETE",
                         "name" : "delete",
@@ -7407,6 +7607,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read tls_policy entry.",
                         "method" : "GET",
                         "name" : "read",
@@ -7443,6 +7644,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Update tls_policy entry.",
                         "method" : "PUT",
                         "name" : "write",
@@ -7482,6 +7684,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "List tls_policy entries.",
                   "method" : "GET",
                   "name" : "index",
@@ -7519,6 +7722,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Add tls_policy entry.",
                   "method" : "POST",
                   "name" : "create",
@@ -7562,6 +7766,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Delete a DKIM-sign domain",
                               "method" : "DELETE",
                               "name" : "delete",
@@ -7588,6 +7793,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read Domain data (comment).",
                               "method" : "GET",
                               "name" : "read",
@@ -7622,6 +7828,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update DKIM-sign domain data (comment).",
                               "method" : "PUT",
                               "name" : "write",
@@ -7660,6 +7867,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "List DKIM-sign domains.",
                         "method" : "GET",
                         "name" : "index",
@@ -7695,6 +7903,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Add DKIM-sign domain.",
                         "method" : "POST",
                         "name" : "create",
@@ -7734,6 +7943,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Get the public key for the configured selector, prepared as DKIM TXT record",
                         "method" : "GET",
                         "name" : "get_selector_info",
@@ -7769,12 +7979,19 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Generate a new private key for selector. All future mail will be signed with the new key!",
                         "method" : "POST",
                         "name" : "set_selector",
                         "parameters" : {
                            "additionalProperties" : 0,
                            "properties" : {
+                              "force" : {
+                                 "description" : "Overwrite existing key",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
                               "keysize" : {
                                  "description" : "Number of bits for the RSA-Key",
                                  "minimum" : 1024,
@@ -7804,10 +8021,52 @@ var pmgapi = [
                   "leaf" : 1,
                   "path" : "/config/dkim/selector",
                   "text" : "selector"
+               },
+               {
+                  "info" : {
+                     "GET" : {
+                        "allowtoken" : 1,
+                        "description" : "Get a list of all existing selectors",
+                        "method" : "GET",
+                        "name" : "get_selector_list",
+                        "parameters" : {
+                           "additionalProperties" : 0
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "items" : {
+                              "properties" : {
+                                 "selector" : {
+                                    "format" : "dns-name",
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{selector}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/dkim/selectors",
+                  "text" : "selectors"
                }
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Directory index.",
                   "method" : "GET",
                   "name" : "index",
@@ -7842,6 +8101,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Edit custom SpamAssassin score",
                         "method" : "DELETE",
                         "name" : "delete_score",
@@ -7869,6 +8129,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Get custom SpamAssassin score",
                         "method" : "GET",
                         "name" : "get_score",
@@ -7905,6 +8166,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Edit custom SpamAssassin score",
                         "method" : "PUT",
                         "name" : "edit_score",
@@ -7950,6 +8212,7 @@ var pmgapi = [
             ],
             "info" : {
                "DELETE" : {
+                  "allowtoken" : 1,
                   "description" : "Revert custom score changes.",
                   "method" : "DELETE",
                   "name" : "revert_score_changes",
@@ -7968,6 +8231,7 @@ var pmgapi = [
                   }
                },
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "List custom scores.",
                   "method" : "GET",
                   "name" : "list_scores",
@@ -8019,6 +8283,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Create custom SpamAssassin score",
                   "method" : "POST",
                   "name" : "create_score",
@@ -8057,6 +8322,7 @@ var pmgapi = [
                   }
                },
                "PUT" : {
+                  "allowtoken" : 1,
                   "description" : "Apply custom score changes.",
                   "method" : "PUT",
                   "name" : "apply_score_changes",
@@ -8098,6 +8364,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Read admin configuration properties.",
                   "method" : "GET",
                   "name" : "read_admin_section",
@@ -8116,6 +8383,7 @@ var pmgapi = [
                   }
                },
                "PUT" : {
+                  "allowtoken" : 1,
                   "description" : "Update admin configuration properties.",
                   "method" : "PUT",
                   "name" : "update_admin_section",
@@ -8251,6 +8519,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Read clamav configuration properties.",
                   "method" : "GET",
                   "name" : "read_clamav_section",
@@ -8269,6 +8538,7 @@ var pmgapi = [
                   }
                },
                "PUT" : {
+                  "allowtoken" : 1,
                   "description" : "Update clamav configuration properties.",
                   "method" : "PUT",
                   "name" : "update_clamav_section",
@@ -8373,6 +8643,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Read mail configuration properties.",
                   "method" : "GET",
                   "name" : "read_mail_section",
@@ -8391,6 +8662,7 @@ var pmgapi = [
                   }
                },
                "PUT" : {
+                  "allowtoken" : 1,
                   "description" : "Update mail configuration properties.",
                   "method" : "PUT",
                   "name" : "update_mail_section",
@@ -8587,19 +8859,29 @@ var pmgapi = [
                         },
                         "relaynomx" : {
                            "default" : 0,
-                           "description" : "Disable MX lookups for default relay.",
+                           "description" : "Disable MX lookups for default relay (SMTP only, ignored for LMTP).",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
                         },
                         "relayport" : {
                            "default" : 25,
-                           "description" : "SMTP port number for relay host.",
+                           "description" : "SMTP/LMTP port number for relay host.",
                            "maximum" : 65535,
                            "minimum" : 1,
                            "optional" : 1,
                            "type" : "integer",
                            "typetext" : "<integer> (1 - 65535)"
+                        },
+                        "relayprotocol" : {
+                           "default" : "smtp",
+                           "description" : "Transport protocol for relay host.",
+                           "enum" : [
+                              "smtp",
+                              "lmtp"
+                           ],
+                           "optional" : 1,
+                           "type" : "string"
                         },
                         "smarthost" : {
                            "description" : "When set, all outgoing mails are deliverd to the specified smarthost.",
@@ -8676,6 +8958,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Read spam configuration properties.",
                   "method" : "GET",
                   "name" : "read_spam_section",
@@ -8694,6 +8977,7 @@ var pmgapi = [
                   }
                },
                "PUT" : {
+                  "allowtoken" : 1,
                   "description" : "Update spam configuration properties.",
                   "method" : "PUT",
                   "name" : "update_spam_section",
@@ -8804,6 +9088,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Read spamquar configuration properties.",
                   "method" : "GET",
                   "name" : "read_spamquar_section",
@@ -8822,6 +9107,7 @@ var pmgapi = [
                   }
                },
                "PUT" : {
+                  "allowtoken" : 1,
                   "description" : "Update spamquar configuration properties.",
                   "method" : "PUT",
                   "name" : "update_spamquar_section",
@@ -8942,6 +9228,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Read virusquar configuration properties.",
                   "method" : "GET",
                   "name" : "read_virusquar_section",
@@ -8960,6 +9247,7 @@ var pmgapi = [
                   }
                },
                "PUT" : {
+                  "allowtoken" : 1,
                   "description" : "Update virusquar configuration properties.",
                   "method" : "PUT",
                   "name" : "update_virusquar_section",
@@ -9025,6 +9313,7 @@ var pmgapi = [
          {
             "info" : {
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Test Regex",
                   "method" : "POST",
                   "name" : "regextest",
@@ -9065,6 +9354,7 @@ var pmgapi = [
       ],
       "info" : {
          "GET" : {
+            "allowtoken" : 1,
             "description" : "Directory index.",
             "method" : "GET",
             "name" : "index",
@@ -9103,6 +9393,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Print Postfix queue domain and age distribution.",
                               "method" : "GET",
                               "name" : "qshape",
@@ -9157,6 +9448,7 @@ var pmgapi = [
                                  {
                                     "info" : {
                                        "DELETE" : {
+                                          "allowtoken" : 1,
                                           "description" : "Delete one message with the named queue ID.",
                                           "method" : "DELETE",
                                           "name" : "delete_queued_mail",
@@ -9200,6 +9492,7 @@ var pmgapi = [
                                           }
                                        },
                                        "GET" : {
+                                          "allowtoken" : 1,
                                           "description" : "Get the contents of a queued mail.",
                                           "method" : "GET",
                                           "name" : "read_queued_mail",
@@ -9257,6 +9550,7 @@ var pmgapi = [
                                           }
                                        },
                                        "POST" : {
+                                          "allowtoken" : 1,
                                           "description" : "Schedule immediate delivery of deferred mail with the specified queue ID.",
                                           "method" : "POST",
                                           "name" : "flush_queued_mail",
@@ -9307,6 +9601,7 @@ var pmgapi = [
                               ],
                               "info" : {
                                  "DELETE" : {
+                                    "allowtoken" : 1,
                                     "description" : "Delete all mails in the queue.",
                                     "method" : "DELETE",
                                     "name" : "delete_queue",
@@ -9343,6 +9638,7 @@ var pmgapi = [
                                     }
                                  },
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "List the mail queue for a specific domain.",
                                     "method" : "GET",
                                     "name" : "mailq",
@@ -9416,6 +9712,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Delete all mails in all posfix queues.",
                               "method" : "DELETE",
                               "name" : "delete_all_queues",
@@ -9442,6 +9739,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Directory index.",
                               "method" : "GET",
                               "name" : "queue_index",
@@ -9481,6 +9779,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Flush the queue: attempt to deliver all queued mail.",
                               "method" : "POST",
                               "name" : "flush_queues",
@@ -9514,6 +9813,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Discards the address verification cache.",
                               "method" : "POST",
                               "name" : "discard_verify_cache",
@@ -9547,6 +9847,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Directory index.",
                         "method" : "GET",
                         "name" : "index",
@@ -9588,6 +9889,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "ClamAV virus database status.",
                               "method" : "GET",
                               "name" : "database_status",
@@ -9632,6 +9934,7 @@ var pmgapi = [
                               }
                            },
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Update ClamAV virus databases.",
                               "method" : "POST",
                               "name" : "update_database",
@@ -9665,6 +9968,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Directory index.",
                         "method" : "GET",
                         "name" : "index",
@@ -9709,6 +10013,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "SpamAssassin rules status.",
                               "method" : "GET",
                               "name" : "rules_status",
@@ -9758,6 +10063,7 @@ var pmgapi = [
                               }
                            },
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Update SpamAssassin rules.",
                               "method" : "POST",
                               "name" : "update_rules",
@@ -9791,6 +10097,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Directory index.",
                         "method" : "GET",
                         "name" : "index",
@@ -9835,6 +10142,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Delete network device configuration",
                               "method" : "DELETE",
                               "name" : "delete_network",
@@ -9864,6 +10172,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Read network device configuration",
                               "method" : "GET",
                               "name" : "network_config",
@@ -9906,6 +10215,7 @@ var pmgapi = [
                               }
                            },
                            "PUT" : {
+                              "allowtoken" : 1,
                               "description" : "Update network device configuration",
                               "method" : "PUT",
                               "name" : "update_network",
@@ -9933,6 +10243,13 @@ var pmgapi = [
                                        "optional" : 1,
                                        "type" : "boolean",
                                        "typetext" : "<boolean>"
+                                    },
+                                    "bond-primary" : {
+                                       "description" : "Specify the primary interface for active-backup bond.",
+                                       "format" : "pve-iface",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
                                     },
                                     "bond_mode" : {
                                        "description" : "Bonding mode.",
@@ -10029,6 +10346,14 @@ var pmgapi = [
                                        "type" : "string",
                                        "typetext" : "<string>"
                                     },
+                                    "mtu" : {
+                                       "description" : "MTU.",
+                                       "maximum" : 65520,
+                                       "minimum" : 1280,
+                                       "optional" : 1,
+                                       "type" : "integer",
+                                       "typetext" : "<integer> (1280 - 65520)"
+                                    },
                                     "netmask" : {
                                        "description" : "Network mask.",
                                        "format" : "ipv4mask",
@@ -10110,6 +10435,21 @@ var pmgapi = [
                                           "unknown"
                                        ],
                                        "type" : "string"
+                                    },
+                                    "vlan-id" : {
+                                       "description" : "vlan-id for a custom named vlan interface (ifupdown2 only).",
+                                       "maximum" : 4094,
+                                       "minimum" : 1,
+                                       "optional" : 1,
+                                       "type" : "integer",
+                                       "typetext" : "<integer> (1 - 4094)"
+                                    },
+                                    "vlan-raw-device" : {
+                                       "description" : "Specify the raw interface for the vlan interface.",
+                                       "format" : "pve-iface",
+                                       "optional" : 1,
+                                       "type" : "string",
+                                       "typetext" : "<string>"
                                     }
                                  }
                               },
@@ -10127,6 +10467,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Revert network configuration changes.",
                         "method" : "DELETE",
                         "name" : "revert_network_changes",
@@ -10148,6 +10489,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "List available networks",
                         "method" : "GET",
                         "name" : "index",
@@ -10201,6 +10543,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Create network device configuration",
                         "method" : "POST",
                         "name" : "create_network",
@@ -10228,6 +10571,13 @@ var pmgapi = [
                                  "optional" : 1,
                                  "type" : "boolean",
                                  "typetext" : "<boolean>"
+                              },
+                              "bond-primary" : {
+                                 "description" : "Specify the primary interface for active-backup bond.",
+                                 "format" : "pve-iface",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
                               },
                               "bond_mode" : {
                                  "description" : "Bonding mode.",
@@ -10317,6 +10667,14 @@ var pmgapi = [
                                  "type" : "string",
                                  "typetext" : "<string>"
                               },
+                              "mtu" : {
+                                 "description" : "MTU.",
+                                 "maximum" : 65520,
+                                 "minimum" : 1280,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1280 - 65520)"
+                              },
                               "netmask" : {
                                  "description" : "Network mask.",
                                  "format" : "ipv4mask",
@@ -10398,6 +10756,21 @@ var pmgapi = [
                                     "unknown"
                                  ],
                                  "type" : "string"
+                              },
+                              "vlan-id" : {
+                                 "description" : "vlan-id for a custom named vlan interface (ifupdown2 only).",
+                                 "maximum" : 4094,
+                                 "minimum" : 1,
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<integer> (1 - 4094)"
+                              },
+                              "vlan-raw-device" : {
+                                 "description" : "Specify the raw interface for the vlan interface.",
+                                 "format" : "pve-iface",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
                               }
                            }
                         },
@@ -10419,6 +10792,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Read task log.",
                                     "method" : "GET",
                                     "name" : "read_task_log",
@@ -10482,6 +10856,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Read task status.",
                                     "method" : "GET",
                                     "name" : "read_task_status",
@@ -10532,6 +10907,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Stop a task.",
                               "method" : "DELETE",
                               "name" : "stop_task",
@@ -10562,6 +10938,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "",
                               "method" : "GET",
                               "name" : "upid_index",
@@ -10608,6 +10985,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read task list for one node (finished tasks).",
                         "method" : "GET",
                         "name" : "node_tasks",
@@ -10681,6 +11059,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "GET" : {
+                                    "allowtoken" : 1,
                                     "description" : "Read service properties",
                                     "method" : "GET",
                                     "name" : "service_state",
@@ -10739,6 +11118,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Start service.",
                                     "method" : "POST",
                                     "name" : "service_start",
@@ -10796,6 +11176,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Stop service.",
                                     "method" : "POST",
                                     "name" : "service_stop",
@@ -10853,6 +11234,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Restart service.",
                                     "method" : "POST",
                                     "name" : "service_restart",
@@ -10910,6 +11292,7 @@ var pmgapi = [
                            {
                               "info" : {
                                  "POST" : {
+                                    "allowtoken" : 1,
                                     "description" : "Reload service.",
                                     "method" : "POST",
                                     "name" : "service_reload",
@@ -10967,6 +11350,7 @@ var pmgapi = [
                         ],
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Directory index",
                               "method" : "GET",
                               "name" : "srvcmdidx",
@@ -11037,6 +11421,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Service list.",
                         "method" : "GET",
                         "name" : "index",
@@ -11081,6 +11466,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read subscription info.",
                         "method" : "GET",
                         "name" : "get",
@@ -11109,6 +11495,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Update subscription info.",
                         "method" : "POST",
                         "name" : "update",
@@ -11142,6 +11529,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Set subscription key.",
                         "method" : "PUT",
                         "name" : "set",
@@ -11178,6 +11566,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "List available updates.",
                               "method" : "GET",
                               "name" : "list_updates",
@@ -11209,6 +11598,7 @@ var pmgapi = [
                               }
                            },
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "This is used to resynchronize the package index files from their sources (apt-get update).",
                               "method" : "POST",
                               "name" : "update_database",
@@ -11256,6 +11646,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Get package changelogs.",
                               "method" : "GET",
                               "name" : "changelog",
@@ -11300,6 +11691,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Get package information for important Proxmox packages.",
                               "method" : "GET",
                               "name" : "versions",
@@ -11337,6 +11729,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Directory index for apt (Advanced Package Tool).",
                         "method" : "GET",
                         "name" : "index",
@@ -11382,6 +11775,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Get the detailed syslog entries for a specific mail ID.",
                               "method" : "GET",
                               "name" : "maillog",
@@ -11499,6 +11893,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read mail list.",
                         "method" : "GET",
                         "name" : "list_mails",
@@ -11652,6 +12047,7 @@ var pmgapi = [
                      {
                         "info" : {
                            "DELETE" : {
+                              "allowtoken" : 1,
                               "description" : "Delete a backup file.",
                               "method" : "DELETE",
                               "name" : "delete",
@@ -11685,6 +12081,7 @@ var pmgapi = [
                               }
                            },
                            "GET" : {
+                              "allowtoken" : 1,
                               "description" : "Download a backup file.",
                               "download" : 1,
                               "method" : "GET",
@@ -11719,6 +12116,7 @@ var pmgapi = [
                               }
                            },
                            "POST" : {
+                              "allowtoken" : 1,
                               "description" : "Restore the system configuration.",
                               "method" : "POST",
                               "name" : "restore",
@@ -11780,6 +12178,7 @@ var pmgapi = [
                   ],
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "List all stored backups (files named proxmox-backup_{DATE}.tgz).",
                         "method" : "GET",
                         "name" : "list",
@@ -11833,6 +12232,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Backup the system configuration.",
                         "method" : "POST",
                         "name" : "backup",
@@ -11873,6 +12273,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Gather various system information about a node",
                         "method" : "GET",
                         "name" : "report",
@@ -11907,6 +12308,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read node RRD statistics",
                         "method" : "GET",
                         "name" : "rrddata",
@@ -11965,6 +12367,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read system log",
                         "method" : "GET",
                         "name" : "syslog",
@@ -12043,6 +12446,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read Journal",
                         "method" : "GET",
                         "name" : "journal",
@@ -12113,6 +12517,7 @@ var pmgapi = [
                {
                   "info" : {
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Creates a Terminal proxy.",
                         "method" : "POST",
                         "name" : "termproxy",
@@ -12166,6 +12571,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Opens a weksocket for VNC traffic.",
                         "method" : "GET",
                         "name" : "vncwebsocket",
@@ -12215,6 +12621,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read DNS settings.",
                         "method" : "GET",
                         "name" : "dns",
@@ -12264,6 +12671,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Write DNS settings.",
                         "method" : "PUT",
                         "name" : "update_dns",
@@ -12318,6 +12726,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read server time and time zone settings.",
                         "method" : "GET",
                         "name" : "time",
@@ -12361,6 +12770,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Set time zone.",
                         "method" : "PUT",
                         "name" : "set_timezone",
@@ -12394,6 +12804,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read server status. This is used by the cluster manager to test the node health.",
                         "method" : "GET",
                         "name" : "status",
@@ -12439,6 +12850,7 @@ var pmgapi = [
                         }
                      },
                      "POST" : {
+                        "allowtoken" : 1,
                         "description" : "Reboot or shutdown a node.",
                         "method" : "POST",
                         "name" : "node_cmd",
@@ -12480,6 +12892,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Node index.",
                   "method" : "GET",
                   "name" : "index",
@@ -12519,6 +12932,7 @@ var pmgapi = [
       ],
       "info" : {
          "GET" : {
+            "allowtoken" : 1,
             "description" : "Cluster node index.",
             "method" : "GET",
             "name" : "index",
@@ -12554,6 +12968,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete a user.",
                         "method" : "DELETE",
                         "name" : "delete",
@@ -12577,6 +12992,7 @@ var pmgapi = [
                         }
                      },
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Read User data.",
                         "method" : "GET",
                         "name" : "read",
@@ -12607,6 +13023,7 @@ var pmgapi = [
                         }
                      },
                      "PUT" : {
+                        "allowtoken" : 1,
                         "description" : "Update user data.",
                         "method" : "PUT",
                         "name" : "write",
@@ -12720,6 +13137,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "List users.",
                   "method" : "GET",
                   "name" : "index",
@@ -12764,6 +13182,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Create new user",
                   "method" : "POST",
                   "name" : "create",
@@ -12868,6 +13287,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Dummy. Useful for formaters which want to priovde a login page.",
                   "method" : "GET",
                   "name" : "get_ticket",
@@ -12882,6 +13302,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Create or verify authentication ticket.",
                   "method" : "POST",
                   "name" : "create_ticket",
@@ -12959,6 +13380,7 @@ var pmgapi = [
          {
             "info" : {
                "PUT" : {
+                  "allowtoken" : 1,
                   "description" : "Change user password.",
                   "method" : "PUT",
                   "name" : "change_passsword",
@@ -12999,6 +13421,7 @@ var pmgapi = [
       ],
       "info" : {
          "GET" : {
+            "allowtoken" : 1,
             "description" : "Directory index.",
             "method" : "GET",
             "name" : "index",
@@ -13038,6 +13461,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete user whitelist entries.",
                         "method" : "DELETE",
                         "name" : "whitelist_delete",
@@ -13081,6 +13505,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Show user whitelist.",
                   "method" : "GET",
                   "name" : "whitelist",
@@ -13118,6 +13543,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Add user whitelist entries.",
                   "method" : "POST",
                   "name" : "whitelist_add",
@@ -13163,6 +13589,7 @@ var pmgapi = [
                {
                   "info" : {
                      "DELETE" : {
+                        "allowtoken" : 1,
                         "description" : "Delete user blacklist entries.",
                         "method" : "DELETE",
                         "name" : "blacklist_delete",
@@ -13206,6 +13633,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Show user blacklist.",
                   "method" : "GET",
                   "name" : "blacklist",
@@ -13243,6 +13671,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Add user blacklist entries.",
                   "method" : "POST",
                   "name" : "blacklist_add",
@@ -13286,6 +13715,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get a list of receivers of spam in the given timespan (Default the last 24 hours).",
                   "method" : "GET",
                   "name" : "spamusers",
@@ -13336,6 +13766,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get Spam Quarantine Status",
                   "method" : "GET",
                   "name" : "spamstatus",
@@ -13379,6 +13810,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get a list of users with whitelist/blacklist setttings.",
                   "method" : "GET",
                   "name" : "quarusers",
@@ -13424,6 +13856,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get a list of quarantined spam mails in the given timeframe (default the last 24 hours) for the given user.",
                   "method" : "GET",
                   "name" : "spam",
@@ -13516,6 +13949,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get a list of quarantined virus mails in the given timeframe (default the last 24 hours).",
                   "method" : "GET",
                   "name" : "virus",
@@ -13599,6 +14033,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get a list of quarantined attachment mails in the given timeframe (default the last 24 hours).",
                   "method" : "GET",
                   "name" : "attachment",
@@ -13678,6 +14113,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get Virus Quarantine Status",
                   "method" : "GET",
                   "name" : "virusstatus",
@@ -13717,6 +14153,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get email data. There is a special formatter called 'htmlmail' to get sanitized html view of the mail content (use the '/api2/htmlmail/quarantine/content' url).",
                   "method" : "GET",
                   "name" : "content",
@@ -13802,6 +14239,7 @@ var pmgapi = [
                   }
                },
                "POST" : {
+                  "allowtoken" : 1,
                   "description" : "Execute quarantine actions.",
                   "method" : "POST",
                   "name" : "action",
@@ -13845,6 +14283,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get Attachments for E-Mail in Quarantine.",
                   "method" : "GET",
                   "name" : "listattachments",
@@ -13899,6 +14338,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Download E-Mail or Attachment from Quarantine.",
                   "download" : 1,
                   "method" : "GET",
@@ -13940,6 +14380,7 @@ var pmgapi = [
       ],
       "info" : {
          "GET" : {
+            "allowtoken" : 1,
             "description" : "Directory index.",
             "method" : "GET",
             "name" : "index",
@@ -13975,6 +14416,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Detailed Contact Statistics.",
                         "method" : "GET",
                         "name" : "contactdetails",
@@ -14091,6 +14533,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Contact Address Statistics.",
                   "method" : "GET",
                   "name" : "contact",
@@ -14201,6 +14644,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Detailed Sender Statistics.",
                         "method" : "GET",
                         "name" : "senderdetails",
@@ -14317,6 +14761,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Sender Address Statistics.",
                   "method" : "GET",
                   "name" : "sender",
@@ -14427,6 +14872,7 @@ var pmgapi = [
                {
                   "info" : {
                      "GET" : {
+                        "allowtoken" : 1,
                         "description" : "Detailed Receiver Statistics.",
                         "method" : "GET",
                         "name" : "receiverdetails",
@@ -14543,6 +14989,7 @@ var pmgapi = [
             ],
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Receiver Address Statistics.",
                   "method" : "GET",
                   "name" : "receiver",
@@ -14656,6 +15103,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Mail Domains Statistics.",
                   "method" : "GET",
                   "name" : "domains",
@@ -14762,6 +15210,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "General Mail Statistics.",
                   "method" : "GET",
                   "name" : "mail",
@@ -14901,6 +15350,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Mail Count Statistics.",
                   "method" : "GET",
                   "name" : "recent",
@@ -15003,6 +15453,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Top recent Mail Receivers (including spam)",
                   "method" : "GET",
                   "name" : "recentreceivers",
@@ -15061,6 +15512,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Mail Count Statistics.",
                   "method" : "GET",
                   "name" : "mailcount",
@@ -15192,6 +15644,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get Statistics about detected Viruses.",
                   "method" : "GET",
                   "name" : "virus",
@@ -15270,6 +15723,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get the count of spam mails grouped by spam score. Count for score 10 includes mails with spam score > 10.",
                   "method" : "GET",
                   "name" : "spamscores",
@@ -15352,6 +15806,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Get the count of spam mails grouped by spam score. Count for score 10 includes mails with spam score > 10.",
                   "method" : "GET",
                   "name" : "maildistribution",
@@ -15462,6 +15917,7 @@ var pmgapi = [
          {
             "info" : {
                "GET" : {
+                  "allowtoken" : 1,
                   "description" : "Early SMTP reject count statistic (RBL, PREGREET rejects with postscreen)",
                   "method" : "GET",
                   "name" : "rejectcount",
@@ -15557,6 +16013,7 @@ var pmgapi = [
       ],
       "info" : {
          "GET" : {
+            "allowtoken" : 1,
             "description" : "Directory index.",
             "method" : "GET",
             "name" : "index",
@@ -15592,6 +16049,7 @@ var pmgapi = [
    {
       "info" : {
          "GET" : {
+            "allowtoken" : 1,
             "description" : "API version details.",
             "method" : "GET",
             "name" : "version",

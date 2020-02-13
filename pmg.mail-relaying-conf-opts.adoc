@@ -4,14 +4,13 @@ The default mail delivery transport (incoming mails).
 
 `relaynomx`: `<boolean>` ('default =' `0`)::
 
-Disable MX lookups for default smtp relay.
-Will be ignored when choosing lmtp as transport protocol.
+Disable MX lookups for default relay (SMTP only, ignored for LMTP).
 
 `relayport`: `<integer> (1 - 65535)` ('default =' `25`)::
 
 SMTP/LMTP port number for relay host.
 
-`relayprotocol`: `<smtp | lmtp>` ('default =' `smtp`)::
+`relayprotocol`: `<lmtp | smtp>` ('default =' `smtp`)::
 
 Transport protocol for relay host.
 
