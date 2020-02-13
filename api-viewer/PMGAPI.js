@@ -1,8 +1,8 @@
 // avoid errors when running without development tools
-if (!Ext.isDefined(Ext.global.console)) {   
-    var console = { 
-        dir: function() {}, 
-        log: function() {} 
+if (!Ext.isDefined(Ext.global.console)) {
+    var console = {
+        dir: function() {},
+        log: function() {}
     };
 }
 
@@ -10,7 +10,7 @@ Ext.onReady(function() {
 
     Ext.define('pmg-param-schema', {
         extend: 'Ext.data.Model',
-        fields:  [ 
+        fields:  [
 	    'name', 'type', 'typetext', 'description', 'verbose_description',
 	    'enum', 'minimum', 'maximum', 'minLength', 'maxLength',
 	    'pattern', 'title', 'requires', 'format', 'default',
@@ -25,7 +25,7 @@ Ext.onReady(function() {
     var store = Ext.create('Ext.data.TreeStore', {
 	model: Ext.define('pmg-api-doc', {
             extend: 'Ext.data.Model',
-            fields:  [ 
+            fields:  [
 		'path', 'info', 'text',
 	    ]
 	}),
@@ -71,10 +71,10 @@ Ext.onReady(function() {
 	if (pdef['enum'])
 	    return pdef['enum'].join(' | ');
 
-	if (pdef.format) 
+	if (pdef.format)
 	    return pdef.format;
 
-	if (pdef.pattern) 
+	if (pdef.pattern)
 	    return Ext.htmlEncode(pdef.pattern);
 
 	return '';
@@ -189,9 +189,9 @@ Ext.onReady(function() {
 
 		if (info.returns) {
 
-                   var retinf = info.returns;
-                   var rtype = retinf.type;
-                   if (!rtype && retinf.items)
+		    var retinf = info.returns;
+		    var rtype = retinf.type;
+		    if (!rtype && retinf.items)
 			rtype = 'array';
 		    if (!rtype)
 			rtype = 'object';
@@ -225,16 +225,16 @@ Ext.onReady(function() {
 		    if (info.permissions.user) {
 			if (!info.permissions.description) {
 			    if (info.permissions.user === 'world') {
-				permhtml += "Accessible without any authententification.";
+				permhtml += "Accessible without any authentication.";
 			    } else if (info.permissions.user === 'all') {
-				permhtml += "Accessible by all authententicated users.";
+				permhtml += "Accessible by all authenticated users.";
 			    } else {
-				permhtml += 'Onyl accessible by user "' + 
+				permhtml += 'Onyl accessible by user "' +
 				    info.permissions.user + '"';
 			    }
 			}
 		    } else if (info.permissions.check) {
-			permhtml += "<pre>Check: " + 
+			permhtml += "<pre>Check: " +
 			    Ext.htmlEncode(Ext.JSON.encode(info.permissions.check))  + "</pre>";
 		    } else {
 			permhtml += "Unknown systax!";
@@ -246,8 +246,8 @@ Ext.onReady(function() {
 		    bodyPadding: 10,
 		    html: permhtml
 		});
-    
-  
+
+
 		items.push({
 		    title: method,
 		    autoScroll: true,
