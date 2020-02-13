@@ -22,26 +22,52 @@ Ext.onReady(function() {
 	]
     });
 
-    var store = Ext.create('Ext.data.TreeStore', {
+    var store = Ext.define('pmg-updated-treestore', {
+	extend: 'Ext.data.TreeStore',
 	model: Ext.define('pmg-api-doc', {
-            extend: 'Ext.data.Model',
-            fields:  [
+	    extend: 'Ext.data.Model',
+	    fields:  [
 		'path', 'info', 'text',
 	    ]
 	}),
-        proxy: {
-            type: 'memory',
-            data: pmgapi
-        },
-        sorters: [{
-            property: 'leaf',
-            direction: 'ASC'
-        }, {
-            property: 'text',
-            direction: 'ASC'
-        }]
-    });
-    
+	proxy: {
+	    type: 'memory',
+	    data: pmgapi
+	},
+	sorters: [{
+	    property: 'leaf',
+	    direction: 'ASC'
+	}, {
+	    property: 'text',
+	    direction: 'ASC'
+	}],
+	filterer: 'bottomup',
+	doFilter: function(node) {
+	    this.filterNodes(node, this.getFilters().getFilterFn(), true);
+	},
+
+	filterNodes: function(node, filterFn, parentVisible) {
+	    var me = this,
+		bottomUpFiltering = me.filterer === 'bottomup',
+		match = filterFn(node) && parentVisible || (node.isRoot() && !me.getRootVisible()),
+		childNodes = node.childNodes,
+		len = childNodes && childNodes.length, i, matchingChildren;
+
+	    if (len) {
+		for (i = 0; i < len; ++i) {
+		    matchingChildren = me.filterNodes(childNodes[i], filterFn, match || bottomUpFiltering) || matchingChildren;
+		}
+		if (bottomUpFiltering) {
+		    match = matchingChildren || match;
+		}
+	    }
+
+	    node.set("visible", match, me._silentOptions);
+	    return match;
+	},
+
+    }).create();
+
     var render_description = function(value, metaData, record) {
 	var pdef = record.data;
 
@@ -196,21 +222,109 @@ Ext.onReady(function() {
 		    if (!rtype)
 			rtype = 'object';
 
-                   var returnhtml;
-                   if (retinf.items) {
-                       returnhtml = '<pre>items: ' + Ext.htmlEncode(JSON.stringify(retinf.items, null, 4)) + '</pre>';
-                   }
+		    var rpstore = Ext.create('Ext.data.Store', {
+			model: 'pmg-param-schema',
+			proxy: {
+			    type: 'memory'
+			},
+			groupField: 'optional',
+			sorters: [
+			    {
+				property: 'name',
+				direction: 'ASC'
+			   }
+			]
+		    });
 
-                   if (retinf.properties) {
-                       returnhtml = returnhtml || '';
-                       returnhtml += '<pre>properties:' + Ext.htmlEncode(JSON.stringify(retinf.properties, null, 4)) + '</pre>';
-                   }
+		    var properties;
+		    if (rtype === 'array' && retinf.items.properties) {
+			properties = retinf.items.properties;
+		    }
 
-		   sections.push({
-		       title: 'Returns: ' + rtype,
-		       bodyPadding: 10,
-		       html: returnhtml
-		   });
+		    if (rtype === 'object' && retinf.properties) {
+			properties = retinf.properties;
+		    }
+
+		    Ext.Object.each(properties, function(name, pdef) {
+			pdef.name = name;
+			rpstore.add(pdef);
+		    });
+
+		    rpstore.sort();
+
+		    var groupingFeature = Ext.create('Ext.grid.feature.Grouping',{
+			enableGroupingMenu: false,
+			groupHeaderTpl: '<tpl if="groupValue">Optional</tpl><tpl if="!groupValue">Obligatory</tpl>'
+		    });
+		    var returnhtml;
+		    if (retinf.items) {
+			returnhtml = '<pre>items: ' + Ext.htmlEncode(JSON.stringify(retinf.items, null, 4)) + '</pre>';
+		    }
+
+		    if (retinf.properties) {
+			returnhtml = returnhtml || '';
+			returnhtml += '<pre>properties:' + Ext.htmlEncode(JSON.stringify(retinf.properties, null, 4)) + '</pre>';
+		    }
+
+		    var rawSection = Ext.create('Ext.panel.Panel', {
+			bodyPadding: '0px 10px 10px 10px',
+			html: returnhtml,
+			hidden: true
+		    });
+
+		    sections.push({
+			xtype: 'gridpanel',
+			title: 'Returns: ' + rtype,
+			features: [groupingFeature],
+			store: rpstore,
+			viewConfig: {
+			    trackOver: false,
+			    stripeRows: true
+			},
+		    columns: [
+			{
+			    header: 'Name',
+			    dataIndex: 'name',
+			    flex: 1
+			},
+			{
+			    header: 'Type',
+			    dataIndex: 'type',
+			    renderer: render_type,
+			    flex: 1
+			},
+			{
+			    header: 'Default',
+			    dataIndex: 'default',
+			    flex: 1
+			},
+			{
+			    header: 'Format',
+			    dataIndex: 'type',
+			    renderer: render_format,
+			    flex: 2
+			},
+			{
+			    header: 'Description',
+			    dataIndex: 'description',
+			    renderer: render_description,
+			    flex: 6
+			}
+		    ],
+		    bbar: [
+			{
+			    xtype: 'button',
+			    text: 'Show RAW',
+			    handler: function(btn) {
+				rawSection.setVisible(!rawSection.isVisible());
+				btn.setText(rawSection.isVisible() ? 'Hide RAW' : 'Show RAW');
+			    }}
+		    ]
+		});
+
+		sections.push(rawSection);
+
+
 		}
 
 		var permhtml = '';
@@ -240,6 +354,10 @@ Ext.onReady(function() {
 			permhtml += "Unknown systax!";
 		    }
 		}
+		if (!info.allowtoken) {
+		    // PMG doesn't fully supports API token, and probably won't ever!?
+		    //permhtml += "<br />This API endpoint is not available for API tokens."
+		}
 
 		sections.push({
 		    title: 'Required permissions',
@@ -266,8 +384,53 @@ Ext.onReady(function() {
 	ct.setActiveTab(0);
     };
 
+    Ext.define('Ext.form.SearchField', {
+	extend: 'Ext.form.field.Text',
+	alias: 'widget.searchfield',
+
+	emptyText: 'Search...',
+
+	flex: 1,
+
+	inputType: 'search',
+	listeners: {
+	    'change': function(){
+
+		var value = this.getValue();
+		if (!Ext.isEmpty(value)) {
+		    store.filter({
+			property: 'path',
+			value: value,
+			anyMatch: true
+		    });
+		} else {
+		    store.clearFilter();
+		}
+	    }
+	}
+    });
+
     var tree = Ext.create('Ext.tree.Panel', {
-        title: 'Resource Tree',
+	title: 'Resource Tree',
+	tbar: [
+	    {
+		xtype: 'searchfield',
+	    }
+	],
+	tools: [
+	    {
+		type: 'expand',
+		tooltip: 'Expand all',
+		tooltipType: 'title',
+		callback: (tree) => tree.expandAll(),
+	    },
+	    {
+		type: 'collapse',
+		tooltip: 'Collapse all',
+		tooltipType: 'title',
+		callback: (tree) => tree.collapseAll(),
+	    },
+	],
         store: store,
 	width: 200,
         region: 'west',
@@ -280,6 +443,7 @@ Ext.onReady(function() {
 		    return;
 		var rec = selections[0];
 		render_docu(rec.data);
+		location.hash = '#' + rec.data.path;
 	    }
 	}
     });
@@ -300,5 +464,19 @@ Ext.onReady(function() {
 	    }
 	]
     });
+
+    var deepLink = function() {
+	var path = window.location.hash.substring(1).replace(/\/\s*$/, '')
+	var endpoint = store.findNode('path', path);
+
+	if (endpoint) {
+	    tree.getSelectionModel().select(endpoint);
+	    tree.expandPath(endpoint.getPath());
+	    render_docu(endpoint.data);
+	}
+    }
+    window.onhashchange = deepLink;
+
+    deepLink();
 
 });
