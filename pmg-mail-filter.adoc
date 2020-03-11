@@ -210,7 +210,7 @@ available:
 
 Spam Filter::
 
-Matches if configured value if greater than the detected spam level.
+Matches if detected spam level is equal or greater than the configured value.
 
 Virus Filter::
 
