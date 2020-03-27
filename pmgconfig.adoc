@@ -409,10 +409,12 @@ certificate for you (`/etc/pmg/pmg-tls.pem`).
 {pmg} uses opportunistic TLS encryption by default. The SMTP transaction is
 encrypted if the 'STARTTLS' ESMTP feature is supported by the remote
 server.  Otherwise, messages are sent in the clear.
-You can set a different TLS policy per desitination domain, should you for
-example need to prevent e-mail delivery without encryption, or to work around
-a broken 'STARTTLS' ESMTP implementation. See {postfix_tls_readme} for details
-on the supported policies.
+
+You can set a different TLS policy per destination. A destination is either a
+remote domain or a next-hop destination as specified in `/etc/pmg/transport`.
+This can be used, should you need to prevent e-mail delivery without
+encryption, or to work around a broken 'STARTTLS' ESMTP implementation. See
+{postfix_tls_readme} for details on the supported policies.
 
 Enable TLS logging::
 
