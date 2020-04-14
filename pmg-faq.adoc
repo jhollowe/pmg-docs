@@ -17,7 +17,7 @@ ADD NEW FAQS TO THE BOTTOM OF THIS SECTION TO MAINTAIN NUMBERING
 
 What distribution is {pmg} based on?::
 
-{pmg} is based on http://www.debian.org[Debian GNU/Linux]
+{pmg} is based on https://www.debian.org[Debian GNU/Linux]
 
 What license does the {pmg} project use?::
 

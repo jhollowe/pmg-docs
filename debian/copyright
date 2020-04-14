@@ -1,6 +1,6 @@
 Coryright for files in debian/* and all perl files (*.pl):
 
-    Copyright (C) 2017 - 2019 Proxmox Server Solutions GmbH
+    Copyright (C) 2017 - 2020 Proxmox Server Solutions GmbH
 
     This software is written by Proxmox Server Solutions GmbH
     <support@proxmox.com>
@@ -17,12 +17,12 @@ Coryright for files in debian/* and all perl files (*.pl):
 
     You should have received a copy of the GNU Affero General Public
     License along with this program.  If not, see
-    <http://www.gnu.org/licenses/>.
+    <https://www.gnu.org/licenses/>.
 
 
 All documentation files (*.adoc) are release under:
 
-    Copyright (C) 2017 - 2019 Proxmox Server Solutions GmbH
+    Copyright (C) 2017 - 2020 Proxmox Server Solutions GmbH
 
     Permission is granted to copy, distribute and/or modify this document
     under the terms of the GNU Free Documentation License, Version 1.3

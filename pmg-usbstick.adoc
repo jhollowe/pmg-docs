@@ -108,7 +108,7 @@ Instructions for Windows
 Download Etcher from https://etcher.io , select the ISO and your USB Drive.
 
 If this doesn't work, alternatively use the OSForensics USB
-installer from http://www.osforensics.com/portability.html
+installer from https://www.osforensics.com/portability.html
 
 
 Boot your server from USB media

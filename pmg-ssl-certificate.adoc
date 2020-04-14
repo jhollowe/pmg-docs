@@ -52,7 +52,7 @@ Test your new certificate by using your browser.
 NOTE: To transfer files from and to your Proxmox, you can use secure
 copy: If you desktop is Linux, you can use the `scp` command line
 tool. If your desktop PC is windows, please use a scp client like
-WinSCP (see http://winscp.net/).
+WinSCP (see https://winscp.net/).
 
 
 Change Certificate for Cluster Setups

@@ -100,7 +100,7 @@ any of the following plattforms:
 
 * and others supporting Debian Linux as guest OS
 
-Please see http://www.proxmox.com for details.
+Please see https://www.proxmox.com for details.
 
 In order to get a benchmark from your hardware, just run 'pmgperf'
 after installation.
