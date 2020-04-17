@@ -231,6 +231,7 @@ Uses regular expressions to match attachment filenames.
 Archive Filter::
 
 Can be used to match specific content types inside archives.
+This also matches the content-types of all regular (non-archived) attachments.
 
 
 [[pmg_mailfilter_when]]
