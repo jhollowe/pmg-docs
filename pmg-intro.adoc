@@ -104,7 +104,7 @@ SMTP Protocol Tests::
 `man postscreen`). Most spam is sent out by zombies (malware on
 compromised end-user computers), and those zombies often try to
 maximize the amount of mails delivered. In order to do that, many of
-them violates the SMTP protocol specification and can thus be detected
+them violate the SMTP protocol specification and thus can get detected
 by these tests.
 
 Before and After Queue Filtering::
@@ -170,8 +170,8 @@ of e-mails and generating notifications.
 Spam Quarantine
 ~~~~~~~~~~~~~~~
 
-Identified Spam mails can be stored to the user accessible Spam
-quarantine. Thus users can view and manage there Spam mails by
+Identified Spam mails can be stored to the user-accessible Spam
+quarantine. Thus, users can view and manage their Spam mails by
 themselves.
 
 
@@ -179,14 +179,16 @@ Tracking and Logging
 ~~~~~~~~~~~~~~~~~~~~
 
 The innovative Proxmox Message Tracking Center tracks and summarizes
-all available logs. With the web-based and user friendly management
-interface, the IT admins can easily overview and control all
+all available logs. With the web-based and user-friendly management
+interface, IT admins can easily overview and control all
 functions from a single screen.
 
 The Message Tracking Center is very fast and powerful, tested on {pmg}
 sites processing over a million emails per day. All different log
 files from the last 7 days can be queried and the results are
 summarized by an intelligent algorithm.
+
+The logged information includes:
 
 - Arrival of the email
 - Proxmox filtering processing with results
@@ -228,7 +230,7 @@ Fetchmail integration
 Flexible User Management
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The administration interface uses a role based access control scheme,
+The administration interface uses a role-based access control scheme,
 using the following roles:
 
 Superuser::
