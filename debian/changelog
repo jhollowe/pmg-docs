@@ -1,3 +1,12 @@
+pmg-docs (6.1-5) pmg; urgency=medium
+
+  * update nmap example, link also to online doc
+
+  * improve explanation of Archive Filter and add one for new Match Archive
+    Filename
+
+ -- Proxmox Support Team <support@proxmox.com>  Mon, 20 Apr 2020 17:32:33 +0200
+
 pmg-docs (6.1-4) pmg; urgency=medium
 
   * move to an always-in-view table of content and more responsive styling
