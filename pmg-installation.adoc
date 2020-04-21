@@ -5,7 +5,7 @@ Installation
 which includes a complete Debian ("buster" for version 6.x) system as
 well as all necessary {pmg} packages.
 
-The installer just asks you a few questions, then partitions the local
+The installer asks you a few questions, then partitions the local
 disk(s), installs all required packages, and configures the system
 including a basic network setup. You can get a fully functional system
 within a few minutes. This is the preferred and recommended
@@ -31,13 +31,13 @@ following:
 
 * Postfix MTA, ClamAV, Spamassassin and the {pmg} toolset
 
-* Web based management interface for using the toolset
+* Web-based management interface for using the toolset
 
 Please burn the downloaded ISO image to a CD or create a
 xref:create_bootable_usb[bootable USB stick].
 
 Then insert the installation CD-ROM on the physical host where you want
-to install {pmg} and boot from that drive. Immediately afterwards you
+to install {pmg} and boot from that drive. Afterwards you
 can choose the following menu options:
 
 image::images/installer/pmg-grub-menu.png[]
@@ -50,7 +50,7 @@ Install {pmg} (Debug mode)::
 
 Start installation in debug mode. It opens a shell console at several
 installation steps, so that you can debug things if something goes
-wrong. Please press `CTRL-D` to exit those debug consoles and continue
+wrong. You can press `CTRL-D` to exit those debug consoles and continue
 installation. This option is mostly for developers and not meant for
 general use.
 
@@ -74,8 +74,9 @@ image::images/installer/pmg-select-target-disk.png[]
 First step ist to read our EULA (End User License Agreement). After
 that you get prompted to select the target hard disk(s).
 
-NOTE: By default, the complete server is used and all existing data is
-removed.
+CAUTION: By default, the whole server is used and all existing data is removed.
+Make sure there is no important data on the server before proceeding with the
+installation.
 
 The `Options` button lets you select the target file system, which
 defaults to `ext4`. The installer uses LVM if you select `ext3`,
@@ -89,12 +90,12 @@ lets you select the ZFS RAID level, and you can choose disks there.
 
 image::images/installer/pmg-select-location.png[]
 
-The next page just ask for basic configuration options like your
-location, the time zone and keyboard layout. The location is used to
-select a download server near you to speedup updates. The installer is
-usually able to auto detect those setting, so you only need to change
-them in rare situations when auto detection fails, or when you want to
-use some special keyboard layout not commonly used in your country.
+The next page asks for basic configuration options like your
+location, the timezone and keyboard layout. The location is used to
+select a download server near you to speed up updates. The installer is
+usually able to auto-detect those settings, so you only need to change
+them in rare situations when auto-detection fails, or when you want to
+use a keyboard layout not commonly used in your country.
 
 image::images/installer/pmg-set-password.png[]
 
@@ -129,17 +130,17 @@ dual stack node, you can easily do that after installation.
 
 image::images/installer/pmg-summary.png[]
 
-If you press `Next`, you will see an overview of your entered
+When you press `Next`, you will see an overview of your entered
 configuration. Please re-check every setting, you can still use the `Previous`
 button to go back and edit any settings.
 
-If you press `Install` now, the installation process starts to format disks,
+After pressing `Install`, the installer starts to format disks,
 and copies packages to the target disk(s).
 
 image::images/installer/pmg-installation.png[]
 
-Copying packages usually takes a few minutes. Please wait until that is
-finished, then reboot the server.
+Copying the packages usually takes a few minutes. Please wait until that is
+finished, and reboot the server.
 
 Further configuration is done via the Proxmox web interface.
 
@@ -150,12 +151,12 @@ Just point your browser to the IP address given during installation
 
 . Login and upload subscription key.
 +
-NOTE: Default login is "root" and the root password is
-defined during the installation process.
+NOTE: Default login is "root" and the password is
+chosen during the installation.
 
 . Check the IP configuration and hostname.
 
-. Check and save the Time Zone.
+. Check and save the timezone.
 
 . Check your xref:firewall_settings[Firewall settings].
 
@@ -169,8 +170,8 @@ your {pmg} ('Smart Host', port 26 by default).
 For detailed deployment scenarios see chapter
 xref:chapter_deployment[Planning for Deployment].
 
-If the installation succeeds you have to route all your incoming and
-outgoing e-mail traffic to the Mail Gateway. For incoming traffic you
+After the installation you have to route all your incoming and
+outgoing e-mail traffic to the {pmg}. For incoming traffic you
 have to configure your firewall and/or DNS settings. For outgoing
 traffic you need to change the existing e-mail server configuration.
 
@@ -185,9 +186,9 @@ those volumes can be controlled with:
 
 `hdsize`::
 
-Defines the total HD size to be used. This way you can save free
-space on the HD for further partitioning (i.e. for an additional PV
-and VG on the same hard disk that can be used for LVM storage).
+Defines the total disk size to be used. This way you can save free
+space on the disk for further partitioning (i.e. for an additional PV
+and VG on the same disk that can be used for LVM storage).
 
 `swapsize`::
 
@@ -214,7 +215,7 @@ RAW disk space.
 
 ZFS also provides the feature to use a fast SSD drive as write cache. The
 write cache is called the ZFS Intent Log (ZIL). You can add that after
-installation using the following command:
+the installation using the following command:
 
  zpool add <pool-name> log </dev/path_to_fast_ssd>
 
@@ -228,7 +229,7 @@ Install {pmg} on Debian
 
 {pmg} ships as a set of Debian packages, so you can install it
 on top of a normal Debian installation. After configuring the
-repositories, you need to run:
+xref:pmg_package_repositories[Package repositories], you need to run:
 
 [source,bash]
 ----
@@ -237,7 +238,7 @@ apt-get install proxmox-mailgateway
 ----
 
 Installing on top of an existing Debian installation looks easy, but
-it presumes that you have correctly installed the base system, and you
+it assumes that you have correctly installed the base system, and you
 know how you want to configure and use the local storage. Network
 configuration is also completely up to you.
 
@@ -251,7 +252,7 @@ Install {pmg} as Linux Container Appliance
 
 The full functionality of {pmg} can also run on top of a Debian-based LXC
 instance. In order to keep the set of installed software, and thus the
-necessary updates, minimal you can use the `proxmox-mailgateway-container`
+necessary updates minimal, you can use the `proxmox-mailgateway-container`
 meta-package. It does not depend on any Linux Kernel, firmware, or components
 used for booting from bare-metal, like grub2.
 
@@ -261,18 +262,11 @@ section, so if you already use Proxmox VE you can setup a {pmg} instance in a
 minute.
 
 NOTE: It's recommended to use a static network configuration. If DHCP should be
-used ensure that the container can always lease the same IP, for example, by
+used ensure that the container always leases the same IP, for example, by
 reserving one with the containers network MAC address.
 
-Additionally you can also install this on top of a normal Debian installation.
-After configuring the repositories, you need to run:
-
-[source,bash]
-----
-apt-get update
-apt-get install proxmox-mailgateway-container
-----
-
+It is also possible to install {pmg} in a regular Debian LXC or VM, just as you would
+xref:pmg_install_on_debian[on a normal Debian].
 
 [[pmg_package_repositories]]
 Package Repositories
@@ -369,7 +363,7 @@ features. As usual, you can configure this using
 deb http://download.proxmox.com/debian/pmg buster pmgtest
 ----
 
-WARNING: the `pmgtest` repository should (as the name implies) only be used
+WARNING: the `pmgtest` repository should only be used
 for testing new features or bug fixes.
 
 
