@@ -11,7 +11,7 @@ the firewall and will be directly forwarded to your e-mail server.
 image::images/2018_IT_infrastructure_without_Proxmox_Mail_Gateway_final_1024.png[]
 
 By using the {pmg}, all your e-mail traffic is forwarded to the
-Proxmox Mail Gateway, which filters the whole e-mail traffic and
+Proxmox Mail Gateway, which filters the e-mail traffic and
 removes unwanted e-mails. You can manage incoming and outgoing mail
 traffic.
 
@@ -21,13 +21,13 @@ image::images/2018_IT_infrastructure_with_Proxmox_Mail_Gateway_final_1024.png[]
 Filtering outgoing e-mails
 --------------------------
 
-Many e-mail filter solutions do not scan outgoing mails. Opposed to
-that {pmg} is designed to scan both incoming and outgoing
-e-mails. This has two major advantages:
+Many e-mail filtering solutions do not scan outgoing mails. In contrast, {pmg} is
+designed to scan both incoming and outgoing e-mails. This has two major
+advantages:
 
 . {pmg} is able to detect viruses sent from an internal host. In many
 countries you are liable for sending viruses to other
-people. The {pmg} outgoing e-mail scanning feature is an additional
+people. The outgoing e-mail scanning feature is an additional
 protection to avoid that.
 
 . {pmg} can gather statistics about outgoing e-mails too. Statistics
@@ -41,17 +41,17 @@ statistics can show you this important information. A solution which
 does not scan outgoing e-mail cannot do that.
 
 To enable outgoing e-mail filtering you just need to send all outgoing
-e-mails through your {png} (usually by specifying Proxmox as
-"smarthost" on your e-mail server.
+e-mails through your {pmg} (usually by specifying Proxmox as
+"smarthost" on your e-mail server).
 
 [[firewall_settings]]
 Firewall settings
 -----------------
 
-In order to pass e-mail traffic to the {pmg} you need to allow traffic
-on the SMTP the port. Our servers use the Network Time Protocol (NTP)
-for time synchronization, RAZOR, DNS, SSH, HTTP and port 8006 for the web
-based management interface.
+In order to pass e-mail traffic to the {pmg} you need to allow traffic on the
+SMTP port. Our software uses the Network Time Protocol (NTP) for time
+synchronization, RAZOR, DNS, SSH, HTTP and port 8006 for the web-based
+management interface.
 
 [options="header"]
 |======
@@ -66,7 +66,7 @@ based management interface.
 |GUI/API |8006    |TCP      |Intranet   |Proxmox
 |======
 
-CAUTION: It is advisable to restrict access to the GUI/API port as far
+CAUTION: It is recommended to restrict access to the GUI/API port as far
 as possible.
 
 The outgoing HTTP connection is mainly used by virus pattern updates,
@@ -82,7 +82,7 @@ System Requirements
 -------------------
 
 The {pmg} can run on dedicated server hardware or inside a virtual machine on
-any of the following plattforms:
+any of the following platforms:
 
 * Proxmox VE (KVM)
 
@@ -92,7 +92,7 @@ any of the following plattforms:
 
 * KVM (virtio drivers are integrated, great performance)
 
-* Virtual box&trade;
+* VirtualBox&trade;
 
 * Citrix Hypervisor&trade; (former XenServer&trade;)
 
@@ -150,5 +150,5 @@ To use the web interface you need a modern browser, this includes:
 * Firefox, a release from the current year, or the latest Extended
 Support Release
 * Chrome, a release from the current year
-* Microsofts currently supported version of Edge
+* Microsoft's currently supported version of Edge
 * Safari, a release from the current year
