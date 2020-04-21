@@ -87,16 +87,19 @@ in message bodies.
 
 Greylisting::
 
-Greylisting an email from a sender your system does not recognize,
-means, that it will be temporarily rejected. Since temporary failures
-are built into the RFC specifications for mail delivery, a legitimate
-server will try to resend the email later on. This is an effective
-method because spammers do not queue and reattempt mail delivery as is
-normal for a regular Mail Transport Agent.
+Greylisting an email means, that it will be temporarily rejected. Since
+temporary failures are part of the the RFC specifications for mail delivery, a
+legitimate server will try to resend the email later on. Spammers on the other
+hand, do not queue and reattempt mail delivery. A greylisted email never
+reaches your mail server and thus your mail server will not send useless "Non
+Delivery Reports" to spammers. Additionally greylisted mail is not analyzed
+by the antivirus and spamdetector engines, which saves resources. Greylisting
+can reduce e-mail traffic up to 50%.
+
 +
-Greylisting can reduce e-mail traffic up to 50%. A greylisted email
-never reaches your mail server and thus your mail server will not send
-useless "Non Delivery Reports" to spammers.
+A mail is greylisted if it is the first mail from a sender to a receiver
+coming from a particular IP network. You can configure which IP addresses
+belong to the same network, by setting an appropriate netmask for greylisting.
 
 SMTP Protocol Tests::
 
