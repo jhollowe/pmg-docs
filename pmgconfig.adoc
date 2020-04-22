@@ -44,9 +44,9 @@ Configuration files overview
 
 `/etc/network/interfaces`::
 
-Network setup. We never modify this files directly. Instead, we write
+Network setup. We never modify this file directly. Instead, we write
 changes to `/etc/network/interfaces.new`. When you reboot, we rename
-the file to `/etc/network/interfaces`, so any changes gets activated
+the file to `/etc/network/interfaces`, so the changes are applied
 on the next reboot.
 
 `/etc/resolv.conf`::
@@ -147,7 +147,7 @@ Service Configuration Templates
 
 {pmg} uses various services to implement mail filtering, for example
 the {postfix} Mail Transport Agent (MTA), the {clamav} antivirus
-engine and the Apache {spamassassin} project. Those services use
+engine and the Apache {spamassassin} project. These services use
 separate configuration files, so we need to rewrite those files when
 configuration is changed.
 
@@ -224,11 +224,11 @@ iface ens18 inet static
 .DNS recommendations
 
 Many tests to detect SPAM mails use DNS queries, so it is important to
-have a fast and reliable DNS server. We also query some public
+have a fast and reliable DNS server. We also query some publicly
 available DNS Blacklists. Most of them apply rate limits for clients,
 so they simply will not work if you use a public DNS server (because
 they are usually blocked). We recommend to use your own DNS server,
-which need to be configured in 'recursive' mode.
+which needs to be configured in 'recursive' mode.
 
 
 Options
@@ -320,14 +320,14 @@ original sender to the other mailserver. This is of particular advantage if
 the processed mail is a spam message or contains a virus and has a forged
 sender-address. Sending out a notification in this situation leads so-called
 'backscatter' mail, which might cause your server to get listed as spamming on
-RBLs.
+RBLs (Real-time Blackhole List).
 
 After-queue filtering has the advantage of providing faster delivery of
 mails for the sending servers, since queueing mails is much faster than
 analyzing it for spam and viruses.
 
 If a mail is addressed to multiple recipients (e.g. when multiple addresses are
-subscribed to the same mailinglist) the situation is more complicated: Your
+subscribed to the same mailing list) the situation is more complicated: Your
 mailserver can only reject or accept the mail for all recipients, after having
 received the complete message, while your rule setup might accept the mail for
 part of the recipients and reject it for others. This can be due to a
@@ -337,7 +337,7 @@ feature.
 If the resulting action of the rule system is the same for all recipients {pmg}
 responds accordingly if configured for before queue filtering (sending '554'
 for a blocked mail and '250' for an accepted or quarantined mail). If some
-mailboxes accept the mail and some reject it the system has to accept the mail.
+mailboxes accept the mail and some reject it, the system has to accept the mail.
 
 Whether {pmg} notifies the sender that delivery failed for some recipients by
 sending a non-delivery report, depends on the 'ndr_on_block' setting in
@@ -405,14 +405,14 @@ ifndef::manvolnum[]
 [thumbnail="pmg-gui-mailproxy-transports.png", big=1]
 endif::manvolnum[]
 
-You can use {pmg} to send e-mails to different internal
-e-mail servers. For example you can send e-mails addressed to
-domain.com to your first e-mail server, and e-mails addressed to
+You can use {pmg} to send emails to different internal
+email servers. For example you can send emails addressed to
+domain.com to your first email server, and emails addressed to
 subdomain.domain.com to a second one.
 
 You can add the IP addresses, hostname, transport protocol (smtp/lmtp),
 transport ports and mail domains (or just single email addresses)
-of your additional e-mail servers. When transport protocol is set to `lmtp`,
+of your additional email servers. When transport protocol is set to `lmtp`,
 the option 'Use MX' is useless and will be automatically set to 'No'.
 
 
@@ -447,11 +447,11 @@ certificate for you (`/etc/pmg/pmg-tls.pem`).
 
 {pmg} uses opportunistic TLS encryption by default. The SMTP transaction is
 encrypted if the 'STARTTLS' ESMTP feature is supported by the remote
-server.  Otherwise, messages are sent in the clear.
+server. Otherwise, messages are sent in the clear.
 
 You can set a different TLS policy per destination. A destination is either a
 remote domain or a next-hop destination as specified in `/etc/pmg/transport`.
-This can be used, should you need to prevent e-mail delivery without
+This can be used if you need to prevent email delivery without
 encryption, or to work around a broken 'STARTTLS' ESMTP implementation. See
 {postfix_tls_readme} for details on the supported policies.
 
@@ -459,7 +459,7 @@ Enable TLS logging::
 
 To get additional information about SMTP TLS activity you can enable
 TLS logging. That way information about TLS sessions and used
-certificate’s is logged via syslog.
+certificates is logged via syslog.
 
 Add TLS received header::
 
@@ -492,7 +492,7 @@ which system and private key were used for signing) is also included in the
 The verification is done by the receiver: The public key is fetched
 via DNS TXT lookup for `yourselector._domainkey.yourdomain.example` and used
 for verifying the hash. You can publish multiple selectors for your domain,
-each use by a system which sends e-mail from your domain, without the need to
+each used by a system which sends email from your domain, without the need to
 share the private key.
 
 {pmg} verifies DKIM Signatures for inbound mail in the Spam Filter by default.
@@ -507,7 +507,7 @@ The headers included in the signature are taken from the list of
 `CC`, `Reply-To` and `Subject` get oversigned.
 
 You can either sign all mails received on the internal port using the domain of
-the envelope sender address or create a list of domains, for which e-mails
+the envelope sender address or create a list of domains, for which emails
 should be signed, defaulting to the list of relay domains.
 
 
@@ -540,7 +540,7 @@ ifndef::manvolnum[]
 [thumbnail="pmg-gui-mailproxy-whitelist.png", big=1]
 endif::manvolnum[]
 
-All SMTP checks are disabled for those entries (e. g. Greylisting,
+All SMTP checks are disabled for those entries (e.g. Greylisting,
 SPF, RBL, ...)
 
 NOTE: If you use a backup MX server (e.g. your ISP offers this service
@@ -562,7 +562,7 @@ endif::manvolnum[]
 signatures. This makes it harder for spammers to identify one aspect
 which they can craft their messages to work around the spam filter.
 
-Every single e-mail will be analyzed and gets a spam score
+Every single email will be analyzed and gets a spam score
 assigned. The system attempts to optimize the efficiency of the rules
 that are run in terms of minimizing the number of false positives and
 false negatives.
@@ -578,16 +578,16 @@ ifndef::manvolnum[]
 [thumbnail="pmg-gui-spamquar-options.png", big=1]
 endif::manvolnum[]
 
-Proxmox analyses all incoming e-mail messages and decides for each
-e-mail if its ham or spam (or virus). Good e-mails are delivered to
-the inbox and spam messages can be moved into the spam quarantine.
+{pmg} analyses all incoming email messages and decides for each
+email if it is ham or spam (or virus). Good emails are delivered to
+the inbox and spam messages are moved into the spam quarantine.
 
 The system can be configured to send daily reports to inform users
-about the personal spam messages received the last day. That report is
+about the personal spam messages received the last day. The report is
 only sent if there are new messages in the quarantine.
 
 Some options are only available in the config file `/etc/pmg/pmg.conf`,
-and not in the webinterface.
+and not in the web interface.
 
 include::pmg.spamquar-conf-opts.adoc[]
 
@@ -616,7 +616,7 @@ slightly adjusting the score of a particular rule. Two examples:
   'DEAR_SOMETHING'). By setting the score of this rule to 0 you can disable
   it completely.
 
-The system logs all rules which particular mail hits. Analyzing the logs can
+The system logs all the rules which a particular mail hits. Analyzing the logs can
 lead to finding such a pattern in your environment.
 
 You can adjust the score of a rule by creating a new 'Custom Rule Score' entry
@@ -639,7 +639,7 @@ ifndef::manvolnum[]
 endif::manvolnum[]
 
 All mails are automatically passed to the included virus detector
-({clamav}). The default setting are considered safe, so it is usually
+({clamav}). The default settings are considered safe, so it is usually
 not required to change them.
 
 {clamav} related settings are saved to subsection 'clamav' in `/etc/pmg/pmg.conf`,
@@ -651,8 +651,8 @@ ifndef::manvolnum[]
 [thumbnail="pmg-gui-clamav-database.png", big=1]
 endif::manvolnum[]
 
-Please note that the virus signature database it automatically
-updated. But you can see the database status on the GUI, and you can
+Please note that the virus signature database is automatically
+updated. You can see the database status in the GUI, and also
 trigger manual updates there.
 
 
@@ -665,8 +665,8 @@ ifndef::manvolnum[]
 endif::manvolnum[]
 
 Indentified virus mails are automatically moved to the virus
-quarantine. The administartor can view those mails using the GUI, or
-deliver them in case of false positives. {pmg} does not notify
+quarantine. The administrator can view these mails using the GUI, and
+choose to deliver them in case of false positives. {pmg} does not notify
 individual users about received virus mails.
 
 Virus quarantine related settings are saved to subsection 'virusquar'
@@ -693,9 +693,9 @@ them, as `init.pre`, `v310.pre`, `v320.pre`, `local.cf` will be overwritten by
 the xref:pmgconfig_template_engine[template engine], while the others can
 get updated by any {spamassassin} package upgrade.
 
-To add your special configuration, you have to create a new file and name it
+To add your custom configuration, you have to create a new file and name it
 `custom.cf` (in this directory), then add your configuration there. Make sure
-to use the correct {spamassassin} syntax, and test with
+to use the correct {spamassassin} syntax, and test it with:
 
 ----
 # spamassassin -D --lint
@@ -704,7 +704,7 @@ to use the correct {spamassassin} syntax, and test with
 If you run a cluster, the `custom.cf` file is synchronized from the
 master node to all cluster members automatically.
 
-Should you only wish to adjust the score assigned to a particular rule you
+To adjust the score assigned to a particular rule you
 can also use the xref:pmgconfig_spamdetector_customscores[Custom Rule Score]
 settings in the GUI.
 
@@ -713,17 +713,17 @@ settings in the GUI.
 Custom Check Interface
 ----------------------
 
-For use cases which are not handled by the {pmg} Virus Detector and
+For use-cases which are not handled by the {pmg} Virus Detector and
 {spamassassin} configuration, advanced users can create a custom check
 executable which, if enabled will be called before the Virus Detector and before
-passing an e-mail through the Rule System. The custom check API is kept as
+passing an email through the Rule System. The custom check API is kept as
 simple as possible, while still providing a great deal of control over the
-treatment of an e-mail. Its input is passed via two CLI arguments:
+treatment of an email. Its input is passed via two CLI arguments:
 
 * the 'api-version' (currently `v1`) - for potential future change of the
   invocation
 
-* the 'queue-file-name' - a filename, which contains the complete e-mail as
+* the 'queue-file-name' - a filename, which contains the complete email as
   rfc822/eml file
 
 The expected output need to be printed on STDOUT and consists of two lines:
@@ -731,14 +731,14 @@ The expected output need to be printed on STDOUT and consists of two lines:
 * the 'api-version' (currently 'v1') - see above
 
 * one of the following 3 results:
-** 'OK' - e-mail is ok
-** 'VIRUS: <virusdescription>' - e-mail is treated as if it contained a virus
-    (the virusdescription is logged and added to the e-mail's headers)
+** 'OK' - email is ok
+** 'VIRUS: <virusdescription>' - email is treated as if it contained a virus
+    (the virus description is logged and added to the email's headers)
 ** 'SCORE: <number>' - <number> is added (negative numbers are also possible)
-    to the e-mail's spamscore
+    to the email's spamscore
 
 The check is run with a 5 minute timeout - if it is exceeded the check
-executable is killed and the e-mail is treated as OK.
+executable is killed and the email is treated as OK.
 
 All output written to STDERR by the check is written with priority 'err' to the
 journal/mail.log.
@@ -814,7 +814,7 @@ Local Users
 
 [thumbnail="pmg-gui-local-user-config.png", big=1]
 
-Local users are used to manage and audit {pmg}. Those users can login on the
+Local users can manage and audit {pmg}. They can login on the
 management web interface.
 
 There are three roles:
@@ -835,7 +835,7 @@ With this role, the user is only allowed to view data and configuration, but
 not to edit it.
 
 In addition there is always the 'root' user, which is used to perform special
-system administrator tasks, such as updgrading a host or changing the
+system administrator tasks, such as upgrading a host or changing the
 network configuration.
 
 NOTE: Only pam users are able to login via the webconsole and ssh, which the
@@ -882,10 +882,10 @@ Sync
 ^^^^
 
 {pmg} synchronizes the relevant user and group info periodically, so that
-that information is available in a fast manner, even when the LDAP/AD server
+the information is available in a fast manner, even when the LDAP/AD server
 is temporarily not accessible.
 
-After a successfull sync, the groups and users should be visible on the web
+After a successful sync, the groups and users should be visible on the web
 interface. After that, you can create rules targeting LDAP users and groups.
 
 
@@ -895,8 +895,8 @@ Fetchmail
 
 [thumbnail="pmg-gui-fetchmail-config.png", big=1]
 
-Fetchmail is utility for polling and forwarding e-mails. You can define
-e-mail accounts, which will then be fetched and forwarded to the e-mail
+Fetchmail is utility for polling and forwarding emails. You can define
+email accounts, which will then be fetched and forwarded to the email
 address you defined.
 
 You have to add an entry for each account/target combination you want to
