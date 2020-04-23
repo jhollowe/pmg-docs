@@ -1,9 +1,9 @@
 Administration
 ==============
 
-The Administration GUI allows you to do common administration tasks
-like updating software packages, manage quarantine, view service
-status and manage mail queues. It also provides server statistics in
+The Administration GUI allows you to do common tasks
+such as updating software packages, managing quarantine, viewing service
+status, and managing mail queues. It also provides server statistics in
 order to verify server health.
 
 
@@ -49,7 +49,7 @@ Updates
 
 We release software updates on a regular basis, and it is recommended
 to always run the latest available version. This page shows the
-available updates, and administrator can run an upgrade by pressing
+available updates, and administrators can run an upgrade by pressing
 the 'Upgrade' button.
 
 See section xref:pmg_package_repositories[Package Repositories] for
@@ -61,7 +61,7 @@ Syslog and Tasks
 
 [thumbnail="pmg-gui-syslog.png", big=1]
 
-The syslog page gives you a quick real-time log view. Please use the
+The syslog page gives you a quick real-time log view. You can use the
 xref:pmg_tracking_center[Tracking Center] to search the logs.
 
 
@@ -78,7 +78,7 @@ previewed and if desired, delivered to the original user.
 
 The email preview on the web interface is very secure as malicious
 code (attacking your operating system or email client) is removed by
-Proxmox.
+{pmg}.
 
 
 Virus
@@ -113,11 +113,11 @@ Tracking Center
 
 Email processing is a complex task and involves several service
 daemons. Each daemon logs information to the syslog service. The
-problem is that a servers analyzes many emails in parallel, so it is
+problem is that a server analyzes many emails in parallel, so it is
 usually very hard to find all logs corresponding to a specific mail.
 
-Introduced in {pmg} 2.1, the tracking center simplifies the search for
-emails dramatically. We use highly optimized C-code to search the
+The Tracking Center simplifies the search for
+emails dramatically. We use highly optimized Rust code to search the
 available syslog data. This is very fast and powerful, and works for
 sites processing several million emails per day.
 
@@ -133,24 +133,24 @@ The result is a list of received mails, including the following data:
 entry, or if you press the '+' button on the left.
 |====
 
-Please notice that you can specify filters, most important you can set
+You can specify filters, and most importantly you can set
 a 'Start' and 'End' time. By default the start time is set to one hour
-ago. If you still get to much result entries, you can try to restrict
-the search to specific sender or receiver addresses, or search for a
+ago. If you still get too many entries, you can try to restrict
+the search to a specific sender or receiver address, or search for a
 specific text in the logs ('Filter' entry).
 
-NOTE: Search is faster if you use a short time interval.
+NOTE: Search is faster if you use a shorter time interval.
 
-The 'Status' field summarize what happens with an email. {pmg} is a
+The 'Status' field summarizes what happened with an email. {pmg} is a
 mail proxy, meaning that the proxy receives mails from outside,
-process it and finally sends the result to the receiver.
+processes them and finally sends the result to the receiver.
 
 The first phase is receiving the mail. The proxy may reject the mail
 early, or instead accepts the mail and feeds it into the filter. The filter
 rules can block or accept the mail.
 
 In the second phase, accepted mails need to be delivered to the
-receiver, and this action may also fail or succeed. The status
+receiver. This action may also fail or succeed. 'Status'
 combines the result from the first and second phase.
 
 When before-queue filtering is enabled, we don't have the same delivery information as
@@ -163,12 +163,12 @@ the status is shown as 'queued/accepted' instead of 'accepted/<status>'.
 |rejected             |1 | Email rejected (e.g. sender IP is listed on a IP blacklist)
 |greylisted           |1 | Email temporarily rejected by greylisting
 |queued/deferred      |1 | Internal Email was queued, still trying to deliver
-|queued/bounced       |1 | Internal Email was queued but not accepted by the target email server (e. g. user unknown)
+|queued/bounced       |1 | Internal Email was queued but not accepted by the target email server (for example user unknown)
 |queued/accepted      |1 | Email was accepted, no delivery information available (before-queue only, replaces accepted/<status>)
-|quarantine           |1 | Email was moved to quanantine
+|quarantine           |1 | Email was moved to quarantine
 |blocked              |1 | Email was blocked by filter rules
 |accepted/deferred    |2 | Email accepted, still trying to deliver
-|accepted/bounced     |2 | Email accepted but not accepted by the target email server (e. g. user unknown)
+|accepted/bounced     |2 | Email accepted but not accepted by the target email server (for example user unknown)
 |accepted/delivered   |2 | Email accepted and delivered
 |====
 
