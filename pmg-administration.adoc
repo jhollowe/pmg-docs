@@ -117,9 +117,11 @@ problem is that a server analyzes many emails in parallel, so it is
 usually very hard to find all logs corresponding to a specific mail.
 
 The Tracking Center simplifies the search for
-emails dramatically. We use highly optimized Rust code to search the
-available syslog data. This is very fast and powerful, and works for
-sites processing several million emails per day.
+emails dramatically. We use highly optimized and safe Rust footnote:[A language
+empowering everyone to build reliable and efficient software.
+https://www.rust-lang.org/] code to search the available syslog data. This is
+very fast and powerful, and works for sites processing several million emails
+per day.
 
 The result is a list of received mails, including the following data:
 
