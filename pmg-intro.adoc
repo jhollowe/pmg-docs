@@ -184,7 +184,7 @@ Spam Quarantine
 ~~~~~~~~~~~~~~~
 
 Identified Spam mails can be stored to the user-accessible Spam quarantine.
-Thus, users can view and manage their Spam mails by themselves.
+Users can so view and manage their Spam mails by themselves.
 
 
 Tracking and Logging
