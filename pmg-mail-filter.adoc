@@ -14,24 +14,24 @@ certain criteria:
 
 'Who' - objects::
 
-Who is the sender or receiver of the e-mail? Those objects can be used
+Who is the sender or recipient of the email? Those objects can be used
 for the 'TO' and/or 'FROM' category.
 +
 ====
-Example: EMail-object - Who is the sender or receiver of the e-mail?
+Example: EMail-object - Who is the sender or recipient of the email?
 ====
 
 'What' - objects::
 
-What is in the e-mail?
+What is in the email?
 +
 ====
-Example: Does the e-mail contain spam?
+Example: Does the email contain spam?
 ====
 
 'When' - objects::
 
-When is the e-mail received by {pmg}?
+When is the email received by {pmg}?
 +
 ====
 Example: Office Hours - Mail is received between 8:00 and 16:00.
@@ -42,15 +42,15 @@ Example: Office Hours - Mail is received between 8:00 and 16:00.
 Defines the final actions.
 +
 ====
-Example: Mark e-mail with “SPAM:” in the subject.
+Example: Mark email with “SPAM:” in the subject.
 ====
 
 Rules are ordered by priority, so rules with higher priority are
 executed first. It is also possible to set a processing direction:
 
-'In'::	Rule applies for all incoming e-mails
+'In'::	Rule applies for all incoming emails
 
-'Out'::	Rule applies for all outgoing e-mails
+'Out'::	Rule applies for all outgoing emails
 
 'In & Out':: Rule applies for both directions
 
@@ -65,7 +65,7 @@ reset the filter rules.
 
 [thumbnail="pmg-gui-mail-filter-actions.png", big=1]
 
-Please note that some actions stops further rule precessing. We call
+Please note that some actions stop further rule processing. We call
 such actions 'final'.
 
 Accept
@@ -125,7 +125,7 @@ removed attachments.
 Header Attributes
 ~~~~~~~~~~~~~~~~~
 
-This object is able to add or modify mail header attributes. As notice above, you can use xref:rule_system_macros[macros], making this a very powerful object. For example, the 'Modify Spam Level' actions adds detailed infomation about detected Spam characteristics to the ` X-SPAM-LEVEL` header.
+This object is able to add or modify mail header attributes. As with notifications above, you can use xref:rule_system_macros[macros], making this a very powerful object. For example, the 'Modify Spam Level' actions adds detailed information about detected Spam characteristics to the `X-SPAM-LEVEL` header.
 
 .'Modify Spam Level' Header Attribute
 ----
@@ -170,7 +170,7 @@ Add a Disclaimer.
 [thumbnail="pmg-gui-mail-filter-who-objects.png", big=1]
 
 This type of objects can be used for the 'TO' and/or 'FROM' category,
-and macth the sender or receiver of the e-mail. A single object can
+and match the sender or recipient of the email. A single object can
 combine multiple items, and the following item types are available:
 
 EMail::
@@ -191,10 +191,10 @@ This can be used to match the senders IP address.
 
 LDAP User or Group::
 
-Test if the mail address belong to a specific LDAP user or group.
+Test if the mail address belongs to a specific LDAP user or group.
 
 We have two important 'Who' - objects called 'Blacklist' and
-'Whitelist'. Those are used in the default ruleset to globally block
+'Whitelist'. These are used in the default ruleset to globally block
 or allow specific senders.
 
 
@@ -246,7 +246,7 @@ This also matches the filenames for all regular (non-archived) attachments.
 [thumbnail="pmg-gui-mail-filter-when-objects.png", big=1]
 
 'When' - objects are use to activate rules at specific daytimes. You
-can compose them of one or more time-frame items.
+can compose them of one or more time frame items.
 
 The default ruleset defines 'Office Hours', but this is not used by
 the default rules.
@@ -274,15 +274,15 @@ Metacharacters
 Some characters have a special meaning. These characters are called
 metacharacters.  The Period (`.`) is a commonly used metacharacter. It
 matches exactly one character, regardless of what the character is.
-`e.mail` would match either "e-mail" or "e-mail" or "e2mail" but not
-"e-some-mail".
+`e.mail` would match either "e-mail" or "e2mail" but not
+"e-some-mail" or "email".
 
 The question mark (`?`) indicates that the character immediately
-preceding it either zero or one time. `e?mail` would match
+preceding it shows up either zero or one time. `e?mail` would match
 either "email" or "mail" but not "e-mail".
 
 Another metacharacter is the star (`*`). This indicates that the
-character immediately to its left may repeated any number of times,
+character immediately preceding it may be repeated any number of times,
 including zero. `e*mail` would match either "email" or "mail" or
 "eeemail".
 
