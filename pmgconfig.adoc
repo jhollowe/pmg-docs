@@ -353,10 +353,6 @@ mail, since the mail already got accepted before being analyzed.
 The details of integrating the mail proxy with {postfix} in both setups are
 explained in {postfix_beforequeue} and {postfix_afterqueue} respectively.
 
-NOTE: Since before queue filtering is currently incompatible with the
-'Tracking Center' you need to enable it by manually
-editing '/etc/pmg/pmg.conf'.
-
 
 [[pmgconfig_mailproxy_greylisting]]
 Greylisting
