@@ -46,21 +46,21 @@ recommended.
 |===========================================================
 
 NOTE: {pmg} releases before 5.0 are not listed here. As they are all EOL (End
-Of Life) it's highly recommended to upgrade to a newer version if still in use.
+Of Life), it's highly recommended to upgrade to a newer version if still in use.
 
 [[faq-upgrade]]
 How can I upgrade {pmg} to the next release?::
 
 Minor version upgrades, for example upgrading from {pmg} in version 5.1
 to 5.2, can be done just like any normal update, either through the
-Webinterface's __Node -> Updates__ panel or through the CLI with:
+__Node -> Updates__ panel or through the command line with:
 +
 ----
 apt update
 apt full-upgrade
 ----
 +
-NOTE: Always ensure you correctly setup the
+NOTE: Always ensure you correctly set up the
 xref:pmg_package_repositories[package repositories] and only continue with the
 actual upgrade if `apt update` did not hit any error.
 +
