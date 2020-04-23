@@ -24,16 +24,17 @@ pmgupgrade - Upgrade Proxmox Mail Gateway
 :pmg-toplevel:
 endif::manvolnum[]
 
-This is a small wrapper around `apt-get dist-upgrade`. We use this to
-print additional information (kernel restart required?), and
-optionally run an interactive shell after the update. It is
-invoked when starting an upgrade using the web GUI.
+This is a small wrapper around `apt full-upgrade`. We use this to print
+additional information, like when a node reboot due to a kernel update is
+required. Additionally, it can run an interactive shell after the update, this
+is used when starting an upgrade using the web GUI.
 
 If you are already logged in on the console, it is preferable to invoke
-`apt-get` directly.
+`apt` directly.
 
 ----
-# apt-get dist-upgrade
+# apt update
+# apt full-upgrade
 ----
 
 ifdef::manvolnum[]

@@ -233,8 +233,8 @@ xref:pmg_package_repositories[Package repositories], you need to run:
 
 [source,bash]
 ----
-apt-get update
-apt-get install proxmox-mailgateway
+apt update
+apt install proxmox-mailgateway
 ----
 
 Installing on top of an existing Debian installation looks easy, but
@@ -265,8 +265,15 @@ NOTE: It's recommended to use a static network configuration. If DHCP should be
 used ensure that the container always leases the same IP, for example, by
 reserving one with the containers network MAC address.
 
-It is also possible to install {pmg} in a regular Debian LXC or VM, just as you would
-xref:pmg_install_on_debian[on a normal Debian].
+Additionally you can also install this on top of a container based Debian
+installation. After configuring the
+xref:pmg_package_repositories[Package repositories], you need to run:
+
+[source,bash]
+----
+apt update
+apt install proxmox-mailgateway-container
+----
 
 [[pmg_package_repositories]]
 Package Repositories
@@ -277,13 +284,13 @@ https://en.wikipedia.org/wiki/Advanced_Packaging_Tool[APT] as package
 management tool. The list of repositories is defined in
 `/etc/apt/sources.list` and `.list` files found inside
 `/etc/apt/sources.d/`. Updates can be installed directly using
-`apt-get`, or via the GUI.
+`apt`, or via the GUI.
 
 Apt `sources.list` files list one package repository per line, with
 the most preferred source listed first. Empty lines are ignored, and a
 `#` character anywhere on a line marks the remainder of that line as a
 comment. The information available from the configured sources is
-acquired by `apt-get update`.
+acquired by `apt update`.
 
 .File `/etc/apt/sources.list`
 ----
