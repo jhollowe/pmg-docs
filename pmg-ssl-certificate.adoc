@@ -3,12 +3,12 @@ SSL certificate
 
 Access to the administration web interface is always done via
 `https`. The default certificate is never valid for your browser and
-you get always warnings.
+you always get warnings.
 
 If you want to get rid of these warnings, you have to generate a valid
 certificate for your server.
 
-Login to your Proxmox via ssh or use the console:
+Login to your {pmg} via ssh or use the console:
 
 ----
 openssl req -newkey rsa:2048 -nodes -keyout key.pem -out req.pem
@@ -33,15 +33,15 @@ An optional company name []: not necessary
 After you finished this certificate request you have to send the file
 `req.pem` to your Certification Authority (CA). The CA will issue the
 certificate (BASE64 encoded) based on your request – save this file as
-`cert.pem` to your Proxmox.
+`cert.pem` to your {pmg}.
 
-To activate the new certificate, do the following on your Proxmox:
+To activate the new certificate, do the following on your {pmg}:
 
 ----
 cat key.pem cert.pem >/etc/pmg/pmg-api.pem
 ----
 
-The restart the API servers
+Then restart the API servers:
 
 ----
 systemctl restart pmgproxy
@@ -49,7 +49,7 @@ systemctl restart pmgproxy
 
 Test your new certificate by using your browser.
 
-NOTE: To transfer files from and to your Proxmox, you can use secure
+NOTE: To transfer files from and to your {pmg}, you can use secure
 copy: If you desktop is Linux, you can use the `scp` command line
 tool. If your desktop PC is windows, please use a scp client like
 WinSCP (see https://winscp.net/).
