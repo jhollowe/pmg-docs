@@ -308,23 +308,23 @@ Before and After Queue scanning
 
 Scanning email can happen at two different stages of mail-processing:
 
-* During the SMTP Session after the complete message has been received (after
-  the 'DATA' command), known as 'before queue filtering'.
+* Before-queue filtering: During the SMTP Session, after the complete message
+  has been received (after the 'DATA' command).
 
-* After intially accepting the mail and putting it on a queue for further
-  processing, known as 'after queue filtering'.
+* After-queue filtering: After initially accepting the mail and putting it on
+  a queue for further processing.
 
-The former has the advantage that the system can reject a mail (by sending a
-permanent reject code '554'), and leave the task of notifying the original
-sender to the other mailserver. This is of particular advantage if the
-processed mail is a spam message or contains a virus and has a forged
+Before-queue filtering has the advantage that the system can reject a mail (by
+sending a permanent reject code '554'), and leave the task of notifying the
+original sender to the other mailserver. This is of particular advantage if
+the processed mail is a spam message or contains a virus and has a forged
 sender-address. Sending out a notification in this situation leads so-called
 'backscatter' mail, which might cause your server to get listed as spamming on
 RBLs.
 
-The latter has the advantage of providing faster delivery of mails for the
-sending servers, since queueing mails is much faster than analyzing it for
-spam and viruses.
+After-queue filtering has the advantage of providing faster delivery of
+mails for the sending servers, since queueing mails is much faster than
+analyzing it for spam and viruses.
 
 If a mail is addressed to multiple recipients (e.g. when multiple addresses are
 subscribed to the same mailinglist) the situation is more complicated: Your
