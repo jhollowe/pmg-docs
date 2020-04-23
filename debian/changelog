@@ -1,3 +1,18 @@
+pmg-docs (6.2-1) pmg; urgency=medium
+
+  * improve and add to greylisting documentation
+
+  * grammar, wording and typo fixes all over the place
+
+  * note that pmg-log-tracker is now written with the safe and efficient Rust
+    language
+
+  * update screenshots
+
+  * user management introduction: document the Helpdesk role
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 23 Apr 2020 19:58:58 +0200
+
 pmg-docs (6.1-5) pmg; urgency=medium
 
   * update nmap example, link also to online doc
