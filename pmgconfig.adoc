@@ -358,6 +358,49 @@ NOTE: Since before queue filtering is currently incompatible with the
 editing '/etc/pmg/pmg.conf'.
 
 
+[[pmgconfig_mailproxy_greylisting]]
+Greylisting
+~~~~~~~~~~~
+
+Greylisting is a technique for preventing unwanted messages from reaching the
+resource intensive stages of content analysis (virus detection and spam
+detection): By initially replying with a temporary failure code ('450') to
+each new email, the {pmg} tells the sending server that it should queue the
+mail and retry delivery at a later moment. Since certain kinds of spam get
+sent out by software, which has no provisioning for queueing, these mails are
+dropped without reaching {pmg} or your mailbox.
+
+The downside of greylisting is the delay introduced by the initial deferral of
+the email, which usually amounts to less than 30 minutes.
+
+In order to prevent unnecessary delays in delivery from known sources, emails
+coming from a source for a recipient, which have passed greylisting in the
+past are directly passed on: For each email the triple '<sender network,
+sender email, recipient email>' is stored in a list, along with the time when
+delivery was attempted. If an email fits an already existing triple, the
+timestamp for that triple is updated and the email is accepted for further
+processing.
+
+As long as a sender and recipient do communicate frequently there is no delay
+introduced by enabling greylisting. A triple is removed after a longer period
+of time, when no mail fitting that triple has been seen. The timeouts in {pmg}
+are:
+
+* 2 days for the retry of the first delivery
+
+* 36 days for known triples
+
+Mails with an empty envelope-sender are always delayed.
+
+Some email service providers send out emails for one domain from multiple
+servers. To prevent delays due to an email coming in from 2 separate IPs of
+the same provider the triples store a network ('cidr') instead of a single IP.
+For certain large providers the default network size might be too small. You
+can configure the netmask applied to an IP for the greylist lookup in
+'/etc/pmg/pmg.conf' or in the GUI with the settings 'greylistmask' for IPv4
+and 'greylistmask6' for IPv6 respectively.
+
+
 [[pmgconfig_mailproxy_transports]]
 Transports
 ~~~~~~~~~~
