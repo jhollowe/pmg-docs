@@ -228,9 +228,9 @@ automatically reintegrate without any operator interaction.
 LDAP integration
 ~~~~~~~~~~~~~~~~
 
-It is possible to query user and group data from LDAP servers. This may be used
-to build special filter rules, or just to provide authentication services for
-the Spam quarantine GUI.
+It is possible to query user and group data from LDAP servers. This may be
+used to build special filter rules, or just to provide authentication services
+for the Spam quarantine GUI.
 
 
 Fetchmail integration
@@ -264,7 +264,7 @@ view statistics.
 
 Helpdesk::
 
-Combined role permissions of the 'Auditor' and the 'Quarantine Manager' role.
+Combines permissions of the 'Auditor' and the 'Quarantine Manager' role.
 
 
 Your benefit with {pmg}
