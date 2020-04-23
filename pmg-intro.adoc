@@ -262,6 +262,10 @@ Auditor::
 Has read-only access to the whole configuration, can access logs and
 view statistics.
 
+Helpdesk::
+
+Combined role permissions of the 'Auditor' and the 'Quarantine Manager' role.
+
 
 Your benefit with {pmg}
 -----------------------
