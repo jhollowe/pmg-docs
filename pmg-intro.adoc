@@ -17,6 +17,7 @@ image::images/Proxmox_Mail_Gateway_Mailprocessing_final_1024.png[]
 Features
 --------
 
+[[intro_spam_detection]]
 Spam detection
 ~~~~~~~~~~~~~~
 
@@ -171,9 +172,8 @@ of e-mails and generating notifications.
 Spam Quarantine
 ~~~~~~~~~~~~~~~
 
-Identified Spam mails can be stored to the user-accessible Spam
-quarantine. Thus, users can view and manage their Spam mails by
-themselves.
+Identified Spam mails can be stored to the user-accessible Spam quarantine.
+Thus, users can view and manage their Spam mails by themselves.
 
 
 Tracking and Logging
@@ -217,9 +217,9 @@ automatically reintegrate without any operator interaction.
 LDAP integration
 ~~~~~~~~~~~~~~~~
 
-It is possible to query user and group data from LDAP servers. This
-may be used to build special filter rules, or just to provide
-authentication services for the Spam quarantine GUI.
+It is possible to query user and group data from LDAP servers. This may be used
+to build special filter rules, or just to provide authentication services for
+the Spam quarantine GUI.
 
 
 Fetchmail integration

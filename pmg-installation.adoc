@@ -112,30 +112,29 @@ recommend to use stronger passwords - here are some guidelines:
   or past) and biographical information (e.g., ID numbers, ancestors' names or
   dates).
 
-It is sometimes necessary to send notification to the system
-administrator, for example:
+It is sometimes necessary to send notification to the system administrator, for
+example:
 
 - Information about available package updates.
 
 - Error messages from periodic CRON jobs.
 
-All those notification mails will be sent to the specified email
-address.
+All those notification mails will be sent to the specified email address.
 
 image::images/installer/pmg-setup-network.png[]
 
-The next step is the network configuration. Please note that you can
-use either IPv4 or IPv6 here, but not both. If you want to configure a
-dual stack node, you can easily do that after installation.
+The next step is the network configuration. Please note that you can use either
+IPv4 or IPv6 here, but not both. If you want to configure a dual stack node,
+you can easily do that after installation.
 
 image::images/installer/pmg-summary.png[]
 
-When you press `Next`, you will see an overview of your entered
-configuration. Please re-check every setting, you can still use the `Previous`
-button to go back and edit any settings.
+When you press `Next`, you will see an overview of your entered configuration.
+Please re-check every setting, you can still use the `Previous` button to go
+back and edit any settings.
 
-After pressing `Install`, the installer starts to format disks,
-and copies packages to the target disk(s).
+After pressing `Install`, the installer starts to format disks, and copies
+packages to the target disk(s).
 
 image::images/installer/pmg-installation.png[]
 
@@ -151,8 +150,8 @@ Just point your browser to the IP address given during installation
 
 . Login and upload subscription key.
 +
-NOTE: Default login is "root" and the password is
-chosen during the installation.
+NOTE: Default login is "root" and the password is chosen during the
+installation.
 
 . Check the IP configuration and hostname.
 
