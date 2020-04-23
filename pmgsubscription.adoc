@@ -23,9 +23,9 @@ pmgsubscription - Subscription Management
 =========================================
 endif::manvolnum[]
 
-{pmg} is free open software, and the company that developed it
+{pmg} is free and open-source software. The company that develops it
 (Proxmox Server Solutions GmbH) offers {pricing-url}[support] in many
-ways, with different support channel, level and pricing.
+ways, with different support channels, levels, and pricing.
 
 The tool `pmgsubscription` is used to handle {pmg}
 subscriptions. Please use the GUI or the `set` command to upload a new

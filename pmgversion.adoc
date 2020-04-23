@@ -24,7 +24,7 @@ pmgversion - Version Info
 :pmg-toplevel:
 endif::manvolnum[]
 
-The binary `pmgversion` prints detailed version information for {pmg}
+`pmgversion` prints detailed version information for {pmg}
 packages.
 
 .Examples
@@ -35,7 +35,7 @@ Print {pmg} version:
 # pmgversion
 ----
 
-List version details for important packages: 
+List version details for important packages:
 
 ----
 # pmgversion -v

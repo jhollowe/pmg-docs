@@ -3,8 +3,8 @@
 -------------------
 
 `nmap` is designed to allow system administrators to scan large
-networks to determine which hosts are up and what services they are
-offering. You can use nmap to test your firewall setting, for example
+networks to determine which hosts are up and what services they
+offer. You can use nmap to test your firewall settings, for example
 to see if the required ports are open.
 
 .Test Razor port (tcp port 2703):
@@ -20,5 +20,6 @@ PORT     STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 6.83 seconds
 ----
 
-See the https://nmap.org/book/man.html[Nmap Reference Guide], also available as
-manual page (`man nmap`), for more information about nmap.
+For more information about `nmap` usage, see the
+https://nmap.org/book/man.html[Nmap Reference Guide], also available as a manual
+page (`man nmap`).

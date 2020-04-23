@@ -25,7 +25,7 @@ pmgreport - Send daily system report email
 :pmg-toplevel:
 endif::manvolnum[]
 
-This binary generates and send daily system report email.
+Generates and sends the daily system report email.
 
 ifdef::manvolnum[]
 include::pmg-copyright.adoc[]
