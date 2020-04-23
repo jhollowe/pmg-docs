@@ -94,7 +94,6 @@ on the other hand, do not queue and reattempt mail delivery. A greylisted email
 never reaches your mail server and thus your mail server will not send useless
 "Non Delivery Reports" to spammers. Additionally greylisted mail is not
 analyzed by the antivirus and spam-detector engines, which saves resources.
-
 +
 A mail is greylisted if it is the first mail from a sender to a receiver
 coming from a particular IP network. You can configure which IP addresses
