@@ -30,3 +30,7 @@ Sets the maximum amount of data (in bytes) to be scanned for each input file.
 
 Enables support for Google Safe Browsing.
 
+`scriptedupdates`: `<boolean>` ('default =' `0`)::
+
+Enables ScriptedUpdates (incremental download of signatures)
+

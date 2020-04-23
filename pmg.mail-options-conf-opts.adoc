@@ -28,7 +28,19 @@ SMTP delay warning time (in hours).
 
 `greylist`: `<boolean>` ('default =' `1`)::
 
-Use Greylisting.
+Use Greylisting for IPv4.
+
+`greylist6`: `<boolean>` ('default =' `0`)::
+
+Use Greylisting for IPv6.
+
+`greylistmask4`: `<integer> (0 - 32)` ('default =' `24`)::
+
+Netmask to apply for greylisting IPv4 hosts
+
+`greylistmask6`: `<integer> (0 - 128)` ('default =' `64`)::
+
+Netmask to apply for greylisting IPv6 hosts
 
 `helotests`: `<boolean>` ('default =' `0`)::
 

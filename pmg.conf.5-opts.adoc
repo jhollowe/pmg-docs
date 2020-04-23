@@ -86,6 +86,10 @@ Sets the maximum amount of data (in bytes) to be scanned for each input file.
 
 Enables support for Google Safe Browsing.
 
+`scriptedupdates`: `<boolean>` ('default =' `0`)::
+
+Enables ScriptedUpdates (incremental download of signatures)
+
 .Section 'mail'
 
 `banner`: `<string>` ('default =' `ESMTP Proxmox`)::
@@ -122,7 +126,19 @@ SMTP port number for incoming mail (untrusted). This must be a different number 
 
 `greylist`: `<boolean>` ('default =' `1`)::
 
-Use Greylisting.
+Use Greylisting for IPv4.
+
+`greylist6`: `<boolean>` ('default =' `0`)::
+
+Use Greylisting for IPv6.
+
+`greylistmask4`: `<integer> (0 - 32)` ('default =' `24`)::
+
+Netmask to apply for greylisting IPv4 hosts
+
+`greylistmask6`: `<integer> (0 - 128)` ('default =' `64`)::
+
+Netmask to apply for greylisting IPv6 hosts
 
 `helotests`: `<boolean>` ('default =' `0`)::
 

@@ -2639,6 +2639,128 @@ var pmgapi = [
                               "leaf" : 0,
                               "path" : "/config/ruledb/what/{ogroup}/virusfilter",
                               "text" : "virusfilter"
+                           },
+                           {
+                              "children" : [
+                                 {
+                                    "info" : {
+                                       "GET" : {
+                                          "allowtoken" : 1,
+                                          "description" : "Read 'Match Archive Filename' object settings.",
+                                          "method" : "GET",
+                                          "name" : "read_archivefilenamefilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "properties" : {
+                                                "id" : {
+                                                   "type" : "integer"
+                                                }
+                                             },
+                                             "type" : "object"
+                                          }
+                                       },
+                                       "PUT" : {
+                                          "allowtoken" : 1,
+                                          "description" : "Update 'Match Archive Filename' object.",
+                                          "method" : "PUT",
+                                          "name" : "update_archivefilenamefilter",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "filename" : {
+                                                   "description" : "Filename filter",
+                                                   "maxLength" : 1024,
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "id" : {
+                                                   "description" : "Object ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                },
+                                                "ogroup" : {
+                                                   "description" : "Object Groups ID.",
+                                                   "type" : "integer",
+                                                   "typetext" : "<integer>"
+                                                }
+                                             }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin"
+                                             ]
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "master",
+                                          "returns" : {
+                                             "type" : "null"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 1,
+                                    "path" : "/config/ruledb/what/{ogroup}/archivefilenamefilter/{id}",
+                                    "text" : "{id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "POST" : {
+                                    "allowtoken" : 1,
+                                    "description" : "Add 'Match Archive Filename' object.",
+                                    "method" : "POST",
+                                    "name" : "archivefilenamefilter",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "filename" : {
+                                             "description" : "Filename filter",
+                                             "maxLength" : 1024,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "ogroup" : {
+                                             "description" : "Object Groups ID.",
+                                             "type" : "integer",
+                                             "typetext" : "<integer>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "master",
+                                    "returns" : {
+                                       "description" : "The object ID.",
+                                       "type" : "integer"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/config/ruledb/what/{ogroup}/archivefilenamefilter",
+                              "text" : "archivefilenamefilter"
                            }
                         ],
                         "info" : {
@@ -6926,7 +7048,7 @@ var pmgapi = [
                               },
                               "host" : {
                                  "description" : "Target host (name or IP address).",
-                                 "format" : "address",
+                                 "format" : "transport-address",
                                  "optional" : 1,
                                  "type" : "string",
                                  "typetext" : "<string>"
@@ -7045,7 +7167,7 @@ var pmgapi = [
                         },
                         "host" : {
                            "description" : "Target host (name or IP address).",
-                           "format" : "address",
+                           "format" : "transport-address",
                            "type" : "string",
                            "typetext" : "<string>"
                         },
@@ -7587,9 +7709,9 @@ var pmgapi = [
                         "parameters" : {
                            "additionalProperties" : 0,
                            "properties" : {
-                              "domain" : {
-                                 "description" : "Domain name.",
-                                 "format" : "transport-domain",
+                              "destination" : {
+                                 "description" : "Destination (Domain or next-hop).",
+                                 "format" : "transport-domain-or-nexthop",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
@@ -7614,9 +7736,9 @@ var pmgapi = [
                         "parameters" : {
                            "additionalProperties" : 0,
                            "properties" : {
-                              "domain" : {
-                                 "description" : "Domain name.",
-                                 "format" : "transport-domain",
+                              "destination" : {
+                                 "description" : "Destination (Domain or next-hop).",
+                                 "format" : "transport-domain-or-nexthop",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               }
@@ -7631,8 +7753,12 @@ var pmgapi = [
                         "proxyto" : "master",
                         "returns" : {
                            "properties" : {
+                              "destination" : {
+                                 "format" : "transport-domain-or-nexthop",
+                                 "type" : "string"
+                              },
                               "domain" : {
-                                 "format" : "transport-domain",
+                                 "format" : "transport-domain-or-nexthop",
                                  "type" : "string"
                               },
                               "policy" : {
@@ -7651,9 +7777,9 @@ var pmgapi = [
                         "parameters" : {
                            "additionalProperties" : 0,
                            "properties" : {
-                              "domain" : {
-                                 "description" : "Domain name.",
-                                 "format" : "transport-domain",
+                              "destination" : {
+                                 "description" : "Destination (Domain or next-hop).",
+                                 "format" : "transport-domain-or-nexthop",
                                  "type" : "string",
                                  "typetext" : "<string>"
                               },
@@ -7678,8 +7804,8 @@ var pmgapi = [
                      }
                   },
                   "leaf" : 1,
-                  "path" : "/config/tlspolicy/{domain}",
-                  "text" : "{domain}"
+                  "path" : "/config/tlspolicy/{destination}",
+                  "text" : "{destination}"
                }
             ],
             "info" : {
@@ -7701,8 +7827,12 @@ var pmgapi = [
                   "returns" : {
                      "items" : {
                         "properties" : {
+                           "destination" : {
+                              "format" : "transport-domain-or-nexthop",
+                              "type" : "string"
+                           },
                            "domain" : {
-                              "format" : "transport-domain",
+                              "format" : "transport-domain-or-nexthop",
                               "type" : "string"
                            },
                            "policy" : {
@@ -7714,7 +7844,7 @@ var pmgapi = [
                      },
                      "links" : [
                         {
-                           "href" : "{domain}",
+                           "href" : "{destination}",
                            "rel" : "child"
                         }
                      ],
@@ -7729,9 +7859,17 @@ var pmgapi = [
                   "parameters" : {
                      "additionalProperties" : 0,
                      "properties" : {
+                        "destination" : {
+                           "description" : "Destination (Domain or next-hop).",
+                           "format" : "transport-domain-or-nexthop",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
                         "domain" : {
-                           "description" : "Domain name.",
-                           "format" : "transport-domain",
+                           "description" : "Deprecated - use 'destination'.",
+                           "format" : "transport-domain-or-nexthop",
+                           "optional" : 1,
                            "type" : "string",
                            "typetext" : "<string>"
                         },
@@ -8620,6 +8758,13 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
+                        },
+                        "scriptedupdates" : {
+                           "default" : 0,
+                           "description" : "Enables ScriptedUpdates (incremental download of signatures)",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
                         }
                      },
                      "type" : "object"
@@ -8749,10 +8894,35 @@ var pmgapi = [
                         },
                         "greylist" : {
                            "default" : 1,
-                           "description" : "Use Greylisting.",
+                           "description" : "Use Greylisting for IPv4.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
+                        },
+                        "greylist6" : {
+                           "default" : 0,
+                           "description" : "Use Greylisting for IPv6.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "greylistmask4" : {
+                           "default" : 24,
+                           "description" : "Netmask to apply for greylisting IPv4 hosts",
+                           "maximum" : 32,
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - 32)"
+                        },
+                        "greylistmask6" : {
+                           "default" : 64,
+                           "description" : "Netmask to apply for greylisting IPv6 hosts",
+                           "maximum" : 128,
+                           "minimum" : 0,
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<integer> (0 - 128)"
                         },
                         "helotests" : {
                            "default" : 0,
@@ -13504,6 +13674,43 @@ var pmgapi = [
                }
             ],
             "info" : {
+               "DELETE" : {
+                  "allowtoken" : 1,
+                  "description" : "Delete user whitelist entries.",
+                  "method" : "DELETE",
+                  "name" : "whitelist_delete_base",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "address" : {
+                           "description" : "The address, or comma-separated list of addresses, you want to remove.",
+                           "minLength" : 3,
+                           "pattern" : "",
+                           "type" : "string"
+                        },
+                        "pmail" : {
+                           "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                           "maxLength" : 512,
+                           "minLength" : 3,
+                           "optional" : 1,
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "protected" : 1,
+                  "returns" : {
+                     "type" : "null"
+                  }
+               },
                "GET" : {
                   "allowtoken" : 1,
                   "description" : "Show user whitelist.",
@@ -13632,6 +13839,43 @@ var pmgapi = [
                }
             ],
             "info" : {
+               "DELETE" : {
+                  "allowtoken" : 1,
+                  "description" : "Delete user blacklist entries.",
+                  "method" : "DELETE",
+                  "name" : "blacklist_delete_base",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "address" : {
+                           "description" : "The address, or comma-separated list of addresses, you want to remove.",
+                           "minLength" : 3,
+                           "pattern" : "",
+                           "type" : "string"
+                        },
+                        "pmail" : {
+                           "description" : "List entries for the user with this primary email address. Quarantine users cannot speficy this parameter, but it is required for all other roles.",
+                           "maxLength" : 512,
+                           "minLength" : 3,
+                           "optional" : 1,
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "qmanager",
+                        "audit",
+                        "quser"
+                     ]
+                  },
+                  "protected" : 1,
+                  "returns" : {
+                     "type" : "null"
+                  }
+               },
                "GET" : {
                   "allowtoken" : 1,
                   "description" : "Show user blacklist.",
