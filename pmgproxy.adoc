@@ -78,9 +78,11 @@ You can define the cipher list in `/etc/default/pmgproxy`, for example
 Above is the default. See the `ciphers(1)` man page from the `openssl`
 package for a list of all available options.
 
-Additionally you can define the order that the client chooses the used cipher in
-`/etc/default/pmgproxy` (default is the first cipher in the list available to
-both client and `pmgproxy`):
+The first of these ciphers, available to both the client and the `pmgproxy`,
+will be used.
+
+Additionally you can allow the client to choose the cipher from the list above
+by disabling the HONOR_CIPHER_ORDER option in `/etc/default/pmgproxy`:
 
  HONOR_CIPHER_ORDER=0
 
