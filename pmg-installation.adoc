@@ -34,7 +34,7 @@ following:
 * Web-based management interface for using the toolset
 
 Please burn the downloaded ISO image to a CD or create a
-xref:create_bootable_usb[bootable USB stick].
+xref:installation_prepare_media[bootable USB flash drive].
 
 Then insert the installation CD-ROM on the physical host where you want
 to install {pmg} and boot from that drive. Afterwards you
@@ -218,9 +218,7 @@ the installation using the following command:
 
  zpool add <pool-name> log </dev/path_to_fast_ssd>
 
-
-include::pmg-usbstick.adoc[]
-
+include::pmg-installation-media.adoc[]
 
 [[pmg_install_on_debian]]
 Install {pmg} on Debian
