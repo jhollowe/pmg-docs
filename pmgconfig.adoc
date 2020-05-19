@@ -51,11 +51,13 @@ on the next reboot.
 
 `/etc/resolv.conf`::
 
-DNS search domain and nameserver setup.
+DNS search domain and nameserver setup. {pmg} uses the search domain setting
+to create the FQDN and domain name used in the postfix configuration.
 
 `/etc/hostname`::
 
-The system's host name.
+The system's host name. {pmg} uses the hostname to create the FQDN used
+in the postfix configuration.
 
 `/etc/hosts`::
 
