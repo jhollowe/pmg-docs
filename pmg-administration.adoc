@@ -155,10 +155,6 @@ In the second phase, accepted mails need to be delivered to the
 receiver. This action may also fail or succeed. 'Status'
 combines the result from the first and second phase.
 
-When before-queue filtering is enabled, we don't have the same delivery information as
-with after-queue filtering. In this case, if the mail is accepted by the filter,
-the status is shown as 'queued/accepted' instead of 'accepted/<status>'.
-
 [options="header",cols="2s,1d,5d"]
 |====
 |Status |Phase |Description
@@ -166,7 +162,7 @@ the status is shown as 'queued/accepted' instead of 'accepted/<status>'.
 |greylisted           |1 | Email temporarily rejected by greylisting
 |queued/deferred      |1 | Internal Email was queued, still trying to deliver
 |queued/bounced       |1 | Internal Email was queued but not accepted by the target email server (for example user unknown)
-|queued/accepted      |1 | Email was accepted, no delivery information available (before-queue only, replaces accepted/<status>)
+|queued/delivered     |1 | Internal Email was queued and delivered
 |quarantine           |1 | Email was moved to quarantine
 |blocked              |1 | Email was blocked by filter rules
 |accepted/deferred    |2 | Email accepted, still trying to deliver
