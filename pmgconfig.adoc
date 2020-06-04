@@ -862,33 +862,33 @@ Local Users
 
 [thumbnail="pmg-gui-local-user-config.png", big=1]
 
-Local users can manage and audit {pmg}. They can login on the
-management web interface.
+Local users can manage and audit {pmg}. They can login on the management web
+interface.
 
 There are three roles:
 
-* Administrator
-+
-Is allowed to manage settings of {pmg}, except some tasks like
-network configuration and upgrading.
+Administrator::
 
-* Quarantine manager
-+
+Is allowed to manage settings of {pmg}, except some tasks like network
+configuration and upgrading.
+
+Quarantine manager::
+
 Is allowed to manage quarantines, blacklists and whitelists, but not other
 settings. Has no right to view any other data.
 
-* Auditor
-+
+Auditor::
+
 With this role, the user is only allowed to view data and configuration, but
 not to edit it.
 
 In addition there is always the 'root' user, which is used to perform special
-system administrator tasks, such as upgrading a host or changing the
-network configuration.
+system administrator tasks, such as upgrading a host or changing the network
+configuration.
 
 NOTE: Only pam users are able to login via the webconsole and ssh, which the
-users created with the web interface are not. Those users are created for
-{pmg} administration only.
+users created with the web interface are not. Those users are created for {pmg}
+administration only.
 
 Local user related settings are saved in `/etc/pmg/user.conf`.
 
