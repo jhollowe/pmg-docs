@@ -174,6 +174,7 @@ combines the result from the first and second phase.
 Postfix Queue Administration
 ----------------------------
 
+[thumbnail="pmg-gui-queue-admin-summary.png", big=1]
 
 Mail-queues are one of the central concepts of the SMTP protocol. Once a
 mailserver accepts a mail for further processing it saves it to a queue.
@@ -184,7 +185,7 @@ If immediate processing is not possible, for example because a downstream
 mailserver is not reachable, the mail remains on the queue for later
 processing.
 
-The 'Queue Administration' panel provides an overview about the current state
+The 'Queue Administration' panel provides a summary about the current state
 of the postfix mail-queue, similar to the 'qshape (1)' command-line utility.
 
 It shows domains for which mails were not delivered, and how long they have
@@ -205,6 +206,20 @@ Delete all currently queued mail, for example if the queue contains only spam.
 
 Clear the recipient verification cache.
 
+A sudden increase of queued mails should be checked out closely. It can
+indicate issues connecting to downstream servers.
+This can also mean that one of the servers for which you relay emails sends
+spam itself.
 
-In the 'Deferred Mail' tab you can filter and examine deferred mail in more
-detail by looking at the headers.
+Deferred Mail
+~~~~~~~~~~~~~
+[thumbnail="pmg-gui-queue-admin-deferred.png"]
+
+In the 'Deferred Mail' tab you can examine each deferred email separately.
+Besides providing the contact information about sender and receiver you can
+also check the reason for an email being still queued.
+
+You can view the complete headers and filter by sender or receiver of queued up
+mails.
+
+Here you can also flush or delete each deferred email independently.
