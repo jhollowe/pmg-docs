@@ -186,6 +186,47 @@ you change the configuration using the GUI or API.
 NOTE: Modified templates from `/etc/pmg/templates/` are automatically
 synced from the master node to all cluster members.
 
+[[pmgconfig_whitelist_overview]]
+White- and Blacklists
+---------------------
+
+{pmg} has multiple white- and blacklists. It differentiates between the 
+xref:pmgconfig_mailproxy_options[SMTP Whitelist]. The rule-based whitelist
+and the user whitelist.
+In addition to the whitelists there are 2 separate blacklists. The rule-based
+blacklist and the user blacklist.
+
+SMTP Whitelist
+~~~~~~~~~~~~~~
+
+The xref:pmgconfig_mailproxy_options[SMTP Whitelist] is responsible for disabling
+greylisting as well as SPF and DNSBL checks. These are done during the SMTP
+dialogue.
+
+Rule-based White-/Blacklist
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The xref:chapter_mailfilter[rule-based white- and blacklists] are predefined
+rules. They work by checking the attached 'Who' objects, containing e.g. a
+domain or a mail address, for a match. If it matches, the assigned action is
+used which by default is 'Accept' for the whitelist rule and 'Block' for the
+blacklist rule. In the default setup the blacklist rule has priority over the
+whitelist rule and spam checks.
+
+User White-/Blacklist
+~~~~~~~~~~~~~~~~~~~~~
+
+The user white- and blacklist are user specific. Every user can add mail addresses
+to their white- and blacklist. When a user adds a mail address to the whitelist,
+the result of the spam analysis will be discarded for that recipient. This can
+help the mail being accepted, but it still depends on the other rules what
+happens next. In the default setup this results in the mail being accepted for
+this recipient.
+
+For mail addresses on a user's blacklist the spam score will be increased by 100.
+It still depends on the rule system what happens when a spam score that high is
+encountered. In the default setup it will be recognized as spam and quarantined
+(spam score of 3 or higher).
 
 [[pmgconfig_systemconfig]]
 System Configuration
