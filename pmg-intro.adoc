@@ -51,7 +51,7 @@ lists of addresses linked to spamming.
 SMTP Whitelist::
 
 Exclude senders from SMTP blocking. To prevent all SMTP checks
-(Greylisting, Receiver Verification, SPF and RBL) and accept all
+(Greylisting, Receiver Verification, SPF and DNSBL) and accept all
 e-mails for the analysis in the filter rule system, you can add the
 following to this list: Domains (Sender/Receiver), Mail address
 (Sender/Receiver), Regular Expression (Sender/Receiver), IP address

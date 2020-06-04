@@ -582,11 +582,16 @@ ifndef::manvolnum[]
 endif::manvolnum[]
 
 All SMTP checks are disabled for those entries (e.g. Greylisting,
-SPF, RBL, ...)
+SPF, DNSBL, ...)
+
+DNSBL checks are done by `postscreen` which works on IP addresses and networks.
+This means it can only make use of the `IP Address` and `IP Network` entries.
 
 NOTE: If you use a backup MX server (e.g. your ISP offers this service
 for you) you should always add those servers here.
 
+NOTE: To disable DNSBL checks entirely, remove any `DNSBL Sites` entries in
+xref:pmgconfig_mailproxy_options[Mail Proxy Options].
 
 [[pmgconfig_spamdetector]]
 Spam Detector Configuration
