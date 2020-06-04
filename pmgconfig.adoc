@@ -865,7 +865,7 @@ Local Users
 Local users can manage and audit {pmg}. They can login on the management web
 interface.
 
-There are three roles:
+There are four roles:
 
 Administrator::
 
@@ -881,6 +881,10 @@ Auditor::
 
 With this role, the user is only allowed to view data and configuration, but
 not to edit it.
+
+Helpdesk::
+
+Combines permissions of the 'Auditor' and the 'Quarantine Manager' role.
 
 In addition there is always the 'root' user, which is used to perform special
 system administrator tasks, such as upgrading a host or changing the network
