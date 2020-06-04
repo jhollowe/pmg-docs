@@ -1,3 +1,17 @@
+pmg-docs (6.2-2) pmg; urgency=medium
+
+  * install: usb: use updated instructions from PVE
+
+  * fix #2449: clarify DNSBL check in SMTP Whitelist
+
+  * add pmg specifics to resolv.conf documentation
+
+  * add queue administration section
+
+  * add white- and blacklist clarification
+
+ -- Proxmox Support Team <support@proxmox.com>  Thu, 04 Jun 2020 16:53:20 +0200
+
 pmg-docs (6.2-1) pmg; urgency=medium
 
   * improve and add to greylisting documentation
