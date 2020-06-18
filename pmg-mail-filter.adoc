@@ -162,9 +162,9 @@ Disclaimer
 
 Add a Disclaimer.
 
-The disclaimer can contain html markup and will be added to the first found
-text/html and text/plain part of an email. It only gets added if the disclaimer
-text can be encoded in the mail's character encoding.
+The disclaimer can contain HTML markup. It will be added to the first
+`text/html` and `text/plain` part of an email. A disclaimer only gets added if
+its text can be encoded in the mail's character encoding.
 
 
 [[pmg_mailfilter_who]]
