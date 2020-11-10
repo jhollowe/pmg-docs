@@ -26,7 +26,7 @@ The installer ISO image includes the following:
 * Complete operating system (Debian Linux, 64-bit)
 
 * The {pmg} installer, which partitions the hard drive(s) with ext4,
-  ext3, xfs or ZFS and installs the operating system.
+  xfs or ZFS and installs the operating system.
 
 * Linux kernel
 
@@ -84,7 +84,7 @@ Make sure there is no important data on the server before proceeding with the
 installation.
 
 The `Options` button lets you select the target file system, which
-defaults to `ext4`. The installer uses LVM if you select `ext3`,
+defaults to `ext4`. The installer uses LVM if you select
 `ext4` or `xfs` as file system, and offers additional option to
 restrict LVM space (see <<advanced_lvm_options,below>>)
 
