@@ -73,7 +73,7 @@ Statistic::
 
 All statistical data.
 
-For examply, you can selectively restore the mail filter rules from an
+For example, you can selectively restore the mail filter rules from an
 older backup:
 
 ----
