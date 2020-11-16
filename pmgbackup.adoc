@@ -35,8 +35,15 @@ mail filter rules and the statistic database.
 NOTE: The backup does not include the network setup, and also no mail
 data from the postfix queue or the spam or virus quarantine.
 
-You can create a backup by simply pressing the 'Backup' button on the
-GUI, or by using the command line interface:
+Backups can be created locally or stored on a
+https://www.proxmox.com/en/proxmox-backup-server[Proxmox Backup Server]
+instance.
+
+Local Backups
+-------------
+
+You can create a backup by simply pressing the 'Backup' button in the 'Local
+Backup/Restore' tab on the GUI, or by using the command line interface:
 
 ----
 # pmgbackup backup
@@ -44,7 +51,7 @@ starting backup to: /var/lib/pmg/backup/pmg-backup_2018_01_04_5A4E0436.tgz
 backup finished
 ----
 
-Backups are stored inside directory `/var/lib/pmg/backup/`. It is
+Local backups are stored inside directory `/var/lib/pmg/backup/`. It is
 usually best to mount a remote file system to that directory, so that
 the resulting backups gets stored remotely.
 
@@ -90,7 +97,118 @@ Analyzing/Upgrading existing Databases...done
 restore finished
 ----
 
+Proxmox Backup Server
+---------------------
 
+In order to backup your {pmg} configuration on a Proxmox Backup Server you
+need configure the instance as backup 'remote'. You can then directly create
+and restore backups, as well as create a scheduled 'backup job' to run
+regular backups.
+
+Remotes
+~~~~~~~
+
+ifndef::manvolnum[]
+[thumbnail="pmg-gui-pbs-remote.png", big=1]
+endif::manvolnum[]
+
+A Proxmox Backup Server remote can be configured using the 'Proxmox Backup
+Server' panel in the 'Backup/Restore' menu of the GUI, or by using the
+`remote` subcommand of `pmgbackup`:
+
+----
+# pmgbackup remote add backup --datastore big --server backup.proxmox.com --user 'pmgbackup@pbs!token' --password --fingerprint 09:54:ef:..snip..:88:af:47:fe:4c:3b:cf:8b:26:88:0b:4e:3c:b2
+Enter new password: ******
+Retype new password: ******
+----
+
+You can use API Tokens in place of a username/password combination.
+
+If the remote certificate is signed by a CA trusted by {pmg} the fingerprint
+is not required.
+
+Additionally you can configure `prune-settings` for each remote to control
+how many backups should be stored on the Proxmox Backup Server:
+
+----
+# pmgbackup remote set backup --keep-last 5 --keep-daily 30 --keep-yearly 5
+----
+The backup-group is pruned after each successful backup according to the
+configured settings.
+
+The public settings are stored in `/etc/pmg/pbs/pbs.conf`, sensitive settings,
+like passwords are stored in individual files named after the remote inside
+`/etc/pmg/pbs/`:
+
+.Configuration Example (`/etc/pmg/pbs/pbs.conf`)
+----
+pbs: backup
+        datastore big
+        server backup.proxmox.com
+        fingerprint 09:54:ef:..snip..:88:af:47:fe:4c:3b:cf:8b:26:88:0b:4e:3c:b2
+        keep-daily 30
+        keep-last 5
+        keep-monthly 3
+        keep-yearly 5
+        username pmgbackup@pbs!token
+----
+
+Backup Jobs
+~~~~~~~~~~~
+
+With a configured remote you can create backups using the GUI or the
+`pbsjob` subcommand of `pmgbackup`:
+
+----
+# pmgbackup pbsjob run  backup
+starting update of current backup state
+Starting backup: host/pmg/2020-11-16T16:38:39Z
+Client name: pmg
+Starting backup protocol: Mon Nov 16 16:38:39 2020
+Upload directory '/var/lib/pmg/backup/current' to 'pmgbackup@pbs!token@backup.proxmox.com:8007:local' as pmgbackup.pxar.didx
+pmgbackup.pxar: had to upload 188.33 KiB of 188.33 KiB in 0.00s, average speed 162.33 MiB/s).
+Uploaded backup catalog (145 B)
+Duration: 0.06s
+End Time: Mon Nov 16 16:38:39 2020
+backup finished
+starting prune of host/pmg
+prune finished
+----
+
+For restoring you can optionally select a particular backup-snapshot to return
+to the state of configuration and rules at that time. If you don't provide one
+the latest backup is restored:
+
+----
+# pmgbackup pbsjob restore backup --backup-time 2020-11-16T14:03:04Z
+starting restore of host/pmg/2020-11-16T14:03:04Z from backup
+..snip..
+restore finished
+----
+
+You can mark a particular snapshot for garbage collection by Proxmox Backup
+Server, by forgetting it:
+
+----
+# pmgbackup pbsjob forget backup  2020-11-16T14:03:04Z
+----
+
+Scheduled Backups
+^^^^^^^^^^^^^^^^^
+
+You can create a `Schedule` for each remote, to periodically create backups of
+your {pmg} - for example to run a daily backup at 03:50:00 with a randomized
+delay of 15 minutes each day:
+
+----
+# pmgbackup pbsjob create backup --schedule '*-*-* 03:50:00' --delay '15 minutes'
+----
+
+The randomized delay can help to prevent load-peaks on the backup server, if
+you have multiple backups, which all should start around the same time.
+
+The schedules are `systemd.timer` units.  See the `systemd.time(7)` man page for
+details on the time specification used.
 
 
 ifdef::manvolnum[]
