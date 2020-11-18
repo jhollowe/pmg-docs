@@ -1,3 +1,20 @@
+pmg-docs (6.3-1) pmg; urgency=medium
+
+  * document Proxmox Backup Server integration
+
+  * local users: document missing Helpdesk role
+
+  * add documentation for RAR support
+
+  * expand docs for adding a disclaimer
+
+  * installation: don't mention ext3 as an option anymore
+
+  * administration: add a basic explanation about configuring the persoenal
+    spam quarantine user self-service
+
+ -- Proxmox Support Team <support@proxmox.com>  Wed, 18 Nov 2020 19:27:31 +0100
+
 pmg-docs (6.2-2) pmg; urgency=medium
 
   * install: usb: use updated instructions from PVE
