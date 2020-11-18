@@ -83,9 +83,11 @@ code (attacking your operating system or email client) is removed by
 Users can get access to their personalized quarantine via the daily
 spam report, or by logging in with their LDAP credentials.
 
-Alternatively you can enable the link on Quarantine Login page. There users will get
-a link to their personalized quarantine.
-To enable this on the Quarantine Login page, edit `/etc/pmg/pmg.conf`  (see section xref:pmgconfig_spamdetector_quarantine[Spam Detector Configuration - Quarantine])
+You can additionally enable user self-service for sending an access link from
+the Quarantine Login page.
+To enable this on the Quarantine Login page, edit `/etc/pmg/pmg.conf`, see section
+xref:pmgconfig_spamdetector_quarantine[Spam Detector Configuration - Quarantine]
+for more details about the available settings.
 
 
 Virus
