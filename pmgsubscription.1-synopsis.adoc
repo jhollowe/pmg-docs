@@ -1,5 +1,9 @@
 *pmgsubscription* `<COMMAND> [ARGS] [OPTIONS]`
 
+*pmgsubscription delete*
+
+Delete subscription key.
+
 *pmgsubscription get*
 
 Read subscription info.

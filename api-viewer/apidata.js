@@ -8500,6 +8500,436 @@ var pmgapi = [
             "text" : "customscores"
          },
          {
+            "children" : [
+               {
+                  "info" : {
+                     "DELETE" : {
+                        "allowtoken" : 1,
+                        "description" : "Delete an PBS remote",
+                        "method" : "DELETE",
+                        "name" : "delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "remote" : {
+                                 "description" : "Profile ID.",
+                                 "format" : "pve-configid",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
+                     "GET" : {
+                        "allowtoken" : 1,
+                        "description" : "Get Proxmox Backup Server remote configuration.",
+                        "method" : "GET",
+                        "name" : "read_config",
+                        "parameters" : {
+                           "additionalProperties" : 1,
+                           "properties" : {
+                              "remote" : {
+                                 "description" : "Proxmox Backup Server ID.",
+                                 "format" : "pve-configid",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "proxyto" : "master",
+                        "returns" : {}
+                     },
+                     "PUT" : {
+                        "allowtoken" : 1,
+                        "description" : "Update PBS remote settings.",
+                        "method" : "PUT",
+                        "name" : "update_config",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "datastore" : {
+                                 "description" : "Proxmox Backup Server datastore name.",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "delete" : {
+                                 "description" : "A list of settings you want to delete.",
+                                 "format" : "pve-configid-list",
+                                 "maxLength" : 4096,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "digest" : {
+                                 "description" : "Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.",
+                                 "maxLength" : 40,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "disable" : {
+                                 "description" : "Flag to disable (deactivate) the entry.",
+                                 "optional" : 1,
+                                 "type" : "boolean",
+                                 "typetext" : "<boolean>"
+                              },
+                              "fingerprint" : {
+                                 "description" : "Certificate SHA 256 fingerprint.",
+                                 "optional" : 1,
+                                 "pattern" : "([A-Fa-f0-9]{2}:){31}[A-Fa-f0-9]{2}",
+                                 "type" : "string"
+                              },
+                              "keep-daily" : {
+                                 "description" : "Keep backups for the last <N> different days. If there is more than one backup for a single day, only the latest one is kept.",
+                                 "format_description" : "N",
+                                 "minimum" : "0",
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<N>"
+                              },
+                              "keep-hourly" : {
+                                 "description" : "Keep backups for the last <N> different hours. If there is more than one backup for a single hour, only the latest one is kept.",
+                                 "format_description" : "N",
+                                 "minimum" : "0",
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<N>"
+                              },
+                              "keep-last" : {
+                                 "description" : "Keep the last <N> backups.",
+                                 "format_description" : "N",
+                                 "minimum" : "0",
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<N>"
+                              },
+                              "keep-monthly" : {
+                                 "description" : "Keep backups for the last <N> different months. If there is more than one backup for a single month, only the latest one is kept.",
+                                 "format_description" : "N",
+                                 "minimum" : "0",
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<N>"
+                              },
+                              "keep-weekly" : {
+                                 "description" : "Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.",
+                                 "format_description" : "N",
+                                 "minimum" : "0",
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<N>"
+                              },
+                              "keep-yearly" : {
+                                 "description" : "Keep backups for the last <N> different years. If there is more than one backup for a single year, only the latest one is kept.",
+                                 "format_description" : "N",
+                                 "minimum" : "0",
+                                 "optional" : 1,
+                                 "type" : "integer",
+                                 "typetext" : "<N>"
+                              },
+                              "password" : {
+                                 "description" : "Password or API token secret for the user on the Proxmox Backup Server.",
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "remote" : {
+                                 "description" : "Proxmox Backup Server ID.",
+                                 "format" : "pve-configid",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "server" : {
+                                 "description" : "Proxmox Backup Server address.",
+                                 "format" : "address",
+                                 "maxLength" : 256,
+                                 "optional" : 1,
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              },
+                              "username" : {
+                                 "description" : "Username or API token ID on the Proxmox Backup Server",
+                                 "maxLength" : 512,
+                                 "minLength" : 3,
+                                 "optional" : 1,
+                                 "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                                 "type" : "string"
+                              }
+                           },
+                           "type" : "object"
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "master",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     }
+                  },
+                  "leaf" : 1,
+                  "path" : "/config/pbs/{remote}",
+                  "text" : "{remote}"
+               }
+            ],
+            "info" : {
+               "GET" : {
+                  "allowtoken" : 1,
+                  "description" : "List all configured Proxmox Backup Server instances.",
+                  "method" : "GET",
+                  "name" : "list",
+                  "parameters" : {
+                     "additionalProperties" : 0
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin",
+                        "audit"
+                     ]
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "items" : {
+                        "additionalProperties" : 0,
+                        "properties" : {
+                           "datastore" : {
+                              "description" : "Proxmox Backup Server datastore name.",
+                              "optional" : 0,
+                              "type" : "string"
+                           },
+                           "disable" : {
+                              "description" : "Flag to disable (deactivate) the entry.",
+                              "optional" : 1,
+                              "type" : "boolean"
+                           },
+                           "fingerprint" : {
+                              "description" : "Certificate SHA 256 fingerprint.",
+                              "optional" : 1,
+                              "pattern" : "([A-Fa-f0-9]{2}:){31}[A-Fa-f0-9]{2}",
+                              "type" : "string"
+                           },
+                           "keep-daily" : {
+                              "description" : "Keep backups for the last <N> different days. If there is more than one backup for a single day, only the latest one is kept.",
+                              "format_description" : "N",
+                              "minimum" : "0",
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "keep-hourly" : {
+                              "description" : "Keep backups for the last <N> different hours. If there is more than one backup for a single hour, only the latest one is kept.",
+                              "format_description" : "N",
+                              "minimum" : "0",
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "keep-last" : {
+                              "description" : "Keep the last <N> backups.",
+                              "format_description" : "N",
+                              "minimum" : "0",
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "keep-monthly" : {
+                              "description" : "Keep backups for the last <N> different months. If there is more than one backup for a single month, only the latest one is kept.",
+                              "format_description" : "N",
+                              "minimum" : "0",
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "keep-weekly" : {
+                              "description" : "Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.",
+                              "format_description" : "N",
+                              "minimum" : "0",
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "keep-yearly" : {
+                              "description" : "Keep backups for the last <N> different years. If there is more than one backup for a single year, only the latest one is kept.",
+                              "format_description" : "N",
+                              "minimum" : "0",
+                              "optional" : 1,
+                              "type" : "integer"
+                           },
+                           "password" : {
+                              "description" : "Password or API token secret for the user on the Proxmox Backup Server.",
+                              "optional" : 1,
+                              "type" : "string"
+                           },
+                           "remote" : {
+                              "description" : "Proxmox Backup Server ID.",
+                              "format" : "pve-configid",
+                              "type" : "string"
+                           },
+                           "server" : {
+                              "description" : "Proxmox Backup Server address.",
+                              "format" : "address",
+                              "maxLength" : 256,
+                              "optional" : 0,
+                              "type" : "string"
+                           },
+                           "username" : {
+                              "description" : "Username or API token ID on the Proxmox Backup Server",
+                              "maxLength" : 512,
+                              "minLength" : 3,
+                              "optional" : 1,
+                              "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                              "type" : "string"
+                           }
+                        },
+                        "type" : "object"
+                     },
+                     "links" : [
+                        {
+                           "href" : "{remote}",
+                           "rel" : "child"
+                        }
+                     ],
+                     "type" : "array"
+                  }
+               },
+               "POST" : {
+                  "allowtoken" : 1,
+                  "description" : "Add Proxmox Backup Server remote instance.",
+                  "method" : "POST",
+                  "name" : "create",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "datastore" : {
+                           "description" : "Proxmox Backup Server datastore name.",
+                           "optional" : 0,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "disable" : {
+                           "description" : "Flag to disable (deactivate) the entry.",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
+                        "fingerprint" : {
+                           "description" : "Certificate SHA 256 fingerprint.",
+                           "optional" : 1,
+                           "pattern" : "([A-Fa-f0-9]{2}:){31}[A-Fa-f0-9]{2}",
+                           "type" : "string"
+                        },
+                        "keep-daily" : {
+                           "description" : "Keep backups for the last <N> different days. If there is more than one backup for a single day, only the latest one is kept.",
+                           "format_description" : "N",
+                           "minimum" : "0",
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<N>"
+                        },
+                        "keep-hourly" : {
+                           "description" : "Keep backups for the last <N> different hours. If there is more than one backup for a single hour, only the latest one is kept.",
+                           "format_description" : "N",
+                           "minimum" : "0",
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<N>"
+                        },
+                        "keep-last" : {
+                           "description" : "Keep the last <N> backups.",
+                           "format_description" : "N",
+                           "minimum" : "0",
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<N>"
+                        },
+                        "keep-monthly" : {
+                           "description" : "Keep backups for the last <N> different months. If there is more than one backup for a single month, only the latest one is kept.",
+                           "format_description" : "N",
+                           "minimum" : "0",
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<N>"
+                        },
+                        "keep-weekly" : {
+                           "description" : "Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.",
+                           "format_description" : "N",
+                           "minimum" : "0",
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<N>"
+                        },
+                        "keep-yearly" : {
+                           "description" : "Keep backups for the last <N> different years. If there is more than one backup for a single year, only the latest one is kept.",
+                           "format_description" : "N",
+                           "minimum" : "0",
+                           "optional" : 1,
+                           "type" : "integer",
+                           "typetext" : "<N>"
+                        },
+                        "password" : {
+                           "description" : "Password or API token secret for the user on the Proxmox Backup Server.",
+                           "optional" : 1,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "remote" : {
+                           "description" : "Proxmox Backup Server ID.",
+                           "format" : "pve-configid",
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "server" : {
+                           "description" : "Proxmox Backup Server address.",
+                           "format" : "address",
+                           "maxLength" : 256,
+                           "optional" : 0,
+                           "type" : "string",
+                           "typetext" : "<string>"
+                        },
+                        "username" : {
+                           "description" : "Username or API token ID on the Proxmox Backup Server",
+                           "maxLength" : 512,
+                           "minLength" : 3,
+                           "optional" : 1,
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
+                        }
+                     },
+                     "type" : "object"
+                  },
+                  "permissions" : {
+                     "check" : [
+                        "admin"
+                     ]
+                  },
+                  "protected" : 1,
+                  "proxyto" : "master",
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 0,
+            "path" : "/config/pbs",
+            "text" : "pbs"
+         },
+         {
             "info" : {
                "GET" : {
                   "allowtoken" : 1,
@@ -9357,6 +9787,13 @@ var pmgapi = [
                            "optional" : 1,
                            "type" : "string"
                         },
+                        "quarantinelink" : {
+                           "default" : 0,
+                           "description" : "Enables user self-service for Quarantine Links. Caution: this is accessible without authentication",
+                           "optional" : 1,
+                           "type" : "boolean",
+                           "typetext" : "<boolean>"
+                        },
                         "reportstyle" : {
                            "default" : "verbose",
                            "description" : "Spam report style.",
@@ -9484,7 +9921,7 @@ var pmgapi = [
             "info" : {
                "POST" : {
                   "allowtoken" : 1,
-                  "description" : "Test Regex",
+                  "description" : "Test Regex ignoring case",
                   "method" : "POST",
                   "name" : "regextest",
                   "parameters" : {
@@ -9842,6 +10279,28 @@ var pmgapi = [
                                                 "incoming",
                                                 "hold"
                                              ],
+                                             "type" : "string"
+                                          },
+                                          "sortdir" : {
+                                             "description" : "Sort direction.",
+                                             "enum" : [
+                                                "ASC",
+                                                "DESC"
+                                             ],
+                                             "optional" : 1,
+                                             "requires" : "sortfield",
+                                             "type" : "string"
+                                          },
+                                          "sortfield" : {
+                                             "description" : "Sort field.",
+                                             "enum" : [
+                                                "arrival_time",
+                                                "message_size",
+                                                "sender",
+                                                "receiver",
+                                                "reason"
+                                             ],
+                                             "optional" : 1,
                                              "type" : "string"
                                           },
                                           "start" : {
@@ -11635,6 +12094,28 @@ var pmgapi = [
                },
                {
                   "info" : {
+                     "DELETE" : {
+                        "allowtoken" : 1,
+                        "description" : "Delete subscription key.",
+                        "method" : "DELETE",
+                        "name" : "delete",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "type" : "null"
+                        }
+                     },
                      "GET" : {
                         "allowtoken" : 1,
                         "description" : "Read subscription info.",
@@ -12439,6 +12920,628 @@ var pmgapi = [
                   "leaf" : 0,
                   "path" : "/nodes/{node}/backup",
                   "text" : "backup"
+               },
+               {
+                  "children" : [
+                     {
+                        "children" : [
+                           {
+                              "children" : [
+                                 {
+                                    "children" : [
+                                       {
+                                          "info" : {
+                                             "DELETE" : {
+                                                "allowtoken" : 1,
+                                                "description" : "Forget a snapshot",
+                                                "method" : "DELETE",
+                                                "name" : "forget_snapshot",
+                                                "parameters" : {
+                                                   "additionalProperties" : 0,
+                                                   "properties" : {
+                                                      "backup-id" : {
+                                                         "description" : "ID (hostname) of backup snapshot",
+                                                         "type" : "string",
+                                                         "typetext" : "<string>"
+                                                      },
+                                                      "backup-time" : {
+                                                         "description" : "Backup time in RFC 3339 format",
+                                                         "type" : "string",
+                                                         "typetext" : "<string>"
+                                                      },
+                                                      "node" : {
+                                                         "description" : "The cluster node name.",
+                                                         "format" : "pve-node",
+                                                         "type" : "string",
+                                                         "typetext" : "<string>"
+                                                      },
+                                                      "remote" : {
+                                                         "description" : "Proxmox Backup Server ID.",
+                                                         "format" : "pve-configid",
+                                                         "type" : "string",
+                                                         "typetext" : "<string>"
+                                                      }
+                                                   }
+                                                },
+                                                "permissions" : {
+                                                   "check" : [
+                                                      "admin",
+                                                      "audit"
+                                                   ]
+                                                },
+                                                "protected" : 1,
+                                                "proxyto" : "node",
+                                                "returns" : {
+                                                   "type" : "null"
+                                                }
+                                             },
+                                             "POST" : {
+                                                "allowtoken" : 1,
+                                                "description" : "Restore the system configuration.",
+                                                "method" : "POST",
+                                                "name" : "restore",
+                                                "parameters" : {
+                                                   "additionalProperties" : 0,
+                                                   "properties" : {
+                                                      "backup-id" : {
+                                                         "description" : "backup-id (hostname) of backup snapshot",
+                                                         "type" : "string",
+                                                         "typetext" : "<string>"
+                                                      },
+                                                      "backup-time" : {
+                                                         "description" : "backup-time to restore",
+                                                         "type" : "string",
+                                                         "typetext" : "<string>"
+                                                      },
+                                                      "config" : {
+                                                         "default" : 0,
+                                                         "description" : "Restore system configuration.",
+                                                         "optional" : 1,
+                                                         "type" : "boolean",
+                                                         "typetext" : "<boolean>"
+                                                      },
+                                                      "database" : {
+                                                         "default" : 1,
+                                                         "description" : "Restore the rule database. This is the default.",
+                                                         "optional" : 1,
+                                                         "type" : "boolean",
+                                                         "typetext" : "<boolean>"
+                                                      },
+                                                      "node" : {
+                                                         "description" : "The cluster node name.",
+                                                         "format" : "pve-node",
+                                                         "type" : "string",
+                                                         "typetext" : "<string>"
+                                                      },
+                                                      "remote" : {
+                                                         "description" : "Proxmox Backup Server ID.",
+                                                         "format" : "pve-configid",
+                                                         "type" : "string",
+                                                         "typetext" : "<string>"
+                                                      },
+                                                      "statistic" : {
+                                                         "default" : 0,
+                                                         "description" : "Restore statistic databases. Only considered when you restore the 'database'.",
+                                                         "optional" : 1,
+                                                         "type" : "boolean",
+                                                         "typetext" : "<boolean>"
+                                                      }
+                                                   }
+                                                },
+                                                "permissions" : {
+                                                   "check" : [
+                                                      "admin"
+                                                   ]
+                                                },
+                                                "protected" : 1,
+                                                "proxyto" : "node",
+                                                "returns" : {
+                                                   "type" : "string"
+                                                }
+                                             }
+                                          },
+                                          "leaf" : 1,
+                                          "path" : "/nodes/{node}/pbs/{remote}/snapshot/{backup-id}/{backup-time}",
+                                          "text" : "{backup-time}"
+                                       }
+                                    ],
+                                    "info" : {
+                                       "GET" : {
+                                          "allowtoken" : 1,
+                                          "description" : "Get snapshots from a specific ID stored on remote.",
+                                          "method" : "GET",
+                                          "name" : "get_group_snapshots",
+                                          "parameters" : {
+                                             "additionalProperties" : 0,
+                                             "properties" : {
+                                                "backup-id" : {
+                                                   "description" : "ID (hostname) of backup snapshot",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "node" : {
+                                                   "description" : "The cluster node name.",
+                                                   "format" : "pve-node",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                },
+                                                "remote" : {
+                                                   "description" : "Proxmox Backup Server ID.",
+                                                   "format" : "pve-configid",
+                                                   "type" : "string",
+                                                   "typetext" : "<string>"
+                                                }
+                                             }
+                                          },
+                                          "permissions" : {
+                                             "check" : [
+                                                "admin",
+                                                "audit"
+                                             ]
+                                          },
+                                          "protected" : 1,
+                                          "proxyto" : "node",
+                                          "returns" : {
+                                             "items" : {
+                                                "properties" : {
+                                                   "backup-id" : {
+                                                      "type" : "string"
+                                                   },
+                                                   "backup-time" : {
+                                                      "type" : "string"
+                                                   },
+                                                   "ctime" : {
+                                                      "type" : "string"
+                                                   },
+                                                   "size" : {
+                                                      "type" : "integer"
+                                                   }
+                                                },
+                                                "type" : "object"
+                                             },
+                                             "links" : [
+                                                {
+                                                   "href" : "{backup-time}",
+                                                   "rel" : "child"
+                                                }
+                                             ],
+                                             "type" : "array"
+                                          }
+                                       }
+                                    },
+                                    "leaf" : 0,
+                                    "path" : "/nodes/{node}/pbs/{remote}/snapshot/{backup-id}",
+                                    "text" : "{backup-id}"
+                                 }
+                              ],
+                              "info" : {
+                                 "GET" : {
+                                    "allowtoken" : 1,
+                                    "description" : "Get snapshots stored on remote.",
+                                    "method" : "GET",
+                                    "name" : "get_snapshots",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "node" : {
+                                             "description" : "The cluster node name.",
+                                             "format" : "pve-node",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "remote" : {
+                                             "description" : "Proxmox Backup Server ID.",
+                                             "format" : "pve-configid",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "node",
+                                    "returns" : {
+                                       "items" : {
+                                          "properties" : {
+                                             "backup-id" : {
+                                                "type" : "string"
+                                             },
+                                             "backup-time" : {
+                                                "type" : "string"
+                                             },
+                                             "ctime" : {
+                                                "type" : "string"
+                                             },
+                                             "size" : {
+                                                "type" : "integer"
+                                             }
+                                          },
+                                          "type" : "object"
+                                       },
+                                       "links" : [
+                                          {
+                                             "href" : "{backup-id}",
+                                             "rel" : "child"
+                                          }
+                                       ],
+                                       "type" : "array"
+                                    }
+                                 },
+                                 "POST" : {
+                                    "allowtoken" : 1,
+                                    "description" : "Create a new backup and prune the backup group afterwards, if configured.",
+                                    "method" : "POST",
+                                    "name" : "run_backup",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "node" : {
+                                             "description" : "The cluster node name.",
+                                             "format" : "pve-node",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "remote" : {
+                                             "description" : "Proxmox Backup Server ID.",
+                                             "format" : "pve-configid",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "node",
+                                    "returns" : {
+                                       "type" : "string"
+                                    }
+                                 }
+                              },
+                              "leaf" : 0,
+                              "path" : "/nodes/{node}/pbs/{remote}/snapshot",
+                              "text" : "snapshot"
+                           },
+                           {
+                              "info" : {
+                                 "DELETE" : {
+                                    "allowtoken" : 1,
+                                    "description" : "Delete backup schedule",
+                                    "method" : "DELETE",
+                                    "name" : "delete_timer",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "node" : {
+                                             "description" : "The cluster node name.",
+                                             "format" : "pve-node",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "remote" : {
+                                             "description" : "Proxmox Backup Server ID.",
+                                             "format" : "pve-configid",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "node",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 },
+                                 "GET" : {
+                                    "allowtoken" : 1,
+                                    "description" : "Get timer specification",
+                                    "method" : "GET",
+                                    "name" : "list_timer",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "node" : {
+                                             "description" : "The cluster node name.",
+                                             "format" : "pve-node",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "remote" : {
+                                             "description" : "Proxmox Backup Server ID.",
+                                             "format" : "pve-configid",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "node",
+                                    "returns" : {
+                                       "properties" : {
+                                          "delay" : {
+                                             "default" : "5min",
+                                             "description" : "Randomized delay to add to the starttime (RandomizedDelaySec setting of the systemd.timer)",
+                                             "optional" : 1,
+                                             "pattern" : "[0-9a-zA-Z. ]+",
+                                             "type" : "string"
+                                          },
+                                          "next-run" : {
+                                             "description" : "The date time of the next run, in server locale.",
+                                             "optional" : 1,
+                                             "type" : "string"
+                                          },
+                                          "remote" : {
+                                             "description" : "Proxmox Backup Server remote ID.",
+                                             "format" : "pve-configid",
+                                             "optional" : 1,
+                                             "type" : "string"
+                                          },
+                                          "schedule" : {
+                                             "default" : "daily",
+                                             "description" : "Schedule for the backup (OnCalendar setting of the systemd.timer)",
+                                             "optional" : 1,
+                                             "pattern" : "[0-9a-zA-Z*.:,\\-/ ]+",
+                                             "type" : "string"
+                                          },
+                                          "unitfile" : {
+                                             "description" : "unit file for the systemd.timer unit",
+                                             "optional" : 1,
+                                             "type" : "string"
+                                          }
+                                       },
+                                       "type" : "object"
+                                    }
+                                 },
+                                 "POST" : {
+                                    "allowtoken" : 1,
+                                    "description" : "Create backup schedule",
+                                    "method" : "POST",
+                                    "name" : "create_timer",
+                                    "parameters" : {
+                                       "additionalProperties" : 0,
+                                       "properties" : {
+                                          "delay" : {
+                                             "default" : "5min",
+                                             "description" : "Randomized delay to add to the starttime (RandomizedDelaySec setting of the systemd.timer)",
+                                             "optional" : 1,
+                                             "pattern" : "[0-9a-zA-Z. ]+",
+                                             "type" : "string"
+                                          },
+                                          "node" : {
+                                             "description" : "The cluster node name.",
+                                             "format" : "pve-node",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "remote" : {
+                                             "description" : "Proxmox Backup Server ID.",
+                                             "format" : "pve-configid",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "schedule" : {
+                                             "default" : "daily",
+                                             "description" : "Schedule for the backup (OnCalendar setting of the systemd.timer)",
+                                             "optional" : 1,
+                                             "pattern" : "[0-9a-zA-Z*.:,\\-/ ]+",
+                                             "type" : "string"
+                                          }
+                                       }
+                                    },
+                                    "permissions" : {
+                                       "check" : [
+                                          "admin",
+                                          "audit"
+                                       ]
+                                    },
+                                    "protected" : 1,
+                                    "proxyto" : "node",
+                                    "returns" : {
+                                       "type" : "null"
+                                    }
+                                 }
+                              },
+                              "leaf" : 1,
+                              "path" : "/nodes/{node}/pbs/{remote}/timer",
+                              "text" : "timer"
+                           }
+                        ],
+                        "info" : {
+                           "GET" : {
+                              "allowtoken" : 1,
+                              "description" : "Backup Job index.",
+                              "method" : "GET",
+                              "name" : "remote_index",
+                              "parameters" : {
+                                 "additionalProperties" : 0,
+                                 "properties" : {
+                                    "node" : {
+                                       "description" : "The cluster node name.",
+                                       "format" : "pve-node",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    },
+                                    "remote" : {
+                                       "description" : "Proxmox Backup Server ID.",
+                                       "format" : "pve-configid",
+                                       "type" : "string",
+                                       "typetext" : "<string>"
+                                    }
+                                 }
+                              },
+                              "returns" : {
+                                 "items" : {
+                                    "properties" : {
+                                       "section" : {
+                                          "type" : "string"
+                                       }
+                                    },
+                                    "type" : "object"
+                                 },
+                                 "links" : [
+                                    {
+                                       "href" : "{section}",
+                                       "rel" : "child"
+                                    }
+                                 ],
+                                 "type" : "array"
+                              }
+                           }
+                        },
+                        "leaf" : 0,
+                        "path" : "/nodes/{node}/pbs/{remote}",
+                        "text" : "{remote}"
+                     }
+                  ],
+                  "info" : {
+                     "GET" : {
+                        "allowtoken" : 1,
+                        "description" : "List all configured Proxmox Backup Server jobs.",
+                        "method" : "GET",
+                        "name" : "list",
+                        "parameters" : {
+                           "additionalProperties" : 0,
+                           "properties" : {
+                              "node" : {
+                                 "description" : "The cluster node name.",
+                                 "format" : "pve-node",
+                                 "type" : "string",
+                                 "typetext" : "<string>"
+                              }
+                           }
+                        },
+                        "permissions" : {
+                           "check" : [
+                              "admin",
+                              "audit"
+                           ]
+                        },
+                        "protected" : 1,
+                        "proxyto" : "node",
+                        "returns" : {
+                           "items" : {
+                              "additionalProperties" : 0,
+                              "properties" : {
+                                 "datastore" : {
+                                    "description" : "Proxmox Backup Server datastore name.",
+                                    "optional" : 0,
+                                    "type" : "string"
+                                 },
+                                 "disable" : {
+                                    "description" : "Flag to disable (deactivate) the entry.",
+                                    "optional" : 1,
+                                    "type" : "boolean"
+                                 },
+                                 "fingerprint" : {
+                                    "description" : "Certificate SHA 256 fingerprint.",
+                                    "optional" : 1,
+                                    "pattern" : "([A-Fa-f0-9]{2}:){31}[A-Fa-f0-9]{2}",
+                                    "type" : "string"
+                                 },
+                                 "keep-daily" : {
+                                    "description" : "Keep backups for the last <N> different days. If there is more than one backup for a single day, only the latest one is kept.",
+                                    "format_description" : "N",
+                                    "minimum" : "0",
+                                    "optional" : 1,
+                                    "type" : "integer"
+                                 },
+                                 "keep-hourly" : {
+                                    "description" : "Keep backups for the last <N> different hours. If there is more than one backup for a single hour, only the latest one is kept.",
+                                    "format_description" : "N",
+                                    "minimum" : "0",
+                                    "optional" : 1,
+                                    "type" : "integer"
+                                 },
+                                 "keep-last" : {
+                                    "description" : "Keep the last <N> backups.",
+                                    "format_description" : "N",
+                                    "minimum" : "0",
+                                    "optional" : 1,
+                                    "type" : "integer"
+                                 },
+                                 "keep-monthly" : {
+                                    "description" : "Keep backups for the last <N> different months. If there is more than one backup for a single month, only the latest one is kept.",
+                                    "format_description" : "N",
+                                    "minimum" : "0",
+                                    "optional" : 1,
+                                    "type" : "integer"
+                                 },
+                                 "keep-weekly" : {
+                                    "description" : "Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.",
+                                    "format_description" : "N",
+                                    "minimum" : "0",
+                                    "optional" : 1,
+                                    "type" : "integer"
+                                 },
+                                 "keep-yearly" : {
+                                    "description" : "Keep backups for the last <N> different years. If there is more than one backup for a single year, only the latest one is kept.",
+                                    "format_description" : "N",
+                                    "minimum" : "0",
+                                    "optional" : 1,
+                                    "type" : "integer"
+                                 },
+                                 "password" : {
+                                    "description" : "Password or API token secret for the user on the Proxmox Backup Server.",
+                                    "optional" : 1,
+                                    "type" : "string"
+                                 },
+                                 "remote" : {
+                                    "description" : "Proxmox Backup Server ID.",
+                                    "format" : "pve-configid",
+                                    "type" : "string"
+                                 },
+                                 "server" : {
+                                    "description" : "Proxmox Backup Server address.",
+                                    "format" : "address",
+                                    "maxLength" : 256,
+                                    "optional" : 0,
+                                    "type" : "string"
+                                 },
+                                 "username" : {
+                                    "description" : "Username or API token ID on the Proxmox Backup Server",
+                                    "maxLength" : 512,
+                                    "minLength" : 3,
+                                    "optional" : 1,
+                                    "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                                    "type" : "string"
+                                 }
+                              },
+                              "type" : "object"
+                           },
+                           "links" : [
+                              {
+                                 "href" : "{remote}",
+                                 "rel" : "child"
+                              }
+                           ],
+                           "type" : "array"
+                        }
+                     }
+                  },
+                  "leaf" : 0,
+                  "path" : "/nodes/{node}/pbs",
+                  "text" : "pbs"
                },
                {
                   "info" : {
@@ -14620,6 +15723,38 @@ var pmgapi = [
             "leaf" : 1,
             "path" : "/quarantine/download",
             "text" : "download"
+         },
+         {
+            "info" : {
+               "POST" : {
+                  "allowtoken" : 1,
+                  "description" : "Send Quarantine link to given e-mail.",
+                  "method" : "POST",
+                  "name" : "sendlink",
+                  "parameters" : {
+                     "additionalProperties" : 0,
+                     "properties" : {
+                        "mail" : {
+                           "description" : "Email Address (allow most characters).",
+                           "maxLength" : 512,
+                           "minLength" : 3,
+                           "pattern" : "(?:[^\\s\\/\\\\@]+\\@[^\\s\\/\\\\@]+)",
+                           "type" : "string"
+                        }
+                     }
+                  },
+                  "permissions" : {
+                     "user" : "world"
+                  },
+                  "protected" : 1,
+                  "returns" : {
+                     "type" : "null"
+                  }
+               }
+            },
+            "leaf" : 1,
+            "path" : "/quarantine/sendlink",
+            "text" : "sendlink"
          }
       ],
       "info" : {

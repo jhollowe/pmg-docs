@@ -300,6 +300,10 @@ Quarantine Port. Useful if you have a reverse proxy or port forwarding for the w
 
 Quarantine Webinterface Protocol. Useful if you have a reverse proxy for the webinterface. Only used for the generated Spam report.
 
+`quarantinelink`: `<boolean>` ('default =' `0`)::
+
+Enables user self-service for Quarantine Links. Caution: this is accessible without authentication
+
 `reportstyle`: `<custom | none | short | verbose>` ('default =' `verbose`)::
 
 Spam report style.

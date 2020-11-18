@@ -24,6 +24,230 @@ Verbose output format.
 
 List all stored backups (files named proxmox-backup_{DATE}.tgz).
 
+*pmgbackup proxmox-backup backup* `<remote>`
+
+Create a new backup and prune the backup group afterwards, if configured.
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+*pmgbackup proxmox-backup forget* `<remote> <backup-id> <backup-time>`
+
+Forget a snapshot
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+`<backup-id>`: `<string>` ::
+
+ID (hostname) of backup snapshot
+
+`<backup-time>`: `<string>` ::
+
+Backup time in RFC 3339 format
+
+*pmgbackup proxmox-backup job create* `<remote>` `[OPTIONS]`
+
+Create backup schedule
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+`--delay` `[0-9a-zA-Z. ]+` ('default =' `5min`)::
+
+Randomized delay to add to the starttime (RandomizedDelaySec setting of the systemd.timer)
+
+`--schedule` `[0-9a-zA-Z*.:,\-/ ]+` ('default =' `daily`)::
+
+Schedule for the backup (OnCalendar setting of the systemd.timer)
+
+*pmgbackup proxmox-backup job delete* `<remote>`
+
+Delete backup schedule
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+*pmgbackup proxmox-backup job show* `<remote>` `[FORMAT_OPTIONS]`
+
+Get timer specification
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+*pmgbackup proxmox-backup list* `<remote>` `[FORMAT_OPTIONS]`
+
+Get snapshots stored on remote.
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+*pmgbackup proxmox-backup remote add* `<remote> --datastore <string> --server <string>` `[OPTIONS]`
+
+Add Proxmox Backup Server remote instance.
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+`--datastore` `<string>` ::
+
+Proxmox Backup Server datastore name.
+
+`--disable` `<boolean>` ::
+
+Flag to disable (deactivate) the entry.
+
+`--fingerprint` `([A-Fa-f0-9]{2}:){31}[A-Fa-f0-9]{2}` ::
+
+Certificate SHA 256 fingerprint.
+
+`--keep-daily` `<N>` ::
+
+Keep backups for the last <N> different days. If there is more than one backup for a single day, only the latest one is kept.
+
+`--keep-hourly` `<N>` ::
+
+Keep backups for the last <N> different hours. If there is more than one backup for a single hour, only the latest one is kept.
+
+`--keep-last` `<N>` ::
+
+Keep the last <N> backups.
+
+`--keep-monthly` `<N>` ::
+
+Keep backups for the last <N> different months. If there is more than one backup for a single month, only the latest one is kept.
+
+`--keep-weekly` `<N>` ::
+
+Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.
+
+`--keep-yearly` `<N>` ::
+
+Keep backups for the last <N> different years. If there is more than one backup for a single year, only the latest one is kept.
+
+`--password` `<password>` ::
+
+Password or API token secret for the user on the Proxmox Backup Server.
+
+`--server` `<string>` ::
+
+Proxmox Backup Server address.
+
+`--username` `(?:[^\s\/\\@]+\@[^\s\/\\@]+)` ::
+
+Username or API token ID on the Proxmox Backup Server
+
+*pmgbackup proxmox-backup remote list* `[FORMAT_OPTIONS]`
+
+List all configured Proxmox Backup Server instances.
+
+*pmgbackup proxmox-backup remote remove* `<remote>`
+
+Delete an PBS remote
+
+`<remote>`: `<string>` ::
+
+Profile ID.
+
+*pmgbackup proxmox-backup remote set* `<remote>` `[OPTIONS]`
+
+Update PBS remote settings.
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+`--datastore` `<string>` ::
+
+Proxmox Backup Server datastore name.
+
+`--delete` `<string>` ::
+
+A list of settings you want to delete.
+
+`--digest` `<string>` ::
+
+Prevent changes if current configuration file has different SHA1 digest. This can be used to prevent concurrent modifications.
+
+`--disable` `<boolean>` ::
+
+Flag to disable (deactivate) the entry.
+
+`--fingerprint` `([A-Fa-f0-9]{2}:){31}[A-Fa-f0-9]{2}` ::
+
+Certificate SHA 256 fingerprint.
+
+`--keep-daily` `<N>` ::
+
+Keep backups for the last <N> different days. If there is more than one backup for a single day, only the latest one is kept.
+
+`--keep-hourly` `<N>` ::
+
+Keep backups for the last <N> different hours. If there is more than one backup for a single hour, only the latest one is kept.
+
+`--keep-last` `<N>` ::
+
+Keep the last <N> backups.
+
+`--keep-monthly` `<N>` ::
+
+Keep backups for the last <N> different months. If there is more than one backup for a single month, only the latest one is kept.
+
+`--keep-weekly` `<N>` ::
+
+Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.
+
+`--keep-yearly` `<N>` ::
+
+Keep backups for the last <N> different years. If there is more than one backup for a single year, only the latest one is kept.
+
+`--password` `<password>` ::
+
+Password or API token secret for the user on the Proxmox Backup Server.
+
+`--server` `<string>` ::
+
+Proxmox Backup Server address.
+
+`--username` `(?:[^\s\/\\@]+\@[^\s\/\\@]+)` ::
+
+Username or API token ID on the Proxmox Backup Server
+
+*pmgbackup proxmox-backup restore* `<remote> <backup-id> <backup-time>` `[OPTIONS]`
+
+Restore the system configuration.
+
+`<remote>`: `<string>` ::
+
+Proxmox Backup Server ID.
+
+`<backup-id>`: `<string>` ::
+
+backup-id (hostname) of backup snapshot
+
+`<backup-time>`: `<string>` ::
+
+backup-time to restore
+
+`--config` `<boolean>` ('default =' `0`)::
+
+Restore system configuration.
+
+`--database` `<boolean>` ('default =' `1`)::
+
+Restore the rule database. This is the default.
+
+`--statistic` `<boolean>` ('default =' `0`)::
+
+Restore statistic databases. Only considered when you restore the 'database'.
+
 *pmgbackup restore* `--filename <string>` `[OPTIONS]`
 
 Restore the system configuration.
