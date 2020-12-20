@@ -789,7 +789,9 @@ var pmgapi = [
                            "items" : {
                               "properties" : {
                                  "id" : {
-                                    "type" : "integer"
+                                    "description" : "Rule ID.",
+                                    "type" : "integer",
+                                    "typetext" : "<integer>"
                                  }
                               },
                               "type" : "object"
@@ -963,7 +965,36 @@ var pmgapi = [
                                     "returns" : {
                                        "properties" : {
                                           "id" : {
+                                             "description" : "Action Object ID.",
+                                             "pattern" : "\\d+_\\d+",
                                              "type" : "string"
+                                          },
+                                          "info" : {
+                                             "description" : "Informational comment.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "name" : {
+                                             "description" : "Action name.",
+                                             "maxLength" : 255,
+                                             "optional" : 1,
+                                             "type" : "string",
+                                             "typetext" : "<string>"
+                                          },
+                                          "original" : {
+                                             "default" : 1,
+                                             "description" : "Send the original, unmodified mail.",
+                                             "optional" : 1,
+                                             "type" : "boolean",
+                                             "typetext" : "<boolean>"
+                                          },
+                                          "target" : {
+                                             "description" : "Send a Blind Carbon Copy to this email address.",
+                                             "format" : "email",
+                                             "type" : "string",
+                                             "typetext" : "<string>"
                                           }
                                        },
                                        "type" : "object"
