@@ -92,7 +92,7 @@ var pmgapi = [
                                              "typetext" : "<boolean>"
                                           },
                                           "direction" : {
-                                             "description" : "Rule direction. Value `0` matches incomming mails, value `1` matches outgoing mails, and value `2` matches both directions.",
+                                             "description" : "Rule direction. Value `0` matches incoming mails, value `1` matches outgoing mails, and value `2` matches both directions.",
                                              "maximum" : 2,
                                              "minimum" : 0,
                                              "optional" : 1,
@@ -111,7 +111,7 @@ var pmgapi = [
                                              "typetext" : "<string>"
                                           },
                                           "priority" : {
-                                             "description" : "Rule priotity.",
+                                             "description" : "Rule priority.",
                                              "maximum" : 100,
                                              "minimum" : 0,
                                              "optional" : 1,
@@ -818,7 +818,7 @@ var pmgapi = [
                                  "typetext" : "<boolean>"
                               },
                               "direction" : {
-                                 "description" : "Rule direction. Value `0` matches incomming mails, value `1` matches outgoing mails, and value `2` matches both directions.",
+                                 "description" : "Rule direction. Value `0` matches incoming mails, value `1` matches outgoing mails, and value `2` matches both directions.",
                                  "maximum" : 2,
                                  "minimum" : 0,
                                  "optional" : 1,
@@ -831,7 +831,7 @@ var pmgapi = [
                                  "typetext" : "<string>"
                               },
                               "priority" : {
-                                 "description" : "Rule priotity.",
+                                 "description" : "Rule priority.",
                                  "maximum" : 100,
                                  "minimum" : 0,
                                  "type" : "integer",
@@ -5752,7 +5752,7 @@ var pmgapi = [
                                        "typetext" : "<string>"
                                     },
                                     "server2" : {
-                                       "description" : "Fallback server address. Userd when the first server is not available.",
+                                       "description" : "Fallback server address. Used when the first server is not available.",
                                        "format" : "address",
                                        "maxLength" : 256,
                                        "optional" : 1,
@@ -5789,7 +5789,7 @@ var pmgapi = [
                         "info" : {
                            "POST" : {
                               "allowtoken" : 1,
-                              "description" : "Synchronice LDAP users to local database.",
+                              "description" : "Synchronize LDAP users to local database.",
                               "method" : "POST",
                               "name" : "sync_profile",
                               "parameters" : {
@@ -6286,7 +6286,7 @@ var pmgapi = [
                            "typetext" : "<string>"
                         },
                         "server2" : {
-                           "description" : "Fallback server address. Userd when the first server is not available.",
+                           "description" : "Fallback server address. Used when the first server is not available.",
                            "format" : "address",
                            "maxLength" : 256,
                            "optional" : 1,
@@ -6581,7 +6581,7 @@ var pmgapi = [
                                  "type" : "boolean"
                               },
                               "pass" : {
-                                 "description" : "The password used tfor server login.",
+                                 "description" : "The password used for server login.",
                                  "maxLength" : 64,
                                  "optional" : 1,
                                  "type" : "string"
@@ -6670,7 +6670,7 @@ var pmgapi = [
                                  "typetext" : "<boolean>"
                               },
                               "pass" : {
-                                 "description" : "The password used tfor server login.",
+                                 "description" : "The password used for server login.",
                                  "maxLength" : 64,
                                  "optional" : 1,
                                  "type" : "string",
@@ -6788,7 +6788,7 @@ var pmgapi = [
                               "type" : "boolean"
                            },
                            "pass" : {
-                              "description" : "The password used tfor server login.",
+                              "description" : "The password used for server login.",
                               "maxLength" : 64,
                               "optional" : 1,
                               "type" : "string"
@@ -6879,7 +6879,7 @@ var pmgapi = [
                            "typetext" : "<boolean>"
                         },
                         "pass" : {
-                           "description" : "The password used tfor server login.",
+                           "description" : "The password used for server login.",
                            "maxLength" : 64,
                            "type" : "string",
                            "typetext" : "<string>"
@@ -8629,7 +8629,7 @@ var pmgapi = [
                                  "typetext" : "<N>"
                               },
                               "keep-weekly" : {
-                                 "description" : "Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.",
+                                 "description" : "Keep backups for the last <N> different weeks. If there is more than one backup for a single week, only the latest one is kept.",
                                  "format_description" : "N",
                                  "minimum" : "0",
                                  "optional" : 1,
@@ -8758,7 +8758,7 @@ var pmgapi = [
                               "type" : "integer"
                            },
                            "keep-weekly" : {
-                              "description" : "Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.",
+                              "description" : "Keep backups for the last <N> different weeks. If there is more than one backup for a single week, only the latest one is kept.",
                               "format_description" : "N",
                               "minimum" : "0",
                               "optional" : 1,
@@ -8867,7 +8867,7 @@ var pmgapi = [
                            "typetext" : "<N>"
                         },
                         "keep-weekly" : {
-                           "description" : "Keep backups for the last <N> different weeks. If there ismore than one backup for a single week, only the latest one is kept.",
+                           "description" : "Keep backups for the last <N> different weeks. If there is more than one backup for a single week, only the latest one is kept.",
                            "format_description" : "N",
                            "minimum" : "0",
                            "optional" : 1,
@@ -8981,7 +8981,7 @@ var pmgapi = [
                         },
                         "custom_check" : {
                            "default" : 0,
-                           "description" : "Use Custom Check Script. The script has to take the defined arguments and can return Virus findings or a Spamscore.",
+                           "description" : "Use Custom Check Script. The script has to take the defined arguments and can return virus findings or a spam score.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -9088,7 +9088,7 @@ var pmgapi = [
             "info" : {
                "GET" : {
                   "allowtoken" : 1,
-                  "description" : "Read clamav configuration properties.",
+                  "description" : "Read ClamAV configuration properties.",
                   "method" : "GET",
                   "name" : "read_clamav_section",
                   "parameters" : {
@@ -9107,7 +9107,7 @@ var pmgapi = [
                },
                "PUT" : {
                   "allowtoken" : 1,
-                  "description" : "Update clamav configuration properties.",
+                  "description" : "Update ClamAV configuration properties.",
                   "method" : "PUT",
                   "name" : "update_clamav_section",
                   "parameters" : {
@@ -9324,14 +9324,14 @@ var pmgapi = [
                         },
                         "greylist" : {
                            "default" : 1,
-                           "description" : "Use Greylisting for IPv4.",
+                           "description" : "Use greylisting for IPv4.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
                         },
                         "greylist6" : {
                            "default" : 0,
-                           "description" : "Use Greylisting for IPv6.",
+                           "description" : "Use greylisting for IPv6.",
                            "optional" : 1,
                            "type" : "boolean",
                            "typetext" : "<boolean>"
@@ -9484,7 +9484,7 @@ var pmgapi = [
                            "type" : "string"
                         },
                         "smarthost" : {
-                           "description" : "When set, all outgoing mails are deliverd to the specified smarthost.",
+                           "description" : "When set, all outgoing mails are delivered to the specified smarthost.",
                            "format" : "address",
                            "optional" : 1,
                            "type" : "string",
@@ -9528,7 +9528,7 @@ var pmgapi = [
                            "typetext" : "<boolean>"
                         },
                         "verifyreceivers" : {
-                           "description" : "Enable receiver verification. The value spefifies the numerical reply code when the Postfix SMTP server rejects a recipient address.",
+                           "description" : "Enable receiver verification. The value specifies the numerical reply code when the Postfix SMTP server rejects a recipient address.",
                            "enum" : [
                               "450",
                               "550"
@@ -9770,7 +9770,7 @@ var pmgapi = [
                         },
                         "port" : {
                            "default" : 8006,
-                           "description" : "Quarantine Port. Useful if you have a reverse proxy or port forwarding for the webinterface. Only used for the generated Spam report.",
+                           "description" : "Quarantine Port. Useful if you have a reverse proxy or port forwarding for the web interface. Only used for the generated Spam report.",
                            "maximum" : 65535,
                            "minimum" : 1,
                            "optional" : 1,
@@ -9779,7 +9779,7 @@ var pmgapi = [
                         },
                         "protocol" : {
                            "default" : "https",
-                           "description" : "Quarantine Webinterface Protocol. Useful if you have a reverse proxy for the webinterface. Only used for the generated Spam report.",
+                           "description" : "Quarantine web interface protocol. Useful if you have a reverse proxy for the web interface. Only used for the generated Spam report.",
                            "enum" : [
                               "http",
                               "https"
@@ -10342,7 +10342,7 @@ var pmgapi = [
                         "info" : {
                            "DELETE" : {
                               "allowtoken" : 1,
-                              "description" : "Delete all mails in all posfix queues.",
+                              "description" : "Delete all mails in all postfix queues.",
                               "method" : "DELETE",
                               "name" : "delete_all_queues",
                               "parameters" : {
@@ -17463,4 +17463,3 @@ var pmgapi = [
    }
 ]
 ;
-
