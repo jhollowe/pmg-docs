@@ -214,7 +214,7 @@ var pmgapi = [
                                  },
                                  "POST" : {
                                     "allowtoken" : 1,
-                                    "description" : "Add  group to 'from' list.",
+                                    "description" : "Add group to 'from' list.",
                                     "method" : "POST",
                                     "name" : "add_from_group",
                                     "parameters" : {
@@ -326,7 +326,7 @@ var pmgapi = [
                                  },
                                  "POST" : {
                                     "allowtoken" : 1,
-                                    "description" : "Add  group to 'to' list.",
+                                    "description" : "Add group to 'to' list.",
                                     "method" : "POST",
                                     "name" : "add_to_group",
                                     "parameters" : {
@@ -438,7 +438,7 @@ var pmgapi = [
                                  },
                                  "POST" : {
                                     "allowtoken" : 1,
-                                    "description" : "Add  group to 'when' list.",
+                                    "description" : "Add group to 'when' list.",
                                     "method" : "POST",
                                     "name" : "add_when_group",
                                     "parameters" : {
@@ -550,7 +550,7 @@ var pmgapi = [
                                  },
                                  "POST" : {
                                     "allowtoken" : 1,
-                                    "description" : "Add  group to 'what' list.",
+                                    "description" : "Add group to 'what' list.",
                                     "method" : "POST",
                                     "name" : "add_what_group",
                                     "parameters" : {
@@ -662,7 +662,7 @@ var pmgapi = [
                                  },
                                  "POST" : {
                                     "allowtoken" : 1,
-                                    "description" : "Add  group to 'action' list.",
+                                    "description" : "Add group to 'action' list.",
                                     "method" : "POST",
                                     "name" : "add_action_group",
                                     "parameters" : {
@@ -6594,7 +6594,7 @@ var pmgapi = [
                                  "type" : "integer"
                               },
                               "protocol" : {
-                                 "description" : "Specify  the  protocol to use when communicating with the remote mailserver",
+                                 "description" : "Specify the protocol to use when communicating with the remote mailserver",
                                  "enum" : [
                                     "pop3",
                                     "imap"
@@ -6685,7 +6685,7 @@ var pmgapi = [
                                  "typetext" : "<integer> (1 - 65535)"
                               },
                               "protocol" : {
-                                 "description" : "Specify  the  protocol to use when communicating with the remote mailserver",
+                                 "description" : "Specify the protocol to use when communicating with the remote mailserver",
                                  "enum" : [
                                     "pop3",
                                     "imap"
@@ -6801,7 +6801,7 @@ var pmgapi = [
                               "type" : "integer"
                            },
                            "protocol" : {
-                              "description" : "Specify  the  protocol to use when communicating with the remote mailserver",
+                              "description" : "Specify the protocol to use when communicating with the remote mailserver",
                               "enum" : [
                                  "pop3",
                                  "imap"
@@ -6893,7 +6893,7 @@ var pmgapi = [
                            "typetext" : "<integer> (1 - 65535)"
                         },
                         "protocol" : {
-                           "description" : "Specify  the  protocol to use when communicating with the remote mailserver",
+                           "description" : "Specify the protocol to use when communicating with the remote mailserver",
                            "enum" : [
                               "pop3",
                               "imap"
@@ -9130,7 +9130,7 @@ var pmgapi = [
                         },
                         "archivemaxrec" : {
                            "default" : 5,
-                           "description" : "Nested archives are scanned recursively, e.g. if a ZIP archive contains a TAR  file,  all files within it will also be scanned. This options specifies how deeply the process should be continued. Warning: setting this limit too high may result in severe damage to the system.",
+                           "description" : "Nested archives are scanned recursively, e.g. if a ZIP archive contains a TAR file,  all files within it will also be scanned. This options specifies how deeply the process should be continued. Warning: setting this limit too high may result in severe damage to the system.",
                            "minimum" : 1,
                            "optional" : 1,
                            "type" : "integer",
