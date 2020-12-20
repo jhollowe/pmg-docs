@@ -14423,7 +14423,7 @@ var pmgapi = [
                                  "maxLength" : 64,
                                  "minLength" : 4,
                                  "type" : "string",
-                                 "typetext" : "<string>"
+                                 "typetext" : "<username>@<realm>"
                               }
                            }
                         },
